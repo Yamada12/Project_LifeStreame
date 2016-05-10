@@ -61,6 +61,7 @@
     <Reference Include="UnityEditor">
       <HintPath>Library\UnityAssemblies\UnityEditor.dll</HintPath>
     </Reference>
+<<<<<<< HEAD
     <Reference Include="UnityEditor.iOS.Extensions.Xcode">
       <HintPath>Library\UnityAssemblies\UnityEditor.iOS.Extensions.Xcode.dll</HintPath>
     </Reference>
@@ -76,6 +77,28 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Button.cs" />
+=======
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="Project_LifeStreame.CSharp.Plugins.csproj">
+      <Project>{721CF4A9-575F-0960-60BE-BD29B15FA460}</Project>
+      <Name>Project_LifeStreame.CSharp.Plugins</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Assets\Scene\MiniGame\Haikannkou\Spawner.cs" />
+    <Compile Include="Assets\Scene\MiniGame\Haikannkou\Wall.cs" />
+    <Compile Include="Assets\Scene\MiniGame\Haikannkou\jump.cs" />
+    <Compile Include="Assets\Script\PlayerStatus.cs" />
+    <Compile Include="Assets\Script\SaveSystem.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Assets\Standard Assets\Environment\Water (Basic)\Shaders\FXWaterBasic.shader" />
+    <None Include="Assets\Standard Assets\Environment\Water\Water\Shaders\FXWaterPro.shader" />
+    <None Include="Assets\Standard Assets\Environment\Water\Water4\Shaders\FXWater4Advanced.shader" />
+    <None Include="Assets\Standard Assets\Environment\Water\Water4\Shaders\FXWater4Simple.shader" />
+    <None Include="Assets\Standard Assets\Environment\Water\Water4\Shaders\WaterInclude.cginc" />
+>>>>>>> 159db91fba8992264ad9d1a02c91e8791e43555b
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\SyntaxTree\UnityVS\2015\UnityVS.CSharp.targets" />
 </Project>
