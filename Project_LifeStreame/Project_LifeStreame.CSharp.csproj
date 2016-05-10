@@ -74,6 +74,7 @@
     <Compile Include="Assets\Scene\MiniGame\Haikannkou\jump.cs" />
     <Compile Include="Assets\Script\PlayerStatus.cs" />
     <Compile Include="Assets\Script\SaveSystem.cs" />
+    <Compile Include="Assets\Script\SettingManager.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Standard Assets\Environment\Water (Basic)\Shaders\FXWaterBasic.shader" />
