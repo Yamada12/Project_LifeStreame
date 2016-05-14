@@ -10,6 +10,7 @@ public class PlayerStatus : MonoBehaviour
     static public float paramater3; //～の数値
     static public float paramater4; //～の数値
     static public float paramater5; //～の数値
+    static public float geneNumber; //世代数
     static public string[] license; //資格名
     static public float lifeTime;   //残り時間
     static public int progress;     //進行度   小学校＝１　2年生＝２　etc...
@@ -29,6 +30,7 @@ public class PlayerStatus : MonoBehaviour
         paramater3 = 0;
         paramater4 = 0;
         paramater5 = 0;
+        geneNumber = 1;         //世代数の初期値は1
         license[0] = "無資格"; //初めの資格が無資格ならその後の資格は探索されないようにしてください。
         lifeTime = 180f;      //仮代入、一番初めに使う値をいれる
         progress = 0;
