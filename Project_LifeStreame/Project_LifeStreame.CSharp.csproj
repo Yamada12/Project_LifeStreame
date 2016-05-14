@@ -61,7 +61,6 @@
     <Reference Include="UnityEditor">
       <HintPath>Library\UnityAssemblies\UnityEditor.dll</HintPath>
     </Reference>
-<<<<<<< HEAD
     <Reference Include="UnityEditor.iOS.Extensions.Xcode">
       <HintPath>Library\UnityAssemblies\UnityEditor.iOS.Extensions.Xcode.dll</HintPath>
     </Reference>
@@ -80,6 +79,12 @@
     <Reference Include="NCalc">
       <HintPath>Assets\Plugins\JOKER\NCalc.dll</HintPath>
     </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="Project_LifeStreame.CSharp.Plugins.csproj">
+      <Project>{721CF4A9-575F-0960-60BE-BD29B15FA460}</Project>
+      <Name>Project_LifeStreame.CSharp.Plugins</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\JOKER\Scripts\Novel\Components\AnimComponent.cs" />
@@ -136,6 +141,11 @@
     <Compile Include="Assets\JOKER\Scripts\Novel\Unity\MessageArea.cs" />
     <Compile Include="Assets\JOKER\Scripts\Novel\Unity\MessageFrame.cs" />
     <Compile Include="Assets\JOKER_GAME\Plugins\PluginComponent.cs" />
+    <Compile Include="Assets\Scene\MiniGame\Haikannkou\Spawner.cs" />
+    <Compile Include="Assets\Scene\MiniGame\Haikannkou\Wall.cs" />
+    <Compile Include="Assets\Scene\MiniGame\Haikannkou\jump.cs" />
+    <Compile Include="Assets\Script\PlayerStatus.cs" />
+    <Compile Include="Assets\Script\SaveSystem.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\JOKER_GAME\Resources\novel\data\config\config.txt" />
@@ -147,13 +157,13 @@
     <None Include="Assets\JOKER_GAME\Resources\novel\data\scenario\tall\system.txt" />
     <None Include="Assets\JOKER_GAME\Resources\novel\data\scenario\tall\title.txt" />
     <None Include="Assets\JOKER_GAME\Resources\novel\data\scenario\wide\Daigaku\D_arubaito.txt" />
+    <None Include="Assets\JOKER_GAME\Resources\novel\data\scenario\wide\Daigaku\D_asobu_Game_friend.txt" />
+    <None Include="Assets\JOKER_GAME\Resources\novel\data\scenario\wide\Daigaku\D_asobu_Game_solo.txt" />
     <None Include="Assets\JOKER_GAME\Resources\novel\data\scenario\wide\Daigaku\D_asobu_ieF_friend.txt" />
     <None Include="Assets\JOKER_GAME\Resources\novel\data\scenario\wide\Daigaku\D_asobu_ie_friend.txt" />
     <None Include="Assets\JOKER_GAME\Resources\novel\data\scenario\wide\Daigaku\D_asobu_ie_solo.txt" />
-    <None Include="Assets\JOKER_GAME\Resources\novel\data\scenario\wide\Daigaku\D_asobu_kouen_friend.txt" />
-    <None Include="Assets\JOKER_GAME\Resources\novel\data\scenario\wide\Daigaku\D_asobu_kouen_solo.txt" />
-    <None Include="Assets\JOKER_GAME\Resources\novel\data\scenario\wide\Daigaku\D_asobu_koutei_friend.txt" />
-    <None Include="Assets\JOKER_GAME\Resources\novel\data\scenario\wide\Daigaku\D_asobu_koutei_solo.txt" />
+    <None Include="Assets\JOKER_GAME\Resources\novel\data\scenario\wide\Daigaku\D_asobu_karaoke_friend.txt" />
+    <None Include="Assets\JOKER_GAME\Resources\novel\data\scenario\wide\Daigaku\D_asobu_karaoke_solo.txt" />
     <None Include="Assets\JOKER_GAME\Resources\novel\data\scenario\wide\Daigaku\D_asobu_kyousitu_friend.txt" />
     <None Include="Assets\JOKER_GAME\Resources\novel\data\scenario\wide\Daigaku\D_asobu_kyousitu_solo.txt" />
     <None Include="Assets\JOKER_GAME\Resources\novel\data\scenario\wide\Daigaku\D_barentain.txt" />
@@ -166,7 +176,8 @@
     <None Include="Assets\JOKER_GAME\Resources\novel\data\scenario\wide\Daigaku\D_ben_tosyokan_solo.txt" />
     <None Include="Assets\JOKER_GAME\Resources\novel\data\scenario\wide\Daigaku\D_ben_tosyositu_friend.txt" />
     <None Include="Assets\JOKER_GAME\Resources\novel\data\scenario\wide\Daigaku\D_ben_tosyositu_solo.txt" />
-    <None Include="Assets\JOKER_GAME\Resources\novel\data\scenario\wide\Daigaku\D_bukatu.txt" />
+    <None Include="Assets\JOKER_GAME\Resources\novel\data\scenario\wide\Daigaku\D_bukatu_B.txt" />
+    <None Include="Assets\JOKER_GAME\Resources\novel\data\scenario\wide\Daigaku\D_bukatu_U.txt" />
     <None Include="Assets\JOKER_GAME\Resources\novel\data\scenario\wide\Daigaku\D_bunkasai.txt" />
     <None Include="Assets\JOKER_GAME\Resources\novel\data\scenario\wide\Daigaku\D_hanami.txt" />
     <None Include="Assets\JOKER_GAME\Resources\novel\data\scenario\wide\Daigaku\D_howaito.txt" />
@@ -177,23 +188,24 @@
     <None Include="Assets\JOKER_GAME\Resources\novel\data\scenario\wide\Daigaku\D_natumaturi.txt" />
     <None Include="Assets\JOKER_GAME\Resources\novel\data\scenario\wide\Daigaku\D_nyugaku.txt" />
     <None Include="Assets\JOKER_GAME\Resources\novel\data\scenario\wide\Daigaku\D_oomisoka_gantan.txt" />
-    <None Include="Assets\JOKER_GAME\Resources\novel\data\scenario\wide\Daigaku\D_ryunen.txt" />
     <None Include="Assets\JOKER_GAME\Resources\novel\data\scenario\wide\Daigaku\D_saboru.txt" />
-    <None Include="Assets\JOKER_GAME\Resources\novel\data\scenario\wide\Daigaku\D_senmonjuken.txt" />
-    <None Include="Assets\JOKER_GAME\Resources\novel\data\scenario\wide\Daigaku\D_sinrosentaku.txt" />
+    <None Include="Assets\JOKER_GAME\Resources\novel\data\scenario\wide\Daigaku\D_sinnrosentaku.txt" />
     <None Include="Assets\JOKER_GAME\Resources\novel\data\scenario\wide\Daigaku\D_sotugyo.txt" />
     <None Include="Assets\JOKER_GAME\Resources\novel\data\scenario\wide\Daigaku\D_syukatu.txt" />
-    <None Include="Assets\JOKER_GAME\Resources\novel\data\scenario\wide\Daigaku\D_syusyoku.txt" />
     <None Include="Assets\JOKER_GAME\Resources\novel\data\scenario\wide\Daigaku\D_undokai.txt" />
     <None Include="Assets\JOKER_GAME\Resources\novel\data\scenario\wide\Daigaku_Renai\D_renai.txt" />
+    <None Include="Assets\JOKER_GAME\Resources\novel\data\scenario\wide\End\E_kaiwa.txt" />
+    <None Include="Assets\JOKER_GAME\Resources\novel\data\scenario\wide\End\E_onsen.txt" />
+    <None Include="Assets\JOKER_GAME\Resources\novel\data\scenario\wide\End\E_sanpo.txt" />
+    <None Include="Assets\JOKER_GAME\Resources\novel\data\scenario\wide\End\E_tv.txt" />
     <None Include="Assets\JOKER_GAME\Resources\novel\data\scenario\wide\Koukou\K_arubaito.txt" />
+    <None Include="Assets\JOKER_GAME\Resources\novel\data\scenario\wide\Koukou\K_asobu_Game_friend.txt" />
+    <None Include="Assets\JOKER_GAME\Resources\novel\data\scenario\wide\Koukou\K_asobu_Game_solo.txt" />
     <None Include="Assets\JOKER_GAME\Resources\novel\data\scenario\wide\Koukou\K_asobu_ieF_friend.txt" />
     <None Include="Assets\JOKER_GAME\Resources\novel\data\scenario\wide\Koukou\K_asobu_ie_friend.txt" />
     <None Include="Assets\JOKER_GAME\Resources\novel\data\scenario\wide\Koukou\K_asobu_ie_solo.txt" />
-    <None Include="Assets\JOKER_GAME\Resources\novel\data\scenario\wide\Koukou\K_asobu_kouen_friend.txt" />
-    <None Include="Assets\JOKER_GAME\Resources\novel\data\scenario\wide\Koukou\K_asobu_kouen_solo.txt" />
-    <None Include="Assets\JOKER_GAME\Resources\novel\data\scenario\wide\Koukou\K_asobu_koutei_friend.txt" />
-    <None Include="Assets\JOKER_GAME\Resources\novel\data\scenario\wide\Koukou\K_asobu_koutei_solo.txt" />
+    <None Include="Assets\JOKER_GAME\Resources\novel\data\scenario\wide\Koukou\K_asobu_karaoke_friend.txt" />
+    <None Include="Assets\JOKER_GAME\Resources\novel\data\scenario\wide\Koukou\K_asobu_karaoke_solo.txt" />
     <None Include="Assets\JOKER_GAME\Resources\novel\data\scenario\wide\Koukou\K_asobu_kyousitu_friend.txt" />
     <None Include="Assets\JOKER_GAME\Resources\novel\data\scenario\wide\Koukou\K_asobu_kyousitu_solo.txt" />
     <None Include="Assets\JOKER_GAME\Resources\novel\data\scenario\wide\Koukou\K_barentain.txt" />
@@ -206,9 +218,9 @@
     <None Include="Assets\JOKER_GAME\Resources\novel\data\scenario\wide\Koukou\K_ben_tosyokan_solo.txt" />
     <None Include="Assets\JOKER_GAME\Resources\novel\data\scenario\wide\Koukou\K_ben_tosyositu_friend.txt" />
     <None Include="Assets\JOKER_GAME\Resources\novel\data\scenario\wide\Koukou\K_ben_tosyositu_solo.txt" />
-    <None Include="Assets\JOKER_GAME\Resources\novel\data\scenario\wide\Koukou\K_bukatu.txt" />
+    <None Include="Assets\JOKER_GAME\Resources\novel\data\scenario\wide\Koukou\K_bukatu_B.txt" />
+    <None Include="Assets\JOKER_GAME\Resources\novel\data\scenario\wide\Koukou\K_bukatu_U.txt" />
     <None Include="Assets\JOKER_GAME\Resources\novel\data\scenario\wide\Koukou\K_bunkasai.txt" />
-    <None Include="Assets\JOKER_GAME\Resources\novel\data\scenario\wide\Koukou\K_daigakujuken.txt" />
     <None Include="Assets\JOKER_GAME\Resources\novel\data\scenario\wide\Koukou\K_hanami.txt" />
     <None Include="Assets\JOKER_GAME\Resources\novel\data\scenario\wide\Koukou\K_howaito.txt" />
     <None Include="Assets\JOKER_GAME\Resources\novel\data\scenario\wide\Koukou\K_juku.txt" />
@@ -218,23 +230,20 @@
     <None Include="Assets\JOKER_GAME\Resources\novel\data\scenario\wide\Koukou\K_natumaturi.txt" />
     <None Include="Assets\JOKER_GAME\Resources\novel\data\scenario\wide\Koukou\K_nyugaku.txt" />
     <None Include="Assets\JOKER_GAME\Resources\novel\data\scenario\wide\Koukou\K_oomisoka_gantan.txt" />
-    <None Include="Assets\JOKER_GAME\Resources\novel\data\scenario\wide\Koukou\K_ryunen.txt" />
     <None Include="Assets\JOKER_GAME\Resources\novel\data\scenario\wide\Koukou\K_saboru.txt" />
-    <None Include="Assets\JOKER_GAME\Resources\novel\data\scenario\wide\Koukou\K_senmonjuken.txt" />
-    <None Include="Assets\JOKER_GAME\Resources\novel\data\scenario\wide\Koukou\K_sinrosentaku.txt" />
+    <None Include="Assets\JOKER_GAME\Resources\novel\data\scenario\wide\Koukou\K_sinnrosentaku.txt" />
     <None Include="Assets\JOKER_GAME\Resources\novel\data\scenario\wide\Koukou\K_sotugyo.txt" />
     <None Include="Assets\JOKER_GAME\Resources\novel\data\scenario\wide\Koukou\K_syukatu.txt" />
-    <None Include="Assets\JOKER_GAME\Resources\novel\data\scenario\wide\Koukou\K_syusyoku.txt" />
     <None Include="Assets\JOKER_GAME\Resources\novel\data\scenario\wide\Koukou\K_undokai.txt" />
     <None Include="Assets\JOKER_GAME\Resources\novel\data\scenario\wide\Koukou_Renai\K_renai.txt" />
     <None Include="Assets\JOKER_GAME\Resources\novel\data\scenario\wide\Senmon\Se_arubaito.txt" />
+    <None Include="Assets\JOKER_GAME\Resources\novel\data\scenario\wide\Senmon\Se_asobu_Game_friend.txt" />
+    <None Include="Assets\JOKER_GAME\Resources\novel\data\scenario\wide\Senmon\Se_asobu_Game_solo.txt" />
     <None Include="Assets\JOKER_GAME\Resources\novel\data\scenario\wide\Senmon\Se_asobu_ieF_friend.txt" />
     <None Include="Assets\JOKER_GAME\Resources\novel\data\scenario\wide\Senmon\Se_asobu_ie_friend.txt" />
     <None Include="Assets\JOKER_GAME\Resources\novel\data\scenario\wide\Senmon\Se_asobu_ie_solo.txt" />
-    <None Include="Assets\JOKER_GAME\Resources\novel\data\scenario\wide\Senmon\Se_asobu_kouen_friend.txt" />
-    <None Include="Assets\JOKER_GAME\Resources\novel\data\scenario\wide\Senmon\Se_asobu_kouen_solo.txt" />
-    <None Include="Assets\JOKER_GAME\Resources\novel\data\scenario\wide\Senmon\Se_asobu_koutei_friend.txt" />
-    <None Include="Assets\JOKER_GAME\Resources\novel\data\scenario\wide\Senmon\Se_asobu_koutei_solo.txt" />
+    <None Include="Assets\JOKER_GAME\Resources\novel\data\scenario\wide\Senmon\Se_asobu_karaoke_friend.txt" />
+    <None Include="Assets\JOKER_GAME\Resources\novel\data\scenario\wide\Senmon\Se_asobu_karaoke_solo.txt" />
     <None Include="Assets\JOKER_GAME\Resources\novel\data\scenario\wide\Senmon\Se_asobu_kyousitu_friend.txt" />
     <None Include="Assets\JOKER_GAME\Resources\novel\data\scenario\wide\Senmon\Se_asobu_kyousitu_solo.txt" />
     <None Include="Assets\JOKER_GAME\Resources\novel\data\scenario\wide\Senmon\Se_barentain.txt" />
@@ -245,10 +254,7 @@
     <None Include="Assets\JOKER_GAME\Resources\novel\data\scenario\wide\Senmon\Se_ben_kyousitu_solo.txt" />
     <None Include="Assets\JOKER_GAME\Resources\novel\data\scenario\wide\Senmon\Se_ben_tosyokan_friend.txt" />
     <None Include="Assets\JOKER_GAME\Resources\novel\data\scenario\wide\Senmon\Se_ben_tosyokan_solo.txt" />
-    <None Include="Assets\JOKER_GAME\Resources\novel\data\scenario\wide\Senmon\Se_ben_tosyositu_friend.txt" />
-    <None Include="Assets\JOKER_GAME\Resources\novel\data\scenario\wide\Senmon\Se_ben_tosyositu_solo.txt" />
     <None Include="Assets\JOKER_GAME\Resources\novel\data\scenario\wide\Senmon\Se_bunkasai.txt" />
-    <None Include="Assets\JOKER_GAME\Resources\novel\data\scenario\wide\Senmon\Se_daigakujuken.txt" />
     <None Include="Assets\JOKER_GAME\Resources\novel\data\scenario\wide\Senmon\Se_hanami.txt" />
     <None Include="Assets\JOKER_GAME\Resources\novel\data\scenario\wide\Senmon\Se_howaito.txt" />
     <None Include="Assets\JOKER_GAME\Resources\novel\data\scenario\wide\Senmon\Se_juku.txt" />
@@ -258,12 +264,10 @@
     <None Include="Assets\JOKER_GAME\Resources\novel\data\scenario\wide\Senmon\Se_natumaturi.txt" />
     <None Include="Assets\JOKER_GAME\Resources\novel\data\scenario\wide\Senmon\Se_nyugaku.txt" />
     <None Include="Assets\JOKER_GAME\Resources\novel\data\scenario\wide\Senmon\Se_oomisoka_gantan.txt" />
-    <None Include="Assets\JOKER_GAME\Resources\novel\data\scenario\wide\Senmon\Se_ryunen.txt" />
     <None Include="Assets\JOKER_GAME\Resources\novel\data\scenario\wide\Senmon\Se_saboru.txt" />
-    <None Include="Assets\JOKER_GAME\Resources\novel\data\scenario\wide\Senmon\Se_sinrosentaku.txt" />
+    <None Include="Assets\JOKER_GAME\Resources\novel\data\scenario\wide\Senmon\Se_sinnrosentaku.txt" />
     <None Include="Assets\JOKER_GAME\Resources\novel\data\scenario\wide\Senmon\Se_sotugyo.txt" />
     <None Include="Assets\JOKER_GAME\Resources\novel\data\scenario\wide\Senmon\Se_syukatu.txt" />
-    <None Include="Assets\JOKER_GAME\Resources\novel\data\scenario\wide\Senmon\Se_syusyoku.txt" />
     <None Include="Assets\JOKER_GAME\Resources\novel\data\scenario\wide\Senmon\Se_undokai.txt" />
     <None Include="Assets\JOKER_GAME\Resources\novel\data\scenario\wide\Senmon_Renai\Se_renai.txt" />
     <None Include="Assets\JOKER_GAME\Resources\novel\data\scenario\wide\Syakai\Sya_asobu.txt" />
@@ -314,6 +318,7 @@
     <None Include="Assets\JOKER_GAME\Resources\novel\data\scenario\wide\Syogaku\S_syougakunyusi.txt" />
     <None Include="Assets\JOKER_GAME\Resources\novel\data\scenario\wide\Syogaku\S_tyugakunyusi.txt" />
     <None Include="Assets\JOKER_GAME\Resources\novel\data\scenario\wide\Syogaku\S_undokai.txt" />
+    <None Include="Assets\JOKER_GAME\Resources\novel\data\scenario\wide\Syogaku\test.txt" />
     <None Include="Assets\JOKER_GAME\Resources\novel\data\scenario\wide\Tyugaku\T_asobu_ieF_friend.txt" />
     <None Include="Assets\JOKER_GAME\Resources\novel\data\scenario\wide\Tyugaku\T_asobu_ie_friend.txt" />
     <None Include="Assets\JOKER_GAME\Resources\novel\data\scenario\wide\Tyugaku\T_asobu_ie_solo.txt" />
@@ -333,7 +338,8 @@
     <None Include="Assets\JOKER_GAME\Resources\novel\data\scenario\wide\Tyugaku\T_ben_tosyokan_solo.txt" />
     <None Include="Assets\JOKER_GAME\Resources\novel\data\scenario\wide\Tyugaku\T_ben_tosyositu_friend.txt" />
     <None Include="Assets\JOKER_GAME\Resources\novel\data\scenario\wide\Tyugaku\T_ben_tosyositu_solo.txt" />
-    <None Include="Assets\JOKER_GAME\Resources\novel\data\scenario\wide\Tyugaku\T_bukatu.txt" />
+    <None Include="Assets\JOKER_GAME\Resources\novel\data\scenario\wide\Tyugaku\T_bukatu_B.txt" />
+    <None Include="Assets\JOKER_GAME\Resources\novel\data\scenario\wide\Tyugaku\T_bukatu_U.txt" />
     <None Include="Assets\JOKER_GAME\Resources\novel\data\scenario\wide\Tyugaku\T_bunkasai.txt" />
     <None Include="Assets\JOKER_GAME\Resources\novel\data\scenario\wide\Tyugaku\T_hanami.txt" />
     <None Include="Assets\JOKER_GAME\Resources\novel\data\scenario\wide\Tyugaku\T_howaito.txt" />
@@ -348,32 +354,16 @@
     <None Include="Assets\JOKER_GAME\Resources\novel\data\scenario\wide\Tyugaku\T_sotugyo.txt" />
     <None Include="Assets\JOKER_GAME\Resources\novel\data\scenario\wide\Tyugaku\T_undokai.txt" />
     <None Include="Assets\JOKER_GAME\Resources\novel\data\scenario\wide\libs\menu.txt" />
+    <None Include="Assets\JOKER_GAME\Resources\novel\data\scenario\wide\libs\quiz.txt" />
     <None Include="Assets\JOKER_GAME\Resources\novel\data\scenario\wide\libs\save.txt" />
     <None Include="Assets\JOKER_GAME\Resources\novel\data\scenario\wide\libs\utils.txt" />
     <None Include="Assets\JOKER_GAME\Resources\novel\data\scenario\wide\system.txt" />
     <None Include="Assets\JOKER_GAME\Resources\novel\data\scenario\wide\title.txt" />
-=======
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="Project_LifeStreame.CSharp.Plugins.csproj">
-      <Project>{721CF4A9-575F-0960-60BE-BD29B15FA460}</Project>
-      <Name>Project_LifeStreame.CSharp.Plugins</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <Compile Include="Assets\Scene\MiniGame\Haikannkou\Spawner.cs" />
-    <Compile Include="Assets\Scene\MiniGame\Haikannkou\Wall.cs" />
-    <Compile Include="Assets\Scene\MiniGame\Haikannkou\jump.cs" />
-    <Compile Include="Assets\Script\PlayerStatus.cs" />
-    <Compile Include="Assets\Script\SaveSystem.cs" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Assets\Standard Assets\Environment\Water (Basic)\Shaders\FXWaterBasic.shader" />
     <None Include="Assets\Standard Assets\Environment\Water\Water\Shaders\FXWaterPro.shader" />
     <None Include="Assets\Standard Assets\Environment\Water\Water4\Shaders\FXWater4Advanced.shader" />
     <None Include="Assets\Standard Assets\Environment\Water\Water4\Shaders\FXWater4Simple.shader" />
     <None Include="Assets\Standard Assets\Environment\Water\Water4\Shaders\WaterInclude.cginc" />
->>>>>>> 159db91fba8992264ad9d1a02c91e8791e43555b
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\SyntaxTree\UnityVS\2015\UnityVS.CSharp.targets" />
 </Project>

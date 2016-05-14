@@ -3,7 +3,6 @@ StandaloneWindows
 C:/Program Files/Unity/Editor/Data/Managed/UnityEngine.dll
 C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll
 C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/Networking/UnityEngine.Networking.dll
-<<<<<<< HEAD
 C:/Program Files/Unity/Editor/Data/Managed/UnityEditor.dll
 C:\Program Files\Unity\Editor\Data\PlaybackEngines\AppleTVSupport\UnityEditor.iOS.Extensions.Xcode.dll
 C:\Program Files\Unity\Editor\Data\PlaybackEngines\AppleTVSupport\UnityEditor.iOS.Extensions.Common.dll
@@ -26,6 +25,3 @@ C:/Program Files/Unity/Editor/Data/PlaybackEngines/LinuxStandaloneSupport/UnityE
 C:/Program Files/Unity/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
 C:/Program Files/Unity/Editor/Data/PlaybackEngines/MacStandaloneSupport/UnityEditor.OSXStandalone.Extensions.dll
 C:/Program Files (x86)/Microsoft Visual Studio Tools for Unity/2015/Editor/SyntaxTree.VisualStudio.Unity.Bridge.dll
-=======
-C:/Program Files/Unity/Editor/Data/Managed/UnityEditor.dll
->>>>>>> 159db91fba8992264ad9d1a02c91e8791e43555b

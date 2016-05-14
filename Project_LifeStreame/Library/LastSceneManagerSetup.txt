@@ -1,8 +1,4 @@
 sceneSetups:
-<<<<<<< HEAD
 - path: Assets/JOKER_GAME/Scenes/Player.unity
-=======
-- path: Assets/Scene/MiniGame/Haikannkou/Haikannkou.unity
->>>>>>> 159db91fba8992264ad9d1a02c91e8791e43555b
   isLoaded: 1
   isActive: 1
