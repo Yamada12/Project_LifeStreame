@@ -10,6 +10,7 @@ public class PlayerStatus : MonoBehaviour
     static public float paramater3; //～の数値
     static public float paramater4; //～の数値
     static public float paramater5; //～の数値
+    static public float geneNumber; //世代数
     static public string[] license; //資格名
     static public float lifeTime;   //残り時間
     static public int progress;     //進行度   小学校＝１　2年生＝２　etc...
@@ -19,6 +20,7 @@ public class PlayerStatus : MonoBehaviour
     static public int schoolFlag;   //所属学校（０なら無所属、１なら？？学校　etc...）
     static public int clubFlag;     //部活動は何系か？　0＝文化　1＝運動　2=無所属
     static public int courseYear;   //経過年数（現在の進行度に何年滞在したか？※学年など）
+
 
     // Use this for initialization
     static public void initStatus ()
@@ -30,6 +32,7 @@ public class PlayerStatus : MonoBehaviour
         paramater3 = 0;
         paramater4 = 0;
         paramater5 = 0;
+        geneNumber = 0;         //世代数
         license[0] = "無資格"; //初めの資格が無資格ならその後の資格は探索されないようにしてください。
         lifeTime = 180f;      //仮代入、一番初めに使う値をいれる
         progress = 0;
@@ -47,4 +50,47 @@ public class PlayerStatus : MonoBehaviour
         Debug.Log("mf is…" + mf);
     }
 
+    static public void GetConverter()
+    {//Jokerから変数を受け取る
+        /*
+        mf = int.Parse(StatusManager.variable.get("f.mf"));
+        clanName = StatusManager.variable.get("f.clanName");
+        paramater1 = float.Parse(StatusManager.variable.get("f.paramater1"));
+        paramater2 = float.Parse(StatusManager.variable.get("f.paramater2"));
+        paramater3 = float.Parse(StatusManager.variable.get("f.paramater3"));
+        paramater4 = float.Parse(StatusManager.variable.get("f.paramater4"));
+        paramater5 = float.Parse(StatusManager.variable.get("f.paramater5"));
+        geneNumber = float.Parse(StatusManager.variable.get("f.geneNumber"));
+        lifeTime = float.Parse(StatusManager.variable.get("f.lifeTime"));
+        progress = int.Parse(StatusManager.variable.get("f.progress"));
+        job = StatusManager.variable.get("f.job");
+        marriage = int.Parse(StatusManager.variable.get("f.marriage"));
+        children = int.Parse(StatusManager.variable.get("f.children"));
+        schoolFlag = int.Parse(StatusManager.variable.get("f.schoolFlag"));
+        clubFlag = int.Parse(StatusManager.variable.get("f.clubFlag"));
+        courseYear = int.Parse(StatusManager.variable.get("f.couceYear"));
+        */
+    }
+
+    static public void InitConverter()
+    {//Jokerに変数を受け渡す
+        /*
+        StatusManager.variable.set("f.mf", ((int)mf).ToString());
+        StatusManager.variable.set("f.clanName", clanName.ToString());
+        StatusManager.variable.set("f.paramater1", ((float)paramater1).ToString());
+        StatusManager.variable.set("f.paramater2", ((float)paramater2).ToString());
+        StatusManager.variable.set("f.paramater3", ((float)paramater3).ToString());
+        StatusManager.variable.set("f.paramater4", ((float)paramater4).ToString());
+        StatusManager.variable.set("f.paramater5", ((float)paramater5).ToString());
+        StatusManager.variable.set("f.geneNumber", ((float)geneNumebr).ToString());
+        StatusManager.variable.set("f.lifeTime", ((float)lifeTime).ToString());
+        StatusManager.variable.set("f.progress", ((int)progress).ToString());
+        StatusManager.variable.set("f.job", job.ToString());
+        StatusManager.variable.set("f.marriage", ((int)marriage).ToString());
+        StatusManager.variable.set("f.children", ((int)children).ToString());
+        StatusManager.variable.set("f.schoolFlag", ((int)schoolFlag).ToString());
+        StatusManager.variable.set("f.clubFlag", ((int)clubFlag).ToString());
+        StatusManager.variable.set("f.courceYear", ((int)courseYear).ToString());
+        */
+    }
 }
