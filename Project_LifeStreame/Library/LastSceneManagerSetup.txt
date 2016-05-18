@@ -1,4 +1,8 @@
 sceneSetups:
+<<<<<<< HEAD
+- path: Assets/Scene/World.unity
+=======
 - path: Assets/JOKER_GAME/Scenes/Player.unity
+>>>>>>> b4260eb58b3e63d6370d79eb9c76f0b4b9bdc944
   isLoaded: 1
   isActive: 1

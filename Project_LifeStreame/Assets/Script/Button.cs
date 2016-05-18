@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Button : MonoBehaviour {
+public class SceneChange : MonoBehaviour {
     public string nextScene;
 
 	// Use this for initialization
@@ -14,7 +14,7 @@ public class Button : MonoBehaviour {
 	
 	}
 
-    public void OnClick()
+    public void Click()
     {
         Application.LoadLevel(nextScene);
     }
