@@ -73,15 +73,12 @@
     <Reference Include="UnityEditor.iOS.Extensions.Common">
       <HintPath>Library\UnityAssemblies\UnityEditor.iOS.Extensions.Common.dll</HintPath>
     </Reference>
-<<<<<<< HEAD
-=======
     <Reference Include="LitJson">
       <HintPath>Assets\Plugins\JOKER\LitJson.dll</HintPath>
     </Reference>
     <Reference Include="NCalc">
       <HintPath>Assets\Plugins\JOKER\NCalc.dll</HintPath>
     </Reference>
->>>>>>> b4260eb58b3e63d6370d79eb9c76f0b4b9bdc944
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Standard Assets\Environment\Water (Basic)\Scripts\WaterBasic.cs" />
