@@ -61,10 +61,6 @@
     <Reference Include="UnityEditor">
       <HintPath>Library\UnityAssemblies\UnityEditor.dll</HintPath>
     </Reference>
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> c18a778d9b035de4aeaaa5b0d569ebcbf621ce5d
     <Reference Include="UnityEditor.iOS.Extensions.Xcode">
       <HintPath>Library\UnityAssemblies\UnityEditor.iOS.Extensions.Xcode.dll</HintPath>
     </Reference>
@@ -77,19 +73,12 @@
     <Reference Include="UnityEditor.iOS.Extensions.Common">
       <HintPath>Library\UnityAssemblies\UnityEditor.iOS.Extensions.Common.dll</HintPath>
     </Reference>
-<<<<<<< HEAD
-  </ItemGroup>
-  <ItemGroup>
-    <Compile Include="Assets\Button.cs" />
-=======
-=======
     <Reference Include="LitJson">
       <HintPath>Assets\Plugins\JOKER\LitJson.dll</HintPath>
     </Reference>
     <Reference Include="NCalc">
       <HintPath>Assets\Plugins\JOKER\NCalc.dll</HintPath>
     </Reference>
->>>>>>> c18a778d9b035de4aeaaa5b0d569ebcbf621ce5d
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="Project_LifeStreame.CSharp.Plugins.csproj">
@@ -98,6 +87,7 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Button.cs" />
     <Compile Include="Assets\JOKER\Scripts\Novel\Components\AnimComponent.cs" />
     <Compile Include="Assets\JOKER\Scripts\Novel\Components\AudioComponent.cs" />
     <Compile Include="Assets\JOKER\Scripts\Novel\Components\BgComponent.cs" />
@@ -152,9 +142,6 @@
     <Compile Include="Assets\JOKER\Scripts\Novel\Unity\MessageArea.cs" />
     <Compile Include="Assets\JOKER\Scripts\Novel\Unity\MessageFrame.cs" />
     <Compile Include="Assets\JOKER_GAME\Plugins\PluginComponent.cs" />
-    <Compile Include="Assets\Scene\MiniGame\Haikannkou\Spawner.cs" />
-    <Compile Include="Assets\Scene\MiniGame\Haikannkou\Wall.cs" />
-    <Compile Include="Assets\Scene\MiniGame\Haikannkou\jump.cs" />
     <Compile Include="Assets\Script\PlayerStatus.cs" />
     <Compile Include="Assets\Script\SaveSystem.cs" />
   </ItemGroup>
@@ -375,7 +362,6 @@
     <None Include="Assets\Standard Assets\Environment\Water\Water4\Shaders\FXWater4Advanced.shader" />
     <None Include="Assets\Standard Assets\Environment\Water\Water4\Shaders\FXWater4Simple.shader" />
     <None Include="Assets\Standard Assets\Environment\Water\Water4\Shaders\WaterInclude.cginc" />
->>>>>>> 159db91fba8992264ad9d1a02c91e8791e43555b
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\SyntaxTree\UnityVS\2015\UnityVS.CSharp.targets" />
 </Project>
