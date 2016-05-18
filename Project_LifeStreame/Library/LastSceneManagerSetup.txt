@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/Scene/MiniGame/Haikannkou/Haikannkou.unity
+- path: Assets/JOKER_GAME/Scenes/Player.unity
   isLoaded: 1
   isActive: 1
