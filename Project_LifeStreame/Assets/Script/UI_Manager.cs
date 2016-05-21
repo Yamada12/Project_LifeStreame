@@ -8,6 +8,7 @@ public class UI_Manager : MonoBehaviour
     GameObject UIController;
     public GameObject menuButton;
     public Text ButtonMessage;
+    public GameObject[] contentButton;
     private bool click;
     private GameObject menu;
 
@@ -30,6 +31,15 @@ public class UI_Manager : MonoBehaviour
             click = false;
             menuEnabled();
             ButtonMessage.text = "▼";
+        }
+    }
+
+    public void contentActiverter(bool active)
+    {
+        for (int i = 0; i < contentButton.Length; i++)
+        {
+            Debug.Log(i);
+            contentButton[i].SetActive(active);
         }
     }
 

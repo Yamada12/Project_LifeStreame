@@ -72,7 +72,9 @@
     <Compile Include="Assets\Scene\MiniGame\Haikannkou\Spawner.cs" />
     <Compile Include="Assets\Scene\MiniGame\Haikannkou\Wall.cs" />
     <Compile Include="Assets\Scene\MiniGame\Haikannkou\jump.cs" />
+    <Compile Include="Assets\Script\ContentManager.cs" />
     <Compile Include="Assets\Script\MainManager.cs" />
+    <Compile Include="Assets\Script\Main_Camera_Manager.cs" />
     <Compile Include="Assets\Script\PlayerStatus.cs" />
     <Compile Include="Assets\Script\SaveSystem.cs" />
     <Compile Include="Assets\Script\SettingManager.cs" />
