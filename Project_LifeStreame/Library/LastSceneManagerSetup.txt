@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/Scene/MiniGame/Gambling/Gambling.unity
+- path: Assets/Scene/Main/Main_ElementarySchool.unity
   isLoaded: 1
   isActive: 1

@@ -72,11 +72,13 @@
     <Compile Include="Assets\Scene\MiniGame\Haikannkou\Spawner.cs" />
     <Compile Include="Assets\Scene\MiniGame\Haikannkou\Wall.cs" />
     <Compile Include="Assets\Scene\MiniGame\Haikannkou\jump.cs" />
-    <Compile Include="Assets\Script\JokerConverter.cs" />
+    <Compile Include="Assets\Script\MainManager.cs" />
     <Compile Include="Assets\Script\PlayerStatus.cs" />
     <Compile Include="Assets\Script\SaveSystem.cs" />
     <Compile Include="Assets\Script\SettingManager.cs" />
     <Compile Include="Assets\Script\StatusRenderer.cs" />
+    <Compile Include="Assets\Script\UI_Controller.cs" />
+    <Compile Include="Assets\Script\UI_Manager.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Standard Assets\Environment\Water (Basic)\Shaders\FXWaterBasic.shader" />

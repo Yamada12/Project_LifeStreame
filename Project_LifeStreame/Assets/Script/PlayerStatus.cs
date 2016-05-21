@@ -33,7 +33,11 @@ public class PlayerStatus : MonoBehaviour
         paramater4 = 0;
         paramater5 = 0;
         geneNumber = 0;         //世代数
-        license[0] = "無資格"; //初めの資格が無資格ならその後の資格は探索されないようにしてください。
+        /*license[0] = "無資格";
+        for (int i = 0; i < license.Length; i++)
+        {//資格の初期化
+            license[i] = "無資格";
+        }*/
         lifeTime = 180f;      //仮代入、一番初めに使う値をいれる
         progress = 0;
         job = "無職";         //暫定無職、小学生とかいれてもいいかも？
