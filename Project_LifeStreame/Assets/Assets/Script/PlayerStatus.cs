@@ -47,7 +47,7 @@ public class PlayerStatus : MonoBehaviour
         clubFlag = 2;       //初期は無所属なので２
         courseYear = 1;      //経過年数なので初期値は１年目
 
-        //test = 0;
+        
     }
 
     public void DebugButton()

@@ -3,19 +3,26 @@ using System.Collections;
 
 public class World_Camera : MonoBehaviour {
 
-    private float a;
-    public float test;//ジョーカー側から返ってきたか判定する変数
+    public GameObject child;
+    public Transform Camera_position;
 
 	// Use this for initialization
-	void Start () {
+	void Awake () {
+        if(World_Player.UI02 == 1)
+        {
+            child.transform.parent = null;
+        }
 
     }
 	
 	// Update is called once per frame
 	void Update () {
 
-        //if(test == 1)
-        //this.transform.Rotate(0, (Time.deltaTime * 50), 0);
+        if(World_Player.UI02 == 1)
+        {
+            iTween.MoveTo(gameObject, iTween.Hash("position", Camera_position, "time", 3.0f));
+            iTween.RotateTo(gameObject, iTween.Hash("rotation", Camera_position, "time", 3.0f));
+        }
 
         
         

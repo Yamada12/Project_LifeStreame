@@ -6,8 +6,8 @@ using UnityEngine.UI;
 public class World_Spawner : MonoBehaviour {
 
     public GameObject Player;
-    public float progress;//進行度
-    public int examination;
+    public int progress;//デバック用の変数
+    static public int examination;
 
     public Transform spawner_ElementarySchool;//小学校
 
@@ -42,115 +42,114 @@ public class World_Spawner : MonoBehaviour {
     // Use this for initialization
     void Start()
     {
-
-
-        //PlayerStatus.GetConverter();//Jokerから変数を受け取る
         //PlayerStatus.initStatus(); //はじめから開始時にすべての変数をリセットするメソッド
+        //PlayerStatus.GetConverter();//Jokerから変数を受け取る
+        //PlayerStatus.InitConverter();//Jokerに変数を受け渡す
 
-        if (StatusManager.variable.get("f.test") == "null")
+        if (StatusManager.variable.get("f.test") == "null")//シーン開始時、nullのため
         {
             examination = 0;
             StatusManager.variable.set("f.test", ((int)examination).ToString());
         }
-
-
-        if (StatusManager.variable.get("f.test") != "null") //シーン開始時、nullのため
+        if (StatusManager.variable.get("f.test") != "null")//試験後、値代入
         {
             examination = int.Parse(StatusManager.variable.get("f.test"));
         }
 
-        if (progress == 1)
+
+        //
+        if (/*PlayerStatus.*/progress == 1)//小学校
         {
             if (examination >= 1)//試験後か判断　1以上で試験後
             {
                 Player.transform.position = (spawner_ES.position);//試験後、小学校にスポーン
             }
         }
-        if (progress == 2)
+        if (/*PlayerStatus.*/progress == 2)//中学校
         {
-            if (examination >= 1)
+            if (examination >= 1)//試験後か判断　1以上で試験後
             {
-                Player.transform.position = (spawner_JHS.position);
+                Player.transform.position = (spawner_JHS.position);//試験後、小学校にスポーン
             }
         }
 
-        if (progress == 3)
+        if (/*PlayerStatus.*/progress == 3)//高校
         {
-            if (examination >= 1)
+            if (examination >= 1)//試験後か判断　1以上で試験後
             {
-                Player.transform.position = (spawner_HS.position);
+                Player.transform.position = (spawner_HS.position);//試験後、小学校にスポーン
             }
         }
 
-        if (progress == 4)
+        if (/*PlayerStatus.*/progress == 4)//専門学校
         {
-            if (examination >= 1)
+            if (examination >= 1)//試験後か判断　1以上で試験後
             {
-                Player.transform.position = (spawner_PS.position);
+                Player.transform.position = (spawner_PS.position);//試験後、小学校にスポーン
             }
         }
 
-        if (progress == 5)
+        if (/*PlayerStatus.*/progress == 5)//大学
         {
-            if (examination >= 1)
+            if (examination >= 1)//試験後か判断　1以上で試験後
             {
-                Player.transform.position = (spawner_U.position);
+                Player.transform.position = (spawner_U.position);//試験後、小学校にスポーン
             }
         }
 
-        if (progress == 6)
+        if (/*PlayerStatus.*/progress == 6)//専門学校
         {
-            if (examination >= 1)
+            if (examination >= 1)//試験後か判断　1以上で試験後
             {
-                Player.transform.position = (spawner_MOS.position);
+                Player.transform.position = (spawner_MOS.position);//試験後、小学校にスポーン
             }
         }
 
-        if (progress == 7)
+        if (/*PlayerStatus.*/progress == 7)//大学
         {
-            if (examination >= 1)
+            if (examination >= 1)//試験後か判断　1以上で試験後
             {
-                Player.transform.position = (spawner_GA.position);
+                Player.transform.position = (spawner_GA.position);//試験後、小学校にスポーン
             }
         }
 
 
-
-        if (examination == 0)
+        //
+        if (examination == 0)//試験前
         {
-            if (progress == 1)
+            if (/*PlayerStatus.*/progress == 1)
             {
                 Player.transform.position = (spawner_ElementarySchool.position);//小学校前にスポーン
             }
 
-            if (progress == 2)
+            if (/*PlayerStatus.*/progress == 2)
             {
                 Player.transform.position = (spawner_JuniorHighSchool.position);//中学校前にスポーン
             }
 
-            if (progress == 3)
+            if (/*PlayerStatus.*/progress == 3)
             {
-                Instantiate(Player, spawner_HighSchool.position, spawner_HighSchool.rotation);//高校前にスポーン
+                Player.transform.position = (spawner_HighSchool.position);//高校前にスポーン
             }
 
-            if (progress == 4)
+            if (/*PlayerStatus.*/progress == 4)
             {
-                Instantiate(Player, spawner_ProfessionalSchool.position, spawner_ProfessionalSchool.rotation);//専門学校前にスポーン
+                Player.transform.position = (spawner_ProfessionalSchool.position);//専門学校前にスポーン
             }
 
-            if (progress == 5)
+            if (/*PlayerStatus.*/progress == 5)
             {
-                Instantiate(Player, spawner_University.position, spawner_University.rotation);//大学前にスポーン
+                Player.transform.position = (spawner_University.position);//大学前にスポーン
             }
 
-            if (progress == 6)
+            if (/*PlayerStatus.*/progress == 6)
             {
-                Instantiate(Player, spawner_MemberOfSociety.position, spawner_MemberOfSociety.rotation);//社会人前にスポーン
+                Player.transform.position = (spawner_MemberOfSociety.position);//社会人前にスポーン
             }
 
-            if (progress == 7)
+            if (/*PlayerStatus.*/progress == 7)
             {
-                Instantiate(Player, spawner_GoldenAger.position, spawner_GoldenAger.rotation);//年寄り前にスポーン
+                Player.transform.position = (spawner_GoldenAger.position);//年寄り前にスポーン
             }
         }
     }
