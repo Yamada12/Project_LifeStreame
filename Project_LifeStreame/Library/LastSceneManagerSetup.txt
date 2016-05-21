@@ -1,8 +1,4 @@
 sceneSetups:
-<<<<<<< HEAD
-- path: Assets/Scene/Main/Main_ProfessionalSchool.unity
-=======
 - path: Assets/Scene/MiniGame/Haikannkou/Haikannkou.unity
->>>>>>> 674dd9b67a5adf485f7fd73ed705cc980864b575
   isLoaded: 1
   isActive: 1
