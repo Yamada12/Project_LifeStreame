@@ -1,0 +1,20 @@
+﻿;メッセージ表示
+[showmessage]
+
+;共通ライブラリ
+;セーブ・ロードバックログなど基本的な機能を取り込む 
+[call file=wide/system target="*system_setting_buttons"]
+
+;ゲーム作成で便利なマクロ集
+[call file=wide/libs/utils]
+[text_new name=_sp_chara_name layer=ui x="-168" y=-108.5 val="" color="DDFF00" fontsize=16 anchor="MiddleLeft"]
+[text_show name="_sp_chara_name"]
+
+
+[wait time=2]
+
+～専門入試～[p]
+
+#コンヌ
+わが軍に勝利を！[p]
+

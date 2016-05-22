@@ -1,5 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
+using Novel;
+using UnityEngine.UI;
 
 public class PlayerStatus : MonoBehaviour
 {
@@ -21,6 +23,8 @@ public class PlayerStatus : MonoBehaviour
     static public int clubFlag;     //部活動は何系か？　0＝文化　1＝運動　2=無所属
     static public int courseYear;   //経過年数（現在の進行度に何年滞在したか？※学年など）
 
+    static public int test;//小学校試験　仮の変数
+
 
     // Use this for initialization
     static public void initStatus ()
@@ -33,11 +37,7 @@ public class PlayerStatus : MonoBehaviour
         paramater4 = 0;
         paramater5 = 0;
         geneNumber = 0;         //世代数
-        /*license[0] = "無資格";
-        for (int i = 0; i < license.Length; i++)
-        {//資格の初期化
-            license[i] = "無資格";
-        }*/
+        //license[0] = "無資格"; //初めの資格が無資格ならその後の資格は探索されないようにしてください。
         lifeTime = 180f;      //仮代入、一番初めに使う値をいれる
         progress = 0;
         job = "無職";         //暫定無職、小学生とかいれてもいいかも？
@@ -46,6 +46,8 @@ public class PlayerStatus : MonoBehaviour
         schoolFlag = 0;      //0=無所属
         clubFlag = 2;       //初期は無所属なので２
         courseYear = 1;      //経過年数なので初期値は１年目
+
+        
     }
 
     public void DebugButton()
@@ -56,7 +58,7 @@ public class PlayerStatus : MonoBehaviour
 
     static public void GetConverter()
     {//Jokerから変数を受け取る
-        /*
+
         mf = int.Parse(StatusManager.variable.get("f.mf"));
         clanName = StatusManager.variable.get("f.clanName");
         paramater1 = float.Parse(StatusManager.variable.get("f.paramater1"));
@@ -73,12 +75,14 @@ public class PlayerStatus : MonoBehaviour
         schoolFlag = int.Parse(StatusManager.variable.get("f.schoolFlag"));
         clubFlag = int.Parse(StatusManager.variable.get("f.clubFlag"));
         courseYear = int.Parse(StatusManager.variable.get("f.couceYear"));
-        */
+
+        test = int.Parse(StatusManager.variable.get("f.test"));
+
     }
 
     static public void InitConverter()
     {//Jokerに変数を受け渡す
-        /*
+        
         StatusManager.variable.set("f.mf", ((int)mf).ToString());
         StatusManager.variable.set("f.clanName", clanName.ToString());
         StatusManager.variable.set("f.paramater1", ((float)paramater1).ToString());
@@ -86,7 +90,7 @@ public class PlayerStatus : MonoBehaviour
         StatusManager.variable.set("f.paramater3", ((float)paramater3).ToString());
         StatusManager.variable.set("f.paramater4", ((float)paramater4).ToString());
         StatusManager.variable.set("f.paramater5", ((float)paramater5).ToString());
-        StatusManager.variable.set("f.geneNumber", ((float)geneNumebr).ToString());
+        StatusManager.variable.set("f.geneNumber", ((float)geneNumber).ToString());
         StatusManager.variable.set("f.lifeTime", ((float)lifeTime).ToString());
         StatusManager.variable.set("f.progress", ((int)progress).ToString());
         StatusManager.variable.set("f.job", job.ToString());
@@ -95,6 +99,5 @@ public class PlayerStatus : MonoBehaviour
         StatusManager.variable.set("f.schoolFlag", ((int)schoolFlag).ToString());
         StatusManager.variable.set("f.clubFlag", ((int)clubFlag).ToString());
         StatusManager.variable.set("f.courceYear", ((int)courseYear).ToString());
-        */
     }
 }
