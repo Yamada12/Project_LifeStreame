@@ -5,13 +5,11 @@ using UnityEngine.UI;
 
 public class World_turningPoint : MonoBehaviour {
 
-    RectTransform ui;
     public GameObject image01;
     public GameObject image02;
 
 	// Use this for initialization
 	void Start () {
-        ui = GetComponent<RectTransform>();
 	
 	}
 	

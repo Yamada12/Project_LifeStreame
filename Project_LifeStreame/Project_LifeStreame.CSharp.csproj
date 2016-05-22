@@ -203,6 +203,8 @@
     <None Include="Assets\assets\JOKER_GAME\Resources\novel\data\scenario\wide\Daigaku\D_nyugaku.txt" />
     <None Include="Assets\assets\JOKER_GAME\Resources\novel\data\scenario\wide\Daigaku\D_oomisoka_gantan.txt" />
     <None Include="Assets\assets\JOKER_GAME\Resources\novel\data\scenario\wide\Daigaku\D_saboru.txt" />
+    <None Include="Assets\assets\JOKER_GAME\Resources\novel\data\scenario\wide\Daigaku\D_shiken.txt" />
+    <None Include="Assets\assets\JOKER_GAME\Resources\novel\data\scenario\wide\Daigaku\D_shiken_iryou.txt" />
     <None Include="Assets\assets\JOKER_GAME\Resources\novel\data\scenario\wide\Daigaku\D_sinnrosentaku.txt" />
     <None Include="Assets\assets\JOKER_GAME\Resources\novel\data\scenario\wide\Daigaku\D_sotugyo.txt" />
     <None Include="Assets\assets\JOKER_GAME\Resources\novel\data\scenario\wide\Daigaku\D_syukatu.txt" />
@@ -245,6 +247,7 @@
     <None Include="Assets\assets\JOKER_GAME\Resources\novel\data\scenario\wide\Koukou\K_nyugaku.txt" />
     <None Include="Assets\assets\JOKER_GAME\Resources\novel\data\scenario\wide\Koukou\K_oomisoka_gantan.txt" />
     <None Include="Assets\assets\JOKER_GAME\Resources\novel\data\scenario\wide\Koukou\K_saboru.txt" />
+    <None Include="Assets\assets\JOKER_GAME\Resources\novel\data\scenario\wide\Koukou\K_shiken.txt" />
     <None Include="Assets\assets\JOKER_GAME\Resources\novel\data\scenario\wide\Koukou\K_sinnrosentaku.txt" />
     <None Include="Assets\assets\JOKER_GAME\Resources\novel\data\scenario\wide\Koukou\K_sotugyo.txt" />
     <None Include="Assets\assets\JOKER_GAME\Resources\novel\data\scenario\wide\Koukou\K_syukatu.txt" />
@@ -279,6 +282,7 @@
     <None Include="Assets\assets\JOKER_GAME\Resources\novel\data\scenario\wide\Senmon\Se_nyugaku.txt" />
     <None Include="Assets\assets\JOKER_GAME\Resources\novel\data\scenario\wide\Senmon\Se_oomisoka_gantan.txt" />
     <None Include="Assets\assets\JOKER_GAME\Resources\novel\data\scenario\wide\Senmon\Se_saboru.txt" />
+    <None Include="Assets\assets\JOKER_GAME\Resources\novel\data\scenario\wide\Senmon\Se_shiken.txt" />
     <None Include="Assets\assets\JOKER_GAME\Resources\novel\data\scenario\wide\Senmon\Se_sinnrosentaku.txt" />
     <None Include="Assets\assets\JOKER_GAME\Resources\novel\data\scenario\wide\Senmon\Se_sotugyo.txt" />
     <None Include="Assets\assets\JOKER_GAME\Resources\novel\data\scenario\wide\Senmon\Se_syukatu.txt" />
@@ -295,6 +299,7 @@
     <None Include="Assets\assets\JOKER_GAME\Resources\novel\data\scenario\wide\Syakai\Sya_natumaturi.txt" />
     <None Include="Assets\assets\JOKER_GAME\Resources\novel\data\scenario\wide\Syakai\Sya_nyusyasiki.txt" />
     <None Include="Assets\assets\JOKER_GAME\Resources\novel\data\scenario\wide\Syakai\Sya_oomisoka_gantan.txt" />
+    <None Include="Assets\assets\JOKER_GAME\Resources\novel\data\scenario\wide\Syakai\Sya_shiken.txt" />
     <None Include="Assets\assets\JOKER_GAME\Resources\novel\data\scenario\wide\Syakai\Sya_sigoto.txt" />
     <None Include="Assets\assets\JOKER_GAME\Resources\novel\data\scenario\wide\Syakai\Sya_syukatu.txt" />
     <None Include="Assets\assets\JOKER_GAME\Resources\novel\data\scenario\wide\Syakai\Sya_tensyoku.txt" />
@@ -328,6 +333,7 @@
     <None Include="Assets\assets\JOKER_GAME\Resources\novel\data\scenario\wide\Syogaku\S_natumaturi.txt" />
     <None Include="Assets\assets\JOKER_GAME\Resources\novel\data\scenario\wide\Syogaku\S_nyugaku.txt" />
     <None Include="Assets\assets\JOKER_GAME\Resources\novel\data\scenario\wide\Syogaku\S_oomisoka_gantan.txt" />
+    <None Include="Assets\assets\JOKER_GAME\Resources\novel\data\scenario\wide\Syogaku\S_shiken.txt" />
     <None Include="Assets\assets\JOKER_GAME\Resources\novel\data\scenario\wide\Syogaku\S_sotugyo.txt" />
     <None Include="Assets\assets\JOKER_GAME\Resources\novel\data\scenario\wide\Syogaku\S_syougakunyusi.txt" />
     <None Include="Assets\assets\JOKER_GAME\Resources\novel\data\scenario\wide\Syogaku\S_tyugakunyusi.txt" />
@@ -365,6 +371,7 @@
     <None Include="Assets\assets\JOKER_GAME\Resources\novel\data\scenario\wide\Tyugaku\T_natumaturi.txt" />
     <None Include="Assets\assets\JOKER_GAME\Resources\novel\data\scenario\wide\Tyugaku\T_nyugaku.txt" />
     <None Include="Assets\assets\JOKER_GAME\Resources\novel\data\scenario\wide\Tyugaku\T_oomisoka_gantan.txt" />
+    <None Include="Assets\assets\JOKER_GAME\Resources\novel\data\scenario\wide\Tyugaku\T_shiken.txt" />
     <None Include="Assets\assets\JOKER_GAME\Resources\novel\data\scenario\wide\Tyugaku\T_sotugyo.txt" />
     <None Include="Assets\assets\JOKER_GAME\Resources\novel\data\scenario\wide\Tyugaku\T_undokai.txt" />
     <None Include="Assets\assets\JOKER_GAME\Resources\novel\data\scenario\wide\libs\menu.txt" />

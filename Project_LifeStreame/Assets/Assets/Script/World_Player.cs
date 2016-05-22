@@ -5,8 +5,8 @@ using UnityEngine.UI;
 
 public class World_Player : MonoBehaviour {
 
-    public int progress;//デバック用の変数
-    public int result;
+    static public int progress = 1;//デバック用の変数
+    static public int result;
     private Transform position;
     static public int UI01;
     static public int UI02;
@@ -167,30 +167,30 @@ public class World_Player : MonoBehaviour {
                 switch (result)
                 {
                     case 1://1受け取り　しょぼい
-                        position = JHS_turning;
-                        iTween.MoveTo(gameObject, iTween.Hash("position", position));
+                        //position = JHS_turning;
+                        iTween.MoveTo(gameObject, iTween.Hash("position", JHS_turning, "time", 3.0f));
                         if (Input.GetMouseButtonDown(0))
                         {
-                            position = target_JHS_s;
-                            iTween.MoveTo(gameObject, iTween.Hash("position", position));
+                            JHS_turning = target_JHS_s;
+                            iTween.MoveTo(gameObject, iTween.Hash("position", JHS_turning, "time", 3.0f));
                         }
                         break;
                     case 2://2受け取り　ふつう
-                        position = JHS_turning;
-                        iTween.MoveTo(gameObject, iTween.Hash("position", position));
+                        //position = JHS_turning;
+                        iTween.MoveTo(gameObject, iTween.Hash("position", JHS_turning, "time", 3.0f));
                         if (Input.GetMouseButtonDown(0))
                         {
-                            position = target_JHS_h;
-                            iTween.MoveTo(gameObject, iTween.Hash("position", position));
+                            JHS_turning = target_JHS_h;
+                            iTween.MoveTo(gameObject, iTween.Hash("position", JHS_turning, "time", 3.0f));
                         }
                         break;
                     case 3://3受け取り　やばい
-                        position = JHS_turning;
-                        iTween.MoveTo(gameObject, iTween.Hash("position", position));
+                        //position = JHS_turning;
+                        iTween.MoveTo(gameObject, iTween.Hash("position", JHS_turning, "time", 3.0f));
                         if (Input.GetMouseButtonDown(0))
                         {
-                            position = target_JHS_y;
-                            iTween.MoveTo(gameObject, iTween.Hash("position", position));
+                            JHS_turning = target_JHS_y;
+                            iTween.MoveTo(gameObject, iTween.Hash("position", JHS_turning, "time", 3.0f));
                         }
                         break;
                     default:
@@ -203,30 +203,30 @@ public class World_Player : MonoBehaviour {
                 switch (result)
                 {
                     case 1://1受け取り　しょぼい
-                        position = HS_turning;
-                        iTween.MoveTo(gameObject, iTween.Hash("position", position));
+                        //position = HS_turning;
+                        iTween.MoveTo(gameObject, iTween.Hash("position", HS_turning, "time", 3.0f));
                         if (Input.GetMouseButtonDown(0))
                         {
-                            position = target_HS_s;
-                            iTween.MoveTo(gameObject, iTween.Hash("position", position));
+                            HS_turning = target_HS_s;
+                            iTween.MoveTo(gameObject, iTween.Hash("position", HS_turning, "time", 3.0f));
                         }
                         break;
                     case 2://2受け取り　ふつう
-                        position = HS_turning;
-                        iTween.MoveTo(gameObject, iTween.Hash("position", position));
+                        //position = HS_turning;
+                        iTween.MoveTo(gameObject, iTween.Hash("position", HS_turning, "time", 3.0f));
                         if (Input.GetMouseButtonDown(0))
                         {
-                            position = target_HS_h;
-                            iTween.MoveTo(gameObject, iTween.Hash("position", position));
+                            HS_turning = target_HS_h;
+                            iTween.MoveTo(gameObject, iTween.Hash("position", HS_turning, "time", 3.0f));
                         }
                         break;
                     case 3://3受け取り　やばい
-                        position = HS_turning;
-                        iTween.MoveTo(gameObject, iTween.Hash("position", position));
+                        //position = HS_turning;
+                        iTween.MoveTo(gameObject, iTween.Hash("position", HS_turning, "time", 3.0f));
                         if (Input.GetMouseButtonDown(0))
                         {
-                            position = target_HS_y;
-                            iTween.MoveTo(gameObject, iTween.Hash("position", position));
+                            HS_turning = target_HS_y;
+                            iTween.MoveTo(gameObject, iTween.Hash("position", HS_turning, "time", 3.0f));
                         }
                         break;
                     default:
@@ -239,30 +239,30 @@ public class World_Player : MonoBehaviour {
                 switch (result)
                 {
                     case 1://1受け取り　しょぼい
-                        position = PS_turning;
-                        iTween.MoveTo(gameObject, iTween.Hash("position", position));
+                        //position = PS_turning;
+                        iTween.MoveTo(gameObject, iTween.Hash("position", PS_turning, "time", 3.0f));
                         if (Input.GetMouseButtonDown(0))
                         {
-                            position = target_PS_s;
-                            iTween.MoveTo(gameObject, iTween.Hash("position", position));
+                            PS_turning = target_PS_s;
+                            iTween.MoveTo(gameObject, iTween.Hash("position", PS_turning, "time", 3.0f));
                         }
                         break;
                     case 2://2受け取り　ふつう
-                        position = PS_turning;
-                        iTween.MoveTo(gameObject, iTween.Hash("position", position));
+                        //position = PS_turning;
+                        iTween.MoveTo(gameObject, iTween.Hash("position", PS_turning, "time", 3.0f));
                         if (Input.GetMouseButtonDown(0))
                         {
-                            position = target_PS_h;
-                            iTween.MoveTo(gameObject, iTween.Hash("position", position));
+                            PS_turning = target_PS_h;
+                            iTween.MoveTo(gameObject, iTween.Hash("position", PS_turning, "time", 3.0f));
                         }
                         break;
                     case 3://3受け取り　やばい
-                        position = PS_turning;
-                        iTween.MoveTo(gameObject, iTween.Hash("position", position));
+                        //position = PS_turning;
+                        iTween.MoveTo(gameObject, iTween.Hash("position", PS_turning, "time", 3.0f));
                         if (Input.GetMouseButtonDown(0))
                         {
-                            position = target_PS_y;
-                            iTween.MoveTo(gameObject, iTween.Hash("position", position));
+                            PS_turning = target_PS_y;
+                            iTween.MoveTo(gameObject, iTween.Hash("position", PS_turning, "time", 3.0f));
                         }
                         break;
                     default:
@@ -275,30 +275,30 @@ public class World_Player : MonoBehaviour {
                 switch (result)
                 {
                     case 1://1受け取り　しょぼい
-                        position = U_turning;
-                        iTween.MoveTo(gameObject, iTween.Hash("position", position));
+                        //position = U_turning;
+                        iTween.MoveTo(gameObject, iTween.Hash("position", U_turning, "time", 3.0f));
                         if (Input.GetMouseButtonDown(0))
                         {
-                            position = target_U_s;
-                            iTween.MoveTo(gameObject, iTween.Hash("position", position));
+                            U_turning = target_U_s;
+                            iTween.MoveTo(gameObject, iTween.Hash("position", U_turning, "time", 3.0f));
                         }
                         break;
                     case 2://2受け取り　ふつう
-                        position = U_turning;
-                        iTween.MoveTo(gameObject, iTween.Hash("position", position));
+                        //position = U_turning;
+                        iTween.MoveTo(gameObject, iTween.Hash("position", U_turning, "time", 3.0f));
                         if (Input.GetMouseButtonDown(0))
                         {
-                            position = target_U_h;
-                            iTween.MoveTo(gameObject, iTween.Hash("position", position));
+                            U_turning = target_U_h;
+                            iTween.MoveTo(gameObject, iTween.Hash("position", U_turning, "time", 3.0f));
                         }
                         break;
                     case 3://3受け取り　やばい
-                        position = U_turning;
-                        iTween.MoveTo(gameObject, iTween.Hash("position", position));
+                        //position = U_turning;
+                        iTween.MoveTo(gameObject, iTween.Hash("position", U_turning, "time", 3.0f));
                         if (Input.GetMouseButtonDown(0))
                         {
-                            position = target_U_y;
-                            iTween.MoveTo(gameObject, iTween.Hash("position", position));
+                            U_turning = target_U_y;
+                            iTween.MoveTo(gameObject, iTween.Hash("position", U_turning, "time", 3.0f));
                         }
                         break;
                     default:
@@ -311,30 +311,30 @@ public class World_Player : MonoBehaviour {
                 switch (result)
                 {
                     case 1://1受け取り　しょぼい
-                        position = MOS_turning;
-                        iTween.MoveTo(gameObject, iTween.Hash("position", position));
+                        //position = MOS_turning;
+                        iTween.MoveTo(gameObject, iTween.Hash("position", MOS_turning, "time", 3.0f));
                         if (Input.GetMouseButtonDown(0))
                         {
-                            position = target_MOS_s;
-                            iTween.MoveTo(gameObject, iTween.Hash("position", position));
+                            MOS_turning = target_MOS_s;
+                            iTween.MoveTo(gameObject, iTween.Hash("position", MOS_turning, "time", 3.0f));
                         }
                         break;
                     case 2://2受け取り　ふつう
-                        position = MOS_turning;
-                        iTween.MoveTo(gameObject, iTween.Hash("position", position));
+                        //position = MOS_turning;
+                        iTween.MoveTo(gameObject, iTween.Hash("position", MOS_turning, "time", 3.0f));
                         if (Input.GetMouseButtonDown(0))
                         {
-                            position = target_MOS_h;
-                            iTween.MoveTo(gameObject, iTween.Hash("position", position));
+                            MOS_turning = target_MOS_h;
+                            iTween.MoveTo(gameObject, iTween.Hash("position", MOS_turning, "time", 3.0f));
                         }
                         break;
                     case 3://3受け取り　やばい
-                        position = MOS_turning;
-                        iTween.MoveTo(gameObject, iTween.Hash("position", position));
+                        //position = MOS_turning;
+                        iTween.MoveTo(gameObject, iTween.Hash("position", MOS_turning, "time", 3.0f));
                         if (Input.GetMouseButtonDown(0))
                         {
-                            position = target_MOS_y;
-                            iTween.MoveTo(gameObject, iTween.Hash("position", position));
+                            MOS_turning = target_MOS_y;
+                            iTween.MoveTo(gameObject, iTween.Hash("position", MOS_turning, "time", 3.0f));
                         }
                         break;
                     default:
@@ -347,30 +347,30 @@ public class World_Player : MonoBehaviour {
                 switch (result)
                 {
                     case 1://1受け取り　しょぼい
-                        position = GA_turning;
-                        iTween.MoveTo(gameObject, iTween.Hash("position", position));
+                        //position = GA_turning;
+                        iTween.MoveTo(gameObject, iTween.Hash("position", GA_turning, "time", 3.0f));
                         if (Input.GetMouseButtonDown(0))
                         {
-                            position = target_GA_s;
-                            iTween.MoveTo(gameObject, iTween.Hash("position", position));
+                            GA_turning = target_GA_s;
+                            iTween.MoveTo(gameObject, iTween.Hash("position", GA_turning, "time", 3.0f));
                         }
                         break;
                     case 2://2受け取り　ふつう
-                        position = GA_turning;
-                        iTween.MoveTo(gameObject, iTween.Hash("position", position));
+                        //position = GA_turning;
+                        iTween.MoveTo(gameObject, iTween.Hash("position", GA_turning, "time", 3.0f));
                         if (Input.GetMouseButtonDown(0))
                         {
-                            position = target_GA_h;
-                            iTween.MoveTo(gameObject, iTween.Hash("position", position));
+                            GA_turning = target_GA_h;
+                            iTween.MoveTo(gameObject, iTween.Hash("position", GA_turning, "time", 3.0f));
                         }
                         break;
                     case 3://3受け取り　やばい
-                        position = GA_turning;
-                        iTween.MoveTo(gameObject, iTween.Hash("position", position));
+                        //position = GA_turning;
+                        iTween.MoveTo(gameObject, iTween.Hash("position", GA_turning, "time", 3.0f));
                         if (Input.GetMouseButtonDown(0))
                         {
-                            position = target_GA_y;
-                            iTween.MoveTo(gameObject, iTween.Hash("position", position));
+                            GA_turning = target_GA_y;
+                            iTween.MoveTo(gameObject, iTween.Hash("position", GA_turning, "time", 3.0f));
                         }
                         break;
                     default:
@@ -397,66 +397,66 @@ public class World_Player : MonoBehaviour {
             if (/*PlayerStatus.*/progress == 2)
             {
                 //position = turning_JHS;
-                iTween.MoveTo(gameObject, iTween.Hash("position", turning_JHS));//ターニング中学校までレッツゴー
+                iTween.MoveTo(gameObject, iTween.Hash("position", turning_JHS, "time", 5.0f));//ターニング中学校までレッツゴー
                 if (Input.GetMouseButton(0))
                 {
                     turning_JHS = target_JuniorHighSchool;
-                    iTween.MoveTo(gameObject, iTween.Hash("position", turning_JHS));
+                    iTween.MoveTo(gameObject, iTween.Hash("position", turning_JHS, "time", 2.0f));
                 }
             }
 
             if (/*PlayerStatus.*/progress == 3)
             {
                 //position = turning_HS;
-                iTween.MoveTo(gameObject, iTween.Hash("position", turning_HS));//ターニング高校までレッツゴー
+                iTween.MoveTo(gameObject, iTween.Hash("position", turning_HS, "time", 5.0f));//ターニング高校までレッツゴー
                 if (Input.GetMouseButton(0))
                 {
                     turning_HS = target_HighSchool;
-                    iTween.MoveTo(gameObject, iTween.Hash("position", turning_HS));
+                    iTween.MoveTo(gameObject, iTween.Hash("position", turning_HS, "time", 2.0f));
                 }
             }
 
             if (/*PlayerStatus.*/progress == 4)
             {
                 //position = turning_PS;
-                iTween.MoveTo(gameObject, iTween.Hash("position", turning_PS));//ターニング専門学校までレッツゴー
+                iTween.MoveTo(gameObject, iTween.Hash("position", turning_PS, "time", 5.0f));//ターニング専門学校までレッツゴー
                 if (Input.GetMouseButton(0))
                 {
                     turning_PS = target_ProfessionalSchool;
-                    iTween.MoveTo(gameObject, iTween.Hash("position", turning_PS));
+                    iTween.MoveTo(gameObject, iTween.Hash("position", turning_PS, "time", 2.0f));
                 }
             }
 
             if (/*PlayerStatus.*/progress == 5)
             {
                 //position = turning_U;
-                iTween.MoveTo(gameObject, iTween.Hash("position", turning_U));//ターニング大学までレッツゴー
+                iTween.MoveTo(gameObject, iTween.Hash("position", turning_U, "time", 5.0f));//ターニング大学までレッツゴー
                 if (Input.GetMouseButton(0))
                 {
                     turning_U = target_University;
-                    iTween.MoveTo(gameObject, iTween.Hash("position", turning_U));
+                    iTween.MoveTo(gameObject, iTween.Hash("position", turning_U, "time", 2.0f));
                 }
             }
 
             if (/*PlayerStatus.*/progress == 6)
             {
                 //position = turning_MOS;
-                iTween.MoveTo(gameObject, iTween.Hash("position", turning_MOS));//ターニング社会人までレッツゴー
+                iTween.MoveTo(gameObject, iTween.Hash("position", turning_MOS, "time", 5.0f));//ターニング社会人までレッツゴー
                 if (Input.GetMouseButton(0))
                 {
                     turning_MOS = target_MemberOfSociety;
-                    iTween.MoveTo(gameObject, iTween.Hash("position", turning_MOS));
+                    iTween.MoveTo(gameObject, iTween.Hash("position", turning_MOS, "time", 2.0f));
                 }
             }
 
             if (/*PlayerStatus.*/progress == 7)
             {
                 //position = turning_GA;
-                iTween.MoveTo(gameObject, iTween.Hash("position", turning_GA));//ターニング年寄りまでレッツゴー
+                iTween.MoveTo(gameObject, iTween.Hash("position", turning_GA, "time", 5.0f));//ターニング年寄りまでレッツゴー
                 if (Input.GetMouseButton(0))
                 {
                     turning_GA = target_GoldenAger;
-                    iTween.MoveTo(gameObject, iTween.Hash("position", turning_GA));
+                    iTween.MoveTo(gameObject, iTween.Hash("position", turning_GA, "time", 2.0f));
                 }
             }
         }
