@@ -129,12 +129,14 @@
     <Compile Include="Assets\JOKER\Scripts\Novel\Unity\MessageFrame.cs" />
     <Compile Include="Assets\JOKER_GAME\Plugins\PluginComponent.cs" />
     <Compile Include="Assets\Script\Main\ContentManager.cs" />
+    <Compile Include="Assets\Script\Main\EventButton_Manager.cs" />
     <Compile Include="Assets\Script\Main\Licence_Manager.cs" />
     <Compile Include="Assets\Script\Main\MainManager.cs" />
     <Compile Include="Assets\Script\Main\Main_Camera_Manager.cs" />
     <Compile Include="Assets\Script\Main\UI_Controller.cs" />
     <Compile Include="Assets\Script\Main\UI_Manager.cs" />
     <Compile Include="Assets\Script\Other\PlayerStatus.cs" />
+    <Compile Include="Assets\Script\Other\ScenarioManager.cs" />
     <Compile Include="Assets\Script\Other\SceneChanger.cs" />
     <Compile Include="Assets\Script\Other\SettingManager.cs" />
     <Compile Include="Assets\Script\Other\StatusRenderer.cs" />

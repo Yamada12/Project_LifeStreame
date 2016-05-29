@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.SceneManagement;
 using System.Collections;
 using System.Collections.Generic;
 using ExpressionParser;
@@ -462,19 +463,16 @@ namespace Novel{
 			enableNextOrder = true;
 		}
 
-		public void callJoker(string scenario_file,string target_name){
-		
-			StatusManager.nextFileName = scenario_file;
-			StatusManager.nextTargetName = target_name;
-			StatusManager.currentScenario = "";
-			//jumpから来たことを通知するためのパラメータが必要
-			Application.LoadLevel("Player");
-
-		
-		}
-
-
-	}
+        public void callJoker(string scenario_file, string target_name)
+        {
+            StatusManager.nextFileName = scenario_file;
+            StatusManager.nextTargetName = target_name;
+            StatusManager.currentScenario = "";
+            //jumpから来たことを通知するためのパラメータが必要
+            //Application.LoadLevel("Player");
+            SceneManager.LoadScene("Player", LoadSceneMode.Single);
+        }
+    }
 
 
 

@@ -1,12 +1,14 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.SceneManagement;
 using Novel;
 
 public class SceneChanger : MonoBehaviour
 {
     public void ChangeUnityScene(string sceneName)
     {//UnityからUnityのシーンへ遷移
-        Application.LoadLevel(sceneName);
+        //Application.LoadLevel(sceneName);
+        SceneManager.LoadScene(sceneName);
     }
 
     public void ChangeJokerScene(string sceneName)

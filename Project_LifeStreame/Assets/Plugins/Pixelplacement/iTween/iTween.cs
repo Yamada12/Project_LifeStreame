@@ -6877,7 +6877,7 @@ public class iTween : MonoBehaviour{
 				}
 			}
 		}else{
-            Debug.Log(easeType);
+            //Debug.Log(easeType);
 			easeType=Defaults.easeType;
 		}
 				

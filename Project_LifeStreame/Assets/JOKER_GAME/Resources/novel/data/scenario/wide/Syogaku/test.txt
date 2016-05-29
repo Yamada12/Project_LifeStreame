@@ -12,6 +12,8 @@
 
 
 [wait time=2]
+[bg_new name="room" storage="room"]
+[bg_show name="room"]
 
 ～小学入試～[p]
 
@@ -55,6 +57,6 @@
 共通ルートです[p]
 Unity側に移動します。[p]
 
-[scene file="World"]
+[scene file="Main_ElementarySchool"]
 
 
