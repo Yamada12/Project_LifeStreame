@@ -1,4 +1,4 @@
-﻿
+
 *title
 ;タイトル画面
 [bg_new name="background" layer="background" storage="title"]
@@ -27,7 +27,7 @@
 @bg_hide name="background" time=1.5
 
 [wait time=2]
-@jump file=wide/Syogaku/test scene=new
+@jump file=wide/scene1 scene=new
 
 *click_load
 [playse storage="start"]

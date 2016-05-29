@@ -440,8 +440,6 @@ namespace Novel{
 
 		public static string currentPlayBgm = "";  //現在再生中のBGMがある場合
 
-		public static string currentTextColor ="";
-
 		public static Variable variable = new Variable();
 
 		//シーンが切り替わったタイミングでクリアする内容

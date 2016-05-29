@@ -53,7 +53,6 @@ namespace Novel{
 
 		public override void set(Dictionary<string,string> param){
 
-
 			if (this.rootObject == null) {
 				this.init (param);
 			}
@@ -69,23 +68,6 @@ namespace Novel{
 
 				}
 			}
-
-
-			//色を復元する。
-			if (this.param ["color"] != "") {
-				string color = this.param ["color"];
-				Color objColor =  ColorX.HexToRGB(color);
-				objColor.a = 0;
-				this.rootObject.GetComponent<Text>().color = objColor;
-
-			}
-
-			if (this.param ["fontsize"] != "") {
-
-				this.rootObject.GetComponent<Text>().fontSize= int.Parse(this.param ["fontsize"]);
-
-			}
-
 			this.rootObject.GetComponent<Text> ().text = text;
 			//this.rootObject.GetComponent<Text> ().resizeTextForBestFit = true;
 

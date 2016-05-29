@@ -317,12 +317,6 @@ namespace Novel
 
 			//テキストを復元する
 			NovelSingleton.GameView.messageArea.GetComponent<Text>().text = sobj.currentMessage;
-
-			//現在の色が設定されている場合は色も復元
-			if (StatusManager.currentTextColor != "") {
-				NovelSingleton.GameView.messageArea.GetComponent<Text>().color = ColorX.HexToRGB (StatusManager.currentTextColor);
-			}
-
 			NovelSingleton.GameManager.scene.messageForSaveTitle = sobj.currentMessage;
 
 			//ステータス復元

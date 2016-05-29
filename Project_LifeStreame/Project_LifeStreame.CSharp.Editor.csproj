@@ -85,11 +85,20 @@
     <Reference Include="UnityEditor.Android.Extensions">
       <HintPath>Library\UnityAssemblies\UnityEditor.Android.Extensions.dll</HintPath>
     </Reference>
+    <Reference Include="UnityEditor.WebGL.Extensions">
+      <HintPath>Library\UnityAssemblies\UnityEditor.WebGL.Extensions.dll</HintPath>
+    </Reference>
     <Reference Include="UnityEditor.WindowsStandalone.Extensions">
       <HintPath>Library\UnityAssemblies\UnityEditor.WindowsStandalone.Extensions.dll</HintPath>
     </Reference>
     <Reference Include="SyntaxTree.VisualStudio.Unity.Bridge">
       <HintPath>Library\UnityAssemblies\SyntaxTree.VisualStudio.Unity.Bridge.dll</HintPath>
+    </Reference>
+    <Reference Include="MeshBakerCore">
+      <HintPath>Assets\MeshBaker\scripts\MeshBakerCore.dll</HintPath>
+    </Reference>
+    <Reference Include="MeshBakerEvalVersionEditor">
+      <HintPath>Assets\MeshBaker\scripts\Editor\MeshBakerEvalVersionEditor.dll</HintPath>
     </Reference>
     <Reference Include="LitJson">
       <HintPath>Assets\Plugins\JOKER\LitJson.dll</HintPath>
@@ -110,6 +119,27 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Editor\Exporter.cs" />
+    <Compile Include="Assets\MeshBaker\scripts\Editor\MB3_BatchPrefabBakerEditor.cs" />
+    <Compile Include="Assets\MeshBaker\scripts\Editor\MB3_BoneWeightCopierEditor.cs" />
+    <Compile Include="Assets\MeshBaker\scripts\Editor\MB3_DisableHiddenAnimationsEditor.cs" />
+    <Compile Include="Assets\MeshBaker\scripts\Editor\MB3_GameObjectMaterialInfo.cs" />
+    <Compile Include="Assets\MeshBaker\scripts\Editor\MB3_MBVersionConcreteEditor.cs" />
+    <Compile Include="Assets\MeshBaker\scripts\Editor\MB3_MeshBakerEditor.cs" />
+    <Compile Include="Assets\MeshBaker\scripts\Editor\MB3_MeshBakerEditorInternal.cs" />
+    <Compile Include="Assets\MeshBaker\scripts\Editor\MB3_MeshBakerEditorWindow.cs" />
+    <Compile Include="Assets\MeshBaker\scripts\Editor\MB3_MeshBakerGrouperEditor.cs" />
+    <Compile Include="Assets\MeshBaker\scripts\Editor\MB3_MultiMeshBakerEditor.cs" />
+    <Compile Include="Assets\MeshBaker\scripts\Editor\MB3_SearchFilters.cs" />
+    <Compile Include="Assets\MeshBaker\scripts\Editor\MB3_ShaderTexturePropertyDrawer.cs" />
+    <Compile Include="Assets\MeshBaker\scripts\Editor\MB3_TextureBakerEditor.cs" />
+    <Compile Include="Assets\MeshBaker\scripts\Editor\MB3_TextureBakerEditorInternal.cs" />
+    <Compile Include="Assets\MeshBaker\scripts\Editor\searchFilters\MB3_GroupByAlreadyAdded.cs" />
+    <Compile Include="Assets\MeshBaker\scripts\Editor\searchFilters\MB3_GroupByLightmapIndex.cs" />
+    <Compile Include="Assets\MeshBaker\scripts\Editor\searchFilters\MB3_GroupByMaterial.cs" />
+    <Compile Include="Assets\MeshBaker\scripts\Editor\searchFilters\MB3_GroupByOutOfBoundsUVs.cs" />
+    <Compile Include="Assets\MeshBaker\scripts\Editor\searchFilters\MB3_GroupByRenderType.cs" />
+    <Compile Include="Assets\MeshBaker\scripts\Editor\searchFilters\MB3_GroupByShader.cs" />
+    <Compile Include="Assets\MeshBaker\scripts\Editor\searchFilters\MB3_GroupByStatic.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\JOKER_GAME\Resources\novel\data\config\config.txt" />
@@ -278,6 +308,7 @@
     <None Include="Assets\JOKER_GAME\Resources\novel\data\scenario\wide\Syogaku\S_natumaturi.txt" />
     <None Include="Assets\JOKER_GAME\Resources\novel\data\scenario\wide\Syogaku\S_nyugaku.txt" />
     <None Include="Assets\JOKER_GAME\Resources\novel\data\scenario\wide\Syogaku\S_oomisoka_gantan.txt" />
+    <None Include="Assets\JOKER_GAME\Resources\novel\data\scenario\wide\Syogaku\S_shiken.txt" />
     <None Include="Assets\JOKER_GAME\Resources\novel\data\scenario\wide\Syogaku\S_sotugyo.txt" />
     <None Include="Assets\JOKER_GAME\Resources\novel\data\scenario\wide\Syogaku\S_syougakunyusi.txt" />
     <None Include="Assets\JOKER_GAME\Resources\novel\data\scenario\wide\Syogaku\S_tyugakunyusi.txt" />
@@ -321,13 +352,29 @@
     <None Include="Assets\JOKER_GAME\Resources\novel\data\scenario\wide\libs\quiz.txt" />
     <None Include="Assets\JOKER_GAME\Resources\novel\data\scenario\wide\libs\save.txt" />
     <None Include="Assets\JOKER_GAME\Resources\novel\data\scenario\wide\libs\utils.txt" />
+    <None Include="Assets\JOKER_GAME\Resources\novel\data\scenario\wide\scene1.txt" />
     <None Include="Assets\JOKER_GAME\Resources\novel\data\scenario\wide\system.txt" />
     <None Include="Assets\JOKER_GAME\Resources\novel\data\scenario\wide\title.txt" />
+    <None Include="Assets\MeshBaker\Release Notes.txt" />
+    <None Include="Assets\MeshBaker\Resources\Shaders\AlbedoShader.shader" />
+    <None Include="Assets\MeshBaker\Resources\Shaders\NormalMapShader.shader" />
+    <None Include="Assets\MeshBaker\docs\README.txt" />
     <None Include="Assets\Standard Assets\Environment\Water (Basic)\Shaders\FXWaterBasic.shader" />
     <None Include="Assets\Standard Assets\Environment\Water\Water\Shaders\FXWaterPro.shader" />
     <None Include="Assets\Standard Assets\Environment\Water\Water4\Shaders\FXWater4Advanced.shader" />
     <None Include="Assets\Standard Assets\Environment\Water\Water4\Shaders\FXWater4Simple.shader" />
     <None Include="Assets\Standard Assets\Environment\Water\Water4\Shaders\WaterInclude.cginc" />
+    <None Include="Assets\ZRNAssets\005135_16321_1_1\Documents\ReadMe.txt" />
+    <None Include="Assets\ZRNAssets\005135_16321_1_1\Shaders\su_Zmap_DoubleSide.shader" />
+    <None Include="Assets\ZRNAssets\005135_16321_1_1\Shaders\su_Zmap_river.shader" />
+    <None Include="Assets\ZRNAssets\005135_16321_1_1\Shaders\su_Zmap_way.shader" />
+    <None Include="Assets\ZRNAssets\006441_09646_1_1\Documents\ReadMe.txt" />
+    <None Include="Assets\ZRNAssets\006441_09646_1_1\Shaders\su_Zmap_funsui.shader" />
+    <None Include="Assets\ZRNAssets\Standard Assets\Projectors\Guidelines.txt" />
+    <None Include="Assets\ZRNAssets\Standard Assets\Projectors\Sources\Shaders\Projector Light.shader" />
+    <None Include="Assets\ZRNAssets\Standard Assets\Projectors\Sources\Shaders\Projector Multiply.shader" />
+    <None Include="Assets\ZRNAssets\license_en.txt" />
+    <None Include="Assets\ZRNAssets\license_jp.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\SyntaxTree\UnityVS\2015\UnityVS.CSharp.targets" />
 </Project>

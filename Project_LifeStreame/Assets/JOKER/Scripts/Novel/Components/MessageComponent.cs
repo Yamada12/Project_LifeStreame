@@ -88,7 +88,6 @@ title=メッセージフォント設定
 
 [param]
 color=色コードを指定します。16進数形式で指定してください（例）#FFFFFF
-size=フォントサイズを指定します
 
 [_doc]
 --------------------
@@ -123,7 +122,6 @@ size=フォントサイズを指定します
 			if (this.param ["color"] != "") {
 				string color = this.param ["color"];
 				this.gameView.messageArea.GetComponent<Text>().color = ColorX.HexToRGB (color);
-				StatusManager.currentTextColor = color;
 
 			}
 
