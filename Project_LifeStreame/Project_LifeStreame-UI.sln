@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2015
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Project_LifeStreame-UI.CSharp.Plugins", "Project_LifeStreame-UI.CSharp.Plugins.csproj", "{9C8B040E-7A38-1F18-0C22-42565D294560}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Project_LifeStreame-UI.CSharp", "Project_LifeStreame-UI.CSharp.csproj", "{B27CCCC5-A1BB-C6B9-5240-895A197068C7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Project_LifeStreame-UI.CSharp.Editor", "Project_LifeStreame-UI.CSharp.Editor.csproj", "{81FC9D6A-3C94-4855-8650-1FF929F85138}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9C8B040E-7A38-1F18-0C22-42565D294560}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9C8B040E-7A38-1F18-0C22-42565D294560}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9C8B040E-7A38-1F18-0C22-42565D294560}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9C8B040E-7A38-1F18-0C22-42565D294560}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B27CCCC5-A1BB-C6B9-5240-895A197068C7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B27CCCC5-A1BB-C6B9-5240-895A197068C7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B27CCCC5-A1BB-C6B9-5240-895A197068C7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B27CCCC5-A1BB-C6B9-5240-895A197068C7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{81FC9D6A-3C94-4855-8650-1FF929F85138}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{81FC9D6A-3C94-4855-8650-1FF929F85138}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{81FC9D6A-3C94-4855-8650-1FF929F85138}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{81FC9D6A-3C94-4855-8650-1FF929F85138}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
