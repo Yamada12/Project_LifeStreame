@@ -1,0 +1,136 @@
+﻿;メッセージ表示
+[showmessage time=0]
+
+;共通ライブラリ
+;セーブ・ロードバックログなど基本的な機能を取り込む 
+;[call file=wide/system target="*system_setting_buttons"]
+
+;ゲーム作成で便利なマクロ集
+[call file=wide/libs/utils]
+[text_new name=_sp_chara_name layer=ui x="-168" y=-108.5 val="" color="DDFF00" fontsize=16 anchor="MiddleLeft"]
+[text_show name="_sp_chara_name" time=0]
+
+[bg_new name="eiga" storage="eiga"]
+;背景宣言
+
+[chara_new name=mio storage=hikaeme_default_c y=-1 ]
+;キャラクター宣言
+
+[wait time=0]
+
+[bg_show name="eiga" time=0.5]
+;背景表示
+
+[show name=mio]
+;キャラクター表示
+
+#{f.clanName}
+どうしようか？[p]
+
+#美音
+どうしようかって[p]
+
+映画館に来てるんだから映画を見るに決まっているでしょ？[p]
+
+#{f.clanName}
+いやそうだけど[p]
+
+何か見たいのある？[p]
+
+#美音
+そうね[p]
+
+あなたのおすすめがいいわ[p]
+
+#{f.clanName}
+おすすめかぁ[p]
+
+[select_new text="アニメ" target=*select_a1 ]
+[select_new text="ホラー" target=*select_a2 ]
+[select_new text="ラブストーリー" target=*select_a3 ]
+
+[select_show sound=click ]
+
+[s]
+
+*select_a1
+
+#{f.clanName}
+アニメは？[p]
+
+#美音
+そうね[p]
+
+これは面白そうね[p]
+
+これにしましょ[p]
+
+#
+筒路　美音の好感度が上がった。[p]
+[calc exp="f.lp_hika={f.lp_hika}+5"]
+
+@jump target=*a_common
+
+*select_a2
+
+#{f.clanName}
+ホラー映画は？[p]
+
+#美音
+そうね[p]
+
+あなたが驚く姿が見れるのならそれにしましょう[p]
+
+あなたこういうの苦手でしょ？[p]
+
+#{f.clanName}
+そうだけど見たくなるんだよね[p]
+
+#美音
+ならそれにしましょ[p]
+
+#
+筒路　美音の好感度が上がった。[p]
+[calc exp="f.lp_hika={f.lp_hika}+5"]
+
+@jump target=*a_common
+
+*select_a3
+
+#{f.clanName}
+ラブストーリーは？[p]
+
+#美音
+ラブストーリー？[p]
+
+だめね[p]
+
+他の人の恋愛を見るのがそんなに楽しいのかしら？[p]
+
+#{f.clanName}
+こういうの好きじゃないの？[p]
+
+#美音
+本では読むけれど[p]
+
+映像では苦手ね[p]
+
+#{f.clanName}
+そうなのか[p]
+
+#
+筒路　美音の好感度が下がった。[p]
+[calc exp="f.lp_hika={f.lp_hika}-5"]
+
+@jump target=*a_common
+
+*a_common 
+
+
+
+経済力が下がった。[p]
+[calc exp="f.ec={f.ec}-20"]
+
+[Export]
+
+[scene file={f.sceneName}]

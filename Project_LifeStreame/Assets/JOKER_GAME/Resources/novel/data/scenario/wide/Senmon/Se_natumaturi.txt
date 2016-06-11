@@ -1,30 +1,67 @@
 ﻿;メッセージ表示
-[showmessage]
+[showmessage time=0]
 
 ;共通ライブラリ
 ;セーブ・ロードバックログなど基本的な機能を取り込む 
-[call file=wide/system target="*system_setting_buttons"]
+;[call file=wide/system target="*system_setting_buttons"]
 
 ;ゲーム作成で便利なマクロ集
 [call file=wide/libs/utils]
 [text_new name=_sp_chara_name layer=ui x="-168" y=-108.5 val="" color="DDFF00" fontsize=16 anchor="MiddleLeft"]
-[text_show name="_sp_chara_name"]
+[text_show name="_sp_chara_name" time=-0]
 
 
-[wait time=2]
+[wait time=0]
 
-～専門編～夏祭り[p]
+[bg_new name="natumaturi" storage="natumaturi"]
+[bg_show name="natumaturi" time=0.5]
 
-#コンヌ
-コミュ力が上がった[p]
+[playbgm wait=false time=1 storage="natumaturi"]
 
-経済力が少し下がった[p]
+～夏祭り～[p]
 
-人間力が上がった[p]
+#
+{f.clanName}は花火を楽しみにいったが雨が降ってきてしまった。[p]
 
-体力が上がった[p]
+#モブ
+うわ～降ってきちゃった。[p]
 
-運が上がった[p]
+#{f.clanName}
+急いで屋根のあるところに[p]
 
-時間をめちゃくちゃ失った[p]
+#モブ
+これじゃ花火は中止かな[p]
 
+#{f.clanName}
+見たかったなぁ、花火[p]
+
+#モブ
+雨じゃ仕方ないね[p]
+
+コミュ力と人間力と体力が上がった。[p]
+[calc exp="f.co={f.co}+20"]
+[calc exp="f.hu={f.hu}+20"]
+[calc exp="f.vi={f.vi}+20"]
+
+[random var="f.rand" num=25]
+
+経済力が少し下がった。[p]
+[calc exp="f.ec={f.ec}-10"]
+
+[random var="f.rand" num=25]
+[if exp="{f.rand}==1"]
+
+なんと！[p]
+
+降っていた雨がやんで花火を見ることが出来た！[p]
+
+運が上がった！[p]
+[calc exp="f.lu={f.lu}+20"]
+
+[endif]
+
+[stopbgm]
+
+[Export]
+
+[scene file="Main_ProfessionalSchool"]

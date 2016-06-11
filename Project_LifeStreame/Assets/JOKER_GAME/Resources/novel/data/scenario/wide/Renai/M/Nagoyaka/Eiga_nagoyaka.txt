@@ -1,0 +1,141 @@
+﻿;メッセージ表示
+[showmessage time=0]
+
+;共通ライブラリ
+;セーブ・ロードバックログなど基本的な機能を取り込む 
+;[call file=wide/system target="*system_setting_buttons"]
+
+;ゲーム作成で便利なマクロ集
+[call file=wide/libs/utils]
+[text_new name=_sp_chara_name layer=ui x="-168" y=-108.5 val="" color="DDFF00" fontsize=16 anchor="MiddleLeft"]
+[text_show name="_sp_chara_name" time=0]
+
+[bg_new name="eiga" storage="eiga"]
+;背景宣言
+
+[chara_new name=yositaka storage=nagoyaka_default_c y=-1 ]
+;キャラクター宣言
+
+[wait time=0]
+
+[bg_show name="eiga" time=0.5]
+;背景表示
+
+[show name=yositaka]
+;キャラクター表示
+
+[playbgm wait=false time=1 storage="eiga"]
+
+#{f.clanName}
+映画何みよっか[p]
+
+#善鷹
+そうだなぁ[p]
+
+何か見たいのないの？[p]
+
+#{f.clanName}
+そうだなぁ[p]
+
+うーん[p]
+
+[select_new text="ホラー映画" target=*select_a1 ]
+[select_new text="アニメ" target=*select_a2 ]
+[select_new text="アクション" target=*select_a3 ]
+
+[select_show sound=click ]
+
+[s]
+
+*select_a1
+
+#{f.clanName}
+ホラー映画が見たいかな[p]
+
+#善鷹
+ほ、ホラー！？[p]
+
+#{f.clanName}
+どうしたの？[p]
+
+もしかして怖いの駄目なの？[p]
+
+#善鷹
+い、いや[p]
+
+へ、平気だよ[p]
+
+#{f.clanName}
+ホント？無理してない？[p]
+
+#善鷹
+だ、大丈夫だって[p]
+
+#
+檜山　善鷹の好感度が下がった。[p]
+[calc exp="f.lp_nago={f.lp_nago}-5"]
+
+@jump target=*a_common
+
+*select_a2
+
+#{f.clanName}
+アニメがいいかな[p]
+
+#善鷹
+あれ？[p]
+
+このアニメ好きなの？[p]
+
+#{f.clanName}
+え？檜山君も好きなの？[p]
+
+[chara_mod name="yositaka" storage="nagoyaka_niko_c"]
+#善鷹
+うん！僕このアニメ好きなんだよ！[p]
+
+#{f.clanName}
+そうだったんだ[p]
+
+もっと早く知りたかったよぉ[p]
+
+#
+檜山　善鷹の好感度が上がった。[p]
+[calc exp="f.lp_nago={f.lp_nago}+5"]
+
+@jump target=*a_common
+
+*select_a3
+
+#{f.clanName}
+アクション映画にしよう！[p]
+
+#善鷹
+良いね、アクション映画！[p]
+
+#{f.clanName}
+なら決まりだね[p]
+
+意外だなぁ[p]
+
+檜山君アクション映画好きなんだ[p]
+
+#善鷹
+ド派手なアクションがあるのが特に好きだよ[p]
+
+#
+檜山　善鷹の好感度が上がった。[p]
+[calc exp="f.lp_nago={f.lp_nago}+5"]
+
+@jump target=*a_common
+
+*a_common 
+
+
+
+経済力が下がった。[p]
+[calc exp="f.ec={f.ec}-20"]
+
+[Export]
+
+[scene file={f.sceneName}]

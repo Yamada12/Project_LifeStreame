@@ -1,0 +1,140 @@
+﻿;メッセージ表示
+[showmessage time=0]
+
+;共通ライブラリ
+;セーブ・ロードバックログなど基本的な機能を取り込む 
+;[call file=wide/system target="*system_setting_buttons"]
+
+;ゲーム作成で便利なマクロ集
+[call file=wide/libs/utils]
+[text_new name=_sp_chara_name layer=ui x="-168" y=-108.5 val="" color="DDFF00" fontsize=16 anchor="MiddleLeft"]
+[text_show name="_sp_chara_name" time=0]
+
+[bg_new name="mati" storage="mati"]
+;背景宣言
+
+[chara_new name=kazuma storage=interi_default_c y=-1 ]
+;キャラクター宣言
+
+[wait time=0]
+
+[bg_show name="mati" time=0.5]
+;背景表示
+
+[show name=kazuma]
+;キャラクター表示
+
+[playbgm wait=false time=1 storage="kaimono"]
+
+#{f.clanName}
+何か買いたいものあるの？[p]
+
+#和真
+メガネの下見でもしようかと[p]
+
+#{f.clanName}
+度が合わなくなってきたの？[p]
+
+#和真
+いえ、予備にいくつかストックしておきたいので[p]
+
+うーん[p]
+
+どれにしましょう・・・[p]
+
+#{f.clanName}
+え、みんな同じじゃないの？[p]
+
+#和真
+全然違いますよ！[p]
+
+よく見てください！[p]
+
+#{f.clanName}
+は、はい！[p]
+
+あ、これは？[p]
+
+[select_new text="右のやつ" target=*select_a1 ]
+[select_new text="真ん中のやつ" target=*select_a2 ]
+[select_new text="左のやつ" target=*select_a3 ]
+
+[select_show sound=click ]
+
+[s]
+
+*select_a1
+
+#{f.clanName}
+右のやつは？[p]
+
+#和真
+これは駄目です[p]
+
+#{f.clanName}
+どうして？[p]
+
+#和真
+これはアンダーリムです！[p]
+
+フレームが全体にない[p]
+
+#{f.clanName}
+た、たしかに[p]
+
+#
+羽神　和真の好感度が下がった。[p]
+[calc exp="f.lp_mega={f.lp_mega}-5"]
+
+@jump target=*a_common
+
+*select_a2
+
+#{f.clanName}
+真ん中のやつは？[p]
+
+#和真
+そうですね[p]
+
+これはよさそうです[p]
+
+#{f.clanName}
+(正直違いがわからない・・・)[p]
+
+#
+羽神　和真の好感度が上がった。[p]
+[calc exp="f.lp_mega={f.lp_mega}+5"]
+
+@jump target=*a_common
+
+*select_a3
+
+#{f.clanName}
+左のやつは？[p]
+
+#和真
+そうですね[p]
+
+今付けているのとは少し違いますが[p]
+
+たしかにいいかもしれないですね[p]
+
+#{f.clanName}
+(お気に召したようだ・・・)[p]
+
+#
+羽神　和真の好感度が上がった。[p]
+[calc exp="f.lp_mega={f.lp_mega}+5"]
+
+@jump target=*a_common
+
+*a_common 
+
+[stopbgm]
+
+経済力が下がった。[p]
+[calc exp="f.ec={f.ec}-20"]
+
+[Export]
+
+[scene file={f.sceneName}]

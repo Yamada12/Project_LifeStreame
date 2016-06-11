@@ -1,0 +1,46 @@
+﻿;メッセージ表示
+[showmessage time=0]
+
+;共通ライブラリ
+;セーブ・ロードバックログなど基本的な機能を取り込む 
+;[call file=wide/system target="*system_setting_buttons"]
+
+;ゲーム作成で便利なマクロ集
+[call file=wide/libs/utils]
+[text_new name=_sp_chara_name layer=ui x="-168" y=-108.5 val="" color="DDFF00" fontsize=16 anchor="MiddleLeft"]
+[text_show name="_sp_chara_name" time=0]
+
+
+[wait time=0]
+
+[bg_new name="nyusya" storage="nyusya"]
+[bg_show name="nyusya" time=0.5]
+
+
+～入社式～[p]
+
+{f.clanName}は入社式会場にいた[p]
+
+#{f.clanName}
+ちゃんとやっていけるかな・・・[p]
+
+知らない人ばかりだし、慣れない環境だし・・・[p]
+
+#同期A
+君、名前は？[p]
+
+#{f.clanName}
+{f.clanName}です。[p]
+
+#同期A
+これからよろしくね。[p]
+
+#{f.clanName}
+よろしく[p]
+
+#
+{f.clanName}は信頼できそうな知り合いが出来てほっとした。[p]
+
+[Export]
+
+[scene file={f.sceneName}]

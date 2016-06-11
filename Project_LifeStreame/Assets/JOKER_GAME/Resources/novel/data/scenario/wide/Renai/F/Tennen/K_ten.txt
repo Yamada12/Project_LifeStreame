@@ -1,0 +1,79 @@
+﻿;メッセージ表示
+[showmessage time=0]
+
+;共通ライブラリ
+;セーブ・ロードバックログなど基本的な機能を取り込む 
+[call file=wide/system target="*system_setting_buttons"]
+
+;ゲーム作成で便利なマクロ集
+[call file=wide/libs/utils]
+[text_new name=_sp_chara_name layer=ui x="-168" y=-108.5 val="" color="DDFF00" fontsize=16 anchor="MiddleLeft"]
+[text_show name="_sp_chara_name" time=0]
+
+[bg_new name="c_room" storage="c_room"]
+;背景宣言
+
+[chara_new name=kokomi storage=tenten_default_s y=-1 ]
+;キャラクター宣言
+
+[wait time=0]
+
+[bg_show name="c_room" time=0.5]
+;背景表示
+
+[show name=sora]
+;キャラクター表示
+
+#心美
+ぅん・・・・・[p]
+
+ねむい[p]
+
+#{f.clanName}
+もうすぐ授業だぞ[p]
+
+#心美
+ぅん・・・[p]
+
+#{f.clanName}
+起きろって[p]
+
+#心美
+ZZZ・・・[p]
+
+#{f.clanName}
+ねちゃったよ・・・[p]
+
+#心美
+ZZZ・・・[p]
+
+#{f.clanName}
+おきろー[p]
+
+#心美
+ZZZ・・・[p]
+
+#{f.clanName}
+ほっぺ、つんつん[p]
+
+#
+ぷにぷに[p]
+
+#心美
+・・・んぅ・・・[p]
+
+#
+ぱく[p]
+
+#{f.clanName}
+あ、食われる[p]
+
+#
+柿瀬　心美をデートに誘えるようになりました。[p]
+
+人間力が少し上がった。[p]
+[calc exp="f.hu={f.hu}+10"]
+
+[Export]
+
+[scene file="Main_HighSchool"]

@@ -3,7 +3,7 @@
 
 ;共通ライブラリ
 ;セーブ・ロードバックログなど基本的な機能を取り込む 
-[call file=wide/system target="*system_setting_buttons"]
+;[call file=wide/system target="*system_setting_buttons"]
 
 ;ゲーム作成で便利なマクロ集
 [call file=wide/libs/utils]
@@ -11,18 +11,47 @@
 [text_show name="_sp_chara_name"]
 
 
-[wait time=2]
+[wait time=1]
 
-～高校生編～運動会[p]
+;[calc exp="f.clanName=福島"]
 
-#コンヌ
-コミュ力が上がった[p]
+[playbgm wait=false time=1 storage="undokai"]
 
-人間力が上がった[p]
+～スポーツ大会～[p]
+
+#
+スポーツ大会当日[p]
+
+#{f.clanName}
+他のクラスを圧倒的な力でねじ伏せるんだ！[p]
+
+#モブ達
+おー！！！[p]
+
+#
+{f.clanName}は圧倒的な力で他のクラスをねじ伏せた[p]
+
+コミュ力と人間力が上がった。[p]
+[calc exp="f.co={f.co}+20"]
+[calc exp="f.hu={f.hu}+20"]
 
 体力がめちゃくちゃ上がった[p]
+[calc exp="f.vi={f.vi}+40"]
+
+[random var="f.rand" num=25]
+[if exp="{f.rand}==1"]
+
+なんと！[p]
+
+ドッジボールで一回投げて全員アウトにした！[p]
 
 運がめちゃくちゃ上がった[p]
+[calc exp="f.lu={f.lu}+40"]
 
-時間をめちゃくちゃ失った[p]
+[endif]
 
+[stopbgm]
+
+[Export]
+
+[scene file="Main_University"]

@@ -4,158 +4,75 @@ using Novel;
 using UnityEngine.UI;
 
 /// <summary>
-/// Worldシーン　Player01の移動先を判定するスクリプト　試験前
+/// Worldシーン　Player01の移動を制御するスクリプト　試験前
 ///　オブジェクト　Player01にアタッチ
 /// </summary>
 
-public class World_Player_Before : MonoBehaviour {
+public class World_Player_Before : MonoBehaviour
+{
 
-    public int progress;//デバック用の変数
-
-
-    //試験前　試験シーンへ遷移するポジション　
-    public Transform target_ElementarySchool;//小学校ポジション
-    public Transform target_JuniorHighSchool;//中学校ポジション
-    public Transform target_HighSchool;//高校ポジション
-    public Transform target_ProfessionalSchool;//専門学校ポジション
-    public Transform target_University;//大学ポジション
-    public Transform target_MemberOfSociety;//社会人ポジション
-    public Transform target_GoldenAger;//年寄りポジション
-
-    //試験前　ターニング
-    public Transform turning_ES;
-    public Transform turning_JHS;
-    public Transform turning_HS;
-    public Transform turning_PS;
-    public Transform turning_U;
-    public Transform turning_MOS;
-    public Transform turning_GA;
-    
-	
-	// Update is called once per frame
-	void Update () {
-
-        if (World_Player.result == 0)//試験前
+    void Start()//試験前　真上にぴょん
+    {
+        if (World_Player.result == 0)
         {
-            if (/*PlayerStatus.*/progress == 1)
-            {
-                //position = turning_ES;
-                if (World_Player.Spawner == 1)
-                {
-                    iTween.MoveTo(gameObject, iTween.Hash("position", turning_ES, "time", 5.0f));//ターニング小学校までレッツゴー
-                    if (World_Player.UI01 == 1)
-                    {
-                        if (Input.GetMouseButton(0))
-                        {
-                            turning_ES = target_ElementarySchool;
-                            iTween.MoveTo(gameObject, iTween.Hash("position", turning_ES, "time", 2.0f));
-                        }
-                    }
-                }
-            }
+            iTween.MoveTo(gameObject, iTween.Hash("delay", 1.0f, "y", 1.5, "time", 0.3f, "oncomplete", "Move1", "oncompletetarget", gameObject));
+        }
 
-            if (/*PlayerStatus.*/progress == 2)
-            {
-                //position = turning_JHS;
-                if (World_Player.Spawner == 1)
-                {
-                    iTween.MoveTo(gameObject, iTween.Hash("position", turning_JHS, "time", 5.0f));//ターニング中学校までレッツゴー
-                    if (World_Player.UI01 == 1)
-                    {
-                        if (Input.GetMouseButton(0))
-                        {
-                            turning_JHS = target_JuniorHighSchool;
-                            iTween.MoveTo(gameObject, iTween.Hash("position", turning_JHS, "time", 2.0f));
-                        }
-                    }
-                }
-            }
+    }
 
-            if (/*PlayerStatus.*/progress == 3)
-            {
-                //position = turning_HS;
-                if (World_Player.Spawner == 1)
-                {
-                    iTween.MoveTo(gameObject, iTween.Hash("position", turning_HS, "time", 5.0f));//ターニング高校までレッツゴー
-                    if (World_Player.UI01 == 1)
-                    {
-                        if (Input.GetMouseButton(0))
-                        {
-                            turning_HS = target_HighSchool;
-                            iTween.MoveTo(gameObject, iTween.Hash("position", turning_HS, "time", 2.0f));
-                        }
-                    }
-                }
-            }
+    public void Move1()//まっすぐびゅーん
+    {
+        if (World_Player.result == 0)
+        {
+            iTween.MoveBy(gameObject, iTween.Hash("delay", 0.5f, "z", 15, "time", 1.0f, "oncomplete", "Move2", "oncompletetarget", gameObject));
+        }
 
-            if (/*PlayerStatus.*/progress == 4)
-            {
-                //position = turning_PS;
-                if (World_Player.Spawner == 1)
-                {
-                    iTween.MoveTo(gameObject, iTween.Hash("position", turning_PS, "time", 5.0f));//ターニング専門学校までレッツゴー
-                    if (World_Player.UI01 == 1)
-                    {
-                        if (Input.GetMouseButton(0))
-                        {
-                            turning_PS = target_ProfessionalSchool;
-                            iTween.MoveTo(gameObject, iTween.Hash("position", turning_PS, "time", 2.0f));
-                        }
-                    }
-                }
-            }
+        if (PlayerStatus.progress == 8)//年寄りはまっすぐびゅーーーーん
+        {
+            iTween.MoveBy(gameObject, iTween.Hash("delay", 0.5f, "z", 50, "time", 20.0f));
+        }
 
-            if (/*PlayerStatus.*/progress == 5)
-            {
-                //position = turning_U;
-                if (World_Player.Spawner == 1)
-                {
-                    iTween.MoveTo(gameObject, iTween.Hash("position", turning_U, "time", 5.0f));//ターニング大学までレッツゴー
-                    if (World_Player.UI01 == 1)
-                    {
-                        if (Input.GetMouseButton(0))
-                        {
-                            turning_U = target_University;
-                            iTween.MoveTo(gameObject, iTween.Hash("position", turning_U, "time", 2.0f));
-                        }
-                    }
-                }
-            }
+    }
 
-            if (/*PlayerStatus.*/progress == 6)
-            {
-                //position = turning_MOS;
-                if (World_Player.Spawner == 1)
-                {
-                    iTween.MoveTo(gameObject, iTween.Hash("position", turning_MOS, "time", 5.0f));//ターニング社会人までレッツゴー
-                    if (World_Player.UI01 == 1)
-                    {
-                        if (Input.GetMouseButton(0))
-                        {
-                            turning_MOS = target_MemberOfSociety;
-                            iTween.MoveTo(gameObject, iTween.Hash("position", turning_MOS, "time", 2.0f));
-                        }
-                    }
-                }
-            }
+    public void Move2()//下にすたっと
+    {
+        if (World_Player.result == 0)
+        {
+            iTween.MoveTo(gameObject, iTween.Hash("delay", 0.5f, "y", -0.5, "time", 0.3f));
+        }
+    }
 
-            if (/*PlayerStatus.*/progress == 7)
+
+    // Update is called once per frame
+    void Update()
+    {
+        if (World_Player.kanban_shiken == 1 && World_Player.Select_Button == 0)
+        {
+            if (Input.GetMouseButton(0))//クリックで試験シーンに飛び込む
             {
-                //position = turning_GA;
-                if (World_Player.Spawner == 1)
-                {
-                    iTween.MoveTo(gameObject, iTween.Hash("position", turning_GA, "time", 5.0f));//ターニング年寄りまでレッツゴー
-                    if (World_Player.UI01 == 1)
-                    {
-                        if (Input.GetMouseButton(0))
-                        {
-                            turning_GA = target_GoldenAger;
-                            iTween.MoveTo(gameObject, iTween.Hash("position", turning_GA, "time", 2.0f));
-                        }
-                    }
-                }
+                iTween.MoveBy(gameObject, iTween.Hash("z", 5, "y", 1));
+                iTween.RotateBy(gameObject, iTween.Hash("z", 0.05));
             }
         }
 
+        if (World_Player.Select_Button == 1)
+        {
+            if (World_SelectButton.Life >= 1)
+            {//上にぴょん
+                iTween.MoveBy(gameObject, iTween.Hash("y", 1, "time", 0.2, "oncomplete", "Select_move", "oncompletetarget", gameObject));
+                World_Player.Select_Button = 99;
+            }
+        }
+
+    }
+
+    public void Select_move()
+    {//まっすぐびゅーん
+        iTween.MoveBy(gameObject, iTween.Hash("z", 13, "time", 0.5, "oncomplete", "Select_move2", "oncompletetarget", gameObject));
+    }
+
+    public void Select_move2()
+    {//下にすたっと
+        iTween.MoveBy(gameObject, iTween.Hash("y", -1, "time", 0.2));
     }
 }

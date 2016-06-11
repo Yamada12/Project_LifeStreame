@@ -1,0 +1,132 @@
+﻿;メッセージ表示
+[showmessage time=0]
+
+;共通ライブラリ
+;セーブ・ロードバックログなど基本的な機能を取り込む 
+[call file=wide/system target="*system_setting_buttons"]
+
+;ゲーム作成で便利なマクロ集
+[call file=wide/libs/utils]
+[text_new name=_sp_chara_name layer=ui x="-168" y=-108.5 val="" color="DDFF00" fontsize=16 anchor="MiddleLeft"]
+[text_show name="_sp_chara_name" time=0]
+
+[bg_new name="suizoku" storage="suizoku"]
+;背景宣言
+
+[chara_new name=yukihito storage=aniki_default_c y=-1 ]
+;キャラクター宣言
+
+[wait time=0]
+
+[bg_show name="suizoku" time=0.5]
+;背景表示
+
+[show name=yukihito]
+;キャラクター表示
+
+#幸人
+ほら見ろ！[p]
+
+沢山いるぞ！[p]
+
+見えるか！[p]
+
+おんぶしてやろうか？[p]
+
+#{f.clanName}
+この年になっておんぶは恥ずかしからやめて！[p]
+
+#幸人
+ペンギンだぞ！ペンギン！[p]
+
+#{f.clanName}
+はしゃぎ過ぎだって[p]
+
+#幸人
+折角来たんだから楽しまないと[p]
+
+お前だってペンギン好きだろ？[p]
+
+#{f.clanName}
+そ、そうだけど[p]
+
+#幸人
+帰りにペンギンのぬいぐるみ買って帰ろうな[p]
+
+[select_new text="やったー！" target=*select_a1 ]
+[select_new text="ホント！？" target=*select_a2 ]
+[select_new text="いらないよ" target=*select_a3 ]
+
+[select_show sound=click ]
+
+[s]
+
+*select_a1
+
+#{f.clanName}
+やったー[p]
+
+うれしい[p]
+
+[chara_mod name="yukihito" storage="aniki_niko_c"]
+
+#幸人
+やっぱり子供だなぁ[p]
+
+#{f.clanName}
+好き嫌いに子供も大人も関係ないの！[p]
+
+#
+相馬　幸人の好感度が上がった。[p]
+[calc exp="f.lp_ani={f.lp_ani}+5"]
+
+@jump target=*a_common
+
+*select_a2
+
+#{f.clanName}
+ホント！？[p]
+
+[chara_mod name="yukihito" storage="aniki_niko_c"]
+#幸人
+ああ、ホントだ[p]
+
+#{f.clanName}
+やったー！[p]
+
+#幸人
+昔からぬいぐるみ好きだったもんな[p]
+
+#
+相馬　幸人の好感度が上がった。[p]
+[calc exp="f.lp_ani={f.lp_ani}+5"]
+
+@jump target=*a_common
+
+*select_a3
+
+#{f.clanName}
+えーいらないよ[p]
+
+[chara_mod name="yukihito" storage="aniki_kanasi_c"]
+#幸人
+そうか、残念だな[p]
+
+喜ぶ顔が見たかったんだけどな[p]
+
+#
+相馬　幸人の好感度が下がった。[p]
+[calc exp="f.lp_ani={f.lp_ani}-5"]
+
+@jump target=*a_common
+
+*a_common 
+
+
+
+経済力が下がった。[p]
+[calc exp="f.ec={f.ec}-20"]
+
+[Export]
+
+[scene file={f.sceneName}]

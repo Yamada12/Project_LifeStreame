@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.SceneManagement;
 using System.Collections;
 using System.Collections.Generic;
 using ExpressionParser;
@@ -317,8 +318,9 @@ scene=new を指定すると、新しくシーンを作成した上でジャン�
 				StatusManager.nextFileName = file;
 				StatusManager.nextTargetName = target;
 				StatusManager.currentScenario = "";
-				//jumpから来たことを通知するためのパラメータが必要
-				Application.LoadLevel("Player");
+                //jumpから来たことを通知するためのパラメータが必要
+                SceneManager.LoadScene("Player", LoadSceneMode.Single);
+				//Application.LoadLevel("Player");
 
 			}
 
@@ -544,7 +546,8 @@ file=呼び出したいシーン名
 
 			string file = this.param ["file"];
 
-			Application.LoadLevel(file);
+            SceneManager.LoadScene(file, LoadSceneMode.Single);
+			//Application.LoadLevel(file);
 
 			//処理終了
 

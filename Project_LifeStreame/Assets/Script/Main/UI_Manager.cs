@@ -7,10 +7,13 @@ using UnityEngine.UI;
 /// </summary>
 public class UI_Manager : MonoBehaviour
 {
-    public GameObject UIControllerPref;
-    GameObject UIController;
+    public GameObject licenceControllerPref;
+    GameObject licenceController;
+    public GameObject loveControllerPref;
+    GameObject loveController;
     public GameObject menuButton;
-    public Text ButtonMessage;
+    public Sprite onImage;
+    public Sprite offImage;
     public GameObject[] contentButton;
     private bool click;
     private GameObject menu;
@@ -18,20 +21,25 @@ public class UI_Manager : MonoBehaviour
     /// <summary>
     /// ライセンス取得メニューを表示するアニメーション
     /// </summary>
-    public void moveAnimation()
+    public void moveAnimation(bool smartPhone)
     {
-        if (!click)
+        if (!smartPhone)
         {
-            click = true;
-            if (UIController == null)
-            { //UIControllerが存在しなければ生成
-                UIController = Instantiate(UIControllerPref) as GameObject;
+            if (!click)
+            {
+                click = true;
+                OpenMenu(0);
+                menuButton.GetComponent<Image>().sprite = onImage;
             }
-            ButtonMessage.text = "▲";
-        } else {
-            click = false;
-            menuEnabled();
-            ButtonMessage.text = "▼";
+            else {
+                click = false;
+                menuButton.GetComponent<Image>().sprite = offImage;
+                menuEnabled(false);
+            }
+        }
+        else
+        {
+                OpenMenu(1);
         }
     }
 
@@ -50,9 +58,36 @@ public class UI_Manager : MonoBehaviour
     /// <summary>
     /// 資格取得メニューを消去する
     /// </summary>
-    void menuEnabled()
+    void menuEnabled(bool smartPhone)
     {
-        menu = GameObject.Find("menu_Canvas(Clone)");
+        if (!smartPhone)
+            menu = GameObject.Find("Licence_Canvas(Clone)");
+        else
+            menu = GameObject.Find("Love_Canvas(Clone)");
+
         Destroy(menu.gameObject);
+    }
+
+    void OpenMenu(int Num)
+    {
+        switch (Num)
+        {
+            case 0: //資格取得パート
+                if (licenceController == null)
+                { //UIControllerが存在しなければ生成
+                    licenceController = Instantiate(licenceControllerPref) as GameObject;
+                }
+                break;
+
+            case 1: //恋愛パート
+                if (loveController == null)
+                { //loveControllerが存在しなければ生成
+                    loveController = Instantiate(loveControllerPref) as GameObject;
+                }
+                break;
+
+            default:
+                break;
+        }
     }
 }

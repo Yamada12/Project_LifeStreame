@@ -1,19 +1,36 @@
 ﻿;メッセージ表示
-[showmessage]
+[showmessage time=0]
 
 ;共通ライブラリ
 ;セーブ・ロードバックログなど基本的な機能を取り込む 
-[call file=wide/system target="*system_setting_buttons"]
+;[call file=wide/system target="*system_setting_buttons"]
 
 ;ゲーム作成で便利なマクロ集
 [call file=wide/libs/utils]
 [text_new name=_sp_chara_name layer=ui x="-168" y=-108.5 val="" color="DDFF00" fontsize=16 anchor="MiddleLeft"]
-[text_show name="_sp_chara_name"]
+[text_show name="_sp_chara_name" time=0]
 
 
-[wait time=2]
+[wait time=0]
+
+[bg_new name="sky01" storage="sky01"]
+[bg_show name="sky01" time=0.5]
+
 
 ～中学校入学式～[p]
 
-#コンヌ
-ヒャッハー[l]俺も中学生デビューだぜ[p]
+#
+新しい出会いに胸を膨らませ[p]
+
+{f.clanName}は入学式会場にいた[p]
+
+#{f.clanName}
+これから中学生生活が始まるんだ。[p]
+
+部活に新しい友達[p]
+
+楽しみだなぁ[p]
+
+[Export]
+
+[scene file="Main_JuniorHighSchool"]

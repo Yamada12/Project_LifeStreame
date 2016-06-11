@@ -1,0 +1,137 @@
+﻿;メッセージ表示
+[showmessage time=0]
+
+;共通ライブラリ
+;セーブ・ロードバックログなど基本的な機能を取り込む 
+;[call file=wide/system target="*system_setting_buttons"]
+
+;ゲーム作成で便利なマクロ集
+[call file=wide/libs/utils]
+[text_new name=_sp_chara_name layer=ui x="-168" y=-108.5 val="" color="DDFF00" fontsize=16 anchor="MiddleLeft"]
+[text_show name="_sp_chara_name" time=0]
+
+[bg_new name="suizoku" storage="suizoku"]
+;背景宣言
+
+[chara_new name=mio storage=hikaeme_default_c y=-1 ]
+;キャラクター宣言
+
+[wait time=0]
+
+[bg_show name="suizoku" time=0.5]
+;背景表示
+
+[show name=mio]
+;キャラクター表示
+
+#{f.clanName}
+筒路さんってこういうの好きなの？[p]
+
+#美音
+そうね[p]
+
+あなたとじゃなければとても楽しかったと思うわ[p]
+
+#{f.clanName}
+え[p]
+
+#美音
+嘘ですよ[p]
+
+#{f.clanName}
+びっくりするからやめてくれよ[p]
+
+#美音
+ふふふ[p]
+
+面白いですね[p]
+
+見てください[p]
+
+クリオネですよ[p]
+
+[select_new text="食べるシーン怖いよね" target=*select_a1 ]
+[select_new text="うねうねしてる" target=*select_a2 ]
+[select_new text="可愛いよね" target=*select_a3 ]
+
+[select_show sound=click ]
+
+[s]
+
+*select_a1
+
+#{f.clanName}
+食べるシーン怖いよね[p]
+
+#美音
+そう！[p]
+
+それ！[p]
+
+それが見たいのよ！[p]
+
+#{f.clanName}
+お、おう！[p]
+
+確かに見たいな！[p]
+
+#
+筒路　美音の好感度が上がった。[p]
+[calc exp="f.lp_hika={f.lp_hika}+5"]
+
+@jump target=*a_common
+
+*select_a2
+
+#{f.clanName}
+なんかうねうねしてる[p]
+
+#美音
+何その普通の回答[p]
+
+#{f.clanName}
+だってうねうねしてるじゃん[p]
+
+#美音
+つまらないわよ[p]
+
+#{f.clanName}
+きびしぃ[p]
+
+#
+筒路　美音の好感度が下がった。[p]
+[calc exp="f.lp_hika={f.lp_hika}-5"]
+
+@jump target=*a_common
+
+*select_a3
+
+#{f.clanName}
+可愛いよね[p]
+
+#美音
+確かに可愛いわ[p]
+
+でも私は・・・[p]
+
+捕食シーンが見たいの！[p]
+
+#{f.clanName}
+怖いやつじゃん！[p]
+
+#
+筒路　美音の好感度が上がった。[p]
+[calc exp="f.lp_hika={f.lp_hika}+5"]
+
+@jump target=*a_common
+
+*a_common 
+
+
+
+経済力が下がった。[p]
+[calc exp="f.ec={f.ec}-20"]
+
+[Export]
+
+[scene file={f.sceneName}]

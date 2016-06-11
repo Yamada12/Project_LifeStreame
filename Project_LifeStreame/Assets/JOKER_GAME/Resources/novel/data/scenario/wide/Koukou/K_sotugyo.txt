@@ -1,20 +1,36 @@
 ﻿;メッセージ表示
-[showmessage]
+[showmessage time=0]
 
 ;共通ライブラリ
 ;セーブ・ロードバックログなど基本的な機能を取り込む 
-[call file=wide/system target="*system_setting_buttons"]
+;[call file=wide/system target="*system_setting_buttons"]
 
 ;ゲーム作成で便利なマクロ集
 [call file=wide/libs/utils]
 [text_new name=_sp_chara_name layer=ui x="-168" y=-108.5 val="" color="DDFF00" fontsize=16 anchor="MiddleLeft"]
-[text_show name="_sp_chara_name"]
+[text_show name="_sp_chara_name" time=0]
 
 
-[wait time=2]
+[wait time=0]
+
+[bg_new name="sky01" storage="sky01"]
+[bg_show name="sky01" time=0.5]
+
 
 ～高校卒業式～[p]
 
-#コンヌ
-卒業だぜ☆[p]
+#
+あっという間だった高校生生活を[p]
 
+{f.clanName}は振り返っていた。[p]
+
+#{f.clanName}
+あっという間だったなぁ高校生生活[p]
+
+最初は不安だったけど楽しかったなぁ[p]
+
+これから皆バラバラになっちゃうけどたまに会いたいなぁ[p]
+
+[Export]
+
+[scene file="Main_HighSchool"]

@@ -1,17 +1,21 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.UI;
 
-public class SettingManager : MonoBehaviour {
+public class SettingManager : MonoBehaviour
+{
+    public GameObject nameField;
 
 	// Use this for initialization
 	void Start ()
     {
-        PlayerStatus.static_Load();
+        PlayerStatus.initStatus();
 	}
 
-    public void ClanInput(string name)
+    public void ClanInput()
     {//一族名登録
-        PlayerStatus.clanName = name;
+        PlayerStatus.clanName = nameField.GetComponent<InputField>().text;
+        Debug.Log(PlayerStatus.clanName);
     }
 
     public void Mf_Select(int select)

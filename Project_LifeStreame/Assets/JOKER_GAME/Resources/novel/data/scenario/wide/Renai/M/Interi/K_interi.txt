@@ -1,0 +1,72 @@
+﻿;メッセージ表示
+[showmessage time=0]
+
+;共通ライブラリ
+;セーブ・ロードバックログなど基本的な機能を取り込む 
+;[call file=wide/system target="*system_setting_buttons"]
+
+;ゲーム作成で便利なマクロ集
+[call file=wide/libs/utils]
+[text_new name=_sp_chara_name layer=ui x="-168" y=-108.5 val="" color="DDFF00" fontsize=16 anchor="MiddleLeft"]
+[text_show name="_sp_chara_name" time=0]
+
+[bg_new name="K_roka" storage="K_roka"]
+;背景宣言
+
+[chara_new name=kazuma storage=interi_default_s x=0 y=-1]
+;キャラクター宣言
+
+[wait time=0]
+
+[bg_show name="K_roka" time=0.5]
+;背景表示
+
+#{f.clanName}
+よいしょっと[p]
+
+こんなにプリント持っていくの大変だよ[p]
+
+[bg_mod name=K_roka storage="odori"]
+
+階段かぁ[p]
+
+気を付けないと[p]
+
+・・・・[p]
+
+#
+ぐらッ！[p]
+
+#{f.clanName}
+きゃッ！[p]
+
+[show name=kazuma]
+;キャラクター表示
+
+#和真
+大丈夫ですか？[p]
+
+#{f.clanName}
+・・・・・[p]
+
+あ、はい！[p]
+
+大丈夫です。[p]
+
+ありがとうございました。[p]
+
+#和真
+よかったら手伝いましょうか？[p]
+
+#{f.clanName}
+あ、お願いします。[p]
+
+#
+羽神　和真をデートに誘えるようになりました。[p]
+
+人間力が少し上がった。[p]
+[calc exp="f.hu={f.hu}+10"]
+
+[Export]
+
+[scene file="Main_HighSchool"]

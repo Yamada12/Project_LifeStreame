@@ -1,0 +1,128 @@
+﻿;メッセージ表示
+[showmessage time=0]
+
+;共通ライブラリ
+;セーブ・ロードバックログなど基本的な機能を取り込む 
+[call file=wide/system target="*system_setting_buttons"]
+
+;ゲーム作成で便利なマクロ集
+[call file=wide/libs/utils]
+[text_new name=_sp_chara_name layer=ui x="-168" y=-108.5 val="" color="DDFF00" fontsize=16 anchor="MiddleLeft"]
+[text_show name="_sp_chara_name" time=0]
+
+[bg_new name="suizoku" storage="suizoku"]
+;背景宣言
+
+[chara_new name=koji storage=oresama_default_c y=-1 ]
+;キャラクター宣言
+
+[wait time=0]
+
+[bg_show name="suizoku" time=0.5]
+;背景表示
+
+[show name=koji]
+;キャラクター表示
+
+#{f.clanName}
+うわ～[p]
+
+綺麗な魚がいっぱい[p]
+
+[chara_mod name="koji" storage="oresama_niko_c"]
+
+#皇子
+喜んでくれてうれしいよ[p]
+
+ほら、ペンギンがこっち見てるぞ[p]
+
+かわいいな[p]
+
+[select_new text="ホントだカワイイ" target=*select_a1 ]
+[select_new text="ペンギン嫌いなんだよね" target=*select_a2 ]
+[select_new text="私は？" target=*select_a3 ]
+
+[select_show sound=click ]
+
+[s]
+
+*select_a1
+
+#{f.clanName}
+ホントだカワイイ[p]
+
+#皇子
+お前の方が可愛いけどな[p]
+
+#{f.clanName}
+え？今なんて言ったの？[p]
+
+#皇子
+お前より可愛いって言ったんだよ！[p]
+
+#{f.clanName}
+え、ひっどーい！[p]
+
+#
+美里　皇子の好感度が上がった。[p]
+[calc exp="f.lp_ore={f.lp_ore}+5"]
+
+@jump target=*a_common
+
+*select_a2
+
+#{f.clanName}
+私ペンギン嫌いなんだよね[p]
+
+[chara_mod name="koji" storage="oresama_niko_c"]
+
+#皇子
+そ、そうなのか[p]
+
+可愛いのに[p]
+
+#{f.clanName}
+ラッコの方が可愛いよ！[p]
+
+#
+美里　皇子の好感度が下がった。[p]
+[calc exp="f.lp_ore={f.lp_ore}-5"]
+
+@jump target=*a_common
+
+*select_a3
+
+#{f.clanName}
+私は？[p]
+
+#皇子
+は？[p]
+
+可愛いに決まってるだろ[p]
+
+バカかお前は[p]
+
+#{f.clanName}
+・・・・・[p]
+
+#皇子
+ほら、ぼーっとしてんな[p]
+
+イルカのショーが始まるぞ[p]
+
+#
+美里　皇子の好感度が上がった。[p]
+[calc exp="f.lp_ore={f.lp_ore}+5"]
+
+@jump target=*a_common
+
+*a_common 
+
+
+
+経済力が下がった。[p]
+[calc exp="f.ec={f.ec}-20"]
+
+[Export]
+
+[scene file={f.sceneName}]

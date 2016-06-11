@@ -18,9 +18,14 @@ public class EventButton_Manager : MonoBehaviour
     void Awake()
     {
         if (!PlayerPrefs.HasKey("0"))
+        {
             awakePanel.SetActive(true);
-        else
+            PlayerStatus.lifeTime = 1200f;
+            MainManager.pauseFlag = true;
+        } else {
             awakePanel.SetActive(false);
+            MainManager.pauseFlag = false;
+        }
     }
 
     /// <summary>
@@ -34,6 +39,7 @@ public class EventButton_Manager : MonoBehaviour
             buttonID[i] = i.ToString();
             PlayerPrefs.SetInt(buttonID[i], useCounts[i]);
         }
+        PlayerPrefs.SetFloat("lifeTime", PlayerStatus.lifeTime);
     }
 
     /// <summary>
@@ -44,7 +50,6 @@ public class EventButton_Manager : MonoBehaviour
         for (int i = 0; i < buttons.Length; i++)
         {
             useCounts[i] = PlayerPrefs.GetInt(buttonID[i]);
-            Debug.Log(useCounts[i]);
             InteractiveCheck(i);
         }
     }
@@ -69,9 +74,15 @@ public class EventButton_Manager : MonoBehaviour
     /// </summary>
     /// /// <param name="id">チェックするボタンのID</param>
     public void InteractiveCheck(int id)
-    {
-        if(useCounts[id] <= 0 || PlayerStatus.lifeTime < lostTimes[id])
-            buttons[id].interactable = false;
+    {//id要らないかも？
+        //if(useCounts[id] <= 0 || PlayerStatus.lifeTime < lostTimes[id])
+        //    buttons[id].interactable = false;
+
+        for(int i = 0; i < useCounts.Length; i++)
+        {
+            if (useCounts[i] <= 0 || PlayerStatus.lifeTime < lostTimes[i])
+                buttons[i].interactable = false;
+        }
     }
 
     /// <summary>
@@ -79,11 +90,12 @@ public class EventButton_Manager : MonoBehaviour
     /// </summary>
     public void InitDelete()
     {
-        for(int i = 100; i < 0; i--)
+        for (int i = 100; i < 0; i--)
         {
             PlayerPrefs.DeleteKey(i.ToString());
         }
         Save_UseCount();
+        MainManager.pauseFlag = false;
     }
 
     public void DeleteALL()

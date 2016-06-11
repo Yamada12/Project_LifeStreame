@@ -1,0 +1,296 @@
+﻿;メッセージ表示
+[showmessage time=0]
+
+;共通ライブラリ
+;セーブ・ロードバックログなど基本的な機能を取り込む 
+;[call file=wide/system target="*system_setting_buttons"]
+
+;ゲーム作成で便利なマクロ集
+[call file=wide/libs/utils]
+[text_new name=_sp_chara_name layer=ui x="-168" y=-108.5 val="" color="DDFF00" fontsize=16 anchor="MiddleLeft"]
+[text_show name="_sp_chara_name" time=0]
+
+[bg_new name="kouen" storage="kouen"]
+;背景宣言
+
+[chara_new name=risa storage=majime_default_c y=-1 ]
+;キャラクター宣言
+
+[wait time=0]
+
+[bg_show name="kouen" time=0.5]
+;背景表示
+
+[show name=risa]
+;キャラクター表示
+
+[playbgm wait=false time=1 storage="kokuhaku"]
+
+#梨沙
+何かしら[p]
+
+こんなところに呼び出して[p]
+
+帰っていいかしら[p]
+
+#{f.clanName}
+ちょっとまって！[p]
+
+#梨沙
+手短にお願い出来るかしら[p]
+
+#{f.clanName}
+わかった[p]
+
+[select_new text="ストレートに" target=*select_a1 ]
+[select_new text="気付いたかのように" target=*select_a2 ]
+[select_new text="情熱的に" target=*select_a3 ]
+
+[select_show sound=click ]
+
+[s]
+
+*select_a1
+
+[calc exp="f.lp_maji={f.lp_maji}+10"]
+
+[if exp="{f.lp_maji}>50"]
+
+#{f.clanName}
+俺は梨沙のことが好きだ[p]
+
+付き合ってほしい[p]
+
+[chara_mod name="risa" storage="majime_tere_c"]
+#梨沙
+え・・・・・[p]
+
+そんなこと急に言われても・・・[p]
+
+わたしは・・・[p]
+
+#{f.clanName}
+俺は梨沙と一緒にいたい[p]
+
+#梨沙
+私でいいの？[p]
+
+私なんて真面目で地味で面白くなくて[p]
+
+なにもいいところなんてないのに[p]
+
+#{f.clanName}
+そんなことない[p]
+
+俺は梨沙が大好きなんだ[p]
+
+#梨沙
+・・・[p]
+
+こんな私でよければ[p]
+
+よろしくお願いします[p]
+
+#
+佐倉　梨沙と恋人関係になりました。[p]
+
+[else]
+
+#{f.clanName}
+俺は梨沙のことが好きだ[p]
+
+付き合ってほしい[p]
+
+#梨沙
+なにに？[p]
+
+買い物？[p]
+
+それとも勉強？[p]
+
+#{f.clanName}
+あ、いや[p]
+
+俺の彼女になってほしい[p]
+
+#梨沙
+そう、やはり聞き間違いではなかったのね[p]
+
+[chara_mod name="risa" storage="majime_kanasi_c"]
+
+ごめんなさい・・・・[p]
+
+別にあなたのことが嫌いなわけではないの[p]
+
+まだあなたのこと分からないことだらけなの[p]
+
+だから、もう少し時間をちょうだい[p]
+
+#
+告白にはまだ早かったようだ[p]
+
+[endif]
+
+@jump target=*a_common
+
+*select_a2
+
+[if exp="{f.lp_maji}>50"]
+
+#{f.clanName}
+俺さ、梨沙と一緒にいると楽というか[p]
+
+気が楽なんだ[p]
+
+気兼ねなく話せるし[p]
+
+梨沙も思ったことを口にしてくれる[p]
+
+それで思ったんだ[p]
+
+俺は梨沙のことが好きなんだって[p]
+
+だから、俺と付き合ってくれないかな？[p]
+
+[chara_mod name="risa" storage="majime_tere_c"]
+#梨沙
+なっ！？[p]
+
+そんな急に言われても・・・[p]
+
+#{f.clanName}
+梨沙は俺のことどう思ってる？[p]
+
+#梨沙
+ど、どうって・・・[p]
+
+・・・[p]
+
+き、きらい・・・[p]
+
+#{f.clanName}
+え・・・？[p]
+
+#梨沙
+素直になれない自分が、嫌い[p]
+
+私も[p]
+
+私もあなたのこと好き[p]
+
+#
+佐倉　梨沙と恋人関係になりました。[p]
+
+[else]
+
+#{f.clanName}
+俺さ、梨沙と一緒にいると楽というか[p]
+
+気が楽なんだ[p]
+
+気兼ねなく話せるし[p]
+
+梨沙も思ったことを口にしてくれる[p]
+
+それで思ったんだ[p]
+
+俺は梨沙のことが好きなんだって[p]
+
+だから、俺と付き合ってくれないかな？[p]
+
+[chara_mod name="risa" storage="majime_kanasi_c"]
+
+#梨沙
+気持ちは嬉しいけれど・・・[p]
+
+自分の気持ちが分からない・・・[p]
+
+あなたのことは嫌いじゃない[p]
+
+でも、これが好きという気持ちなのか[p]
+
+よくわからないの[p]
+
+だから、ごめんなさい[p]
+
+#
+告白にはまだ早かったようだ[p]
+
+[endif]
+
+@jump target=*a_common
+
+*select_a3
+
+[if exp="{f.lp_maji}>50"]
+
+#{f.clanName}
+俺は！[p]
+
+俺は梨沙のことが好きだ！[p]
+
+だから俺は大好きな梨沙のことを守りたい！[p]
+
+ずっと一緒にいて守ってあげたい！[p]
+
+[chara_mod name="risa" storage="majime_odoroki_c"]
+
+#梨沙
+ちょ、ちょっと！[p]
+
+[chara_mod name="risa" storage="majime_tere_c"]
+
+大声で恥ずかしいこと言わないで[p]
+
+#{f.clanName}
+梨沙は俺のことどう思ってるの？[p]
+
+[chara_mod name="risa" storage="majime_kanasi_c"]
+
+#梨沙
+わ、私は・・・[p]
+
+[chara_mod name="risa" storage="majime_tere_c"]
+
+大好きに決まってるでしょ・・・[p]
+
+#
+佐倉　梨沙と恋人関係になりました。[p]
+
+[else]
+
+#{f.clanName}
+俺は！[p]
+
+俺は梨沙のことが好きだ！[p]
+
+だから俺は大好きな梨沙のことを守りたい！[p]
+
+ずっと一緒にいて守ってあげたい！[p]
+
+#梨沙
+守るって、いったい何から？[p]
+
+#{f.clanName}
+そ、それは・・・[p]
+
+#梨沙
+それと、恥ずかしことを大声で叫ばないでもらえるかしら？[p]
+
+[chara_mod name="risa" storage="majime_tere_c"]
+でも、気持ちはうれしかったわ[p]
+
+#
+告白にはまだ早かったようだ[p]
+
+[endif]
+
+@jump target=*a_common
+
+*a_common 
+
+[stopbgm]
+
+[Export]
+
+[scene file={f.sceneName}]

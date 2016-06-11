@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.SceneManagement;
 using System.Collections;
 using System.Collections.Generic;
 using ExpressionParser;
@@ -465,16 +466,11 @@ namespace Novel{
 			StatusManager.nextFileName = scenario_file;
 			StatusManager.nextTargetName = target_name;
 			StatusManager.currentScenario = "";
-			//jumpから来たことを通知するためのパラメータが必要
-			Application.LoadLevel("Player");
+            //jumpから来たことを通知するためのパラメータが必要
+            SceneManager.LoadScene("Player", LoadSceneMode.Single);
+			//Application.LoadLevel("Player");
 
 		
 		}
-
-
 	}
-
-
-
-
 }

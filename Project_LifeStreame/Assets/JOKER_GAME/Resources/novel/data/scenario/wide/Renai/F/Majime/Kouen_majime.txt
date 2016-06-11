@@ -1,0 +1,152 @@
+﻿;メッセージ表示
+[showmessage time=0]
+
+;共通ライブラリ
+;セーブ・ロードバックログなど基本的な機能を取り込む 
+;[call file=wide/system target="*system_setting_buttons"]
+
+;ゲーム作成で便利なマクロ集
+[call file=wide/libs/utils]
+[text_new name=_sp_chara_name layer=ui x="-168" y=-108.5 val="" color="DDFF00" fontsize=16 anchor="MiddleLeft"]
+[text_show name="_sp_chara_name" time=0]
+
+[bg_new name="kouen" storage="kouen"]
+;背景宣言
+
+[chara_new name=risa storage=majime_tere_c y=-1 ]
+;キャラクター宣言
+
+[wait time=0]
+
+[bg_show name="kouen" time=0.5]
+;背景表示
+
+[show name=risa]
+;キャラクター表示
+
+[playbgm wait=false time=1 storage="kouen"]
+
+#{f.clanName}
+たまにはこういう落ち着いたところもいいね[p]
+
+#梨沙
+そうね[p]
+
+いつもはバタバタしていてゆっくりすることも少ないから[p]
+
+#{f.clanName}
+何か買ってくるよ[p]
+
+#梨沙
+わかったわ[p]
+
+[chara_hide name=risa time=1 wait=false]
+
+[bg_mod name=kouen storage="black"]
+
+[wait time=1]
+
+[bg_mod name=kouen storage="kouen"]
+
+#{f.clanName}
+なにを買おうか[p]
+
+[select_new text="ソフトクリーム" target=*select_a1 ]
+[select_new text="焼き鳥" target=*select_a2 ]
+[select_new text="クレープ" target=*select_a3 ]
+
+[select_show sound=click ]
+
+[s]
+
+*select_a1
+
+[chara_show name=risa]
+
+#{f.clanName}
+はい、ソフトクリーム[p]
+
+#梨沙
+ありがとう[p]
+
+これおいしいわね[p]
+
+#{f.clanName}
+一回食べてみたかったんだよね[p]
+
+美味しいって聞いてたから[p]
+
+#梨沙
+そうだったの[p]
+
+#
+佐倉　梨沙の好感度が上がった。[p]
+[calc exp="f.lp_maji={f.lp_maji}+5"]
+
+@jump target=*a_common
+
+*select_a2
+
+[chara_show name=risa]
+
+#{f.clanName}
+はい、焼き鳥[p]
+
+[chara_mod name="risa" storage="majime_odoroki_c"]
+
+#梨沙
+や、やきとり？[p]
+
+#{f.clanName}
+うん[p]
+
+お腹空いてると思って[p]
+
+[chara_mod name="risa" storage="majime_yakitori_c"]
+#梨沙
+雰囲気的にアウトよ[p]
+
+#{f.clanName}
+そ、そう？[p]
+
+#
+佐倉　梨沙の好感度が下がった。[p]
+[calc exp="f.lp_maji={f.lp_maji}-5"]
+
+@jump target=*a_common
+
+*select_a3
+
+[chara_show name=risa]
+
+#{f.clanName}
+はい、クレープ[p]
+
+#梨沙
+ありがとう[p]
+
+おいしいわこれ[p]
+
+#{f.clanName}
+これ美味しいって噂だったんだよ[p]
+
+一緒に食べれてよかったよ[p]
+
+#
+佐倉　梨沙の好感度が上がった。[p]
+[calc exp="f.lp_maji={f.lp_maji}+5"]
+
+@jump target=*a_common
+
+*a_common 
+
+
+
+経済力が下がった。[p]
+[calc exp="f.ec={f.ec}-20"]
+
+[stopbgm]
+
+[Export]
+
+[scene file={f.sceneName}]

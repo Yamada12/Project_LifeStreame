@@ -3,7 +3,7 @@
 
 ;共通ライブラリ
 ;セーブ・ロードバックログなど基本的な機能を取り込む 
-[call file=wide/system target="*system_setting_buttons"]
+;[call file=wide/system target="*system_setting_buttons"]
 
 ;ゲーム作成で便利なマクロ集
 [call file=wide/libs/utils]
@@ -11,9 +11,20 @@
 [text_show name="_sp_chara_name"]
 
 
-[wait time=2]
+[wait time=1]
 
-～高校入学式～[p]
+;[calc exp="f.clanName=福島"]
 
-#コンヌ
-ヒャッハー[l]俺も高校デビューだぜ[p]
+
+～大学入学式～[p]
+
+{f.clanName}は入学式会場にいた[p]
+
+#{f.clanName}
+大学ではどんなことをしようかな[p]
+
+自分の好きなことを突き詰めていこう[p]
+
+[Export]
+
+[scene file="Main_University"]

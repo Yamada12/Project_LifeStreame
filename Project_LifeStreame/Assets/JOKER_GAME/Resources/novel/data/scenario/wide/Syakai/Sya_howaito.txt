@@ -1,26 +1,86 @@
 ﻿;メッセージ表示
-[showmessage]
+[showmessage time=0]
 
 ;共通ライブラリ
 ;セーブ・ロードバックログなど基本的な機能を取り込む 
-[call file=wide/system target="*system_setting_buttons"]
+;[call file=wide/system target="*system_setting_buttons"]
 
 ;ゲーム作成で便利なマクロ集
 [call file=wide/libs/utils]
 [text_new name=_sp_chara_name layer=ui x="-168" y=-108.5 val="" color="DDFF00" fontsize=16 anchor="MiddleLeft"]
-[text_show name="_sp_chara_name"]
+[text_show name="_sp_chara_name" time=0]
 
 
-[wait time=2]
+[wait time=0]
 
-～社会人編～[p]
+[bg_new name="sakura" storage="sakura"]
+[bg_show name="sakura" time=0.5]
 
-#コンヌ
-コミュ力が少し上がった[p]
+[playbgm wait=false time=1 storage="barehowa"]
 
-人間力が少し上がった[p]
+～ホワイトデー～[p]
 
-運が結構上がった[p]
+#
+ホワイトデーの朝[p]
 
-時間を少し失った[p]
+[if exp="{f.mf}==0"]
 
+#{f.clanName}
+おはようございまーす。[p]
+
+これ、日頃お世話になっているお礼です。[p]
+
+#社員A
+意外と律儀なんですね。[p]
+
+#{f.clanName}
+意外は余計ですよ。[p]
+
+コミュ力と人間力が少し上がった。[p]
+[calc exp="f.co={f.co}+10"]
+[calc exp="f.hu={f.hu}+10"]
+
+[random var="f.rand" num=25]
+[if exp="{f.rand}==1"]
+
+#
+なんと！[p]
+
+お返しに大量の飴をもらった。[p]
+[calc exp="f.lu={f.lu}+10"]
+
+[endif]
+
+[else]
+
+#{f.clanName}
+おはようございまーす。[p]
+
+#社員A
+これ、今日ホワイトデーだから君にもあげるよ。[p]
+
+#{f.clanName}
+あ、ありがとうございます。[p]
+
+コミュ力と人間力が少し上がった。[p]
+[calc exp="f.co={f.co}+10"]
+[calc exp="f.hu={f.hu}+10"]
+
+[random var="f.rand" num=25]
+[if exp="{f.rand}==1"]
+
+#
+なんと！[p]
+
+明らかに他の人と包みが違かった。[p]
+[calc exp="f.lu={f.lu}+10"]
+
+[endif]
+
+[endif]
+
+[stopbgm]
+
+[Export]
+
+[scene file={f.sceneName}]

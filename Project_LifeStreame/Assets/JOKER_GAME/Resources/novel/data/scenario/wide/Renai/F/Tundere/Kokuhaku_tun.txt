@@ -1,0 +1,286 @@
+﻿;メッセージ表示
+[showmessage time=0]
+
+;共通ライブラリ
+;セーブ・ロードバックログなど基本的な機能を取り込む 
+;[call file=wide/system target="*system_setting_buttons"]
+
+;ゲーム作成で便利なマクロ集
+[call file=wide/libs/utils]
+[text_new name=_sp_chara_name layer=ui x="-168" y=-108.5 val="" color="DDFF00" fontsize=16 anchor="MiddleLeft"]
+[text_show name="_sp_chara_name" time=0]
+
+[bg_new name="kouen" storage="kouen"]
+;背景宣言
+
+[chara_new name=toka storage=tundere_default_c y=-1 ]
+;キャラクター宣言
+
+[wait time=0]
+
+[bg_show name="kouen" time=0.5]
+;背景表示
+
+[show name=toka]
+;キャラクター表示
+
+[playbgm wait=false time=1 storage="kokuhaku"]
+
+#橙花
+突然なによ[p]
+
+こんなところに呼び出して[p]
+
+#{f.clanName}
+ちょっとね[p]
+
+橙花に伝えることがあって[p]
+
+#橙花
+なによ[p]
+
+さっさと言いなさいよ[p]
+
+[select_new text="ストレートに" target=*select_a1 ]
+[select_new text="気付いたかのように" target=*select_a2 ]
+[select_new text="情熱的に" target=*select_a3 ]
+
+[select_show sound=click ]
+
+[s]
+
+*select_a1
+
+[calc exp="f.lp_tun={f.lp_tun}+10"]
+
+#{f.clanName}
+俺は橙花のことが好きだ[p]
+
+[if exp="{f.lp_tun}>50"]
+
+[chara_mod name="toka" storage="tundere_tere_c"]
+
+#橙花
+な！？[p]
+
+#{f.clanName}
+俺はお前が好きなんだ[p]
+
+#橙花
+ちょ、ちょっと待って[p]
+
+ちょっと今整理するから！[p]
+
+#{f.clanName}
+・・・・・[p]
+
+#橙花
+・・・・・[p]
+
+私も・・・[p]
+
+好き・・・[p]
+
+#{f.clanName}
+え？[p]
+
+#橙花
+だから！私もあんたのことが好きだって言ってるでしょ！[p]
+
+#{f.clanName}
+・・・・・[p]
+
+これからもよろしくな、橙花[p]
+
+#
+姫百合　橙花と恋人関係になりました。[p]
+
+[else]
+
+#{f.clanName}
+俺は橙花のことが好きだ[p]
+
+[chara_mod name="toka" storage="tundere_kanasi_c"]
+
+#橙花
+それはどういう意味での好き？[p]
+
+恋愛としての好きなら[p]
+
+もう少しだけまって[p]
+
+私の心の整理がついてないから[p]
+
+別に、あんたが嫌ってわけじゃないの[p]
+
+ただ、もう少しで整理がつきそうなの[p]
+
+#{f.clanName}
+わかった[p]
+
+#
+告白にはまだ早かったようだ[p]
+
+[endif]
+
+@jump target=*a_common
+
+*select_a2
+
+[if exp="{f.lp_tun}>50"]
+
+#{f.clanName}
+お前とはずいぶん長い付き合いだよな[p]
+
+#橙花
+な、なによ突然[p]
+
+#{f.clanName}
+小さいころから今までお前がそばにいて[p]
+
+当然のように助けてもらったり[p]
+
+それで気づいたんだ[p]
+
+俺はお前が好きなんだって[p]
+
+#橙花
+そうね[p]
+
+・・・・・[p]
+
+[chara_mod name="toka" storage="tundere_tere_c"]
+い、いまなんていったの？[p]
+
+#{f.clanName}
+俺はお前のことが好き[p]
+
+#橙花
+なななな[p]
+
+そういうことはもっと分かりやすく言いなさいよ！[p]
+
+#{f.clanName}
+で、お前は俺のことどう思ってる？[p]
+
+#橙花
+・・・・[p]
+
+大好きに決まってるでしょ！[p]
+
+#{f.clanName}
+これからもよろしくな、橙花[p]
+
+#
+姫百合　橙花と恋人関係になりました。[p]
+
+[else]
+
+#{f.clanName}
+お前とはずいぶん長い付き合いだよな[p]
+
+#橙花
+な、なによ突然[p]
+
+#{f.clanName}
+小さいころから今までお前がそばにいて[p]
+
+当然のように助けてもらったり[p]
+
+それで気づいたんだ[p]
+
+俺はお前が好きなんだって[p]
+
+#橙花
+そうね[p]
+
+・・・・[p]
+
+でも、ごめん[p]
+
+私はあなたのこと恋愛の対象として見れてないの[p]
+
+嫌いというわけではないの[p]
+
+今の関係のままでいましょ[p]
+
+#
+告白にはまだ早かったようだ[p]
+
+[endif]
+
+@jump target=*a_common
+
+*select_a3
+
+[if exp="{f.lp_tun}>50"]
+
+#{f.clanName}
+俺は、橙花のことがこの世界で一番好きだ！[p]
+
+橙花がいないと俺は生きていけない！[p]
+
+俺と付き合ってくれないか！[p]
+
+[chara_mod name="toka" storage="tundere_tere_c"]
+#橙花
+ななななななななななな[p]
+
+何よ大声でそんな恥ずかしいこと[p]
+
+#{f.clanName}
+橙花はどうなんだ[p]
+
+俺のことどう思ってるんだ？[p]
+
+#橙花
+わ、わたしは・・・[p]
+
+好きに決まってるでしょ！？[p]
+
+バカ！！！[p]
+
+#
+姫百合　橙花と恋人関係になりました。[p]
+
+[else]
+
+#{f.clanName}
+俺は、橙花のことがこの世界で一番好きだ！[p]
+
+橙花がいないと俺は生きていけない！[p]
+
+俺と付き合ってくれないか！[p]
+
+[chara_mod name="toka" storage="tundere_tere_c"]
+#橙花
+ななななななななななな[p]
+
+何よ大声でそんな恥ずかしいこと[p]
+
+#{f.clanName}
+橙花はどうなんだ[p]
+
+俺のことどう思ってるんだ？[p]
+
+#橙花
+わ、わたしは・・・[p]
+
+分からないの・・・[p]
+
+考えられないの・・・[p]
+
+#
+告白にはまだ早かったようだ[p]
+
+[endif]
+
+@jump target=*a_common
+
+*a_common 
+
+[stopbgm]
+
+[Export]
+
+[scene file={f.sceneName}]

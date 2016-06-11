@@ -1,0 +1,77 @@
+﻿;メッセージ表示
+[showmessage time=0]
+
+;共通ライブラリ
+;セーブ・ロードバックログなど基本的な機能を取り込む 
+;[call file=wide/system target="*system_setting_buttons"]
+
+;ゲーム作成で便利なマクロ集
+[call file=wide/libs/utils]
+[text_new name=_sp_chara_name layer=ui x="-168" y=-108.5 val="" color="DDFF00" fontsize=16 anchor="MiddleLeft"]
+[text_show name="_sp_chara_name" time=0]
+
+[bg_new name="tosyo" storage="tosyo"]
+;背景宣言
+
+[chara_new name=kojiro storage=kamase_default_s x=0 y=-1]
+;キャラクター宣言
+
+[wait time=0]
+
+[bg_show name="tosyo" time=0.5]
+;背景表示
+
+[playbgm wait=false time=1 storage="kamase"]
+
+#{f.clanName}
+うーん・・・[p]
+
+手が届かない・・・[p]
+
+台はどこに[p]
+
+[show name=kojiro]
+
+#虎次郎
+困っているようだね。[p]
+
+あの本を取りたいのかい？[p]
+
+#{f.clanName}
+あ、はい[p]
+
+#虎次郎
+よし[p]
+
+オレが取ってあげよう。[p]
+
+#{f.clanName}
+あ、いや・・・[p]
+
+大丈夫です・・・[p]
+
+#虎次郎
+遠慮しなくていい[p]
+
+よいしょ[p]
+
+#
+・・・・・[p]
+
+#虎次郎
+思ったより高いな・・・[p]
+
+#{f.clanName}
+台持ってきますね。[p]
+
+#
+鎌瀬　虎次郎をデートに誘えるようになりました。[p]
+
+人間力が少し上がった。[p]
+[calc exp="f.hu={f.hu}+10"]
+
+[stopbgm]
+
+[Export]
+
+[scene file="Main_HighSchool"]

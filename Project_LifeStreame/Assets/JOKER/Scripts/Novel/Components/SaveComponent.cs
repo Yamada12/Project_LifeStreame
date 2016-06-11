@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.SceneManagement;
 using System.Collections;
 using System.Collections.Generic;
 using ExpressionParser;
@@ -105,7 +106,8 @@ name=ロードするセーブファイル名を指定します
 			string name = this.param ["name"];
 
 			StatusManager.nextLoad =name;
-			Application.LoadLevel("Player");
+            SceneManager.LoadScene("Player", LoadSceneMode.Single);
+			//Application.LoadLevel("Player");
 
 			//this.gameManager.nextOrder ();
 

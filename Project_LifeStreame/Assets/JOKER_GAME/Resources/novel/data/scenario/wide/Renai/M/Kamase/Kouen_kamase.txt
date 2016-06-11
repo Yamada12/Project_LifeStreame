@@ -1,0 +1,165 @@
+﻿;メッセージ表示
+[showmessage time=0]
+
+;共通ライブラリ
+;セーブ・ロードバックログなど基本的な機能を取り込む 
+;[call file=wide/system target="*system_setting_buttons"]
+
+;ゲーム作成で便利なマクロ集
+[call file=wide/libs/utils]
+[text_new name=_sp_chara_name layer=ui x="-168" y=-108.5 val="" color="DDFF00" fontsize=16 anchor="MiddleLeft"]
+[text_show name="_sp_chara_name" time=0]
+
+[bg_new name="kouen" storage="kouen"]
+;背景宣言
+
+[chara_new name=kojiro storage=kamase_default_c y=-1 ]
+;キャラクター宣言
+
+[wait time=0]
+
+[bg_show name="kouen" time=0.5]
+;背景表示
+
+[show name=kojiro]
+;キャラクター表示
+
+[playbgm wait=false time=1 storage="kouen"]
+
+#{f.clanName}
+あ！鉄棒だ！[p]
+
+久しぶりだなぁ[p]
+
+よいしょっと[p]
+
+#虎次郎
+へぇ[p]
+
+鉄棒出来るんだ[p]
+
+#{f.clanName}
+小学生の頃好きで毎日ぐるぐるしてたよ[p]
+
+鎌瀬君はできる？[p]
+
+[chara_mod name="kojiro" storage="kamase_odoroki_c"]
+
+#虎次郎
+え！？[p]
+
+で、できるよ[p]
+
+[select_new text="前回りしてみて" target=*select_a1 ]
+[select_new text="逆上がりしてみて" target=*select_a2 ]
+[select_new text="もしかしてできない？" target=*select_a3 ]
+
+[select_show sound=click ]
+
+[s]
+
+*select_a1
+
+#{f.clanName}
+前回りしてみて[p]
+
+[chara_mod name="kojiro" storage="kamase_default_c"]
+
+#虎次郎
+い、いいだろう[p]
+
+・・・・[p]
+
+ふッ！[p]
+
+ズガン！[p]
+
+#{f.clanName}
+だ、大丈夫鎌瀬君！[p]
+
+#虎次郎
+いてて[p]
+
+#{f.clanName}
+久しぶりにやったらそりゃこうなるよね[p]
+
+#虎次郎
+あ、う、うん[p]
+
+そうだな[p]
+
+#
+鎌瀬　虎次郎の好感度が上がった。[p]
+[calc exp="f.lp_kama={f.lp_kama}+5"]
+
+@jump target=*a_common
+
+*select_a2
+
+#{f.clanName}
+逆上がりしてみて[p]
+
+[chara_mod name="kojiro" storage="kamase_default_c"]
+
+#虎次郎
+い、いいだろう[p]
+
+・・・・[p]
+
+とう！[p]
+
+#虎次郎
+あ、できた[p]
+
+#{f.clanName}
+凄いね鎌瀬君！[p]
+
+凄い綺麗だったよ！[p]
+
+#虎次郎
+あ、あ、うん[p]
+
+だ、だろ！[p]
+
+#
+鎌瀬　虎次郎の好感度が上がった。[p]
+[calc exp="f.lp_nkama={f.lp_kama}+5"]
+
+@jump target=*a_common
+
+*select_a3
+
+#{f.clanName}
+もしかしてできない？[p]
+
+[chara_mod name="kojiro" storage="kamase_kanasi_c"]
+
+#虎次郎
+すいません！[p]
+
+出来ません！[p]
+
+#{f.clanName}
+よし！特訓しよ！[p]
+
+#虎次郎
+ひぃぃぃぃぃ！[p]
+
+#
+鎌瀬　虎次郎の好感度が下がった。[p]
+[calc exp="f.lp_kama={f.lp_kama}-5"]
+
+@jump target=*a_common
+
+*a_common 
+
+
+
+経済力が下がった。[p]
+[calc exp="f.ec={f.ec}-20"]
+
+[stopbgm]
+
+[Export]
+
+[scene file={f.sceneName}]

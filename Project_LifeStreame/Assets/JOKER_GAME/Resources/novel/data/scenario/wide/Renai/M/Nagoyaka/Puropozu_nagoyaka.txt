@@ -1,0 +1,81 @@
+﻿;メッセージ表示
+[showmessage time=0]
+
+;共通ライブラリ
+;セーブ・ロードバックログなど基本的な機能を取り込む 
+;[call file=wide/system target="*system_setting_buttons"]
+
+;ゲーム作成で便利なマクロ集
+[call file=wide/libs/utils]
+[text_new name=_sp_chara_name layer=ui x="-168" y=-108.5 val="" color="DDFF00" fontsize=16 anchor="MiddleLeft"]
+[text_show name="_sp_chara_name" time=0]
+
+[bg_new name="ike" storage="ike"]
+;背景宣言
+
+[chara_new name=yositaka storage=nagoyaka_default_c y=-1 ]
+;キャラクター宣言
+
+[wait time=0]
+
+[bg_show name="ike" time=0.5]
+;背景表示
+
+[show name=yositaka]
+;キャラクター表示
+
+[playbgm wait=false time=1 storage="puropozu"]
+
+#{f.clanName}
+綺麗な眺め[p]
+
+#善鷹
+そうだねぇ[p]
+
+風が心地いいよ[p]
+
+・・・・・・[p]
+
+#{f.clanName}
+・・・・・・[p]
+
+#善鷹
+少し真面目な話していいかな[p]
+
+#{f.clanName}
+なに？[p]
+
+#善鷹
+僕考えたんだ[p]
+
+これからどうしたいか[p]
+
+君とどうしたいかを[p]
+
+そしｔ、僕はこれから先君のために生きていきたいと思っている[p]
+
+だから、結婚してくれないか？[p]
+
+#{f.clanName}
+わ、わ、わ[p]
+
+私でいいの？[p]
+
+#善鷹
+君じゃなきゃダメだ[p]
+
+#{f.clanName}
+うれしいよ・・・[p]
+
+凄くうれしい・・・[p]
+
+こんな私でよろしければ[p]
+
+よろしくお願いします[p]
+
+#
+檜山　善鷹と結婚することが出来ました。[p]
+
+[Export]
+
+[scene file={f.sceneName}]

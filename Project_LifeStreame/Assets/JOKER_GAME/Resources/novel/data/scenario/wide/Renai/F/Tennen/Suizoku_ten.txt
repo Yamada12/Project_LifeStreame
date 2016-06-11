@@ -1,0 +1,122 @@
+﻿;メッセージ表示
+[showmessage time=0]
+
+;共通ライブラリ
+;セーブ・ロードバックログなど基本的な機能を取り込む 
+[call file=wide/system target="*system_setting_buttons"]
+
+;ゲーム作成で便利なマクロ集
+[call file=wide/libs/utils]
+[text_new name=_sp_chara_name layer=ui x="-168" y=-108.5 val="" color="DDFF00" fontsize=16 anchor="MiddleLeft"]
+[text_show name="_sp_chara_name" time=0]
+
+[bg_new name="suizoku" storage="suizoku"]
+;背景宣言
+
+[chara_new name=kokomi storage=tennen_default_c y=-1 ]
+;キャラクター宣言
+
+[wait time=0]
+
+[bg_show name="suizoku" time=0.5]
+;背景表示
+
+[show name=kokomi]
+;キャラクター表示
+
+#{f.clanName}
+こういう所好きだろ？[p]
+
+#心美
+うん[p]
+
+あ[p]
+
+#心美
+お魚がいっぱい[p]
+
+あ、チンアナゴだ[p]
+
+#{f.clanName}
+チンアナゴ？[p]
+
+何だそれは[p]
+
+#心美
+これ[p]
+
+地面から出てるやつ[p]
+
+#心美
+かわいい[p]
+
+[select_new text="美味しいのか？" target=*select_a1 ]
+[select_new text="可愛いね" target=*select_a2 ]
+[select_new text="きもちわる！" target=*select_a3 ]
+
+[select_show sound=click ]
+
+[s]
+
+*select_a1
+
+#心美
+面白いことを聞くのね[p]
+
+実際どうなのかな[p]
+
+食べるところは少ない[p]
+
+うーん[p]
+
+#{f.clanName}
+考え始めてしまった・・・[p]
+
+#
+柿瀬　心美の好感度が上がった。[p]
+[calc exp="f.lp_ten={f.lp_ten}+5"]
+
+@jump target=*a_common
+
+*select_a2
+
+だよね～[p]
+
+私もこういう風にユラユラしていたい[p]
+
+#{f.clanName}
+俺は人間のままがいいな[p]
+
+#
+柿瀬　心美の好感度が上がった。[p]
+[calc exp="f.lp_ten={f.lp_ten}+5"]
+
+@jump target=*a_common
+
+*select_a3
+
+え～[p]
+
+可愛いじゃん[p]
+
+チンアナゴ可愛いじゃん[p]
+
+#{f.clanName}
+俺にはわからないな・・・[p]
+
+#
+柿瀬　心美の好感度が下がった。[p]
+[calc exp="f.lp_ten={f.lp_ten}-5"]
+
+@jump target=*a_common
+
+*a_common 
+
+
+
+経済力が下がった。[p]
+[calc exp="f.ec={f.ec}-20"]
+
+[Export]
+
+[scene file={f.sceneName}]

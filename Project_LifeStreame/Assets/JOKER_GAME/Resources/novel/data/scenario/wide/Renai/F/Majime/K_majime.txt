@@ -1,0 +1,63 @@
+﻿;メッセージ表示
+[showmessage time=0]
+
+;共通ライブラリ
+;セーブ・ロードバックログなど基本的な機能を取り込む 
+;[call file=wide/system target="*system_setting_buttons"]
+
+;ゲーム作成で便利なマクロ集
+[call file=wide/libs/utils]
+[text_new name=_sp_chara_name layer=ui x="-168" y=-108.5 val="" color="DDFF00" fontsize=16 anchor="MiddleLeft"]
+[text_show name="_sp_chara_name" time=0]
+
+[bg_new name="c_room" storage="c_room"]
+;背景宣言
+
+[chara_new name=risa storage=majime_default_s x=0 y=-0.5 scale=0.9]
+;キャラクター宣言
+
+[wait time=0]
+
+[bg_show name="c_room" time=0.5]
+;背景表示
+
+[show name=risa]
+;キャラクター表示
+
+[playbgm wait=false time=1 storage="majime"]
+
+#梨沙
+すいません{f.clanName}さん[p]
+
+#{f.clanName}
+ん？[p]
+
+#梨沙
+このプリントの印刷と整理を手伝ってもらいたいんだけど。[p]
+
+#{f.clanName}
+え、なんで俺？[p]
+
+#梨沙
+今この教室にいる人で考えて[p]
+
+真面目にやってくれそうな人が{f.clanName}さんだったからよ。[p]
+
+消去法で[p]
+
+#{f.clanName}
+最後の一言がなかったらうれしかったよ。[p]
+
+委員長・・・[p]
+
+#
+佐倉　梨沙をデートに誘えるようになりました。[p]
+
+人間力が少し上がった。[p]
+[calc exp="f.hu={f.hu}+10"]
+
+[stopbgm]
+
+[Export]
+
+[scene file="Main_HighSchool"]

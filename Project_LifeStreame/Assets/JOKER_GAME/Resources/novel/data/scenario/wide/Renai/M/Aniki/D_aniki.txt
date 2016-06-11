@@ -1,0 +1,79 @@
+﻿;メッセージ表示
+[showmessage time=0]
+
+;共通ライブラリ
+;セーブ・ロードバックログなど基本的な機能を取り込む 
+[call file=wide/system target="*system_setting_buttons"]
+
+;ゲーム作成で便利なマクロ集
+[call file=wide/libs/utils]
+[text_new name=_sp_chara_name layer=ui x="-168" y=-108.5 val="" color="DDFF00" fontsize=16 anchor="MiddleLeft"]
+[text_show name="_sp_chara_name" time=0]
+
+[bg_new name="ie" storage="ie"]
+;背景宣言
+
+[chara_new name=yukihito storage=aniki_default_c y=-1 ]
+;キャラクター宣言
+
+[wait time=0]
+
+[bg_show name="ie" time=0.5]
+;背景表示
+
+[show name=yukihito]
+;キャラクター表示
+
+#幸人
+おーい[p]
+
+大好きなお兄ちゃんが遊びに来てやったぞぉ[p]
+
+#{f.clanName}
+恥ずかしいからやめて！[p]
+
+#幸人
+誰が？[p]
+
+#{f.clanName}
+私に決まってるでしょ！[p]
+
+#幸人
+小さい頃はお兄ちゃんお兄ちゃんって言ってたのに？[p]
+
+#{f.clanName}
+それは昔の話でしょ！？[p]
+
+今は違うの！[p]
+
+[chara_mod name="yukihito" storage="aniki_odoroki_c"]
+
+#幸人
+俺のことが嫌いなのか！？[p]
+
+#{f.clanName}
+そ、そういうことじゃなくて・・・[p]
+
+[chara_mod name="yukihito" storage="aniki_niko_c"]
+
+#幸人
+なら、好きなのか？[p]
+
+#{f.clanName}
+そ、そういうわけでも・・・[p]
+
+#幸人
+好き？嫌いどっち？[p]
+
+#{f.clanName}
+もぉ！うるさい！！！[p]
+
+#
+相馬　幸人をデートに誘えるようになりました。[p]
+
+人間力が少し上がった。[p]
+[calc exp="f.hu={f.hu}+10"]
+
+[Export]
+
+[scene file={f.sceneName}]

@@ -1,0 +1,67 @@
+﻿;メッセージ表示
+[showmessage time=0]
+
+;共通ライブラリ
+;セーブ・ロードバックログなど基本的な機能を取り込む 
+[call file=wide/system target="*system_setting_buttons"]
+
+;ゲーム作成で便利なマクロ集
+[call file=wide/libs/utils]
+[text_new name=_sp_chara_name layer=ui x="-168" y=-108.5 val="" color="DDFF00" fontsize=16 anchor="MiddleLeft"]
+[text_show name="_sp_chara_name" time=0]
+
+[bg_new name="ie" storage="ie"]
+;背景宣言
+
+[chara_new name=yukihito storage=aniki_default_s x=0 y=-1]
+;キャラクター宣言
+
+[wait time=0]
+
+[bg_show name="ie" time=0.5]
+;背景表示
+
+[show name=yukihito]
+;キャラクター表示
+
+#幸人
+おはよう！[p]
+
+#{f.clanName}
+おはよう幸人[p]
+
+#幸人
+ほら寝癖ついてるぞ[p]
+
+#{f.clanName}
+ちょっと、外ではやめてって言ってるでしょ[p]
+
+#幸人
+いいじゃないか、別に[p]
+
+#{f.clanName}
+幸人は良くても私は恥ずかしいの！[p]
+
+#幸人
+小さい頃は一緒にお風呂に入ってたのに[p]
+
+#{f.clanName}
+その話は今関係ないでしょ！？[p]
+
+#幸人
+はははッ[p]
+
+ほら、早く学校いくぞ[p]
+
+#{f.clanName}
+あ、ちょっと待ってよ！[p]
+
+#
+相馬　幸人をデートに誘えるようになりました。[p]
+
+人間力が少し上がった。[p]
+[calc exp="f.hu={f.hu}+10"]
+
+[Export]
+
+[scene file="Main_HighSchool"]

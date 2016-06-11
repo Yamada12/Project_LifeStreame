@@ -1,0 +1,67 @@
+﻿;メッセージ表示
+[showmessage time=0]
+
+;共通ライブラリ
+;セーブ・ロードバックログなど基本的な機能を取り込む 
+;[call file=wide/system target="*system_setting_buttons"]
+
+;ゲーム作成で便利なマクロ集
+[call file=wide/libs/utils]
+[text_new name=_sp_chara_name layer=ui x="-168" y=-108.5 val="" color="DDFF00" fontsize=16 anchor="MiddleLeft"]
+[text_show name="_sp_chara_name" time=0]
+
+[bg_new name="mati" storage="mati"]
+;背景宣言
+
+[chara_new name=mio storage=hikaeme_default_c y=-1 ]
+;キャラクター宣言
+
+[wait time=0]
+
+[bg_show name="mati" time=0.5]
+;背景表示
+
+[show name=mio]
+;キャラクター表示
+
+#{f.clanName}
+あ、筒路さんだ[p]
+
+#美音
+あら[p]
+
+どちらさまでしたっけ？[p]
+
+#{f.clanName}
+わざとだろッ！？[p]
+
+#美音
+勿論[p]
+
+覚えていますよ[p]
+
+[chara_mod name="mio" storage="hikaeme_kanasi_c"]
+あんなことをされたら・・・[p]
+
+#{f.clanName}
+誤解を招くような言い方はやめろ！[p]
+
+[chara_mod name="mio" storage="hikaeme_niko_c"]
+#美音
+嫌です[p]
+
+#{f.clanName}
+高校の頃から変わらないんだな・・・[p]
+
+#美音
+{f.clanName}君も変わらず、いじり甲斐がありますね[p]
+
+#
+筒路　美音をデートに誘えるようになりました。[p]
+
+人間力が少し上がった。[p]
+[calc exp="f.hu={f.hu}+10"]
+
+[Export]
+
+[scene file={f.sceneName}]

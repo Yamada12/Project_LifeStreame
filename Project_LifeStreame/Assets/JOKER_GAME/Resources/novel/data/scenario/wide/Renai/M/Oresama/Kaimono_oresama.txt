@@ -1,0 +1,145 @@
+﻿;メッセージ表示
+[showmessage time=0]
+
+;共通ライブラリ
+;セーブ・ロードバックログなど基本的な機能を取り込む 
+[call file=wide/system target="*system_setting_buttons"]
+
+;ゲーム作成で便利なマクロ集
+[call file=wide/libs/utils]
+[text_new name=_sp_chara_name layer=ui x="-168" y=-108.5 val="" color="DDFF00" fontsize=16 anchor="MiddleLeft"]
+[text_show name="_sp_chara_name" time=0]
+
+[bg_new name="mati" storage="mati"]
+;背景宣言
+
+[chara_new name=koji storage=oresama_default_c y=-1 ]
+;キャラクター宣言
+
+[wait time=0]
+
+[bg_show name="kouen" time=0.5]
+;背景表示
+
+[show name=mati]
+;キャラクター表示
+
+#皇子
+何か欲しいものあるのか？[p]
+
+#{f.clanName}
+別にないけど[p]
+
+見て回るのも楽しいよ[p]
+
+#皇子
+そうか？[p]
+
+#{f.clanName}
+楽しいもん！[p]
+
+#皇子
+ま、いいか[p]
+
+[select_new text="これ皇子君に似合うんじゃない？" target=*select_a1 ]
+[select_new text="お揃いの何か買おう？" target=*select_a2 ]
+[select_new text="これどうかな？" target=*select_a3 ]
+
+[select_show sound=click ]
+
+[s]
+
+*select_a1
+
+#{f.clanName}
+これ皇子君に似合うんじゃない？[p]
+
+#皇子
+これか？[p]
+
+#{f.clanName}
+うん！[p]
+
+#皇子
+そうかな？[p]
+
+#{f.clanName}
+うん！うん！[p]
+
+似合う似合う！[p]
+
+[chara_mod name="koji" storage="oresama_niko_c"]
+
+#皇子
+なら試着してみるよ[p]
+
+#
+美里　皇子の好感度が上がった。[p]
+[calc exp="f.lp_ore={f.lp_ore}+5"]
+
+@jump target=*a_common
+
+*select_a2
+
+#{f.clanName}
+何かお揃いの買おう？[p]
+
+#皇子
+お揃い？[p]
+
+そうだなぁ[p]
+
+このストラップとかどうだ？[p]
+
+#{f.clanName}
+何それ！可愛い！[p]
+
+[chara_mod name="koji" storage="oresama_niko_c"]
+
+#皇子
+ならこれ買ってくるよ[p]
+
+#
+美里　皇子の好感度が上がった。[p]
+[calc exp="f.lp_ore={f.lp_ore}+5"]
+
+@jump target=*a_common
+
+*select_a3
+
+#{f.clanName}
+これ私に似合うと思う？[p]
+
+#皇子
+あー良いんじゃない？[p]
+
+#{f.clanName}
+これは？[p]
+
+#皇子
+それも可愛いよ[p]
+
+#{f.clanName}
+これはこれは？[p]
+
+#皇子
+うん、いいとおもう[p]
+
+(つ、疲れる・・・)[p]
+
+#
+美里　皇子の好感度が下がった。[p]
+[calc exp="f.lp_ore={f.lp_ore}-5"]
+
+@jump target=*a_common
+
+*a_common 
+
+
+
+経済力が下がった。[p]
+[calc exp="f.ec={f.ec}-20"]
+
+[Export]
+
+[scene file={f.sceneName}]

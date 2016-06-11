@@ -1,0 +1,77 @@
+﻿;メッセージ表示
+[showmessage time=0]
+
+;共通ライブラリ
+;セーブ・ロードバックログなど基本的な機能を取り込む 
+;[call file=wide/system target="*system_setting_buttons"]
+
+;ゲーム作成で便利なマクロ集
+[call file=wide/libs/utils]
+[text_new name=_sp_chara_name layer=ui x="-168" y=-108.5 val="" color="DDFF00" fontsize=16 anchor="MiddleLeft"]
+[text_show name="_sp_chara_name" time=0]
+
+[bg_new name="K_roka" storage="K_roka"]
+;背景宣言
+
+[chara_new name=sora storage=supokon_default_s x=15 y=-1 ]
+;キャラクター宣言
+
+[wait time=0]
+
+[bg_show name="K_roka" time=0.5]
+;背景表示
+
+[show name=sora]
+;キャラクター表示
+
+[playbgm wait=false time=1 storage="supokon"]
+
+#
+うおおおおおおおおい！[p]
+
+#{f.clanName}
+ん？[p]
+
+[anim name=sora time=1 x=0 y=-1]
+
+#蒼空
+おっとっと[p]
+
+何してるの？[p]
+
+#{f.clanName}
+危ないから廊下は走るな。[p]
+
+#蒼空
+ぶつかってないよ？[p]
+
+#{f.clanName}
+そういうことじゃない[p]
+
+#蒼空
+あ、早く行かないとお好み焼きパンなくなっちゃう！[p]
+
+それじゃね！[p]
+
+[anim name=sora time=1 x=-15 y=-1]
+
+#{f.clanName}
+だから危ないって[p]
+
+#蒼空
+うん！わかった！[p]
+
+#{f.clanName}
+いや、全然わかってない・・・[p]
+
+#
+花楓　蒼空をデートに誘えるようになりました。[p]
+
+人間力が少し上がった。[p]
+[calc exp="f.hu={f.hu}+10"]
+
+[stopbgm]
+
+[Export]
+
+[scene file="Main_HighSchool"]

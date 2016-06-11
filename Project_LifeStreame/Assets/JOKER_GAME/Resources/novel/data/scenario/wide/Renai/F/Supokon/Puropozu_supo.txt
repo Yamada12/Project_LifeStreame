@@ -1,0 +1,119 @@
+﻿;メッセージ表示
+[showmessage time=0]
+
+;共通ライブラリ
+;セーブ・ロードバックログなど基本的な機能を取り込む 
+;[call file=wide/system target="*system_setting_buttons"]
+
+;ゲーム作成で便利なマクロ集
+[call file=wide/libs/utils]
+[text_new name=_sp_chara_name layer=ui x="-168" y=-108.5 val="" color="DDFF00" fontsize=16 anchor="MiddleLeft"]
+[text_show name="_sp_chara_name" time=0]
+
+[bg_new name="kouen" storage="kouen"]
+;背景宣言
+
+[chara_new name=sora storage=supo_niko_c y=-1 ]
+;キャラクター宣言
+
+[wait time=0]
+
+[bg_show name="kouen" time=0.5]
+;背景表示
+
+[show name=sora]
+;キャラクター表示
+
+[playbgm wait=false time=1 storage="puropozu"]
+
+#蒼空
+あははは[p]
+
+はやく～[p]
+
+#{f.clanName}
+まって・・・ちょっとまって・・・[p]
+
+[chara_mod name=sora storage=supokon_default_c]
+
+#蒼空
+どうしてそんなに体力ないのぉ？[p]
+
+#{f.clanName}
+蒼空が化け物級にあるんだって・・・[p]
+
+#蒼空
+なら少し休憩ね[p]
+
+#{f.clanName}
+はぁ～疲れた[p]
+
+#蒼空
+はい、飲み物[p]
+
+#{f.clanName}
+お、サンキュ[p]
+
+ふぅ～[p]
+
+#蒼空
+なんかいいよね[p]
+
+こういうの[p]
+
+#{f.clanName}
+そうだな[p]
+
+ゆっくり落ち着いて[p]
+
+#蒼空
+眠くなってきた・・・[p]
+
+#{f.clanName}
+寝るなよ？[p]
+
+#蒼空
+寝ないよ[p]
+
+まだ走るもん[p]
+
+#{f.clanName}
+まだ走るのか[p]
+
+#蒼空
+うん[p]
+
+#{f.clanName}
+ちょっといいかな[p]
+
+#蒼空
+何？[p]
+
+#{f.clanName}
+俺は世界中の誰よりもお前が好きだ[p]
+
+ずっと俺について来てほしい[p]
+
+結婚してください[p]
+
+#蒼空
+私、全力ダッシュだけどいい？[p]
+
+追い越しちゃうかもよ？[p]
+
+#{f.clanName}
+そうなっても全力で追いかける[p]
+
+[chara_mod name=sora storage=supokon_niko_c]
+
+#蒼空
+なら、結婚しよう！[p]
+
+#
+花楓　蒼空と結婚することが出来ました。[p]
+
+[stopbgm]
+
+[Export]
+
+[scene file={f.sceneName}]

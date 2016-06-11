@@ -3,7 +3,7 @@
 
 ;共通ライブラリ
 ;セーブ・ロードバックログなど基本的な機能を取り込む 
-[call file=wide/system target="*system_setting_buttons"]
+;[call file=wide/system target="*system_setting_buttons"]
 
 ;ゲーム作成で便利なマクロ集
 [call file=wide/libs/utils]
@@ -11,20 +11,68 @@
 [text_show name="_sp_chara_name"]
 
 
-[wait time=2]
+[wait time=1]
 
-～社会人編～夏祭り[p]
+[bg_new name="syakai02" storage="syakai02"]
+[bg_show name="syakai02" time=0.5]
 
-#コンヌ
-コミュが上がった[p]
+[playbgm wait=false time=1 storage="natumaturi"]
 
-経済力が少し下がった[p]
+～夏祭り～[p]
 
-人間力が上がった[p]
+#
+{f.clanName}は夏祭りの日も仕事だった。[p]
 
-体力が上がった[p]
+#{f.clanName}
+くぅ～[p]
 
-運が上がった[p]
+こんな時も仕事かぁ～[p]
 
-時間をめちゃくちゃ失った[p]
+#社員A
+ほら、{f.clanName}もこっち来て[p]
 
+#{f.clanName}
+え？[p]
+
+#
+ひゅ～・・・バン！[p]
+
+#{f.clanName}
+あ[p]
+
+#{f.clanName}
+ここのフロア花火を見るにはちょうどいいな[p]
+
+#社員A
+ここで見た方が花火は綺麗だよ。[p]
+
+#社員B
+よーし、このまま全員で祭りに行くぞぉ！[p]
+
+コミュ力と人間力と体力が上がった。[p]
+[calc exp="f.co={f.co}+20"]
+[calc exp="f.hu={f.hu}+20"]
+[calc exp="f.vi={f.vi}+20"]
+
+[random var="f.rand" num=25]
+
+経済力が少し下がった。[p]
+[calc exp="f.ec={f.ec}-10"]
+
+[random var="f.rand" num=25]
+[if exp="{f.rand}==1"]
+
+なんと！[p]
+
+祭りの終盤に行ったことで屋台の人が沢山おまけしてくれた！[p]
+
+運が上がった！[p]
+[calc exp="f.lu={f.lu}+20"]
+
+[endif]
+
+[stopbgm]
+
+[Export]
+
+[scene file={f.sceneName}]

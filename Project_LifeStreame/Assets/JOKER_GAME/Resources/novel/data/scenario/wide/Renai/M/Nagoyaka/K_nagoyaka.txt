@@ -1,0 +1,64 @@
+﻿;メッセージ表示
+[showmessage time=0]
+
+;共通ライブラリ
+;セーブ・ロードバックログなど基本的な機能を取り込む 
+;[call file=wide/system target="*system_setting_buttons"]
+
+;ゲーム作成で便利なマクロ集
+[call file=wide/libs/utils]
+[text_new name=_sp_chara_name layer=ui x="-168" y=-108.5 val="" color="DDFF00" fontsize=16 anchor="MiddleLeft"]
+[text_show name="_sp_chara_name" time=0]
+
+[bg_new name="c_room" storage="c_room"]
+;背景宣言
+
+[chara_new name=yositaka storage=nagoyaka_default_s x=0 y=-1]
+;キャラクター宣言
+
+[wait time=0]
+
+[bg_show name="c_room" time=0.5]
+;背景表示
+
+[show name=yositaka]
+;キャラクター表示
+
+[playbgm wait=false time=1 storage="nagoyaka"]
+
+#善鷹
+へぇ～[p]
+
+そうなんだ[p]
+
+意外な一面だね。[p]
+
+#{f.clanName}
+でしょでしょ[p]
+
+いつも教室で1人で勉強してるから[p]
+
+あんまり他人と関わらないのかと思ってたの[p]
+
+#善鷹
+人は見かけによらないんだね[p]
+
+#{f.clanName}
+檜山君は見かけどおりだけどね。[p]
+
+#善鷹
+はは[p]
+
+褒め言葉だと思っておくよ。[p]
+
+#
+檜山　善鷹をデートに誘えるようになりました。[p]
+
+人間力が少し上がった。[p]
+[calc exp="f.hu={f.hu}+10"]
+
+[stopbgm]
+
+[Export]
+
+[scene file="Main_HighSchool"]

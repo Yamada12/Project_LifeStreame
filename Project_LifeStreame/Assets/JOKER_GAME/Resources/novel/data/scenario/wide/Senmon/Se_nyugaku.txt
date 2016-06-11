@@ -1,19 +1,31 @@
 ﻿;メッセージ表示
-[showmessage]
+[showmessage time=0]
 
 ;共通ライブラリ
 ;セーブ・ロードバックログなど基本的な機能を取り込む 
-[call file=wide/system target="*system_setting_buttons"]
+;[call file=wide/system target="*system_setting_buttons"]
 
 ;ゲーム作成で便利なマクロ集
 [call file=wide/libs/utils]
 [text_new name=_sp_chara_name layer=ui x="-168" y=-108.5 val="" color="DDFF00" fontsize=16 anchor="MiddleLeft"]
-[text_show name="_sp_chara_name"]
+[text_show name="_sp_chara_name" time=0]
 
 
-[wait time=2]
+[wait time=0]
 
-～専門入学式～[p]
+[bg_new name="sky01" storage="sky01"]
+[bg_show name="sky01" time=0.5]
 
-#コンヌ
-ヒャッハー[l]俺も専門学生だぜ[p]
+
+～専門学校入学式入学式～[p]
+
+{f.clanName}は入学式会場にいた[p]
+
+#{f.clanName}
+沢山の知識を得て[p]
+
+理想を実現させよう。[p]
+
+[Export]
+
+[scene file="Main_ProfessionalSchool"]

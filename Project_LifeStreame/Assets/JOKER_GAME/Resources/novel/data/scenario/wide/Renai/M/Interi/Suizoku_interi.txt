@@ -1,0 +1,148 @@
+﻿;メッセージ表示
+[showmessage time=0]
+
+;共通ライブラリ
+;セーブ・ロードバックログなど基本的な機能を取り込む 
+;[call file=wide/system target="*system_setting_buttons"]
+
+;ゲーム作成で便利なマクロ集
+[call file=wide/libs/utils]
+[text_new name=_sp_chara_name layer=ui x="-168" y=-108.5 val="" color="DDFF00" fontsize=16 anchor="MiddleLeft"]
+[text_show name="_sp_chara_name" time=0]
+
+[bg_new name="suizoku" storage="suizoku"]
+;背景宣言
+
+[chara_new name=kazuma storage=interi_default_c y=-1 ]
+;キャラクター宣言
+
+[wait time=0]
+
+[bg_show name="suizoku" time=0.5]
+;背景表示
+
+[show name=kazuma]
+;キャラクター表示
+
+[playbgm wait=false time=1 storage="suizoku"]
+
+#{f.clanName}
+水族館だぁ[p]
+
+#和真
+そうですね[p]
+
+#{f.clanName}
+羽神君は好きな魚とかいるの？[p]
+
+#和真
+僕ですか？[p]
+
+そうですね[p]
+
+特に好きな魚はいませんが[p]
+
+アクアリウムなどは好きですね[p]
+
+#{f.clanName}
+あ～いいよねぇ[p]
+
+見てるといやされるよねぇ[p]
+
+#和真
+あなたは好きな魚とかいるんですか？[p]
+
+#{f.clanName}
+わたしかぁ[p]
+
+[select_new text="マグロかな美味しいよね" target=*select_a1 ]
+[select_new text="ペンギンさん" target=*select_a2 ]
+[select_new text="アシカ" target=*select_a3 ]
+
+[select_show sound=click ]
+
+[s]
+
+*select_a1
+
+#{f.clanName}
+マグロ！[p]
+
+おいしいもん！[p]
+
+#和真
+え？[p]
+
+食べる方ですか？[p]
+
+#{f.clanName}
+あ～お寿司食べたくなってきちゃった[p]
+
+#
+羽神　和真の好感度が下がった。[p]
+[calc exp="f.lp_mega={f.lp_mega}-5"]
+
+@jump target=*a_common
+
+*select_a2
+
+#{f.clanName}
+ペンギンさん[p]
+
+#和真
+ペンギンですか[p]
+
+確かに可愛いですよね[p]
+
+あの歩き方とか[p]
+
+#{f.clanName}
+そうそう！[p]
+
+すごくかわいいよね！[p]
+
+#
+羽神　和真の好感度が上がった。[p]
+[calc exp="f.lp_mega={f.lp_mega}+5"]
+
+@jump target=*a_common
+
+*select_a3
+
+#{f.clanName}
+アシカかな！[p]
+
+賢いし[p]
+
+#和真
+そうですよね[p]
+
+沢山の芸が出来て凄いですよね[p]
+
+#{f.clanName}
+すごいよね～[p]
+
+鼻先でボールをさぁ[p]
+
+#和真
+あとで、アシカのショーがあるので見に行きましょうか[p]
+
+#{f.clanName}
+うん！[p]
+
+#
+羽神　和真の好感度が上がった。[p]
+[calc exp="f.lp_mega={f.lp_mega}+5"]
+
+@jump target=*a_common
+
+*a_common 
+
+[stopbgm]
+
+経済力が下がった。[p]
+[calc exp="f.ec={f.ec}-20"]
+
+[Export]
+
+[scene file={f.sceneName}]

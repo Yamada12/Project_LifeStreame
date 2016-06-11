@@ -1,0 +1,157 @@
+﻿;メッセージ表示
+[showmessage time=0]
+
+;共通ライブラリ
+;セーブ・ロードバックログなど基本的な機能を取り込む 
+;[call file=wide/system target="*system_setting_buttons"]
+
+;ゲーム作成で便利なマクロ集
+[call file=wide/libs/utils]
+[text_new name=_sp_chara_name layer=ui x="-168" y=-108.5 val="" color="DDFF00" fontsize=16 anchor="MiddleLeft"]
+[text_show name="_sp_chara_name" time=0]
+
+[bg_new name="kouen" storage="kouen"]
+;背景宣言
+
+[chara_new name=toka storage=tundere_default_c y=-1 ]
+;キャラクター宣言
+
+[wait time=0]
+
+[bg_show name="kouen" time=0.5]
+;背景表示
+
+[show name=toka]
+;キャラクター表示
+
+[playbgm wait=false time=1 storage="kouen"]
+
+#{f.clanName}
+少し休憩しようか[p]
+
+#橙花
+そうね[p]
+
+#{f.clanName}
+何かジュース買ってくるよ[p]
+
+何がいい？[p]
+
+#橙花
+なんでもいいわ[p]
+
+適当に選んできて[p]
+
+#{f.clanName}
+分かった[p]
+
+[chara_hide name=toka time=1 wait=false]
+
+[bg_mod name=kouen storage="black"]
+
+[wait time=1]
+
+[bg_mod name=kouen storage="kouen"]
+
+[select_new text="オレンジジュース" target=*select_a1 ]
+[select_new text="紫蘇スパークリング" target=*select_a2 ]
+[select_new text="スポーツドリンク" target=*select_a3 ]
+
+[select_show sound=click ]
+
+[s]
+
+*select_a1
+
+[chara_show name=toka ]
+
+#{f.clanName}
+はい[p]
+
+オレンジジュース[p]
+
+#橙花
+ありがとう[p]
+
+丁度オレンジジュースが飲みたいと思ってたのよ[p]
+
+#{f.clanName}
+なら最初から言ってくれよ・・・[p]
+
+#
+姫百合　橙花の好感度が上がった。[p]
+[calc exp="f.lp_tun={f.lp_tun}+5"]
+
+@jump target=*a_common
+
+*select_a2
+
+[chara_show name=toka ]
+
+#{f.clanName}
+はい[p]
+
+紫蘇スパークリング[p]
+
+[chara_mod name=toka storage=tundere_default_c]
+
+#橙花
+な、なにそれ[p]
+
+#{f.clanName}
+え？おもしろそうだったから[p]
+
+#橙花
+普通の買ってきなさいよ[p]
+
+#{f.clanName}
+えー[p]
+
+面白いと思ったのにー[p]
+
+#
+姫百合　橙花の好感度が下がった。[p]
+[calc exp="f.lp_tun={f.lp_tun}-5"]
+
+@jump target=*a_common
+
+*select_a3
+
+[chara_show name=toka ]
+
+はい[p]
+
+スポーツドリンク[p]
+
+#橙花
+ありがと[p]
+
+疲れてたから丁度良いわ[p]
+
+#{f.clanName}
+最初から言ってくれればいいのに[p]
+
+#橙花
+あんたを試したのよ[p]
+
+#{f.clanName}
+まじかよ[p]
+
+#
+姫百合　橙花の好感度が上がった。[p]
+[calc exp="f.lp_tun={f.lp_tun}+5"]
+
+@jump target=*a_common
+
+*a_common 
+
+
+
+経済力が下がった。[p]
+[calc exp="f.ec={f.ec}-20"]
+
+[stopbgm]
+
+[Export]
+
+[scene file={f.sceneName}]

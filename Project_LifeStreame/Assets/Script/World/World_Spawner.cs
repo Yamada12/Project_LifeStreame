@@ -10,15 +10,18 @@ using UnityEngine.UI;
 
 public class World_Spawner : MonoBehaviour {
 
-    public GameObject Player;
-    public int progress;//デバック用の変数
-    static public int examination;
+    public GameObject Play;
+    static public GameObject Player;
+    //static public int progress = 4;//デバック用の変数
+
 
     public Transform spawner_ElementarySchool;//小学校
 
     public Transform spawner_JuniorHighSchool;//中学校
 
     public Transform spawner_HighSchool;//高校
+
+    public Transform spawner_Select;//人生の選択　専門or大学or就職
 
     public Transform spawner_ProfessionalSchool;//専門学校
 
@@ -47,114 +50,97 @@ public class World_Spawner : MonoBehaviour {
     // Use this for initialization
     void Start()//進行度によってスタート位置を判定する
     {
-        //PlayerStatus.initStatus(); //はじめから開始時にすべての変数をリセットするメソッド
-        //PlayerStatus.GetConverter();//Jokerから変数を受け取る
-        //PlayerStatus.InitConverter();//Jokerに変数を受け渡す
+        Player = Play;
 
-        if (StatusManager.variable.get("f.test") == "null")//シーン開始時、nullのため
+        if (World_Player.result == 0)//試験前
         {
-            examination = 0;
-            StatusManager.variable.set("f.test", ((int)examination).ToString());
-        }
-        if (StatusManager.variable.get("f.test") != "null")//試験後、値代入
-        {
-            examination = int.Parse(StatusManager.variable.get("f.test"));
-        }
-
-
-        //
-        if (/*PlayerStatus.*/progress == 1)//小学校
-        {
-            if (examination >= 1)//試験後か判断　1以上で試験後
-            {
-                Player.transform.position = (spawner_ES.position);//試験後、小学校にスポーン
-            }
-        }
-        if (/*PlayerStatus.*/progress == 2)//中学校
-        {
-            if (examination >= 1)//試験後か判断　1以上で試験後
-            {
-                Player.transform.position = (spawner_JHS.position);//試験後、小学校にスポーン
-            }
-        }
-
-        if (/*PlayerStatus.*/progress == 3)//高校
-        {
-            if (examination >= 1)//試験後か判断　1以上で試験後
-            {
-                Player.transform.position = (spawner_HS.position);//試験後、小学校にスポーン
-            }
-        }
-
-        if (/*PlayerStatus.*/progress == 4)//専門学校
-        {
-            if (examination >= 1)//試験後か判断　1以上で試験後
-            {
-                Player.transform.position = (spawner_PS.position);//試験後、小学校にスポーン
-            }
-        }
-
-        if (/*PlayerStatus.*/progress == 5)//大学
-        {
-            if (examination >= 1)//試験後か判断　1以上で試験後
-            {
-                Player.transform.position = (spawner_U.position);//試験後、小学校にスポーン
-            }
-        }
-
-        if (/*PlayerStatus.*/progress == 6)//専門学校
-        {
-            if (examination >= 1)//試験後か判断　1以上で試験後
-            {
-                Player.transform.position = (spawner_MOS.position);//試験後、小学校にスポーン
-            }
-        }
-
-        if (/*PlayerStatus.*/progress == 7)//大学
-        {
-            if (examination >= 1)//試験後か判断　1以上で試験後
-            {
-                Player.transform.position = (spawner_GA.position);//試験後、小学校にスポーン
-            }
-        }
-
-
-        //
-        if (examination == 0)//試験前
-        {
-            if (/*PlayerStatus.*/progress == 1)
+            if (PlayerStatus.progress == 1)
             {
                 Player.transform.position = (spawner_ElementarySchool.position);//小学校前にスポーン
             }
 
-            if (/*PlayerStatus.*/progress == 2)
+            if (PlayerStatus.progress == 2)
             {
                 Player.transform.position = (spawner_JuniorHighSchool.position);//中学校前にスポーン
             }
 
-            if (/*PlayerStatus.*/progress == 3)
+            if (PlayerStatus.progress == 3)
             {
                 Player.transform.position = (spawner_HighSchool.position);//高校前にスポーン
             }
 
-            if (/*PlayerStatus.*/progress == 4)
+            if (PlayerStatus.progress == 4)
+            {
+                Player.transform.position = (spawner_Select.position);//人生の選択にスポーン
+            }
+
+            if (PlayerStatus.progress == 5)
             {
                 Player.transform.position = (spawner_ProfessionalSchool.position);//専門学校前にスポーン
             }
 
-            if (/*PlayerStatus.*/progress == 5)
+            if (PlayerStatus.progress == 6)
             {
                 Player.transform.position = (spawner_University.position);//大学前にスポーン
             }
 
-            if (/*PlayerStatus.*/progress == 6)
+            if (PlayerStatus.progress == 7)
             {
                 Player.transform.position = (spawner_MemberOfSociety.position);//社会人前にスポーン
             }
 
-            if (/*PlayerStatus.*/progress == 7)
+            if (PlayerStatus.progress == 8)
             {
-                Player.transform.position = (spawner_GoldenAger.position);//年寄り前にスポーン
+                Player.transform.position = (spawner_GoldenAger.position);//年寄りにスポーン
+            }
+        }
+
+
+        //試験後
+        if (PlayerStatus.progress == 1)//小学校
+        {
+            if (World_Player.result >= 1)//試験後か判断　1以上で試験後
+            {
+                Player.transform.position = (spawner_ES.position);//試験後、校舎手前にスポーン
+            }
+        }
+        if (PlayerStatus.progress == 2)//中学校
+        {
+            if (World_Player.result >= 1)//試験後か判断　1以上で試験後
+            {
+                Player.transform.position = (spawner_JHS.position);//試験後、校舎手前にスポーン
+            }
+        }
+
+        if (PlayerStatus.progress == 3)//高校
+        {
+            if (World_Player.result >= 1)//試験後か判断　1以上で試験後
+            {
+                Player.transform.position = (spawner_HS.position);//試験後、校舎手前にスポーン
+            }
+        }
+
+        if (PlayerStatus.progress == 5)//専門学校
+        {
+            if (World_Player.result >= 1)//試験後か判断　1以上で試験後
+            {
+                Player.transform.position = (spawner_PS.position);//試験後、校舎手前にスポーン
+            }
+        }
+
+        if (PlayerStatus.progress == 6)//大学
+        {
+            if (World_Player.result >= 1)//試験後か判断　1以上で試験後
+            {
+                Player.transform.position = (spawner_U.position);//試験後、校舎手前にスポーン
+            }
+        }
+
+        if (PlayerStatus.progress == 7)//社会人
+        {
+            if (World_Player.result >= 1)//試験後か判断　1以上で試験後
+            {
+                Player.transform.position = (spawner_MOS.position);//試験後、ビル手前にスポーン
             }
         }
     }

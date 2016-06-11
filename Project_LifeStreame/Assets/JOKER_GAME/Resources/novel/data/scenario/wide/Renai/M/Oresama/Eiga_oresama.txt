@@ -1,0 +1,158 @@
+﻿;メッセージ表示
+[showmessage time=0]
+
+;共通ライブラリ
+;セーブ・ロードバックログなど基本的な機能を取り込む 
+[call file=wide/system target="*system_setting_buttons"]
+
+;ゲーム作成で便利なマクロ集
+[call file=wide/libs/utils]
+[text_new name=_sp_chara_name layer=ui x="-168" y=-108.5 val="" color="DDFF00" fontsize=16 anchor="MiddleLeft"]
+[text_show name="_sp_chara_name" time=0]
+
+[bg_new name="eiga" storage="eiga"]
+;背景宣言
+
+[chara_new name=koji storage=oresama_default_c y=-1 ]
+;キャラクター宣言
+
+[wait time=0]
+
+[bg_show name="suizoku" time=0.5]
+;背景表示
+
+[show name=koji]
+;キャラクター表示
+
+#{f.clanName}
+映画かぁ[p]
+
+#皇子
+何か見たいものはあるか？[p]
+
+俺は特にないが[p]
+
+#{f.clanName}
+そうね[p]
+
+何にしようかしら[p]
+
+何でもいいの？[p]
+
+#皇子
+俺はなんでもいいぜ[p]
+
+#{f.clanName}
+なら[p]
+
+[select_new text="アニメにしよう！" target=*select_a1 ]
+[select_new text="このラブストーリー" target=*select_a2 ]
+[select_new text="ホラー映画がいい！" target=*select_a3 ]
+
+[select_show sound=click ]
+
+[s]
+
+*select_a1
+
+#{f.clanName}
+アニメ映画にしよう！[p]
+
+#皇子
+アニメか[p]
+
+おまえこういうのも好きなのか[p]
+
+#{f.clanName}
+うん[p]
+
+アニメは小さいころから好きだよ[p]
+
+#皇子
+ならこれにするか[p]
+
+#
+美里　皇子の好感度が上がった。[p]
+[calc exp="f.lp_ore={f.lp_ore}+5"]
+
+@jump target=*a_common
+
+*select_a2
+
+#{f.clanName}
+このラブストーリーがいい！[p]
+
+#皇子
+ラブストーリーか[p]
+
+お前らしいな[p]
+
+#{f.clanName}
+そうかな？[p]
+
+#皇子
+そうだよ[p]
+
+#{f.clanName}
+うーん[p]
+
+よくわかんないなぁ[p]
+
+#皇子
+気にすんな[p]
+
+ほら早くいくぞ[p]
+
+#{f.clanName}
+ちょ、ちょっとまってよ[p]
+
+#
+美里　皇子の好感度が上がった。[p]
+[calc exp="f.lp_ore={f.lp_ore}+5"]
+
+@jump target=*a_common
+
+*select_a3
+
+#{f.clanName}
+ホラー映画にしよう！[p]
+
+#皇子
+え、ほ、ホラー・・・[p]
+
+#{f.clanName}
+え？どうしたの？[p]
+
+もしかして苦手？[p]
+
+#皇子
+い、いやッ[p]
+
+全然こわくねぇし[p]
+
+#{f.clanName}
+そっか[p]
+
+なら、早くいこうか[p]
+
+#{f.clanName}
+お、おう[p]
+
+任せておけ[p]
+
+#
+美里　皇子の好感度が下がった。[p]
+[calc exp="f.lp_ore={f.lp_ore}-5"]
+
+@jump target=*a_common
+
+*a_common 
+
+
+
+経済力が下がった。[p]
+[calc exp="f.ec={f.ec}-20"]
+
+[Export]
+
+[scene file={f.sceneName}]

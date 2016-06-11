@@ -1,0 +1,127 @@
+﻿;メッセージ表示
+[showmessage time=0]
+
+;共通ライブラリ
+;セーブ・ロードバックログなど基本的な機能を取り込む 
+;[call file=wide/system target="*system_setting_buttons"]
+
+;ゲーム作成で便利なマクロ集
+[call file=wide/libs/utils]
+[text_new name=_sp_chara_name layer=ui x="-168" y=-108.5 val="" color="DDFF00" fontsize=16 anchor="MiddleLeft"]
+[text_show name="_sp_chara_name" time=0]
+
+[bg_new name="mati" storage="mati"]
+;背景宣言
+
+[chara_new name=mio storage=hikaeme_default_c y=-1 ]
+;キャラクター宣言
+
+[wait time=0]
+
+[bg_show name="mati" time=0.5]
+;背景表示
+
+[show name=mio]
+;キャラクター表示
+
+#{f.clanName}
+本買いたいんだっけ？[p]
+
+#美音
+ええ[p]
+
+#{f.clanName}
+筒路さん本好きだもんね[p]
+
+#美音
+あなたは本は読まないの？[p]
+
+#{f.clanName}
+俺か[p]
+
+[select_new text="読書はきらいで" target=*select_a1 ]
+[select_new text="漫画くらいなら" target=*select_a2 ]
+[select_new text="よく読むよ" target=*select_a3 ]
+
+[select_show sound=click ]
+
+[s]
+
+*select_a1
+
+#{f.clanName}
+読書嫌いなんだよなぁ[p]
+
+[chara_mod name="hiro" storage="hikaeme_kanasi_c"]
+
+#美音
+そうなの・・・[p]
+
+勿体無いわね[p]
+
+本を読めばいろんな世界を旅できるのに[p]
+
+#
+筒路　美音の好感度が下がった。[p]
+[calc exp="f.lp_hika={f.lp_hika}-5"]
+
+@jump target=*a_common
+
+*select_a2
+
+#{f.clanName}
+漫画くらいなら読むよ[p]
+
+#美音
+私もたまに読むわ[p]
+
+#{f.clanName}
+そうなの？[p]
+
+意外だなぁ[p]
+
+#美音
+特にファンタジーものが多いわ[p]
+
+おすすめがあったら聞きたいわ[p]
+
+#
+筒路　美音の好感度が上がった。[p]
+[calc exp="f.lp_hika={f.lp_hika}+5"]
+
+@jump target=*a_common
+
+*select_a3
+
+#{f.clanName}
+俺もよく読むよ[p]
+
+#美音
+そうだったの[p]
+
+意外だわ[p]
+
+あなたは袋とじのある本ばかりだと[p]
+
+#{f.clanName}
+どんな偏見だ！[p]
+
+#美音
+なら今度おすすめを聞こうかしら[p]
+
+#
+筒路　美音の好感度が上がった。[p]
+[calc exp="f.lp_hika={f.lp_hika}+5"]
+
+@jump target=*a_common
+
+*a_common 
+
+
+
+経済力が下がった。[p]
+[calc exp="f.ec={f.ec}-20"]
+
+[Export]
+
+[scene file={f.sceneName}]

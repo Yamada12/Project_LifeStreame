@@ -1,0 +1,148 @@
+﻿;メッセージ表示
+[showmessage time=0]
+
+;共通ライブラリ
+;セーブ・ロードバックログなど基本的な機能を取り込む 
+[call file=wide/system target="*system_setting_buttons"]
+
+;ゲーム作成で便利なマクロ集
+[call file=wide/libs/utils]
+[text_new name=_sp_chara_name layer=ui x="-168" y=-108.5 val="" color="DDFF00" fontsize=16 anchor="MiddleLeft"]
+[text_show name="_sp_chara_name" time=0]
+
+[bg_new name="kouen" storage="kouen"]
+;背景宣言
+
+[chara_new name=kokomi storage=tennen_default_c y=-1 ]
+;キャラクター宣言
+
+[wait time=0]
+
+[bg_show name="kouen" time=0.5]
+;背景表示
+
+[show name=kokomi]
+;キャラクター表示
+
+#{f.clanName}
+すこし休憩しようか[p]
+
+#心美
+うん[p]
+
+・・・・[p]
+
+#{f.clanName}
+この後何かしたいことあるか？[p]
+
+#心美
+・・・・[p]
+
+#{f.clanName}
+心美？[p]
+
+#心美
+アリ[p]
+
+#{f.clanName}
+え？[p]
+
+#心美
+アリがいる[p]
+
+じー[p]
+
+#{f.clanName}
+アリ好きなのか？[p]
+
+#心美
+うん[p]
+
+#{f.clanName}
+可愛い[p]
+
+[select_new text="えーそうかな？" target=*select_a1 ]
+[select_new text="どのへんが？" target=*select_a2 ]
+[select_new text="確かに可愛い" target=*select_a3 ]
+
+[select_show sound=click ]
+
+[s]
+
+*select_a1
+
+#心美
+かわいいよー[p]
+
+#{f.clanName}
+だってさぁ[p]
+
+夏場とかすぐ集まってくるし[p]
+
+#心美
+甘いものをボロボロこぼすあなたが悪いの[p]
+
+#{f.clanName}
+た、たしかに・・・[p]
+
+#
+柿瀬　心美の好感度が上がった。[p]
+[calc exp="f.lp_ten={f.lp_ten}-5"]
+
+@jump target=*a_common
+
+*select_a2
+
+#心美
+どの辺って[p]
+
+ちょこちょこ歩いてるところとか[p]
+
+頑張って運んでるところとか[p]
+
+小さいのに頑張ってるんだよ？[p]
+
+可愛くないの？[p]
+
+[chara_mod name=kokomi storage=tennen_kanasi_c]
+
+#{f.clanName}
+か、かわいいです[p]
+
+#
+柿瀬　心美の好感度が上がった[p]
+[calc exp="f.lp_ten={f.lp_ten}+5"]
+
+@jump target=*a_common
+
+*select_a3
+
+#心美
+だよねー[p]
+
+可愛いよねー[p]
+
+もってかえろう[p]
+
+#{f.clanName}
+可愛そうだから置いていきなさい[p]
+
+[chara_mod name=kokomi storage=tennen_kanasi_c]
+えー[p]
+
+#
+柿瀬　心美の好感度が上がった。[p]
+[calc exp="f.lp_ten={f.lp_ten}+5"]
+
+@jump target=*a_common
+
+*a_common 
+
+
+
+経済力が下がった。[p]
+[calc exp="f.ec={f.ec}-20"]
+
+[Export]
+
+[scene file={f.sceneName}]

@@ -1,0 +1,103 @@
+﻿;メッセージ表示
+[showmessage time=0]
+
+;共通ライブラリ
+;セーブ・ロードバックログなど基本的な機能を取り込む 
+;[call file=wide/system target="*system_setting_buttons"]
+
+;ゲーム作成で便利なマクロ集
+[call file=wide/libs/utils]
+[text_new name=_sp_chara_name layer=ui x="-168" y=-108.5 val="" color="DDFF00" fontsize=16 anchor="MiddleLeft"]
+[text_show name="_sp_chara_name" time=0]
+
+[bg_new name="ike" storage="ike"]
+;背景宣言
+
+[chara_new name=toka storage=tundere_odoroki_c y=-1 ]
+;キャラクター宣言
+
+[wait time=0]
+
+[bg_show name="ike" time=0.5]
+;背景表示
+
+[show name=toka]
+;キャラクター表示
+
+[playbgm wait=false time=1 storage="puropozu"]
+
+#橙花
+うわ～綺麗[p]
+
+#{f.clanName}
+綺麗だね[p]
+
+#橙花
+空気もおいしいきがするわ[p]
+
+#{f.clanName}
+そうだね[p]
+
+[chara_mod name="toka" storage="tundere_default_c"]
+
+#橙花
+ちょっと、私の話聞いてる？[p]
+
+#{f.clanName}
+ああ、ちょっと考えてたんだ[p]
+
+#橙花
+何を？[p]
+
+#{f.clanName}
+うん[p]
+
+今の関係を終わりにしないか？[p]
+
+[chara_mod name="toka" storage="tundere_odoroki_c"]
+
+#橙花
+え？[p]
+
+どういうこと？[p]
+
+[chara_mod name="toka" storage="tundere_kanasi_c"]
+
+私のこと嫌いになったの？[p]
+
+何か私悪いことした？[p]
+
+素直じゃないから？[p]
+
+#{f.clanName}
+そうじゃない[p]
+
+橙花はいいこだよ[p]
+
+だから、今の関係を終わらせて次に進むんだ[p]
+
+俺と結婚してください[p]
+
+[chara_mod name="toka" storage="tundere_odoroki_c"]
+
+#橙花
+うそ・・・[p]
+
+ホントに私でいいの？[p]
+
+#{f.clanName}
+橙花じゃなきゃだめだ[p]
+
+#橙花
+うれしい！[p]
+
+大好き！[p]
+
+#
+姫百合　橙花と結婚することが出来ました。[p]
+
+[stopbgm]
+
+[Export]
+
+[scene file={f.sceneName}]

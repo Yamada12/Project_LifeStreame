@@ -1,25 +1,76 @@
 ﻿;メッセージ表示
-[showmessage]
+[showmessage time=0]
 
 ;共通ライブラリ
 ;セーブ・ロードバックログなど基本的な機能を取り込む 
-[call file=wide/system target="*system_setting_buttons"]
+;[call file=wide/system target="*system_setting_buttons"]
 
 ;ゲーム作成で便利なマクロ集
 [call file=wide/libs/utils]
 [text_new name=_sp_chara_name layer=ui x="-168" y=-108.5 val="" color="DDFF00" fontsize=16 anchor="MiddleLeft"]
-[text_show name="_sp_chara_name"]
+[text_show name="_sp_chara_name" time=0]
 
 
-[wait time=2]
+[wait time=0]
 
-～中学生編～バレンタイン[p]
+[bg_new name="syoko" storage="syoko"]
+[bg_show name="syoko" time=0.5]
 
-#コンヌ
-コミュ力が少し上がった[p]
+[playbgm wait=false time=1 storage="barehowa"]
 
-人間力が少し上がった[p]
+～バレンタイン～[p]
 
-運が結構上がった[p]
+#
+バレンタインの朝[p]
 
-時間を少し失った[p]
+[if exp="{f.mf}==0"]
+
+#{f.clanName}
+チョコレートもらえるかなぁ[p]
+
+{f.clanName}は少し期待した。[p]
+
+コミュ力と人間力が少し上がった。[p]
+[calc exp="f.co={f.co}+10"]
+[calc exp="f.hu={f.hu}+10"]
+
+[random var="f.rand" num=25]
+[if exp="{f.rand}==1"]
+
+#
+なんと！[p]
+
+チョコレートをもらった！[p]
+[calc exp="f.lu={f.lu}+10"]
+
+[endif]
+
+[else]
+
+#{f.clanName}
+チョコレート受け取ってもらえるかな[p]
+
+{f.clanName}は少し期待した。[p]
+
+コミュ力と人間力が少し上がった。[p]
+[calc exp="f.co={f.co}+10"]
+[calc exp="f.hu={f.hu}+10"]
+
+[random var="f.rand" num=25]
+[if exp="{f.rand}==1"]
+
+#
+なんと！[p]
+
+チョコレートを受け取ってもらえた！[p]
+[calc exp="f.lu={f.lu}+10"]
+
+[endif]
+
+[endif]
+
+[stopbgm]
+
+[Export]
+
+[scene file="Main_JuniorHighSchool"]

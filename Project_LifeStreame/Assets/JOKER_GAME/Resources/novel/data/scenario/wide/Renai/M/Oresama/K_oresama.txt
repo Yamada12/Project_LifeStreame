@@ -1,0 +1,66 @@
+﻿;メッセージ表示
+[showmessage time=0]
+
+;共通ライブラリ
+;セーブ・ロードバックログなど基本的な機能を取り込む 
+[call file=wide/system target="*system_setting_buttons"]
+
+;ゲーム作成で便利なマクロ集
+[call file=wide/libs/utils]
+[text_new name=_sp_chara_name layer=ui x="-168" y=-108.5 val="" color="DDFF00" fontsize=16 anchor="MiddleLeft"]
+[text_show name="_sp_chara_name" time=0]
+
+[bg_new name="hoken" storage="hoken"]
+;背景宣言
+
+[chara_new name=koji storage=oresama_default_s x=0 y=-1]
+;キャラクター宣言
+
+[wait time=0]
+
+[bg_show name="tosyo" time=0.5]
+;背景表示
+
+#{f.clanName}
+失礼します。[p]
+
+健康診断の結果を持ってきました。[p]
+
+#保健の先生
+あら、そこに置いておいてくれるかしら。[p]
+
+#{f.clanName}
+はい、わかりました。[p]
+
+[show name=koji]
+
+#皇子
+しつれーしまーす[p]
+
+#保健の先生
+あらあら、また来たの美里君[p]
+
+#皇子
+先生苗字で呼ぶのやめてもらえますか[p]
+
+#保健の先生
+えぇ、可愛いのに[p]
+
+#皇子
+だから嫌なんですよ。[p]
+
+#{f.clanName}
+美里君いつもここにいたんだ[p]
+
+#皇子
+お前も苗字で呼ぶのやめてくれよ・・・[p]
+
+#
+美里　皇子をデートに誘えるようになりました。[p]
+
+人間力が少し上がった。[p]
+[calc exp="f.hu={f.hu}+10"]
+
+[Export]
+
+[scene file="Main_HighSchool"]

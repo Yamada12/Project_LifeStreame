@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.SceneManagement;
 
 
 namespace Novel {
@@ -259,8 +260,7 @@ title=一時停止から復帰
 		{
 			//次にシナリオ読み込みます。nextOrder はしてほしくない。
 			StatusManager.nextLoad ="gametmp";
-			Application.LoadLevel("Player");
-
+            SceneManager.LoadScene("Player");
 		}
 
 

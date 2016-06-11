@@ -10,29 +10,30 @@ public class World_Camera : MonoBehaviour {
 
     public GameObject child;//子オブジェクト
     public Transform Camera_position;//カメラのポジション
-
-	// Use this for initialization
-	void Awake () {//試験後、学校前で親子関係解除
-        if(World_Player.UI02 == 1)
-        {
-            child.transform.parent = null;
-        }
-
-    }
 	
 	// Update is called once per frame
-	void Update () {//カメラの位置をplayer01の真後ろに移動させる
+	void Update () {//カメラの動作制御
 
-        if(World_Player.UI02 == 1)
-        {
+        if(World_Player.kanban_nyugaku == 1 || World_Player.Select_Button == 1 || World_Player.kanban_toshiyori == 1 || World_Player.kanban_shakai == 1)
+        {//カメラの位置をplayer01の真後ろに移動させる
             iTween.MoveTo(gameObject, iTween.Hash("position", Camera_position, "time", 3.0f));
             iTween.RotateTo(gameObject, iTween.Hash("rotation", Camera_position, "time", 3.0f));
         }
 
-        
-        
-        
+        if(World_Player.kanban_toshiyori == 1)
+        {
+            World_Player.kanban_toshiyori = 2;
+        }
 
-	
-	}
+        if (World_Player.kanban_nyugaku == 2 || World_Player.Select_Button == 3 || World_Player.kanban_toshiyori == 2 || World_Player.kanban_shakai == 2)
+        {//親子関係解除
+            child.transform.parent = null;
+        }
+
+
+
+
+
+
+    }
 }

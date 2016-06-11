@@ -1,0 +1,133 @@
+﻿;メッセージ表示
+[showmessage time=0]
+
+;共通ライブラリ
+;セーブ・ロードバックログなど基本的な機能を取り込む 
+;[call file=wide/system target="*system_setting_buttons"]
+
+;ゲーム作成で便利なマクロ集
+[call file=wide/libs/utils]
+[text_new name=_sp_chara_name layer=ui x="-168" y=-108.5 val="" color="DDFF00" fontsize=16 anchor="MiddleLeft"]
+[text_show name="_sp_chara_name" time=0]
+
+[bg_new name="eiga" storage="eiga"]
+;背景宣言
+
+[chara_new name=toka storage=tundere_tere_c y=-1 ]
+;キャラクター宣言
+
+[wait time=0]
+
+[bg_show name="eiga" time=0.5]
+;背景表示
+
+[show name=toka]
+;キャラクター表示
+
+[playbgm wait=false time=1 storage="eiga"]
+
+#橙花
+映画って見るの久しぶり[p]
+
+#{f.clanName}
+何見ようかなぁ[p]
+
+何か見たいのある？[p]
+
+#橙花
+あ、あんたに任せるわ[p]
+
+#{f.clanName}
+うーん、どうしようかなぁ[p]
+
+[select_new text="ホラー" target=*select_a1 ]
+[select_new text="ラブストーリー" target=*select_a2 ]
+[select_new text="アクション" target=*select_a3 ]
+
+[select_show sound=click ]
+
+[s]
+
+*select_a1
+
+[chara_mod name=toka storage=tundere_odoroki_c]
+
+#橙花
+ホラー映画！？[p]
+
+#{f.clanName}
+ん？[p]
+
+怖いのか？[p]
+
+[chara_mod name=toka storage=tundere_default_c]
+
+#橙花
+べ、別に怖くなんかないわよ！[p]
+
+#
+姫百合　橙花の好感度が下がった。[p]
+[calc exp="f.lp_tun={f.lp_tun}-5"]
+
+@jump target=*a_common
+
+*select_a2
+
+#{f.clanName}
+なら、ラブストーリーしようか[p]
+
+橙花こういうの好きだろ？[p]
+
+[chara_mod name=toka storage=tundere_odoroki_c]
+
+#橙花
+どうして知ってるの？[p]
+
+#{f.clanName}
+そりゃ、小さい頃からずっと一緒だったから[p]
+
+なんとなくわかるよ[p]
+
+[chara_mod name=toka storage=tundere_tere_c]
+
+#
+姫百合　橙花の好感度が上がった。[p]
+[calc exp="f.lp_tun={f.lp_tun}+5"]
+
+@jump target=*a_common
+
+*select_a3
+
+[chara_mod name=toka storage=tundere_tere_c]
+
+#橙花
+あっ！これ見たかったやつだ！[p]
+
+ここでもやってるんだ！[p]
+
+#{f.clanName}
+これ見たかったのか？[p]
+
+#橙花
+うん！[p]
+
+#{f.clanName}
+ならこれにしようか[p]
+
+#
+姫百合　橙花の好感度が上がった。[p]
+[calc exp="f.lp_tun={f.lp_tun}+5"]
+
+@jump target=*a_common
+
+*a_common 
+
+
+経済力が下がった。[p]
+[calc exp="f.ec={f.ec}-20"]
+
+[stopbgm]
+
+[Export]
+
+[scene file={f.sceneName}]

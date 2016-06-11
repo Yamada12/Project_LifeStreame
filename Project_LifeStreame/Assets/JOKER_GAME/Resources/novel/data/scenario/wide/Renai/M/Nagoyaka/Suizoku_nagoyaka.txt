@@ -1,0 +1,139 @@
+﻿;メッセージ表示
+[showmessage time=0]
+
+;共通ライブラリ
+;セーブ・ロードバックログなど基本的な機能を取り込む 
+;[call file=wide/system target="*system_setting_buttons"]
+
+;ゲーム作成で便利なマクロ集
+[call file=wide/libs/utils]
+[text_new name=_sp_chara_name layer=ui x="-168" y=-108.5 val="" color="DDFF00" fontsize=16 anchor="MiddleLeft"]
+[text_show name="_sp_chara_name" time=0]
+
+[bg_new name="suizoku" storage="suizoku"]
+;背景宣言
+
+[chara_new name=yositaka storage=nagoyaka_default_c y=-1 ]
+;キャラクター宣言
+
+[wait time=0]
+
+[bg_show name="suizoku" time=0.5]
+;背景表示
+
+[show name=yositaka]
+;キャラクター表示
+
+[playbgm wait=false time=1 storage="suizoku"]
+
+#善鷹
+うわ～[p]
+
+魚がたくさんいる～[p]
+
+#{f.clanName}
+もぉ～[p]
+
+はしゃぎ過ぎだよ[p]
+
+#善鷹
+ごめんごめん[p]
+
+ついついはしゃいじゃって[p]
+
+#{f.clanName}
+ふふふ[p]
+
+楽しそう[p]
+
+#善鷹
+みて！アシカだよ！[p]
+
+[select_new text="ホントだ！凄いね" target=*select_a1 ]
+[select_new text="そんなことより次行こうよ" target=*select_a2 ]
+[select_new text="可愛いね" target=*select_a3 ]
+
+[select_show sound=click ]
+
+[s]
+
+*select_a1
+
+#{f.clanName}
+ホントだ！凄いね[p]
+
+賢いんだねぇ[p]
+
+#善鷹
+ホントだよ[p]
+
+訓練してるからとはいえ[p]
+
+いろんなことが出来るんだね[p]
+
+#{f.clanName}
+すごいねぇ[p]
+
+#
+檜山　善鷹の好感度が上がった。[p]
+[calc exp="f.lp_nago={f.lp_nago}+5"]
+
+@jump target=*a_common
+
+*select_a2
+
+#{f.clanName}
+そんなことより次いこう[p]
+
+#善鷹
+え～[p]
+
+アシカは嫌い？[p]
+
+#{f.clanName}
+嫌いじゃないけどさ[p]
+
+ペンギンみよ！[p]
+
+#
+檜山　善鷹の好感度が下がった。[p]
+[calc exp="f.lp_nago={f.lp_nago}-5"]
+
+@jump target=*a_common
+
+*select_a3
+
+#{f.clanName}
+可愛いね[p]
+
+#善鷹
+可愛いよね[p]
+
+器用だなぁ[p]
+
+僕にはできないよ[p]
+
+#{f.clanName}
+ふふ[p]
+
+どうして、檜山君がやるの[p]
+
+#善鷹
+例えだよ例え[p]
+
+#
+檜山　善鷹の好感度が上がった。[p]
+[calc exp="f.lp_nago={f.lp_nago}+5"]
+
+@jump target=*a_common
+
+*a_common 
+
+
+
+経済力が下がった。[p]
+[calc exp="f.ec={f.ec}-20"]
+
+[Export]
+
+[scene file={f.sceneName}]

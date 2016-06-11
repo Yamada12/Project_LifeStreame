@@ -1,0 +1,69 @@
+﻿;メッセージ表示
+[showmessage time=0]
+
+;共通ライブラリ
+;セーブ・ロードバックログなど基本的な機能を取り込む 
+;[call file=wide/system target="*system_setting_buttons"]
+
+;ゲーム作成で便利なマクロ集
+[call file=wide/libs/utils]
+[text_new name=_sp_chara_name layer=ui x="-168" y=-108.5 val="" color="DDFF00" fontsize=16 anchor="MiddleLeft"]
+[text_show name="_sp_chara_name" time=0]
+
+[bg_new name="tosyo" storage="tosyo"]
+;背景宣言
+
+[chara_new name=mio storage=hikaeme_default_s x=0 y=-0.5 scale=0.9]
+;キャラクター宣言
+
+[wait time=0]
+
+[bg_show name="tosyo" time=0.5]
+;背景表示
+
+#{f.clanName}
+よいしょっと[p]
+
+やっと運び終わった[p]
+
+ん？あれは[p]
+
+[show name=mio]
+;キャラクター表示
+
+#{f.clanName}
+筒路さん、何してるの？[p]
+
+#美音
+見ればわかるでしょ。[p]
+
+読書よ[p]
+
+#{f.clanName}
+どんな本読んでるの？[p]
+
+#美音
+ファンタジーもの[p]
+
+#{f.clanName}
+意外だなぁ[p]
+
+もっと難しい本読んでるのかと思ってたよ[p]
+
+#美音
+あなたも読んでみる？[p]
+
+#{f.clanName}
+う、うん[p]
+
+もう少しページが少ない方がいいかな・・・[p]
+
+#
+筒路　美音をデートに誘えるようになりました。[p]
+
+人間力が少し上がった。[p]
+[calc exp="f.hu={f.hu}+10"]
+
+[Export]
+
+[scene file="Main_HighSchool"]

@@ -1,0 +1,67 @@
+﻿;メッセージ表示
+[showmessage time=0]
+
+;共通ライブラリ
+;セーブ・ロードバックログなど基本的な機能を取り込む 
+[call file=wide/system target="*system_setting_buttons"]
+
+;ゲーム作成で便利なマクロ集
+[call file=wide/libs/utils]
+[text_new name=_sp_chara_name layer=ui x="-168" y=-108.5 val="" color="DDFF00" fontsize=16 anchor="MiddleLeft"]
+[text_show name="_sp_chara_name" time=0]
+
+[bg_new name="mati" storage="mati"]
+;背景宣言
+
+[chara_new name=koji storage=oresama_default_c y=-1 ]
+;キャラクター宣言
+
+[wait time=0]
+
+[bg_show name="roka" time=0.5]
+;背景表示
+
+[show name=koji]
+;キャラクター表示
+
+#皇子
+あーだるい[p]
+
+#{f.clanName}
+あ、美里君[p]
+
+#皇子
+ん？なんだお前かよ[p]
+
+あと苗字で呼ぶな[p]
+
+#{f.sceneName}
+だって名前で呼ぶの抵抗あるんだもん[p]
+
+#皇子
+なんで[p]
+
+#{f.sceneName}
+だって、凄い親しい仲だと思われたり[p]
+
+#皇子
+なんだそんなこと気にしてんのか？[p]
+
+#{f.sceneName}
+だって[p]
+
+#皇子
+俺の女になったらそんなこと気にしなくてよくなるぜ？[p]
+
+#{f.sceneName}
+え、ええ！？[p]
+
+#
+美里　皇子をデートに誘えるようになりました。[p]
+
+人間力が少し上がった。[p]
+[calc exp="f.hu={f.hu}+10"]
+
+[Export]
+
+[scene file={f.sceneName}]
