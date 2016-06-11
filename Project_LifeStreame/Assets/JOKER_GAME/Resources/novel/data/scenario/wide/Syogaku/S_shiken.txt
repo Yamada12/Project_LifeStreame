@@ -1,0 +1,764 @@
+﻿;メッセージ表示
+[showmessage]
+
+;共通ライブラリ
+;セーブ・ロードバックログなど基本的な機能を取り込む 
+[call file=wide/system target="*system_setting_buttons"]
+
+;ゲーム作成で便利なマクロ集
+[call file=wide/libs/quiz]
+[text_new name=_sp_chara_name layer=ui x="-168" y=-108.5 val="" color="DDFF00" fontsize=16 anchor="MiddleLeft"]
+[text_show name="_sp_chara_name"]
+
+;変数
+
+[wait time=1]
+;[playbgm wait=false time=1 storage=""]
+[bg_new name="bg" storage="shiken"]
+[bg_show name="bg"]
+
+～小学入試～[p]
+
+第１問[p]
+[random var="f.rand"num=7]
+[if exp="{f.rand}==0"]
+人参に一番多く含まれているビタミンと言えばビタミン何？[p]
+[select_new text="A:　ビタミンA" target=*select_a1_1]
+[select_new text="B:　ビタミンB" target=*select_a1_2]
+[select_new text="C:　ビタミンC" target=*select_a1_3]
+[select_show sound=click ]
+[s]
+
+*select_a1_1
+"A:ビタミンA"を選びました[p]
+[playse storage="correct3"]
+正解です！[p]
+[calc exp="f.test={f.test}+3"]
+合計{f.test}ポイント[p]
+@jump target=*2
+
+*select_a1_2
+"B:ビタミンB"を選びました[p]
+[playse storage="incorrect1"]
+不正解です！[p]
+[calc exp="f.test={f.test}+1"]
+合計{f.test}ポイント[p]
+@jump target=*2
+
+*select_a1_3
+"C:ビタミンC"を選びました[p]
+[playse storage="incorrect1"]
+不正解です！[p]
+[calc exp="f.test={f.test}+1"]
+合計{f.test}ポイント[p]
+@jump target=*2
+[endif]
+
+
+[if exp="{f.rand}==1"]
+あまり見ることのない2000円札。[l]
+この2000円札に描かれている肖像画は誰の肖像画でしょう？[p]
+[select_new text="A:　清少納言" target=*select_a2_1]
+[select_new text="B:　楊貴妃" target=*select_a2_2]
+[select_new text="C:　紫式部" target=*select_a2_3]
+[select_show sound=click ]
+[s]
+
+*select_a2_1
+"A:清少納言"を選びました[p]
+[playse storage="incorrect1"]
+不正解です！[p]
+[calc exp="f.test={f.test}+1"]
+合計{f.test}ポイント[p]
+@jump target=*2
+
+*select_a2_2
+"B:楊貴妃"を選びました[p]
+[playse storage="incorrect1"]
+不正解です！[p]
+[calc exp="f.test={f.test}+1"]
+合計{f.test}ポイント[p]
+@jump target=*2
+
+*select_a2_3
+"C:紫式部"を選びました[p]
+[playse storage="correct3"]
+正解です！[p]
+[calc exp="f.test={f.test}+3"]
+合計{f.test}ポイント[p]
+@jump target=*2
+[endif]
+
+
+[if exp="{f.rand}==2"]
+バスケットボールのゴールは直径何センチでしょう？[p]
+[select_new text="A:　35㎝" target=*select_a3_1]
+[select_new text="B:　40㎝" target=*select_a3_2]
+[select_new text="C:　45㎝" target=*select_a3_3]
+[select_show sound=click ]
+[s]
+
+*select_a3_1
+"A:35㎝"を選びました[p]
+[playse storage="incorrect1"]
+不正解です！[p]
+[calc exp="f.test={f.test}+1"]
+合計{f.test}ポイント[p]
+@jump target=*2
+
+*select_a3_2
+"B:40㎝"を選びました[p]
+[playse storage="incorrect1"]
+不正解です！[p]
+[calc exp="f.test={f.test}+1"]
+合計{f.test}ポイント[p]
+@jump target=*2
+
+*select_a3_3
+"C:45㎝"を選びました[p]
+[playse storage="correct3"]
+正解です！[p]
+[calc exp="f.test={f.test}+3"]
+合計{f.test}ポイント[p]
+@jump target=*2
+[endif]
+
+
+[if exp="{f.rand}==3"]
+ワープロの「ワ―」はワードの略。[l]
+では、「プロ」は何の略？[p]
+[select_new text="A:　プロフェッショナル" target=*select_a4_1]
+[select_new text="B:　プロセッサ―" target=*select_a2]
+[select_new text="C:　プロトタイプ" target=*select_a3]
+[select_show sound=click ]
+[s]
+
+*select_a4_1
+"A:プロフェッショナル"を選びました[p]
+[playse storage="incorrect1"]
+不正解です！[p]
+[calc exp="f.test={f.test}+1"]
+合計{f.test}ポイント[p]
+@jump target=*2
+
+*select_a4_2
+"B:プロセッサー"を選びました[p]
+[playse storage="correct3"]
+正解です！[p]
+[calc exp="f.test={f.test}+3"]
+合計{f.test}ポイント[p]
+@jump target=*2
+
+*select_a4_3
+"C:プロトタイプ"を選びました[p]
+[playse storage="incorrect1"]
+不正解です！[p]
+[calc exp="f.test={f.test}+1"]
+合計{f.test}ポイント[p]
+@jump target=*2
+[endif]
+
+
+[if exp="{f.rand}==4"]
+戦国時代の武将で、「鳴かぬなら鳴かせてみようホトトギス」[l]
+と詠われたのは誰？[p]
+[select_new text="A:　豊臣秀吉" target=*select_a5_1]
+[select_new text="B:　織田信長" target=*select_a5_2]
+[select_new text="C:　徳川家康" target=*select_a5_3]
+[select_show sound=click ]
+[s]
+
+*select_a5_1
+"A:豊臣秀吉"を選びました[p]
+[playse storage="correct3"]
+正解です！[p]
+[calc exp="f.test={f.test}+3"]
+合計{f.test}ポイント[p]
+@jump target=*2
+
+*select_a5_2
+"B:織田信長"を選びました[p]
+[playse storage="incorrect1"]
+不正解です！[p]
+[calc exp="f.test={f.test}+1"]
+合計{f.test}ポイント[p]
+@jump target=*2
+
+*select_a5_3
+"C:徳川家康"を選びました[p]
+[playse storage="incorrect1"]
+不正解です！[p]
+[calc exp="f.test={f.test}+1"]
+合計{f.test}ポイント[p]
+@jump target=*2
+[endif]
+
+
+[if exp="{f.rand}==5"]
+戦国武将の織田信長が大ファンで、[l]
+この時代に勝負を判定する役目ができたスポーツと言えば？[p]
+[select_new text="A:　剣道" target=*select_a6_1]
+[select_new text="B:　けまり" target=*select_a6_2]
+[select_new text="C:　相撲" target=*select_a6_3]
+[select_show sound=click ]
+[s]
+
+*select_a6_1
+"A:剣道"を選びました[p]
+[playse storage="incorrect1"]
+不正解です！[p]
+[calc exp="f.test={f.test}+1"]
+合計{f.test}ポイント[p]
+@jump target=*2
+
+*select_a6_2
+"B:けまり"を選びました[p]
+[playse storage="incorrect1"]
+不正解です！[p]
+[calc exp="f.test={f.test}+1"]
+合計{f.test}ポイント[p]
+@jump target=*2
+
+*select_a6_3
+"C:相撲"を選びました[p]
+[playse storage="correct3"]
+正解です！[p]
+[calc exp="f.test={f.test}+3"]
+合計{f.test}ポイント[p]
+@jump target=*2
+[endif]
+
+
+[if exp="{f.rand}==6"]
+成人の日、体育の日、海の日、敬老の日のように[l]
+祝日を月曜日にすることで連休を多くする制度をなんというでしょう？[p]
+[select_new text="A:　ハッピーマンデー制度" target=*select_a7_1]
+[select_new text="B:　ラッキーマンデー制度" target=*select_a7_2]
+[select_new text="C:　ネッシーマンデー制度" target=*select_a7_3]
+[select_show sound=click ]
+[s]
+
+*select_a7_1
+"A:ハッピーマンデー制度"を選びました[p]
+[playse storage="correct3"]
+正解です！[p]
+[calc exp="f.test={f.test}+3"]
+合計{f.test}ポイント[p]
+@jump target=*2
+
+*select_a7_2
+"B:ラッキーマンデー制度"を選びました[p]
+[playse storage="incorrect1"]
+不正解です！[p]
+[calc exp="f.test={f.test}+1"]
+合計{f.test}ポイント[p]
+@jump target=*2
+
+*select_a7_3
+"C:ネッシーマンデー制度"を選びました[p]
+[playse storage="incorrect1"]
+不正解です！[p]
+[calc exp="f.test={f.test}+1"]
+合計{f.test}ポイント[p]
+@jump target=*2
+[endif]
+
+
+
+*2
+第２問[p]
+[random var="f.rand"num=7]
+
+[if exp="{f.rand}==0"]
+アーチェリーの標的で一番特典が高いど真ん中のゾーンは何色でしょう？[p]
+[select_new text="A　:赤色" target=*select_b8_1]
+[select_new text="B　:緑色" target=*select_b8_2]
+[select_new text="C　:黄色" target=*select_b8_3]
+[select_show sound=click ]
+[s]
+
+*select_b8_1
+"A:赤色"を選びました[p]
+[playse storage="incorrect1"]
+不正解です！[p]
+[calc exp="f.test={f.test}+1"]
+合計{f.test}ポイント[p]
+@jump target=*3
+
+*select_b8_2
+"B:緑色"を選びました[p]
+[playse storage="incorrect1"]
+不正解です！[p]
+[calc exp="f.test={f.test}+1"]
+合計{f.test}ポイント[p]
+@jump target=*3
+
+*select_b8_3
+"C:黄色"を選びました[p]
+[playse storage="correct3"]
+正解です！[p]
+[calc exp="f.test={f.test}+3"]
+合計{f.test}ポイント[p]
+@jump target=*3
+[endif]
+
+
+[if exp="{f.rand}==1"]
+サイコロを2個振って、出た目の合計が７になる確率は、[l]
+何分の１でしょう？[p]
+[select_new text="A:　2分の1" target=*select_b9_1]
+[select_new text="B:　12分の1" target=*select_b9_2]
+[select_new text="C:　6分の1" target=*select_b9_3]
+[select_show sound=click ]
+[s]
+
+*select_b9_1
+"A:2分の1"を選びました[p]
+[playse storage="incorrect1"]
+不正解です！[p]
+[calc exp="f.test={f.test}+1"]
+合計{f.test}ポイント[p]
+@jump target=*3
+
+*select_b9_2
+"B:12分の1"を選びました[p]
+[playse storage="incorrect1"]
+不正解です！[p]
+[calc exp="f.test={f.test}+1"]
+合計{f.test}ポイント[p]
+@jump target=*3
+
+*select_b9_3
+"C:6分の1"を選びました[p]
+[playse storage="correct3"]
+正解です！[p]
+[calc exp="f.test={f.test}+3"]
+合計{f.test}ポイント[p]
+@jump target=*3
+[endif]
+
+
+[if exp="{f.rand}==2"]
+銀閣寺に銀河塗られない原因となった、1467年から[l]
+11年にわたって起こった出来事は「何の乱」でしょう？[p]
+[select_new text="A:　応仁の乱" target=*select_b10_1]
+[select_new text="B:　壬申の乱" target=*select_b10_2]
+[select_new text="C:　承久の乱" target=*select_b10_3]
+[select_show sound=click ]
+[s]
+
+*select_b10_1
+"A:応仁の乱"を選びました[p]
+[playse storage="correct3"]
+正解です！[p]
+[calc exp="f.test={f.test}+3"]
+合計{f.test}ポイント[p]
+@jump target=*3
+
+*select_b10_2
+"B:壬申の乱"を選びました[p]
+[playse storage="incorrect1"]
+不正解です！[p]
+[calc exp="f.test={f.test}+1"]
+合計{f.test}ポイント[p]
+@jump target=*3
+
+*select_b10_3
+"C:承久の乱"を選びました[p]
+[playse storage="incorrect1"]
+不正解です！[p]
+[calc exp="f.test={f.test}+1"]
+合計{f.test}ポイント[p]
+@jump target=*3
+[endif]
+
+
+[if exp="{f.rand}==3"]
+世界で最も人口の多い国と言えばどこでしょう？[p]
+[select_new text="A:　インド" target=*select_b11_1]
+[select_new text="B:　中国" target=*select_b11_2]
+[select_new text="C:　アメリカ合衆国" target=*select_b11_3]
+[select_show sound=click ]
+[s]
+
+*select_b11_1
+"A:インド"を選びました[p]
+[playse storage="incorrect1"]
+不正解です！[p]
+[calc exp="f.test={f.test}+1"]
+合計{f.test}ポイント[p]
+@jump target=*3
+
+*select_b11_2
+"B:中国"を選びました[p]
+[playse storage="correct3"]
+正解です！[p]
+[calc exp="f.test={f.test}+3"]
+合計{f.test}ポイント[p]
+@jump target=*3
+
+*select_b11_3
+"C:アメリカ合衆国"を選びました[p]
+[playse storage="incorrect1"]
+不正解です！[p]
+[calc exp="f.test={f.test}+1"]
+合計{f.test}ポイント[p]
+@jump target=*3
+[endif]
+
+
+[if exp="{f.rand}==4"]
+四国地方は全部で４つの県です。[l]
+では九州地方は沖縄を含めて全部で何件でしょう？[p]
+[select_new text="A:　6県" target=*select_b12_1]
+[select_new text="B:　7県" target=*select_b12_2]
+[select_new text="C:　8県" target=*select_b12_3]
+[select_show sound=click ]
+[s]
+
+*select_b12_1
+"A:6県"を選びました[p]
+[playse storage="incorrect1"]
+不正解です！[p]
+[calc exp="f.test={f.test}+1"]
+テスト{f.test}[p]
+@jump target=*3
+
+*select_b12_2
+"B:7県"を選びました[p]
+[playse storage="incorrect1"]
+不正解です！[p]
+[calc exp="f.test={f.test}+1"]
+合計{f.test}ポイント[p]
+@jump target=*3
+
+*select_b12_3
+"C:8県"を選びました[p]
+[playse storage="correct3"]
+正解です！[p]
+[calc exp="f.test={f.test}+3"]
+合計{f.test}ポイント[p]
+@jump target=*3
+[endif]
+
+
+[if exp="{f.rand}==5"]
+日本の三陸海岸などに分布する山地が沈んでできた[l]
+ギザギザの海岸の事を何海岸と言うでしょう？[p]
+[select_new text="A:　アリス式海岸" target=*select_b13_1]
+[select_new text="B:　リアス式海岸" target=*select_b13_2]
+[select_new text="C:　スアリ式海岸" target=*select_b13_3]
+[select_show sound=click ]
+[s]
+
+*select_b13_1
+"A:アリス式海岸"を選びました[p]
+[playse storage="incorrect1"]
+不正解です！[p]
+[calc exp="f.test={f.test}+1"]
+合計{f.test}ポイント[p]
+@jump target=*3
+
+*select_b13_2
+"B:リアス式海岸"を選びました[p]
+[playse storage="correct3"]
+正解です！[p]
+[calc exp="f.test={f.test}+3"]
+合計{f.test}ポイント[p]
+@jump target=*3
+
+*select_b13_3
+"C:スアリ式海岸"を選びました[p]
+[playse storage="incorrect1"]
+不正解です！[p]
+[calc exp="f.test={f.test}+1"]
+合計{f.test}ポイント[p]
+@jump target=*3
+[endif]
+
+
+[if exp="{f.rand}==6"]
+アメリカ大統領選挙が行われる曜日は必ず決まっていますが、[l]
+何曜日でしょう？[p]
+[select_new text="A:　火曜日" target=*select_b14_1]
+[select_new text="B:　水曜日" target=*select_b14_2]
+[select_new text="C:　土曜日" target=*select_b14_3]
+[select_show sound=click ]
+[s]
+
+*select_b14_1
+"A:火曜日"を選びました[p]
+[playse storage="correct3"]
+正解です！[p]
+[calc exp="f.test={f.test}+3"]
+合計{f.test}ポイント[p]
+@jump target=*3
+
+*select_b14_2
+"B:水曜日"を選びました[p]
+[playse storage="incorrect1"]
+不正解です！[p]
+[calc exp="f.test={f.test}+1"]
+合計{f.test}ポイント[p]
+@jump target=*3
+
+*select_b14_3
+"C:土曜日"を選びました[p]
+[playse storage="incorrect1"]
+不正解です！[p]
+[calc exp="f.test={f.test}+1"]
+合計{f.test}ポイント[p]
+@jump target=*3
+[endif]
+
+
+
+
+
+*3
+第３問[p]
+[random var="f.rand"num=7]
+[if exp="{f.rand}==0"]
+富士山がまたがっている県は山梨県と何県でしょう？[p]
+[select_new text="A:　長野県" target=*select_c15_1]
+[select_new text="B:　愛知県" target=*select_c15_2]
+[select_new text="C:　静岡県" target=*select_c15_3]
+[select_show sound=click ]
+[s]
+
+*select_c15_1
+"A:長野県"を選びました[p]
+[playse storage="incorrect1"]
+不正解です！[p]
+[calc exp="f.test={f.test}+1"]
+合計{f.test}ポイント[p]
+@jump target=*Unity
+
+*select_c15_2
+"B:愛知県"を選びました[p]
+[playse storage="incorrect1"]
+不正解です！[p]
+[calc exp="f.test={f.test}+1"]
+合計{f.test}ポイント[p]
+@jump target=*Unity
+
+*select_c15_3
+"C:静岡県"を選びました[p]
+[playse storage="correct3"]
+正解です！[p]
+[calc exp="f.test={f.test}+3"]
+合計{f.test}ポイント[p]
+@jump target=*Unity
+[endif]
+
+
+[if exp="{f.rand}==1"]
+夏目漱石の小説「坊ちゃん」の主人公は何の教科の担任でしょう？[p]
+[select_new text="A:　国語" target=*select_c16_1]
+[select_new text="B:　数学" target=*select_c16_2]
+[select_new text="C:　社会" target=*select_c16_3]
+[select_show sound=click ]
+[s]
+
+*select_c16_1
+"A:国語"を選びました[p]
+[playse storage="incorrect1"]
+不正解です！[p]
+[calc exp="f.test={f.test}+1"]
+合計{f.test}ポイント[p]
+@jump target=*Unity
+
+*select_c16_2
+"B:数学"を選びました[p]
+[playse storage="correct3"]
+正解です！[p]
+[calc exp="f.test={f.test}+3"]
+合計{f.test}ポイント[p]
+@jump target=*Unity
+
+*select_c16_3
+"C:社会"を選びました[p]
+[playse storage="incorrect1"]
+不正解です！[p]
+[calc exp="f.test={f.test}+1"]
+合計{f.test}ポイント[p]
+@jump target=*Unity
+[endif]
+
+
+[if exp="{f.rand}==2"]
+源為朝（みなもとのためとも）、那須与一（なすのよいち）[l]
+、ロビンフッドに共通する武器と言えば何？[p]
+[select_new text="A:　刀" target=*select_c17_1]
+[select_new text="B:　弓" target=*select_c17_2]
+[select_new text="C:　槍" target=*select_c17_3]
+[select_show sound=click ]
+[s]
+
+*select_c17_1
+"A:刀"を選びました[p]
+[playse storage="incorrect1"]
+不正解です！[p]
+[calc exp="f.test={f.test}+1"]
+合計{f.test}ポイント[p]
+@jump target=*Unity
+
+*select_c17_2
+"B:弓"を選びました[p]
+[playse storage="correct3"]
+正解です！[p]
+[calc exp="f.test={f.test}+3"]
+合計{f.test}ポイント[p]
+@jump target=*Unity
+
+*select_c17_3
+"C:槍"を選びました[p]
+[playse storage="incorrect1"]
+不正解です！[p]
+[calc exp="f.test={f.test}+1"]
+合計{f.test}ポイント[p]
+@jump target=*Unity
+[endif]
+
+
+[if exp="{f.rand}==3"]
+奈良時代に東大寺に大仏を作り、[l]
+全国各地に国分寺を作らせた天皇と言えば誰でしょう？[p]
+[select_new text="A:　聖武天皇" target=*select_c18_1]
+[select_new text="B:　孝謙天皇" target=*select_c18_2]
+[select_new text="C:　桓武天皇" target=*select_c18_3]
+[select_show sound=click ]
+[s]
+
+*select_c18_1
+"A:聖武天皇"を選びました[p]
+[playse storage="correct3"]
+正解です！[p]
+[calc exp="f.test={f.test}+3"]
+合計{f.test}ポイント[p]
+@jump target=*Unity
+
+*select_c18_2
+"B:孝謙天皇"を選びました[p]
+[playse storage="incorrect1"]
+不正解です！[p]
+[calc exp="f.test={f.test}+1"]
+合計{f.test}ポイント[p]
+@jump target=*Unity
+
+*select_c18_3
+"C:桓武天皇"を選びました[p]
+[playse storage="incorrect1"]
+不正解です！[p]
+[calc exp="f.test={f.test}+1"]
+合計{f.test}ポイント[p]
+@jump target=*Unity
+[endif]
+
+
+[if exp="{f.rand}==4"]
+ずばりマラソンで走る距離は何キロでしょうか？[p]
+[select_new text="A:　42.195km" target=*select_c19_1]
+[select_new text="B:　42.159km" target=*select_c19_2]
+[select_new text="C:　24.195km" target=*select_c19_3]
+[select_show sound=click ]
+[s]
+
+*select_c19_1
+"A:42.195km"を選びました[p]
+[playse storage="correct3"]
+正解です！[p]
+[calc exp="f.test={f.test}+3"]
+合計{f.test}ポイント[p]
+@jump target=*Unity
+
+*select_c19_2
+"B:42.159km"を選びました[p]
+[playse storage="incorrect1"]
+不正解です！[p]
+[calc exp="f.test={f.test}+1"]
+合計{f.test}ポイント[p]
+@jump target=*Unity
+
+*select_c19_3
+"C:24.195km"を選びました[p]
+[playse storage="incorrect1"]
+不正解です！[p]
+[calc exp="f.test={f.test}+1"]
+合計{f.test}ポイント[p]
+@jump target=*Unity
+[endif]
+
+
+[if exp="{f.rand}==5"]
+モルワイデ図法・メルカトル図法といったら何の書き方でしょう？
+[select_new text="A:　絵画" target=*select_c20_1]
+[select_new text="B:　小説" target=*select_c20_2]
+[select_new text="C:　地図" target=*select_c20_3]
+[select_show sound=click ]
+[s]
+
+*select_c20_1
+"A:絵画"を選びました[p]
+[playse storage="incorrect1"]
+不正解です！[p]
+[calc exp="f.test={f.test}+1"]
+合計{f.test}ポイント[p]
+@jump target=*Unity
+
+*select_c20_2
+"B:小説"を選びました[p]
+[playse storage="incorrect1"]
+不正解です！[p]
+[calc exp="f.test={f.test}+1"]
+合計{f.test}ポイント[p]
+@jump target=*Unity
+
+*select_c20_3
+"C:地図"を選びました[p]
+[playse storage="correct3"]
+正解です！[p]
+[calc exp="f.test={f.test}+3"]
+合計{f.test}ポイント[p]
+@jump target=*Unity
+[endif]
+
+
+[if exp="{f.rand}==6"]
+現在の国民の祝日の中で、一年の最後にある祝日は何でしょう？
+[select_new text="A:　勤労感謝の日" target=*select_c21_1]
+[select_new text="B:　天皇誕生日" target=*select_c21_2]
+[select_new text="C:　　建国記念日" target=*select_c21_3]
+[select_show sound=click ]
+[s]
+
+*select_c21_1
+"A:勤労感謝の日"を選びました[p]
+[playse storage="incorrect1"]
+不正解です！[p]
+[calc exp="f.test={f.test}+1"]
+合計{f.test}ポイント[p]
+@jump target=*Unity
+
+*select_c21_2
+"B:天皇誕生日"を選びました[p]
+[playse storage="correct3"]
+正解です！[p]
+[calc exp="f.test={f.test}+3"]
+合計{f.test}ポイント[p]
+@jump target=*Unity
+
+*select_c21_3
+"C:建国記念日"を選びました[p]
+[playse storage="incorrect1"]
+不正解です！[p]
+[calc exp="f.test={f.test}+1"]
+合計{f.test}ポイント[p]
+@jump target=*Unity
+[endif]
+
+
+*Unity
+;[stopbgm]
+結果発表!!![p]
+[scene file="World"]

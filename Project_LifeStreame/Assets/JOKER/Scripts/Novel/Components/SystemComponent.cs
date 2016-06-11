@@ -1482,40 +1482,23 @@ val=名前を表示します。キャラクター情報と絡めたい場合はc
 
 			string name = this.param ["val"];
 			string show_name = name;
-			Novel.Image obj = NovelSingleton.ImageManager.getImage ("_sp_chara_name");
+			GameObject obj = GameObject.Find ("Canvas/_sp_chara_name");
 
 			if (StatusManager.variable.get ("_chara_jname." + name) != "null") {
 				show_name = StatusManager.variable.get ("_chara_jname." + name);
 				//色の指定もある場合
 				if (StatusManager.variable.get ("_chara_jcolor." + name) != "null") {
-
-					string color = StatusManager.variable.get ("_chara_jcolor." + name);
-					obj.setImage(new Dictionary<string,string> () {
-						{"color",color},
-						{"time","0"},
-						{"type",""}
-					});
-				
+					obj.GetComponent<Text> ().color = ColorX.HexToRGB (StatusManager.variable.get ("_chara_jcolor." + name));
 				}
 					
 			} else {
-				obj.setImage(new Dictionary<string,string> () {
-					{"color","#FFFFFF"},
-					{"time","0"},
-					{"type",""}
-				});
+				obj.GetComponent<Text> ().color = Color.white;
 			}
 
 			Image img = this.gameManager.imageManager.getImage ("_sp_chara_name");
 			img.dicSave ["val"] = show_name;
 
-			obj.setImage(new Dictionary<string,string> () {
-				{"val",show_name},
-				{"time","0"},
-				{"type",""}
-
-			});
-
+			obj.GetComponent<Text> ().text = show_name;
 
 			this.gameManager.nextOrder ();
 
