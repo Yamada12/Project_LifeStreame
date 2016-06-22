@@ -29,6 +29,8 @@ namespace Novel
             PlayerStatus.lp_ore = int.Parse(StatusManager.variable.get("f.lp_ore"));
             PlayerStatus.lp_ani = int.Parse(StatusManager.variable.get("f.lp_ani"));
 
+            PlayerStatus.marriage = int.Parse(StatusManager.variable.get("f.marriage"));
+
             //次のシナリオに進む処理
             this.gameManager.nextOrder();
 

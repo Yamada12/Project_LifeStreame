@@ -16,7 +16,6 @@
 [bg_new name="sakura" storage="sakura"]
 [bg_show name="sakura" time=0.5]
 
-[playbgm wait=false time=1 storage="hanami"]
 
 ～花見～[p]
 
@@ -63,10 +62,6 @@
 飲み過ぎたにもかかわらず二日酔いにならなかった。[p]
 
 [calc exp="f.lu={f.lu}+10"]
-
-[stopbgm]
-
-[Export]
 
 [endif]
 

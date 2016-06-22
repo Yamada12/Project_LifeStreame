@@ -24,8 +24,6 @@
 [show name=kojiro]
 ;キャラクター表示
 
-[playbgm wait=false time=1 storage="kokuhaku"]
-
 #虎次郎
 どうしたんだい？[p]
 
@@ -60,7 +58,7 @@
 
 一緒にいるとなぜか安心するの[p]
 
-全然たよりないのに[p]
+全然頼りないのに[p]
 
 あなたのそんな自然で親しみやすいところが[p]
 
@@ -73,8 +71,9 @@
 
 オレも君のことちゅきだよ[p]
 
-んん！[p]
+んんッ！[p]
 
+[chara_mod name="kojiro" storage="kamase_odoroki_c"]
 好きだ！！！[p]
 
 #
@@ -89,16 +88,17 @@
 
 一緒にいるとなぜか安心するの[p]
 
-全然たよりないのに[p]
+全然頼りないのに[p]
 
 あなたのそんな自然で親しみやすいところが[p]
 
 好きなのかもしれない[p]
 
+[chara_mod name="kojiro" storage="kamase_kanasi_c"]
 #虎次郎
 んー[p]
 
-君は僕の魅力にまだ気づき切れていないようだ[p]
+君は僕の魅力にまだ気付き切れていないようだ[p]
 
 それでは僕の彼女は務まらない[p]
 
@@ -137,6 +137,7 @@
 
 オレのそばにいればいくらでも笑わせてやる[p]
 
+[chara_mod name="kojiro" storage="kamase_tere_c"]
 オレも[p]
 
 君のそばにいたい[p]
@@ -161,6 +162,7 @@
 
 だから、私と付き合ってください[p]
 
+[chara_mod name="kojiro" storage="kamase_kanasi_c"]
 #虎次郎
 残念だけど[p]
 
@@ -198,6 +200,7 @@
 
 今では全部が好きなの！[p]
 
+[chara_mod name="kojiro" storage="kamase_odoroki_c"]
 #虎次郎
 ちょっとまってくれ[p]
 
@@ -229,6 +232,7 @@
 
 今では全部が好きなの！[p]
 
+[chara_mod name="kojiro" storage="kamase_kanasi_c"]
 #虎次郎
 熱がこもったいい告白だった[p]
 
@@ -246,8 +250,6 @@
 @jump target=*a_common
 
 *a_common 
-
-[stopbgm]
 
 [Export]
 

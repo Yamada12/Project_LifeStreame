@@ -15,11 +15,13 @@ public class SceneChanger : MonoBehaviour
     {//UnityからJokerのシーンへ遷移
         PlayerStatus.InitConverter();
         NovelSingleton.StatusManager.callJoker(sceneName, "");
+        SoundPlayer.Instance.PlaySE("Event_Enter");
     }
 
     public void ChangeJokerScene_Love(string character)
     {
         float rnd = Random.Range(0, 4);
+        SoundPlayer.Instance.PlaySE("Event_Enter");
 
         switch (character)
         {
@@ -183,4 +185,5 @@ public class SceneChanger : MonoBehaviour
                 break;
         }
     }
+
 }

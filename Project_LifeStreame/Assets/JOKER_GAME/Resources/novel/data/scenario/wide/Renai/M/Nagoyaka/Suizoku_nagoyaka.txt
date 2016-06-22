@@ -13,7 +13,7 @@
 [bg_new name="suizoku" storage="suizoku"]
 ;背景宣言
 
-[chara_new name=yositaka storage=nagoyaka_default_c y=-1 ]
+[chara_new name=yositaka storage=nagoyaka_niko_c y=-1 ]
 ;キャラクター宣言
 
 [wait time=0]
@@ -23,8 +23,6 @@
 
 [show name=yositaka]
 ;キャラクター表示
-
-[playbgm wait=false time=1 storage="suizoku"]
 
 #善鷹
 うわ～[p]
@@ -85,6 +83,7 @@
 #{f.clanName}
 そんなことより次いこう[p]
 
+[chara_mod name="yositaka" storage="nagoyaka_kanasi_c"]
 #善鷹
 え～[p]
 

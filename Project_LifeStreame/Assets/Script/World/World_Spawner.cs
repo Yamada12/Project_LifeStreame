@@ -8,7 +8,8 @@ using UnityEngine.UI;
 /// 空オブジェクト　Spawner_Scriptにアタッチ
 /// </summary>
 
-public class World_Spawner : MonoBehaviour {
+public class World_Spawner : MonoBehaviour
+{
 
     public GameObject Play;
     static public GameObject Player;
@@ -58,7 +59,10 @@ public class World_Spawner : MonoBehaviour {
             {
                 Player.transform.position = (spawner_ElementarySchool.position);//小学校前にスポーン
             }
+        }
 
+        if (World_Player.shiken == 0)
+        {
             if (PlayerStatus.progress == 2)
             {
                 Player.transform.position = (spawner_JuniorHighSchool.position);//中学校前にスポーン
@@ -99,14 +103,14 @@ public class World_Spawner : MonoBehaviour {
         //試験後
         if (PlayerStatus.progress == 1)//小学校
         {
-            if (World_Player.result >= 1)//試験後か判断　1以上で試験後
+            if (World_Player.shiken == 1)//試験後か判断　1以上で試験後
             {
                 Player.transform.position = (spawner_ES.position);//試験後、校舎手前にスポーン
             }
         }
         if (PlayerStatus.progress == 2)//中学校
         {
-            if (World_Player.result >= 1)//試験後か判断　1以上で試験後
+            if (World_Player.shiken == 1)//試験後か判断　1以上で試験後
             {
                 Player.transform.position = (spawner_JHS.position);//試験後、校舎手前にスポーン
             }
@@ -114,7 +118,7 @@ public class World_Spawner : MonoBehaviour {
 
         if (PlayerStatus.progress == 3)//高校
         {
-            if (World_Player.result >= 1)//試験後か判断　1以上で試験後
+            if (World_Player.shiken == 1)//試験後か判断　1以上で試験後
             {
                 Player.transform.position = (spawner_HS.position);//試験後、校舎手前にスポーン
             }
@@ -122,7 +126,7 @@ public class World_Spawner : MonoBehaviour {
 
         if (PlayerStatus.progress == 5)//専門学校
         {
-            if (World_Player.result >= 1)//試験後か判断　1以上で試験後
+            if (World_Player.shiken == 1)//試験後か判断　1以上で試験後
             {
                 Player.transform.position = (spawner_PS.position);//試験後、校舎手前にスポーン
             }
@@ -130,7 +134,7 @@ public class World_Spawner : MonoBehaviour {
 
         if (PlayerStatus.progress == 6)//大学
         {
-            if (World_Player.result >= 1)//試験後か判断　1以上で試験後
+            if (World_Player.shiken == 1)//試験後か判断　1以上で試験後
             {
                 Player.transform.position = (spawner_U.position);//試験後、校舎手前にスポーン
             }
@@ -138,7 +142,7 @@ public class World_Spawner : MonoBehaviour {
 
         if (PlayerStatus.progress == 7)//社会人
         {
-            if (World_Player.result >= 1)//試験後か判断　1以上で試験後
+            if (World_Player.shiken == 1)//試験後か判断　1以上で試験後
             {
                 Player.transform.position = (spawner_MOS.position);//試験後、ビル手前にスポーン
             }

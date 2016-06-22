@@ -27,5 +27,6 @@ public class Main_Camera_Manager : MonoBehaviour
     {
         iTween.ScaleTo(this.gameObject, iTween.Hash("x", 1f, "y", 1f, "z", 1f, "time", 0.5f));
         iTween.MoveTo(this.gameObject, iTween.Hash("position", originalObject.transform.position, "time", 0.5f));
+        SoundPlayer.Instance.PlaySE("Content_Cancel");
     }
 }

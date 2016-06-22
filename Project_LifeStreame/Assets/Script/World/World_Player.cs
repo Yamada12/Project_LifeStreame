@@ -18,9 +18,10 @@ public class World_Player : MonoBehaviour {
     static public int Select_Button;
     static public int kanban_shakai;
     static public int kanban_toshiyori;
+    static public int shiken;
     static public int Spawner;
 
-    void Awake()
+    void Awake()//変更点
     {
         kanban_shiken = 0;
         kanban_nyugaku = 0;
@@ -28,17 +29,24 @@ public class World_Player : MonoBehaviour {
         kanban_shakai = 0;
         kanban_toshiyori = 0;
 
+        if (shiken == 1)
+        {
+            if (StatusManager.variable.get("f.test") != "null")//試験後、値代入
+            {
+                result = int.Parse(StatusManager.variable.get("f.test"));
+            }
+        }
+
+        Debug.Log("リザルト：" + result);
+        Debug.Log("試験：" + shiken);
  
-        if (StatusManager.variable.get("f.test") == "null")//シーン開始時、nullのため
+        if (StatusManager.variable.get("f.test") == "null")//小学生開始時、nullのため
         {
             result = 0;
             StatusManager.variable.set("f.test", ((int)result).ToString());
         }
 
-        if (StatusManager.variable.get("f.test") != "null")//試験後、値代入
-        {
-            result = int.Parse(StatusManager.variable.get("f.test"));
-        }
+        SoundPlayer.Instance.PlayBGM("World01");
     }
 
     public void OnTriggerEnter(Collider other)
@@ -50,6 +58,7 @@ public class World_Player : MonoBehaviour {
         if (other.gameObject.tag == "turning_After")
         {
             kanban_nyugaku = 1;
+            //shiken = 0;
         }
         if(other.gameObject.tag == "select_Button")
         {
@@ -58,6 +67,7 @@ public class World_Player : MonoBehaviour {
         if(other.gameObject.tag == "select_Button2")
         {
             Select_Button = 2;
+            shiken = 0;
         }
         if(other.gameObject.tag == "shakai")
         {
@@ -75,20 +85,22 @@ public class World_Player : MonoBehaviour {
         //小学校
         if (other.gameObject.tag == "Target_ES")
         {
+            PlayerStatus.InitConverter();
+            shiken = 1;
             NovelSingleton.StatusManager.callJoker("wide/Syogaku/S_shiken", "");//小学校試験シーンへ
         }
         //小学校しょぼい・ふつう・やばいにレッツゴー
         if(other.gameObject.tag == "ES_s")
         {
-            SceneManager.LoadScene("Main_ElementarySchool");//メイン小学校へ
+            SceneManager.LoadScene("Main");//メイン小学校へ
         }
         if (other.gameObject.tag == "ES_h")
         {
-            SceneManager.LoadScene("Main_ElementarySchool");//メイン小学校へ
+            SceneManager.LoadScene("Main");//メイン小学校へ
         }
         if (other.gameObject.tag == "ES_y")
         {
-            SceneManager.LoadScene("Main_ElementarySchool");//メイン小学校へ
+            SceneManager.LoadScene("Main");//メイン小学校へ
         }
 
 
@@ -98,20 +110,22 @@ public class World_Player : MonoBehaviour {
         //中学校
         if (other.gameObject.tag == "Target_JHS")
         {
+            PlayerStatus.InitConverter();
+            shiken = 1;
             NovelSingleton.StatusManager.callJoker("wide/Syogaku/S_shiken", "");//中学校試験シーンへ
         }
         //中学校しょぼい・ふつう・やばいにレッツゴー
         if (other.gameObject.tag == "JHS_s")
         {
-            SceneManager.LoadScene("Main_JuniorHighSchool");//メイン中学校へ
+            SceneManager.LoadScene("Main");//メイン中学校へ
         }
         if (other.gameObject.tag == "JHS_h")
         {
-            SceneManager.LoadScene("Main_JuniorHighSchool");//メイン中学校へ
+            SceneManager.LoadScene("Main");//メイン中学校へ
         }
         if (other.gameObject.tag == "JHS_y")
         {
-            SceneManager.LoadScene("Main_JuniorHighSchool");//メイン中学校へ
+            SceneManager.LoadScene("Main");//メイン中学校へ
         }
 
 
@@ -121,21 +135,23 @@ public class World_Player : MonoBehaviour {
         //高校
         if (other.gameObject.tag == "Target_HS")
         {
-
+            PlayerStatus.InitConverter();
+            shiken = 1;
             NovelSingleton.StatusManager.callJoker("wide/Syogaku/S_shiken", "");//高校試験シーンへ
+            Debug.Log("出てるよ-");
         }
         //高校しょぼい・ふつう・やばいにレッツゴー
         if (other.gameObject.tag == "HS_s")
         {
-            SceneManager.LoadScene("Main_HighSchool");//メイン高校へ
+            SceneManager.LoadScene("Main");//メイン高校へ
         }
         if (other.gameObject.tag == "HS_h")
         {
-            SceneManager.LoadScene("Main_HighSchool");//メイン高校へ
+            SceneManager.LoadScene("Main");//メイン高校へ
         }
         if (other.gameObject.tag == "HS_y")
         {
-            SceneManager.LoadScene("Main_HighSchool");//メイン高校へ
+            SceneManager.LoadScene("Main");//メイン高校へ
         }
 
 
@@ -160,25 +176,25 @@ public class World_Player : MonoBehaviour {
 
 
 
-
         //専門学校
         if (other.gameObject.tag == "Target_PS")
         {
-
+            PlayerStatus.InitConverter();
+            shiken = 1;
             NovelSingleton.StatusManager.callJoker("wide/Syogaku/S_shiken", "");//専門学校試験シーンへ
         }
         //専門学校しょぼい・ふつう・やばいにレッツゴー
         if (other.gameObject.tag == "PS_s")
         {
-            SceneManager.LoadScene("Main_ProfessionalSchool");//メイン専門学校へ
+            SceneManager.LoadScene("Main");//メイン専門学校へ
         }
         if (other.gameObject.tag == "PS_h")
         {
-            SceneManager.LoadScene("Main_ProfessionalSchool");//メイン専門学校へ
+            SceneManager.LoadScene("Main");//メイン専門学校へ
         }
         if (other.gameObject.tag == "PS_y")
         {
-            SceneManager.LoadScene("Main_ProfessionalSchool");//メイン専門学校へ
+            SceneManager.LoadScene("Main");//メイン専門学校へ
         }
 
 
@@ -188,37 +204,34 @@ public class World_Player : MonoBehaviour {
         //大学
         if (other.gameObject.tag == "Target_U")
         {
-
+            PlayerStatus.InitConverter();
+            shiken = 1;
             NovelSingleton.StatusManager.callJoker("wide/Syogaku/S_shiken", "");//大学試験シーンへ
         }
         //大学しょぼい・ふつう・やばいにレッツゴー
         if (other.gameObject.tag == "U_s")
         {
-            SceneManager.LoadScene("Main_College");//メイン大学へ
+            SceneManager.LoadScene("Main");//メイン大学へ
         }
         if (other.gameObject.tag == "U_h")
         {
-            SceneManager.LoadScene("Main_College");//メイン大学へ
+            SceneManager.LoadScene("Main");//メイン大学へ
         }
         if (other.gameObject.tag == "U_y")
         {
-            SceneManager.LoadScene("Main_College");//メイン大学へ
+            SceneManager.LoadScene("Main");//メイン大学へ
         }
 
-
-
-
-        
-        //社会人
-        if (other.gameObject.tag == "Target_MOS")
-        {
-
-            NovelSingleton.StatusManager.callJoker("wide/Syogaku/S_shiken", "");//社会人試験シーンへ
-        }
         //ビルにレッツゴー
         if (other.gameObject.tag == "MOS")
         {
-            SceneManager.LoadScene("Main_Society");//メイン社会人へ
+            SceneManager.LoadScene("Main");//メイン社会人へ
+        }
+
+        //民家にレッツゴー
+        if (other.gameObject.tag == "GA")
+        {
+            SceneManager.LoadScene("Main");//メイン社会人へ
         }
     }
 }

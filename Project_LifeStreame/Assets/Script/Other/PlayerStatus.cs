@@ -9,8 +9,8 @@ using UnityEngine.SceneManagement;
 /// </summary>
 public class PlayerStatus : MonoBehaviour
 {
-    static public int mf = 1;                  //性別　0＝男性　1=女性
-    static public string clanName = "みやの";   //一族の名前
+    static public int mf = 0;                   //性別　0＝男性　1=女性
+    static public string clanName = "みやの";      //一族の名前
     static public float co = 0;                    //コミュ力の数値   最大値999
     static public float ec = 0;                     //経済力の数値
     static public float ac = 0;                     //学力の数値
@@ -18,24 +18,24 @@ public class PlayerStatus : MonoBehaviour
     static public float vi = 0;                     //体力の数値
     static public float lu = 0;                     //運の数値
     static public float geneNumber = 1;             //世代数
-    static public float lifeTime = 1200f;               //残り時間
+    static public float lifeTime = 1200f;           //残り時間
     static public int progress = 1;                 //進行度   小学校＝１　2年生＝２　etc...
     static public string job = "小学生";        //ジョブ名（職業名）
-    static public int marriage;                //結婚しているかどうか？　0＝結婚している　1=結婚してない
+    static public int marriage = 0;                //結婚しているかどうか？　0＝何もない　1=付き合っている(1：ツンデレ、テリメガ)　10=結婚している
     static public int children;                 //子供の人数（双子かどうか？）
     static public int schoolFlag;               //所属学校（０なら無所属、１なら？？学校　etc...）
     static public int clubFlag;                 //部活動は何系か？　0＝文化　1＝運動　2=無所属
     static public int courseYear;               //経過年数（現在の進行度に何年滞在したか？※学年など）
-    static public int lp_tun;                   //好感度：ツンデレ
-    static public int lp_maji;                  //好感度：真面目
-    static public int lp_supo;                  //好感度：スポコン
-    static public int lp_hika;                  //好感度：控え目
-    static public int lp_ten;                   //好感度：天然
-    static public int lp_mega;                  //好感度：インテリメガネ
-    static public int lp_kama;                  //好感度：カマセ
-    static public int lp_nago;                  //好感度：和やか
-    static public int lp_ore;                   //好感度：オレサマ
-    static public int lp_ani;                   //好感度：アニキ
+    static public int lp_tun;                   //好感度：ツンデレ  (0なら出会っていない。1以上で出会っている。)
+    static public int lp_maji;                  //好感度：真面目   (0なら出会っていない。1以上で出会っている。)
+    static public int lp_supo;                  //好感度：スポコン  (0なら出会っていない。1以上で出会っている。)
+    static public int lp_hika;                  //好感度：控え目   (0なら出会っていない。1以上で出会っている。)
+    static public int lp_ten;                   //好感度：天然(   0なら出会っていない。1以上で出会っている。)
+    static public int lp_mega;                  //好感度：インテリメガネ   (0なら出会っていない。1以上で出会っている。)
+    static public int lp_kama;                  //好感度：カマセ   (0なら出会っていない。1以上で出会っている。)
+    static public int lp_nago;                  //好感度：和やか   (0なら出会っていない。1以上で出会っている。)
+    static public int lp_ore;                   //好感度：オレサマ  (0なら出会っていない。1以上で出会っている。)
+    static public int lp_ani;                   //好感度：アニキ   (0なら出会っていない。1以上で出会っている。)
 
     /// <summary>
     /// はじめから開始時にすべての変数をリセットするメソッド
@@ -109,7 +109,7 @@ public class PlayerStatus : MonoBehaviour
     /// Jokerのシーンへ変数を受け渡す
     /// </summary>
     static public void InitConverter()
-    {    
+    {
         StatusManager.variable.set("f.mf", ((int)mf).ToString());
         StatusManager.variable.set("f.clanName", clanName.ToString());
         StatusManager.variable.set("f.co", ((float)co).ToString());
@@ -172,6 +172,7 @@ public class PlayerStatus : MonoBehaviour
         PlayerPrefs.SetInt("lp_nago", PlayerStatus.lp_nago);
         PlayerPrefs.SetInt("lp_ore", PlayerStatus.lp_ore);
         PlayerPrefs.SetInt("lp_ani", PlayerStatus.lp_ani);
+        PlayerPrefs.SetInt("result", World_Player.result);
     }
 
     /// <summary>
@@ -206,5 +207,6 @@ public class PlayerStatus : MonoBehaviour
         PlayerStatus.lp_nago = PlayerPrefs.GetInt("lp_nago");
         PlayerStatus.lp_ore = PlayerPrefs.GetInt("lp_ore");
         PlayerStatus.lp_ani = PlayerPrefs.GetInt("lp_ani");
+        World_Player.result = PlayerPrefs.GetInt("result");
     }
 }

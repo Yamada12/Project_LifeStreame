@@ -24,8 +24,6 @@
 [show name=kazuma]
 ;キャラクター表示
 
-[playbgm wait=false time=1 storage="kouen"]
-
 #{f.clanName}
 う～ん[p]
 
@@ -36,7 +34,7 @@
 #和真
 そうですね[p]
 
-僕もあんまり来ないですけど[p]
+僕もあまり来ないですけど[p]
 
 たまに来てみるといいところですね[p]
 
@@ -45,6 +43,7 @@
 
 眠くなってきちゃった・・・[p]
 
+[chara_mod name="kazuma" storage="interi_odoroki_c"]
 #和真
 こんなところで寝ないでくださいよ？[p]
 
@@ -66,6 +65,7 @@ ZZZ・・・[p]
 #和真
 ちょっと起きてくださいよ[p]
 
+[chara_mod name="kazuma" storage="interi_kanasi_c"]
 はぁ、寝てしまった[p]
 
 #
@@ -79,6 +79,7 @@ ZZZ・・・[p]
 #{f.clanName}
 そうだね[p]
 
+[chara_mod name="kazuma" storage="interi_default_c"]
 #和真
 何か飲み物を買ってきますよ[p]
 
@@ -94,8 +95,9 @@ ZZZ・・・[p]
 *select_a3
 
 #{f.clanName}
-もう少しこうしてたい[p]
+もう少し、こうしてたい[p]
 
+[chara_mod name="kazuma" storage="interi_kanasi_c"]
 #和真
 しょうがないですね[p]
 
@@ -114,7 +116,7 @@ ZZZ・・・[p]
 
 *a_common 
 
-[stopbgm]
+
 
 経済力が下がった。[p]
 [calc exp="f.ec={f.ec}-20"]

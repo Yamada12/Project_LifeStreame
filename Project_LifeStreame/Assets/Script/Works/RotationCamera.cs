@@ -11,11 +11,6 @@ public class RotationCamera : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-        //targetに、"Sample"の名前のオブジェクトのコンポーネントを見つけてアクセスする
-        Transform target = GameObject.Find("Sample").transform;
-        //変数targetPosにSampleの位置情報を取得
-        targetPos = target.position;
-
         //自分の向きをターゲットの正面に向ける
         //		transform.LookAt(target);
 

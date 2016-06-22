@@ -23,30 +23,24 @@ public class World_Player_After : MonoBehaviour
 
     public void Move4()//前にブーン
     {
-        if (World_Player.result >= 1)
-        {
-            iTween.MoveBy(gameObject, iTween.Hash("z", 3, "time", 0.3f, "oncomplete", "Move5", "oncompletetarget", gameObject));
-        }
+        iTween.MoveBy(gameObject, iTween.Hash("z", 3, "time", 0.3f, "oncomplete", "Move5", "oncompletetarget", gameObject));
     }
 
     public void Move5()//下にすたっ
     {
-        if (World_Player.result >= 1)
-        {
-            iTween.MoveBy(gameObject, iTween.Hash("y", -0.5, "time", 0.2f, "oncomplete", "Update", "oncompletetarget", gameObject));
-        }
+        iTween.MoveBy(gameObject, iTween.Hash("y", -0.5, "time", 0.2f, "oncomplete", "Update", "oncompletetarget", gameObject));
     }
 
     void Update()
     {
         if (World_Player.result >= 1)//試験後、クリックで
         {
-            if (World_Player.kanban_nyugaku == 1 || World_Player.kanban_shakai == 1)
+            if (World_Player.kanban_nyugaku == 2 || World_Player.kanban_shakai == 1)
             {
                 if (Input.GetMouseButton(0))
                 {
                     iTween.MoveBy(gameObject, iTween.Hash("y", 0.5, "time", 0.2f, "oncomplete", "Move7", "oncompletetarget", gameObject));
-                    World_Player.kanban_nyugaku = 2;
+                    World_Player.kanban_nyugaku = 3;
                     World_Player.kanban_shakai = 2;
                 }
             }
@@ -57,36 +51,34 @@ public class World_Player_After : MonoBehaviour
             iTween.MoveBy(gameObject, iTween.Hash("y", 0.5, "time", 0.2f, "oncomplete", "Move7", "oncompletetarget", gameObject));
             World_Player.Select_Button = 99;
         }
-        
+
 
 
     }
 
     public void Move7()
     {
-        if (World_Player.result >= 1)//試験後、ルート決め
+        switch (World_Player.result)
         {
-            switch (World_Player.result)
-            {
-                case 3:
-                    iTween.MoveBy(gameObject, iTween.Hash("z", 20, "x", 20, "time", 3f));
-                    break;
-                case 5:
-                    iTween.MoveBy(gameObject, iTween.Hash("z", 20, "x", 20, "time", 3f));
-                    break;
-                case 7:
-                    iTween.MoveBy(gameObject, iTween.Hash("z", 20, "time", 3f));
-                    break;
-                case 9:
-                    iTween.MoveBy(gameObject, iTween.Hash("z", 20, "x", -20, "time", 3f));
-                    break;
-                default:
-                    break;
-            }
+            case 3:
+                iTween.MoveBy(gameObject, iTween.Hash("z", 20, "x", 20, "time", 3f));
+                break;
+            case 5:
+                iTween.MoveBy(gameObject, iTween.Hash("z", 20, "x", 20, "time", 3f));
+                break;
+            case 7:
+                iTween.MoveBy(gameObject, iTween.Hash("z", 20, "time", 3f));
+                break;
+            case 9:
+                iTween.MoveBy(gameObject, iTween.Hash("z", 20, "x", -20, "time", 3f));
+                break;
+            default:
+                break;
         }
-        if (World_SelectButton.Life >= 1)//人生の選択、ルート決め
+
+        if (World_SelectButton.Life >= 1)//人生の選択肢、ルート決め
         {
-            World_Player.Select_Button = 3;
+            World_Player.Select_Button = 3;//Camera 親子解除
 
             switch (World_SelectButton.Life)
             {
@@ -101,14 +93,6 @@ public class World_Player_After : MonoBehaviour
                     break;
                 default:
                     break;
-            }
-        }
-
-        if (PlayerStatus.progress == 7)//社会人、試験後まっすぐびゅーん
-        {
-            if (World_Player.result >= 1)
-            {
-                iTween.MoveBy(gameObject, iTween.Hash("z", 20, "time", 3f));
             }
         }
     }

@@ -24,8 +24,6 @@
 [show name=yositaka]
 ;キャラクター表示
 
-[playbgm wait=false time=1 storage="kokuhaku"]
-
 #善鷹
 どうしたの？[p]
 
@@ -56,6 +54,7 @@
 
 ずっと前から好きだったの[p]
 
+[chara_mod name="yositaka" storage="nagoyaka_niko_c"]
 #善鷹
 あ～[p]
 
@@ -85,6 +84,7 @@
 
 ずっと前から好きだったの[p]
 
+[chara_mod name="yositaka" storage="nagoyaka_kanasi_c"]
 #善鷹
 ごめんね[p]
 
@@ -128,6 +128,7 @@
 
 だから、私と付き合ってほしいの[p]
 
+[chara_mod name="yositaka" storage="nagoyaka_niko_c"]
 #善鷹
 凄い褒められちゃったな[p]
 
@@ -165,6 +166,7 @@
 
 だから、私と付き合ってほしいの[p]
 
+[chara_mod name="yositaka" storage="nagoyaka_kanasi_c"]
 #善鷹
 ごめん・・・[p]
 
@@ -204,6 +206,7 @@
 
 大好き！檜山君！[p]
 
+[chara_mod name="yositaka" storage="nagoyaka_niko_c"]
 #善鷹
 あはは[p]
 
@@ -235,14 +238,13 @@
 
 大好き！檜山君！[p]
 
+[chara_mod name="yositaka" storage="nagoyaka_kanasi_c"]
 #善鷹
 そ、そんなこと言われても[p]
 
 僕も君のことは好きだけど[p]
 
 まだ友達としてなんだ[p]
-
-もう少しゆっくり時間をかけて恋愛をしていこう[p]
 
 #
 告白にはまだ早かったようだ[p]

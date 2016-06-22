@@ -12,6 +12,7 @@ public class JobManager : MonoBehaviour
 
     public GameObject movePoints;
     public GameObject basePoint;
+    public GameObject sendPoint;
     private Vector3 basePoints_Origin;
 
     public GameObject applicationButton;
@@ -20,10 +21,10 @@ public class JobManager : MonoBehaviour
     void Start ()
     {
         basePoints_Origin = basePoint.gameObject.transform.position;
-        jobName.text = "求人票";
-        acPoints.text = "17ac/1works";
-        necessaryAbilty.text = "コミュ力：～以上";
-        test.text = "筆記試験";
+        jobName.text = "職業名";
+        acPoints.text = "数値/仕事一回辺り";
+        necessaryAbilty.text = "必須能力値が表示されます。";
+        test.text = "試験の内容が表示されます。";
         detail.text = "ここに各職業毎の詳細が記載されます。";
 	}
 
@@ -33,15 +34,23 @@ public class JobManager : MonoBehaviour
         {
             applicationButton.SetActive(false);
             turningPanel.SetActive(true);
+            basePoint.transform.localRotation = Quaternion.Euler(0, 180, 0);
             iTween.ScaleTo(basePoint, iTween.Hash("x", 1.25f, "y", 1.25f, "time", 1f));
+            iTween.RotateTo(basePoint, iTween.Hash("y", 360, "time", 1f));
             iTween.MoveTo(basePoint, iTween.Hash("position", movePoints.gameObject.transform.position, "time", 1f));
         }
         else {
             applicationButton.SetActive(true);
             turningPanel.SetActive(false);
-            iTween.ScaleTo(basePoint, iTween.Hash("x", 1f, "y", 1f, "time", 1f));
-            iTween.MoveTo(basePoint, iTween.Hash("position", basePoints_Origin, "time", 1f));
+            iTween.ScaleTo(basePoint, iTween.Hash("x", 1f, "y", 1f, "time", 0.5f));
+            iTween.MoveTo(basePoint, iTween.Hash("position", basePoints_Origin, "time", 0.5f));
         }
+    }
+
+    public void SendAnimation()
+    {
+        turningPanel.SetActive(false);
+        iTween.MoveTo(basePoint, iTween.Hash("position", sendPoint.gameObject.transform.position, "time", 1f));
     }
 
     public void JobsVote(int jobID)

@@ -16,6 +16,7 @@ public class ContentManager : MonoBehaviour
     public void OpenContent()
     {
         this.gameObject.SetActive(false);
+        SoundPlayer.Instance.PlaySE("Content_Enter");
 
         for (int i = 0; i < targetContent.Length; i++)
         {

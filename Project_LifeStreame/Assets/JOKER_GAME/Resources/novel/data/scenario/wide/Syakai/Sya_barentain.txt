@@ -16,7 +16,6 @@
 [bg_new name="syakai" storage="syakai"]
 [bg_show name="syakai" time=0.5]
 
-[playbgm wait=false time=1 storage="barehowa"]
 
 ～バレンタイン～[p]
 
@@ -83,8 +82,6 @@
 [endif]
 
 [endif]
-
-[stopbgm]
 
 [Export]
 

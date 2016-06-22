@@ -58,6 +58,7 @@
 #
 ・・・・・[p]
 
+[chara_mod name="kojiro" storage="kamase_kanasi_s"]
 #虎次郎
 思ったより高いな・・・[p]
 
@@ -74,4 +75,4 @@
 
 [Export]
 
-[scene file="Main_HighSchool"]
+[scene file={f.sceneName}]

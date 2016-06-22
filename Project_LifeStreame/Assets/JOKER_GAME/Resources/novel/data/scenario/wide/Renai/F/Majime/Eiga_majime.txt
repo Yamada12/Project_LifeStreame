@@ -24,8 +24,6 @@
 [show name=risa]
 ;キャラクター表示
 
-[playbgm wait=false time=1 storage="eiga"]
-
 #{f.clanName}
 何か見たい映画ある？[p]
 
@@ -55,7 +53,7 @@
 [chara_mod name="risa" storage="majime_kanasi_c"]
 
 #梨沙
-私がそんな非科学的なものに興味があると思ってるの・・・？[p]
+私がそんな非科学的なものに興味があると思ってるの[p]
 
 #{f.clanName}
 あ、あれ[p]
@@ -103,7 +101,7 @@
 #梨沙
 アニメ映画？[p]
 
-私そういうのに興味は・・・[p]
+私そういうのに興味は[p]
 
 #{f.clanName}
 いいから見るよ！[p]
@@ -121,7 +119,7 @@
 
 [chara_mod name="risa" storage="majime_tere_c"]
 #梨沙
-意外と面白かったわ[p]
+とても面白かったわ[p]
 
 また誘ってちょうだい[p]
 
@@ -137,8 +135,6 @@
 
 経済力が下がった。[p]
 [calc exp="f.ec={f.ec}-20"]
-
-[stopbgm]
 
 [Export]
 

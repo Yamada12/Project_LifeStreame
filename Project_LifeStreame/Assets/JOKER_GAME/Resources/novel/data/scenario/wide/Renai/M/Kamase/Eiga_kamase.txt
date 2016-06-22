@@ -24,8 +24,6 @@
 [show name=kojiro]
 ;キャラクター表示
 
-[playbgm wait=false time=1 storage="eiga"]
-
 #虎次郎
 映画か[p]
 
@@ -106,9 +104,11 @@
 #{f.clanName}
 ラブストーリーは？[p]
 
+[chara_mod name="kojiro" storage="kamase_odoroki_c"]
 #虎次郎
 ら、ラブストーリー・・・だと？[p]
 
+[chara_mod name="kojiro" storage="kamase_kanasi_c"]
 ラブストーリーは駄目だ[p]
 
 昔からラブストーリーを見ると蕁麻疹がでるんだ[p]
@@ -131,8 +131,6 @@
 
 経済力が下がった。[p]
 [calc exp="f.ec={f.ec}-20"]
-
-[stopbgm]
 
 [Export]
 

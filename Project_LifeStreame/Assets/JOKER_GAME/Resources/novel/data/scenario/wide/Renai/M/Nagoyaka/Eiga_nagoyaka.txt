@@ -24,8 +24,6 @@
 [show name=yositaka]
 ;キャラクター表示
 
-[playbgm wait=false time=1 storage="eiga"]
-
 #{f.clanName}
 映画何みよっか[p]
 
@@ -52,6 +50,7 @@
 #{f.clanName}
 ホラー映画が見たいかな[p]
 
+[chara_mod name="yositaka" storage="nagoyaka_kanasi_c"]
 #善鷹
 ほ、ホラー！？[p]
 
@@ -110,6 +109,7 @@
 #{f.clanName}
 アクション映画にしよう！[p]
 
+[chara_mod name="yositaka" storage="nagoyaka_niko_c"]
 #善鷹
 良いね、アクション映画！[p]
 

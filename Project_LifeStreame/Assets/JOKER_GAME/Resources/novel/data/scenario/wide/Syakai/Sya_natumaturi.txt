@@ -13,10 +13,8 @@
 
 [wait time=1]
 
-[bg_new name="syakai02" storage="syakai02"]
-[bg_show name="syakai02" time=0.5]
+;[calc exp="f.clanName=福島"]
 
-[playbgm wait=false time=1 storage="natumaturi"]
 
 ～夏祭り～[p]
 
@@ -70,8 +68,6 @@
 [calc exp="f.lu={f.lu}+20"]
 
 [endif]
-
-[stopbgm]
 
 [Export]
 

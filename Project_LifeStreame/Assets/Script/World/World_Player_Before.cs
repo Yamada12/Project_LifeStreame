@@ -15,19 +15,17 @@ public class World_Player_Before : MonoBehaviour
     {
         if (World_Player.result == 0)
         {
-            iTween.MoveTo(gameObject, iTween.Hash("delay", 1.0f, "y", 1.5, "time", 0.3f, "oncomplete", "Move1", "oncompletetarget", gameObject));
+            iTween.MoveTo(gameObject, iTween.Hash("delay", 2.0f, "y", 1.5, "time", 0.3f, "oncomplete", "Move1", "oncompletetarget", gameObject));
         }
 
     }
 
     public void Move1()//まっすぐびゅーん
     {
-        if (World_Player.result == 0)
-        {
-            iTween.MoveBy(gameObject, iTween.Hash("delay", 0.5f, "z", 15, "time", 1.0f, "oncomplete", "Move2", "oncompletetarget", gameObject));
-        }
+        
+        iTween.MoveBy(gameObject, iTween.Hash("delay", 0.5f, "z", 15, "time", 0.5f, "oncomplete", "Move2", "oncompletetarget", gameObject));
 
-        if (PlayerStatus.progress == 8)//年寄りはまっすぐびゅーーーーん
+        if (PlayerStatus.progress == 7 || PlayerStatus.progress == 8)//年寄りはまっすぐびゅーーーーん
         {
             iTween.MoveBy(gameObject, iTween.Hash("delay", 0.5f, "z", 50, "time", 20.0f));
         }
@@ -36,7 +34,6 @@ public class World_Player_Before : MonoBehaviour
 
     public void Move2()//下にすたっと
     {
-        if (World_Player.result == 0)
         {
             iTween.MoveTo(gameObject, iTween.Hash("delay", 0.5f, "y", -0.5, "time", 0.3f));
         }
@@ -51,7 +48,9 @@ public class World_Player_Before : MonoBehaviour
             if (Input.GetMouseButton(0))//クリックで試験シーンに飛び込む
             {
                 iTween.MoveBy(gameObject, iTween.Hash("z", 5, "y", 1));
-                iTween.RotateBy(gameObject, iTween.Hash("z", 0.05));
+                //iTween.RotateBy(gameObject, iTween.Hash("z", 0.05));
+                World_Player.kanban_shiken = 99;
+                World_Player.Select_Button = 99;
             }
         }
 

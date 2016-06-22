@@ -30,16 +30,19 @@ public class UI_Manager : MonoBehaviour
                 click = true;
                 OpenMenu(0);
                 menuButton.GetComponent<Image>().sprite = onImage;
+                SoundPlayer.Instance.PlaySE("Normal_Enter");
             }
             else {
                 click = false;
                 menuButton.GetComponent<Image>().sprite = offImage;
+                SoundPlayer.Instance.PlaySE("Normal_Enter");
                 menuEnabled(false);
             }
         }
         else
         {
                 OpenMenu(1);
+            SoundPlayer.Instance.PlaySE("SmartPhone_Enter");
         }
     }
 

@@ -21,10 +21,10 @@
 [bg_show name="mati" time=0.5]
 ;背景表示
 
+[playbgm wait=false time=1 storage="majime"]
+
 [show name=risa]
 ;キャラクター表示
-
-[playbgm wait=false time=1 storage="majime"]
 
 #{f.clanName}
 あれは委員長？[p]

@@ -24,8 +24,6 @@
 [show name=sora]
 ;キャラクター表示
 
-[playbgm wait=false time=1 storage="kaimono"]
-
 #{f.clanName}
 何か買いたいものあるのか？[p]
 
@@ -124,7 +122,7 @@
 
 きめた[p]
 
-君の選んでくれたこっちにするよ[p]
+君の選んでくれたこっちするよ[p]
 
 はい、買って[p]
 
@@ -142,8 +140,6 @@
 
 経済力が下がった。[p]
 [calc exp="f.ec={f.ec}-20"]
-
-[stopbgm]
 
 [Export]
 

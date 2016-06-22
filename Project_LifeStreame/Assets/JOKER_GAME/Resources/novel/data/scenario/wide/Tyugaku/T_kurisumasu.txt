@@ -16,7 +16,6 @@
 [bg_new name="room" storage="room"]
 [bg_show name="room" time=0]
 
-[playbgm wait=false time=1 storage="kurisumasu"]
 
 ～クリスマス～[p]
 
@@ -46,8 +45,6 @@
 
 [endif]
 
-[stopbgm]
-
 [Export]
 
-[scene file="Main_JuniorHighSchool"]
+[scene file={f.sceneName}]

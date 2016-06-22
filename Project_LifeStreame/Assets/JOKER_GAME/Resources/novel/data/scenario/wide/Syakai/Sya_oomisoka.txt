@@ -16,7 +16,6 @@
 [bg_new name="jinja" storage="jinja"]
 [bg_show name="jinja" time=0.5]
 
-[playbgm wait=false time=1 storage="oomisoka"]
 
 ～初詣～[p]
 
@@ -65,8 +64,6 @@
 [calc exp="f.lu={f.lu}+100"]
 
 [endif]
-
-[stopbgm]
 
 [Export]
 

@@ -24,8 +24,6 @@
 [show name=sora]
 ;キャラクター表示
 
-[playbgm wait=false time=1 storage="puropozu"]
-
 #蒼空
 あははは[p]
 
@@ -111,8 +109,6 @@
 
 #
 花楓　蒼空と結婚することが出来ました。[p]
-
-[stopbgm]
 
 [Export]
 

@@ -21,10 +21,10 @@
 [bg_show name="kouen" time=0.5]
 ;背景表示
 
+[playbgm wait=false time=1 storage="nagoyaka"]
+
 [show name=yositaka]
 ;キャラクター表示
-
-[playbgm wait=false time=1 storage="nagoyaka"]
 
 #善鷹
 あははは[p]
@@ -44,7 +44,7 @@
 #{f.clanName}
 何してるの？[p]
 
-[chara_mod name="yositaka" storage="nagoyaka_odoroki_c"]
+[chara_mod name="yositaka" storage="nagoyaka_kanasi_c"]
 #善鷹
 あッ[p]
 

@@ -24,6 +24,15 @@ public class World_UI : MonoBehaviour {
     public GameObject image07;//社会人看板（迎え）
     public GameObject image08;//年寄り看板
 
+    public GameObject start01;//小学生　始まりUI
+    public GameObject start02;//中学生　始まりUI
+    public GameObject start03;//高校　始まりUI
+    public GameObject start04;//人生の選択　始まりUI
+    public GameObject start05;//専門学校　始まりUI
+    public GameObject start06;//大学　始まりUI
+    public GameObject start07;//社会人　始まりUI
+    public GameObject start08;//歳より　始まりUI
+
     // Use this for initialization
     void Start () {//世代数と名前を参照する
         //PlayerStatus.initStatus();
@@ -37,8 +46,7 @@ public class World_UI : MonoBehaviour {
         GUI.skin.button.fontSize = 30;
 
         //第〇世代〇〇家
-        GUI.Box(new Rect(Screen.width / 2 - 550, Screen.height / 2 - 300, 500, 100), "",Box);
-        GUI.TextArea(new Rect(Screen.width / 2 - 500, Screen.height / 2 - 280, 500, 100),"第" + PlayerStatus.geneNumber + "世代" + PlayerStatus.clanName + "家", Text);
+        GUI.Box(new Rect(Screen.width / 2 - 500, Screen.height / 2 - 270, 500, 100), "第" + PlayerStatus.geneNumber + "世代" + PlayerStatus.clanName + "家", Box);
 
         //試験前・試験後・人生の選択・社会人・年寄りの看板・ボタンを表示する
         //イメージオブジェクトをそれぞれにアタッチ
@@ -64,16 +72,60 @@ public class World_UI : MonoBehaviour {
 
         if (World_Player.kanban_toshiyori == 2)//
         {
-            iTween.MoveTo(image08, iTween.Hash("z", -5f, "time", 2.0f));//お迎え看板を右下からにゅっと
+            iTween.MoveTo(image08, iTween.Hash("z", -10f, "time", 2.0f));//お迎え看板を右下からにゅっと
         }
+
+        if(World_Player.shiken == 0)//何パートか？　確認UI 
+        {
+            if(PlayerStatus.progress == 1)//小学生パート
+            {
+                iTween.MoveTo(start01, iTween.Hash("delay", 0.5f, "x", -60, "time", 1.0f));//スタート小学校を左からにゅっと
+            }
+
+            if (PlayerStatus.progress == 2)//中学生パート
+            {
+                iTween.MoveTo(start02, iTween.Hash("x", -60, "time", 7.0f));//スタート小学校を左からにゅっと
+            }
+
+            if (PlayerStatus.progress == 3)//高校パート
+            {
+                iTween.MoveTo(start03, iTween.Hash("x", -60, "time", 7.0f));//スタート小学校を左からにゅっと
+            }
+
+            if (PlayerStatus.progress == 4)//人生の選択パート
+            {
+                iTween.MoveTo(start04, iTween.Hash("x", -60, "time", 7.0f));//スタート小学校を左からにゅっと
+            }
+
+            if (PlayerStatus.progress == 5)//専門学校パート
+            {
+                iTween.MoveTo(start05, iTween.Hash("x", -60, "time", 7.0f));//スタート小学校を左からにゅっと
+            }
+
+            if (PlayerStatus.progress == 6)//大学パート
+            {
+                iTween.MoveTo(start06, iTween.Hash("x", -60, "time", 7.0f));//スタート小学校を左からにゅっと
+            }
+
+            if (PlayerStatus.progress == 7)//社会人パート
+            {
+                iTween.MoveTo(start07, iTween.Hash("x", -60, "time", 7.0f));//スタート小学校を左からにゅっと
+            }
+
+            if (PlayerStatus.progress == 8)//歳よりパート
+            {
+                iTween.MoveTo(start08, iTween.Hash("x", -60, "time", 7.0f));//スタート小学校を左からにゅっと
+            }
+        }
+
 
         if (PlayerStatus.progress == 4)//高校卒業後
         {
             if(World_Player.Select_Button == 1)
             {//選択肢３つ出てくる 専門学校・大学・就職
-                iTween.ScaleTo(image03, iTween.Hash("x", 1, "y", 0.7, "time", 2.0f, "oncomplete", "Click", "oncompletetarget", gameObject));
-                iTween.ScaleTo(image04, iTween.Hash("x", 1, "y", 0.7, "time", 2.0f, "oncomplete", "Click", "oncompletetarget", gameObject));
-                iTween.ScaleTo(image05, iTween.Hash("x", 1, "y", 0.7, "time", 2.0f, "oncomplete", "Click", "oncompletetarget", gameObject));
+                iTween.ScaleTo(image03, iTween.Hash("delay", 1f, "x", 1, "y", 1.3, "time", 2.0f, "oncomplete", "Click", "oncompletetarget", gameObject));
+                iTween.ScaleTo(image04, iTween.Hash("delay", 1f, "x", 1, "y", 1.3, "time", 2.0f, "oncomplete", "Click", "oncompletetarget", gameObject));
+                iTween.ScaleTo(image05, iTween.Hash("delay", 1f, "x", 1, "y", 1.3, "time", 2.0f, "oncomplete", "Click", "oncompletetarget", gameObject));
             }
         }
 
@@ -88,8 +140,4 @@ public class World_UI : MonoBehaviour {
             iTween.ScaleBy(image05, iTween.Hash("x", 0, "y", 0, "time", 2.0f));
         }
     }
-
-
-
-
 }

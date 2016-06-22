@@ -21,6 +21,8 @@
 [bg_show name="K_roka" time=0.5]
 ;背景表示
 
+[playbgm wait=false time=1 storage="interi"]
+
 #{f.clanName}
 よいしょっと[p]
 
@@ -67,6 +69,8 @@
 人間力が少し上がった。[p]
 [calc exp="f.hu={f.hu}+10"]
 
+[stopbgm]
+
 [Export]
 
-[scene file="Main_HighSchool"]
+[scene file={f.sceneName}]

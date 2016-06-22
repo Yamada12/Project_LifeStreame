@@ -16,7 +16,7 @@
 [bg_new name="syoko" storage="syoko"]
 [bg_show name="syoko" time=0.5]
 
-[playbgm wait=false time=1 storage="barehowa"]
+[playbgm storage=hanami]
 
 ～バレンタイン～[p]
 
@@ -69,8 +69,6 @@
 
 [endif]
 
-[stopbgm]
-
 [Export]
 
-[scene file="Main_ElementarySchool"]
+[scene file={f.sceneName}]

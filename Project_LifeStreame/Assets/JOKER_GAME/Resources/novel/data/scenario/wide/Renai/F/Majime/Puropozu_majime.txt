@@ -24,8 +24,6 @@
 [show name=risa]
 ;キャラクター表示
 
-[playbgm wait=false time=1 storage="puropozu"]
-
 #梨沙
 きれいね[p]
 
@@ -72,8 +70,6 @@
 
 #
 佐倉　梨沙と結婚することが出来ました。[p]
-
-[stopbgm]
 
 [Export]
 

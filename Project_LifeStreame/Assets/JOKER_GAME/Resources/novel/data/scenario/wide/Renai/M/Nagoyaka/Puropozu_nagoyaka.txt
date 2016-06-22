@@ -24,8 +24,6 @@
 [show name=yositaka]
 ;キャラクター表示
 
-[playbgm wait=false time=1 storage="puropozu"]
-
 #{f.clanName}
 綺麗な眺め[p]
 
@@ -39,6 +37,7 @@
 #{f.clanName}
 ・・・・・・[p]
 
+[chara_mod name="yositaka" storage="nagoyaka_kanasi_c"]
 #善鷹
 少し真面目な話していいかな[p]
 
@@ -52,8 +51,9 @@
 
 君とどうしたいかを[p]
 
-そしｔ、僕はこれから先君のために生きていきたいと思っている[p]
+そして、僕はこれから先君のために生きていきたいと思っている[p]
 
+[chara_mod name="yositaka" storage="nagoyaka_tere_c"]
 だから、結婚してくれないか？[p]
 
 #{f.clanName}

@@ -33,4 +33,4 @@
 
 [Export]
 
-[scene file="Main_ProfessionalSchool"]
+[scene file={f.sceneName}]

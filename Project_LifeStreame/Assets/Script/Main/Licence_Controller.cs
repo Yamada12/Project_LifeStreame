@@ -75,6 +75,7 @@ public class Licence_Controller : MonoBehaviour
     public void ClosedMenu()
     {
         fadeOut();
+        SoundPlayer.Instance.PlaySE("SmartPhone_Cancel");
     }
 
     /// <summary>

@@ -33,4 +33,4 @@
 
 [Export]
 
-[scene file="Main_University"]
+[scene file={f.sceneName}]

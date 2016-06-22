@@ -75,6 +75,7 @@
 #{f.clanName}
 迷ったんだよね？[p]
 
+[chara_mod name="kojiro" storage="kamase_kanasi_c"]
 #虎次郎
 はい、迷ってます[p]
 

@@ -24,8 +24,6 @@
 [show name=sora]
 ;キャラクター表示
 
-[playbgm wait=false time=1 storage="kouen"]
-
 #{f.clanName}
 少し休憩しようか[p]
 
@@ -134,8 +132,6 @@
 
 経済力が下がった。[p]
 [calc exp="f.ec={f.ec}-20"]
-
-[stopbgm]
 
 [Export]
 

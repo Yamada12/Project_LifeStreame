@@ -24,8 +24,6 @@
 [show name=risa]
 ;キャラクター表示
 
-[playbgm wait=false time=1 storage="kokuhaku"]
-
 #梨沙
 何かしら[p]
 
@@ -288,8 +286,6 @@
 @jump target=*a_common
 
 *a_common 
-
-[stopbgm]
 
 [Export]
 

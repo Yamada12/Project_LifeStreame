@@ -19,6 +19,8 @@
 
 ～入試～[p]
 
+[calc exp="f.test={f.test}-{f.test}"]
+
 第１問[p]
 [random var="f.rand"num=7]
 [if exp="{f.rand}==0"]
@@ -577,7 +579,7 @@
 
 
 [if exp="{f.rand}==5"]
-モルワイデ図法・メルカトル図法といったら何の書き方でしょう？
+モルワイデ図法・メルカトル図法といったら何の書き方でしょう？[p]
 [select_new text="A:　絵画" target=*select_c20_1]
 [select_new text="B:　小説" target=*select_c20_2]
 [select_new text="C:　地図" target=*select_c20_3]
@@ -635,4 +637,4 @@
 *Unity
 [stopbgm]
 結果発表!!![p]
-[scene file="World"]
+[scene file={f.sceneName}]

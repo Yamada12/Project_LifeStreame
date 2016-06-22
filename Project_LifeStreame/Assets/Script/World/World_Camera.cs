@@ -16,8 +16,14 @@ public class World_Camera : MonoBehaviour {
 
         if(World_Player.kanban_nyugaku == 1 || World_Player.Select_Button == 1 || World_Player.kanban_toshiyori == 1 || World_Player.kanban_shakai == 1)
         {//カメラの位置をplayer01の真後ろに移動させる
-            iTween.MoveTo(gameObject, iTween.Hash("position", Camera_position, "time", 3.0f));
-            iTween.RotateTo(gameObject, iTween.Hash("rotation", Camera_position, "time", 3.0f));
+            iTween.MoveTo(gameObject, iTween.Hash("position", Camera_position, "time", 1.0f, "oncomplete", "", "oncompletetarget", gameObject));
+            iTween.RotateTo(gameObject, iTween.Hash("rotation", Camera_position, "time", 1.0f));
+            World_Player.kanban_nyugaku = 2;
+        }
+
+        if(World_Player.kanban_shakai == 1)
+        {
+            World_Player.kanban_shakai = 2;
         }
 
         if(World_Player.kanban_toshiyori == 1)

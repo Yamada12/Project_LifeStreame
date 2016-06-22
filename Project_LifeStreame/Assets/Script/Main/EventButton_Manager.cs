@@ -33,7 +33,6 @@ public class EventButton_Manager : MonoBehaviour
     /// </summary>
     public void Save_UseCount()
     {
-        Debug.Log(buttons.Length);
         for (int i = 0; i < buttons.Length; i++)
         {
             buttonID[i] = i.ToString();
@@ -90,15 +89,14 @@ public class EventButton_Manager : MonoBehaviour
     /// </summary>
     public void InitDelete()
     {
-        for (int i = 100; i < 0; i--)
+        for (int i = 0; i < 50; i++)
         {
             PlayerPrefs.DeleteKey(i.ToString());
         }
-        Save_UseCount();
-        MainManager.pauseFlag = false;
+        MainManager.pauseFlag = true;
     }
 
-    public void DeleteALL()
+    public void Debug_DeleteALL()
     {//デバッグ用セーブデータ全消去
         PlayerPrefs.DeleteKey("0");
         InteractiveCheck(0);

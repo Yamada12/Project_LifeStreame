@@ -24,8 +24,6 @@
 [show name=sora]
 ;キャラクター表示
 
-[playbgm wait=false time=1 storage="kokuhaku"]
-
 #蒼空
 どうしたの？[p]
 
@@ -227,8 +225,6 @@
 @jump target=*a_common
 
 *a_common 
-
-[stopbgm]
 
 [Export]
 

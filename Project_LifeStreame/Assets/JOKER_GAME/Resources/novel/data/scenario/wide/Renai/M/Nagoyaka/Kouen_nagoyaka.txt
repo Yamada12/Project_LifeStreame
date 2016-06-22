@@ -24,8 +24,6 @@
 [show name=yositaka]
 ;キャラクター表示
 
-[playbgm wait=false time=1 storage="kouen"]
-
 #{f.clanName}
 公園？[p]
 
@@ -50,6 +48,7 @@
 #善鷹
 あそこのベンチで食べようか[p]
 
+[chara_mod name="yositaka" storage="nagoyaka_niko_c"]
 #二人
 いただきまーす[p]
 
