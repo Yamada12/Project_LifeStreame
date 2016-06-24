@@ -29,21 +29,25 @@ public class World_Player : MonoBehaviour {
         kanban_shakai = 0;
         kanban_toshiyori = 0;
 
+        Debug.Log("リザルト：" + result);
+        Debug.Log("試験：" + shiken);
+
         if (shiken == 1)
         {
             if (StatusManager.variable.get("f.test") != "null")//試験後、値代入
             {
                 result = int.Parse(StatusManager.variable.get("f.test"));
+                PlayerStatus.static_Save();
             }
         }
 
-        Debug.Log("リザルト：" + result);
-        Debug.Log("試験：" + shiken);
- 
-        if (StatusManager.variable.get("f.test") == "null")//小学生開始時、nullのため
+        if (shiken == 0)
         {
-            result = 0;
-            StatusManager.variable.set("f.test", ((int)result).ToString());
+            if (StatusManager.variable.get("f.test") == "null")//小学生開始時、nullのため
+            {
+                result = 0;
+                StatusManager.variable.set("f.test", ((int)result).ToString());
+            }
         }
     }
 
@@ -51,6 +55,7 @@ public class World_Player : MonoBehaviour {
     {
         SoundPlayer.Instance.PlayBGM("World01");
         PlayerStatus.static_Save();
+        PlayerStatus.static_Load();
     }
 
     public void OnTriggerEnter(Collider other)
@@ -229,14 +234,21 @@ public class World_Player : MonoBehaviour {
         //ビルにレッツゴー
         if (other.gameObject.tag == "MOS")
         {
-            SceneManager.LoadScene("Main");//メイン社会人へ
+            SceneManager.LoadScene("Work");//メイン社会人へ
         }
 
         //民家にレッツゴー
         if (other.gameObject.tag == "GA")
         {
-            SceneManager.LoadScene("Main");//メイン社会人へ
-            NovelSingleton.StatusManager.callJoker("wide/Happy/H_end", "");
+            if (PlayerStatus.children <= 0)
+            {
+                PlayerStatus.InitConverter();
+                NovelSingleton.StatusManager.callJoker("wide/Happy/H_end", "");
+            }
+            else
+            {//引き継ぎ処理
+                SceneManager.LoadScene("Chain");
+            }
         }
     }
 }

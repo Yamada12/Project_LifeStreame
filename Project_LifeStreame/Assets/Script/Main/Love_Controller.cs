@@ -42,7 +42,8 @@ public class Love_Controller : MonoBehaviour
                 else
                     basePoint_f[2].GetComponentInChildren<Button>().interactable = true;
             }
-            else {
+            else
+            {
                 switch (PlayerStatus.marriage)
                 {//誰と付き合っているか
                     case 1://ツンデレ
@@ -100,7 +101,8 @@ public class Love_Controller : MonoBehaviour
                 else
                     basePoint_m[2].GetComponentInChildren<Button>().interactable = true;
             }
-            else {
+            else
+            {
                 switch (PlayerStatus.marriage)
                 {//誰と付き合っているか
                     case 1://テリメガ

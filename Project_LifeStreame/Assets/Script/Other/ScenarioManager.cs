@@ -123,7 +123,7 @@ public class ScenarioManager : MonoBehaviour
     {//コミュ力の上昇
         PlayerStatus.co += _parameter;
         PlayerPrefs.SetFloat("co", PlayerStatus.co);
-        flyText.GetComponentInChildren<Text>().alignment = TextAnchor.UpperLeft;
+        flyText.GetComponentInChildren<Text>().alignment = TextAnchor.UpperCenter;
         StartCoroutine(PopText("コミュ力↑", 0f));
     }
 
@@ -131,7 +131,7 @@ public class ScenarioManager : MonoBehaviour
     {//経済力の上昇
         PlayerStatus.ec += _parameter;
         PlayerPrefs.SetFloat("ec", PlayerStatus.ec);
-        flyText.GetComponentInChildren<Text>().alignment = TextAnchor.UpperLeft;
+        flyText.GetComponentInChildren<Text>().alignment = TextAnchor.UpperCenter;
         StartCoroutine(PopText("経済力↑", 0f));
     }
 
@@ -139,7 +139,7 @@ public class ScenarioManager : MonoBehaviour
     {//学力の上昇
         PlayerStatus.ac += _parameter;
         PlayerPrefs.SetFloat("ac", PlayerStatus.ac);
-        flyText.GetComponentInChildren<Text>().alignment = TextAnchor.UpperLeft;
+        flyText.GetComponentInChildren<Text>().alignment = TextAnchor.UpperCenter;
         StartCoroutine(PopText("学力↑", 0f));
     }
 
@@ -147,7 +147,7 @@ public class ScenarioManager : MonoBehaviour
     {//人間力の上昇
         PlayerStatus.hu += _parameter;
         PlayerPrefs.SetFloat("hu", PlayerStatus.hu);
-        flyText.GetComponentInChildren<Text>().alignment = TextAnchor.UpperLeft;
+        flyText.GetComponentInChildren<Text>().alignment = TextAnchor.UpperCenter;
         StartCoroutine(PopText("人間力↑", 0f));
     }
 
@@ -155,7 +155,7 @@ public class ScenarioManager : MonoBehaviour
     {//体力の上昇
         PlayerStatus.vi += _parameter;
         PlayerPrefs.SetFloat("vi", PlayerStatus.vi);
-        flyText.GetComponentInChildren<Text>().alignment = TextAnchor.UpperLeft;
+        flyText.GetComponentInChildren<Text>().alignment = TextAnchor.UpperCenter;
         StartCoroutine(PopText("体力↑", 0f));
     }
 
@@ -258,7 +258,7 @@ public class ScenarioManager : MonoBehaviour
     /// <param name="time">ディレイの時間</param>
     public void OtherPoper(string text, float time)
     {
-        flyText.GetComponentInChildren<Text>().alignment = TextAnchor.LowerLeft;
+        flyText.GetComponentInChildren<Text>().alignment = TextAnchor.UpperCenter;
         StartCoroutine(PopText(text, time));
     }
 
@@ -268,6 +268,7 @@ public class ScenarioManager : MonoBehaviour
     /// <param name="text">表示する内容</param>
     public IEnumerator PopText(string text, float delayTime)
     {
+        PlayerStatus.babyCounter();
         flyText.GetComponentInChildren<Text>().text = text;
         if (delayTime <= 0)
         {
@@ -277,7 +278,14 @@ public class ScenarioManager : MonoBehaviour
             StopAllCoroutines();
         }
         yield return new WaitForSeconds(delayTime);
-        if (delayTime >= 0.5)
+        if (delayTime <= 0.5 && delayTime > 0)
+        {
+            flyText.GetComponentInChildren<Text>().color = new Color(36f / 255f, 253f / 255f, 42f / 255f);
+            GameObject obj = Instantiate(flyText) as GameObject;
+            SoundPlayer.Instance.PlaySE("StatusUp");
+            StopAllCoroutines();
+        }
+        else if (delayTime >= 1)
         {
             flyText.GetComponentInChildren<Text>().color = new Color(34f / 255f, 151f / 255f, 244f / 255f);
             GameObject obj02 = Instantiate(flyText) as GameObject;
@@ -298,6 +306,255 @@ public class ScenarioManager : MonoBehaviour
             PlayerStatus.lifeTime = 0;
         }
         PlayerPrefs.SetFloat("lifeTime", PlayerStatus.lifeTime);
+    }
+
+    public void Working()
+    {
+        switch (PlayerStatus.job)
+        {
+            case "フリーター"://フリーター
+                PlayerStatus.ec += 10;
+                PlayerStatus.lifeTime -= 50;
+                flyText.GetComponentInChildren<Text>().alignment = TextAnchor.UpperCenter;
+                StartCoroutine(PopText("経済力↑", 0f));
+                PlayerStatus.job = "フリーター";
+                break;
+            case "サラリーマン"://サラリーマン
+                PlayerStatus.ec += 12;
+                PlayerStatus.lifeTime -= 50;
+                flyText.GetComponentInChildren<Text>().alignment = TextAnchor.UpperCenter;
+                StartCoroutine(PopText("経済力↑", 0f));
+                PlayerStatus.job = "サラリーマン";
+                break;
+            case "料理人"://料理人
+                PlayerStatus.ec += 15;
+                PlayerStatus.lifeTime -= 50;
+                flyText.GetComponentInChildren<Text>().alignment = TextAnchor.UpperCenter;
+                StartCoroutine(PopText("経済力↑", 0f));
+                PlayerStatus.job = "料理人";
+                break;
+            case "医者"://医者
+                PlayerStatus.ec += 30;
+                PlayerStatus.lifeTime -= 50;
+                flyText.GetComponentInChildren<Text>().alignment = TextAnchor.UpperCenter;
+                StartCoroutine(PopText("経済力↑", 0f));
+                PlayerStatus.job = "医者";
+                break;
+            case "芸能人"://芸能人
+                PlayerStatus.ec += 15;
+                PlayerStatus.lifeTime -= 50;
+                flyText.GetComponentInChildren<Text>().alignment = TextAnchor.UpperCenter;
+                StartCoroutine(PopText("経済力↑", 0f));
+                PlayerStatus.job = "芸能人";
+                break;
+            case "警察"://警察
+                PlayerStatus.ec += 24;
+                PlayerStatus.lifeTime -= 50;
+                flyText.GetComponentInChildren<Text>().alignment = TextAnchor.UpperCenter;
+                StartCoroutine(PopText("経済力↑", 0f));
+                PlayerStatus.job = "警察";
+                break;
+            case "教師"://教師
+                PlayerStatus.ec += 23;
+                PlayerStatus.lifeTime -= 50;
+                flyText.GetComponentInChildren<Text>().alignment = TextAnchor.UpperCenter;
+                StartCoroutine(PopText("経済力↑", 0f));
+                PlayerStatus.job = "教師";
+                break;
+            case "消防士"://消防士
+                PlayerStatus.ec += 25;
+                PlayerStatus.lifeTime -= 50;
+                flyText.GetComponentInChildren<Text>().alignment = TextAnchor.UpperCenter;
+                StartCoroutine(PopText("経済力↑", 0f));
+                PlayerStatus.job = "消防士";
+                break;
+            case "自衛隊"://自衛隊
+                PlayerStatus.ec += 18;
+                PlayerStatus.lifeTime -= 50;
+                flyText.GetComponentInChildren<Text>().alignment = TextAnchor.UpperCenter;
+                StartCoroutine(PopText("経済力↑", 0f));
+                PlayerStatus.job = "自衛隊";
+                break;
+            case "スポーツ選手"://スポーツ選手
+                PlayerStatus.ec += 100;
+                PlayerStatus.lifeTime -= 150;
+                flyText.GetComponentInChildren<Text>().alignment = TextAnchor.UpperCenter;
+                StartCoroutine(PopText("経済力↑", 0f));
+                PlayerStatus.job = "スポーツ選手";
+                break;
+            case "美容師"://美容師
+                PlayerStatus.ec += 18;
+                PlayerStatus.lifeTime -= 50;
+                flyText.GetComponentInChildren<Text>().alignment = TextAnchor.UpperCenter;
+                StartCoroutine(PopText("経済力↑", 0f));
+                PlayerStatus.job = "美容師";
+                break;
+            case "システムエンジニア"://システムエンジニア
+                PlayerStatus.ec += 21;
+                PlayerStatus.lifeTime -= 50;
+                flyText.GetComponentInChildren<Text>().alignment = TextAnchor.UpperCenter;
+                StartCoroutine(PopText("経済力↑", 0f));
+                PlayerStatus.job = "システムエンジニア";
+                break;
+            case "音楽家"://音楽家
+                PlayerStatus.ec += 17;
+                PlayerStatus.lifeTime -= 50;
+                flyText.GetComponentInChildren<Text>().alignment = TextAnchor.UpperCenter;
+                StartCoroutine(PopText("経済力↑", 0f));
+                PlayerStatus.job = "音楽家";
+                break;
+            case "農家"://農家
+                PlayerStatus.ec += 16;
+                PlayerStatus.lifeTime -= 50;
+                flyText.GetComponentInChildren<Text>().alignment = TextAnchor.UpperCenter;
+                StartCoroutine(PopText("経済力↑", 0f));
+                PlayerStatus.job = "農家";
+                break;
+            case "小説家"://小説家
+                PlayerStatus.ec += 15;
+                PlayerStatus.lifeTime -= 50;
+                flyText.GetComponentInChildren<Text>().alignment = TextAnchor.UpperCenter;
+                StartCoroutine(PopText("経済力↑", 0f));
+                PlayerStatus.job = "小説家";
+                break;
+            case "科学者"://科学者
+                PlayerStatus.ec += 32;
+                PlayerStatus.lifeTime -= 50;
+                flyText.GetComponentInChildren<Text>().alignment = TextAnchor.UpperCenter;
+                StartCoroutine(PopText("経済力↑", 0f));
+                PlayerStatus.job = "科学者";
+                break;
+            case "運送業"://運送業
+                PlayerStatus.ec += 22;
+                PlayerStatus.lifeTime -= 50;
+                flyText.GetComponentInChildren<Text>().alignment = TextAnchor.UpperCenter;
+                StartCoroutine(PopText("経済力↑", 0f));
+                PlayerStatus.job = "運送業";
+                break;
+            case "土木業"://土木業
+                PlayerStatus.ec += 16;
+                PlayerStatus.lifeTime -= 50;
+                flyText.GetComponentInChildren<Text>().alignment = TextAnchor.UpperCenter;
+                StartCoroutine(PopText("経済力↑", 0f));
+                PlayerStatus.job = "土木業";
+                break;
+            case "デザイナー"://デザイナー
+                PlayerStatus.ec += 19;
+                PlayerStatus.lifeTime -= 50;
+                flyText.GetComponentInChildren<Text>().alignment = TextAnchor.UpperCenter;
+                StartCoroutine(PopText("経済力↑", 0f));
+                PlayerStatus.job = "デザイナー";
+                break;
+            case "歌手"://歌手
+                PlayerStatus.ec += 20;
+                PlayerStatus.lifeTime -= 50;
+                flyText.GetComponentInChildren<Text>().alignment = TextAnchor.UpperCenter;
+                StartCoroutine(PopText("経済力↑", 0f));
+                PlayerStatus.job = "歌手";
+                break;
+            case "カメラマン"://カメラマン
+                PlayerStatus.ec += 15;
+                PlayerStatus.lifeTime -= 50;
+                flyText.GetComponentInChildren<Text>().alignment = TextAnchor.UpperCenter;
+                StartCoroutine(PopText("経済力↑", 0f));
+                PlayerStatus.job = "カメラマン";
+                break;
+            case "宇宙飛行士"://宇宙飛行士
+                PlayerStatus.ec += 42;
+                PlayerStatus.lifeTime -= 50;
+                flyText.GetComponentInChildren<Text>().alignment = TextAnchor.UpperCenter;
+                StartCoroutine(PopText("経済力↑", 0f));
+                PlayerStatus.job = "宇宙飛行士";
+                break;
+            case "漁師"://漁師
+                PlayerStatus.ec += 20;
+                PlayerStatus.lifeTime -= 50;
+                flyText.GetComponentInChildren<Text>().alignment = TextAnchor.UpperCenter;
+                StartCoroutine(PopText("経済力↑", 0f));
+                PlayerStatus.job = "漁師";
+                break;
+            case "ダンサー"://ダンサー
+                PlayerStatus.ec += 17;
+                PlayerStatus.lifeTime -= 50;
+                flyText.GetComponentInChildren<Text>().alignment = TextAnchor.UpperCenter;
+                StartCoroutine(PopText("経済力↑", 0f));
+                PlayerStatus.job = "ダンサー";
+                break;
+            case "弁護士"://弁護士
+                PlayerStatus.ec += 30;
+                PlayerStatus.lifeTime -= 50;
+                flyText.GetComponentInChildren<Text>().alignment = TextAnchor.UpperCenter;
+                StartCoroutine(PopText("経済力↑", 0f));
+                PlayerStatus.job = "弁護士";
+                break;
+            case "占い師"://†占い師†
+                PlayerStatus.ec += 10;
+                PlayerStatus.lifeTime -= 50;
+                flyText.GetComponentInChildren<Text>().alignment = TextAnchor.UpperCenter;
+                StartCoroutine(PopText("経済力↑", 0f));
+                PlayerStatus.job = "占い師";
+                break;
+            case "執事・メイド"://†執事・メイド†
+                PlayerStatus.ec += 10;
+                PlayerStatus.lifeTime -= 50;
+                flyText.GetComponentInChildren<Text>().alignment = TextAnchor.UpperCenter;
+                StartCoroutine(PopText("経済力↑", 0f));
+                PlayerStatus.job = "執事・メイド";
+                break;
+            case "正義の味方"://†正義の味方†
+                PlayerStatus.ec += 10;
+                PlayerStatus.lifeTime -= 50;
+                flyText.GetComponentInChildren<Text>().alignment = TextAnchor.UpperCenter;
+                StartCoroutine(PopText("経済力↑", 0f));
+                PlayerStatus.job = "正義の味方";
+                break;
+            case "スタントマン"://†スタントマン†
+                PlayerStatus.ec += 10;
+                PlayerStatus.lifeTime -= 50;
+                flyText.GetComponentInChildren<Text>().alignment = TextAnchor.UpperCenter;
+                StartCoroutine(PopText("経済力↑", 0f));
+                PlayerStatus.job = "スタントマン";
+                break;
+            case "配管工"://†配管工†
+                PlayerStatus.ec += 10;
+                PlayerStatus.lifeTime -= 50;
+                flyText.GetComponentInChildren<Text>().alignment = TextAnchor.UpperCenter;
+                StartCoroutine(PopText("経済力↑", 0f));
+                PlayerStatus.job = "配管工";
+                break;
+            case "ギャンブラー"://†ギャンブラー†
+                float rnd = Random.Range(0, 1000);
+                if (rnd <= PlayerStatus.lu)
+                {
+                    PlayerStatus.ec += 60;
+                    flyText.GetComponentInChildren<Text>().alignment = TextAnchor.UpperCenter;
+                    StartCoroutine(PopText("運がいいね！", 0f));
+                }
+                PlayerStatus.lifeTime -= 50;
+                flyText.GetComponentInChildren<Text>().alignment = TextAnchor.UpperCenter;
+                StartCoroutine(PopText("何も起こらなかった", 0f));
+                PlayerStatus.job = "ギャンブラー";
+                break;
+            case "王子・王女"://‡王子・王女‡
+                PlayerStatus.ec += 50;
+                PlayerStatus.ac += 50;
+                PlayerStatus.lu += 50;
+                PlayerStatus.vi += 50;
+                PlayerStatus.hu += 50;
+                PlayerStatus.co += 50;
+                PlayerStatus.lifeTime -= 50;
+                flyText.GetComponentInChildren<Text>().alignment = TextAnchor.UpperCenter;
+                StartCoroutine(PopText("無双", 0f));
+                PlayerStatus.job = "王子・王女";
+                break;
+            default:
+                PlayerStatus.ec += 10;
+                PlayerStatus.lifeTime -= 50;
+                flyText.GetComponentInChildren<Text>().alignment = TextAnchor.UpperCenter;
+                StartCoroutine(PopText("経済力↑", 0f));
+                PlayerStatus.job = "フリーター";
+                break;
+        }
     }
 
     /// <summary>

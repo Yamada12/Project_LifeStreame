@@ -23,167 +23,170 @@ public class SceneChanger : MonoBehaviour
     {
         float rnd = Random.Range(0, 4);
         SoundPlayer.Instance.PlaySE("Event_Enter");
-
-        switch (character)
+        PlayerStatus.lifeTime -= 20;
+        if (PlayerStatus.lifeTime > 20)
         {
-            case "tun"://ツンデレ
-                if (rnd == 0)
-                {
+            switch (character)
+            {
+                case "tun"://ツンデレ
+                    if (rnd == 0)
+                    {
+                        PlayerStatus.InitConverter();
+                        NovelSingleton.StatusManager.callJoker("wide/Renai/F/Tundere/Eiga_tun", "");
+                    }
+                    else if (rnd == 1)
+                    {
+                        PlayerStatus.InitConverter();
+                        NovelSingleton.StatusManager.callJoker("wide/Renai/F/Tundere/Kaimono_tun", "");
+                    }
+                    else if (rnd == 2)
+                    {
+                        PlayerStatus.InitConverter();
+                        NovelSingleton.StatusManager.callJoker("wide/Renai/F/Tundere/Kouen_tun", "");
+                    }
+                    else if (rnd == 3)
+                    {
+                        PlayerStatus.InitConverter();
+                        NovelSingleton.StatusManager.callJoker("wide/Renai/F/Tundere/Suizoku_tun", "");
+                    }
+                    break;
+                case "majime"://真面目
+                    if (rnd == 0)
+                    {
+                        PlayerStatus.InitConverter();
+                        NovelSingleton.StatusManager.callJoker("wide/Renai/F/Majime/Eiga_majime", "");
+                    }
+                    else if (rnd == 1)
+                    {
+                        PlayerStatus.InitConverter();
+                        NovelSingleton.StatusManager.callJoker("wide/Renai/F/Majime/Kaimono_majime", "");
+                    }
+                    else if (rnd == 2)
+                    {
+                        PlayerStatus.InitConverter();
+                        NovelSingleton.StatusManager.callJoker("wide/Renai/F/Majime/Kouen_majime", "");
+                    }
+                    else if (rnd == 3)
+                    {
+                        PlayerStatus.InitConverter();
+                        NovelSingleton.StatusManager.callJoker("wide/Renai/F/Majime/Suizoku_majime", "");
+                    }
+                    break;
+                case "supokon"://スポコン
+                    if (rnd == 0)
+                    {
+                        PlayerStatus.InitConverter();
+                        NovelSingleton.StatusManager.callJoker("wide/Renai/F/Supokon/Eiga_supo", "");
+                    }
+                    else if (rnd == 1)
+                    {
+                        PlayerStatus.InitConverter();
+                        NovelSingleton.StatusManager.callJoker("wide/Renai/F/Supokon/Kaimono_supo", "");
+                    }
+                    else if (rnd == 2)
+                    {
+                        PlayerStatus.InitConverter();
+                        NovelSingleton.StatusManager.callJoker("wide/Renai/F/Supokon/Kouen_supo", "");
+                    }
+                    else if (rnd == 3)
+                    {
+                        PlayerStatus.InitConverter();
+                        NovelSingleton.StatusManager.callJoker("wide/Renai/F/Supokon/Suizoku_supo", "");
+                    }
+                    break;
+                case "mega"://インテリメガネ
+                    if (rnd == 0)
+                    {
+                        PlayerStatus.InitConverter();
+                        NovelSingleton.StatusManager.callJoker("wide/Renai/M/Interi/Eiga_interi", "");
+                    }
+                    else if (rnd == 1)
+                    {
+                        PlayerStatus.InitConverter();
+                        NovelSingleton.StatusManager.callJoker("wide/Renai/M/Interi/Kaimono_interi", "");
+                    }
+                    else if (rnd == 2)
+                    {
+                        PlayerStatus.InitConverter();
+                        NovelSingleton.StatusManager.callJoker("wide/Renai/M/Interi/Kouen_interi", "");
+                    }
+                    else if (rnd == 3)
+                    {
+                        PlayerStatus.InitConverter();
+                        NovelSingleton.StatusManager.callJoker("wide/Renai/M/Interi/Suizoku_interi", "");
+                    }
+                    break;
+                case "kamase"://カマセ
+                    if (rnd == 0)
+                    {
+                        PlayerStatus.InitConverter();
+                        NovelSingleton.StatusManager.callJoker("wide/Renai/M/Kamase/Eiga_kamase", "");
+                    }
+                    else if (rnd == 1)
+                    {
+                        PlayerStatus.InitConverter();
+                        NovelSingleton.StatusManager.callJoker("wide/Renai/M/Kamase/Kaimono_kamase", "");
+                    }
+                    else if (rnd == 2)
+                    {
+                        PlayerStatus.InitConverter();
+                        NovelSingleton.StatusManager.callJoker("wide/Renai/M/Kamase/Kouen_kamase", "");
+                    }
+                    else if (rnd == 3)
+                    {
+                        PlayerStatus.InitConverter();
+                        NovelSingleton.StatusManager.callJoker("wide/Renai/M/Kamase/Suizoku_kamase", "");
+                    }
+                    break;
+                case "nago"://和やか
+                    if (rnd == 0)
+                    {
+                        PlayerStatus.InitConverter();
+                        NovelSingleton.StatusManager.callJoker("wide/Renai/M/Nagoyaka/Eiga_nagoyaka", "");
+                    }
+                    else if (rnd == 1)
+                    {
+                        PlayerStatus.InitConverter();
+                        NovelSingleton.StatusManager.callJoker("wide/Renai/M/Nagoyaka/Kaimono_nagoyaka", "");
+                    }
+                    else if (rnd == 2)
+                    {
+                        PlayerStatus.InitConverter();
+                        NovelSingleton.StatusManager.callJoker("wide/Renai/M/Nagoyaka/Kouen_nagoyaka", "");
+                    }
+                    else if (rnd == 3)
+                    {
+                        PlayerStatus.InitConverter();
+                        NovelSingleton.StatusManager.callJoker("wide/Renai/M/Nagoyaka/Suizoku_nagoyaka", "");
+                    }
+                    break;
+                case "tun_con":
                     PlayerStatus.InitConverter();
-                    NovelSingleton.StatusManager.callJoker("wide/Renai/F/Tundere/Eiga_tun", "");
-                }
-                else if (rnd == 1)
-                {
+                    NovelSingleton.StatusManager.callJoker("wide/Renai/F/Tundere/Kokuhaku_tun", "");
+                    break;
+                case "majime_con":
                     PlayerStatus.InitConverter();
-                    NovelSingleton.StatusManager.callJoker("wide/Renai/F/Tundere/Kaimono_tun", "");
-                }
-                else if (rnd == 2)
-                {
+                    NovelSingleton.StatusManager.callJoker("wide/Renai/F/Majime/Kokuhaku_majime", "");
+                    break;
+                case "supokon_con":
                     PlayerStatus.InitConverter();
-                    NovelSingleton.StatusManager.callJoker("wide/Renai/F/Tundere/Kouen_tun", "");
-                }
-                else if (rnd == 3)
-                {
+                    NovelSingleton.StatusManager.callJoker("wide/Renai/F/Supokon/Kokuhaku_supo", "");
+                    break;
+                case "mega_con":
                     PlayerStatus.InitConverter();
-                    NovelSingleton.StatusManager.callJoker("wide/Renai/F/Tundere/Suizoku_tun", "");
-                }
-                break;
-            case "majime"://真面目
-                if (rnd == 0)
-                {
+                    NovelSingleton.StatusManager.callJoker("wide/Renai/M/Interi/Kokuhaku_interi", "");
+                    break;
+                case "kamase_con":
                     PlayerStatus.InitConverter();
-                    NovelSingleton.StatusManager.callJoker("wide/Renai/F/Majime/Eiga_majime", "");
-                }
-                else if (rnd == 1)
-                {
+                    NovelSingleton.StatusManager.callJoker("wide/Renai/M/Kamase/Kokuhaku_kamase", "");
+                    break;
+                case "nago_con":
                     PlayerStatus.InitConverter();
-                    NovelSingleton.StatusManager.callJoker("wide/Renai/F/Majime/Kaimono_majime", "");
-                }
-                else if (rnd == 2)
-                {
-                    PlayerStatus.InitConverter();
-                    NovelSingleton.StatusManager.callJoker("wide/Renai/F/Majime/Kouen_majime", "");
-                }
-                else if (rnd == 3)
-                {
-                    PlayerStatus.InitConverter();
-                    NovelSingleton.StatusManager.callJoker("wide/Renai/F/Majime/Suizoku_majime", "");
-                }
-                break;
-            case "supokon"://スポコン
-                if (rnd == 0)
-                {
-                    PlayerStatus.InitConverter();
-                    NovelSingleton.StatusManager.callJoker("wide/Renai/F/Supokon/Eiga_supo", "");
-                }
-                else if (rnd == 1)
-                {
-                    PlayerStatus.InitConverter();
-                    NovelSingleton.StatusManager.callJoker("wide/Renai/F/Supokon/Kaimono_supo", "");
-                }
-                else if (rnd == 2)
-                {
-                    PlayerStatus.InitConverter();
-                    NovelSingleton.StatusManager.callJoker("wide/Renai/F/Supokon/Kouen_supo", "");
-                }
-                else if (rnd == 3)
-                {
-                    PlayerStatus.InitConverter();
-                    NovelSingleton.StatusManager.callJoker("wide/Renai/F/Supokon/Suizoku_supo", "");
-                }
-                break;
-            case "mega"://インテリメガネ
-                if (rnd == 0)
-                {
-                    PlayerStatus.InitConverter();
-                    NovelSingleton.StatusManager.callJoker("wide/Renai/M/Interi/Eiga_interi", "");
-                }
-                else if (rnd == 1)
-                {
-                    PlayerStatus.InitConverter();
-                    NovelSingleton.StatusManager.callJoker("wide/Renai/M/Interi/Kaimono_interi", "");
-                }
-                else if (rnd == 2)
-                {
-                    PlayerStatus.InitConverter();
-                    NovelSingleton.StatusManager.callJoker("wide/Renai/M/Interi/Kouen_interi", "");
-                }
-                else if (rnd == 3)
-                {
-                    PlayerStatus.InitConverter();
-                    NovelSingleton.StatusManager.callJoker("wide/Renai/M/Interi/Suizoku_interi", "");
-                }
-                break;
-            case "kamase"://カマセ
-                if (rnd == 0)
-                {
-                    PlayerStatus.InitConverter();
-                    NovelSingleton.StatusManager.callJoker("wide/Renai/M/Kamase/Eiga_kamase", "");
-                }
-                else if (rnd == 1)
-                {
-                    PlayerStatus.InitConverter();
-                    NovelSingleton.StatusManager.callJoker("wide/Renai/M/Kamase/Kaimono_kamase", "");
-                }
-                else if (rnd == 2)
-                {
-                    PlayerStatus.InitConverter();
-                    NovelSingleton.StatusManager.callJoker("wide/Renai/M/Kamase/Kouen_kamase", "");
-                }
-                else if (rnd == 3)
-                {
-                    PlayerStatus.InitConverter();
-                    NovelSingleton.StatusManager.callJoker("wide/Renai/M/Kamase/Suizoku_kamase", "");
-                }
-                break;
-            case "nago"://和やか
-                if (rnd == 0)
-                {
-                    PlayerStatus.InitConverter();
-                    NovelSingleton.StatusManager.callJoker("wide/Renai/M/Nagoyaka/Eiga_nagoyaka", "");
-                }
-                else if (rnd == 1)
-                {
-                    PlayerStatus.InitConverter();
-                    NovelSingleton.StatusManager.callJoker("wide/Renai/M/Nagoyaka/Kaimono_nagoyaka", "");
-                }
-                else if (rnd == 2)
-                {
-                    PlayerStatus.InitConverter();
-                    NovelSingleton.StatusManager.callJoker("wide/Renai/M/Nagoyaka/Kouen_nagoyaka", "");
-                }
-                else if (rnd == 3)
-                {
-                    PlayerStatus.InitConverter();
-                    NovelSingleton.StatusManager.callJoker("wide/Renai/M/Nagoyaka/Suizoku_nagoyaka", "");
-                }
-                break;
-            case "tun_con":
-                PlayerStatus.InitConverter();
-                NovelSingleton.StatusManager.callJoker("wide/Renai/F/Tundere/Kokuhaku_tun", "");
-                break;
-            case "majime_con":
-                PlayerStatus.InitConverter();
-                NovelSingleton.StatusManager.callJoker("wide/Renai/F/Majime/Kokuhaku_majime", "");
-                break;
-            case "supokon_con":
-                PlayerStatus.InitConverter();
-                NovelSingleton.StatusManager.callJoker("wide/Renai/F/Supokon/Kokuhaku_supo", "");
-                break;
-            case "mega_con":
-                PlayerStatus.InitConverter();
-                NovelSingleton.StatusManager.callJoker("wide/Renai/M/Interi/Kokuhaku_interi", "");
-                break;
-            case "kamase_con":
-                PlayerStatus.InitConverter();
-                NovelSingleton.StatusManager.callJoker("wide/Renai/M/Kamase/Kokuhaku_kamase", "");
-                break;
-            case "nago_con":
-                PlayerStatus.InitConverter();
-                NovelSingleton.StatusManager.callJoker("wide/Renai/M/Nagoyaka/Kokuhaku_nagoyaka", "");
-                break;
-            default:
-                break;
+                    NovelSingleton.StatusManager.callJoker("wide/Renai/M/Nagoyaka/Kokuhaku_nagoyaka", "");
+                    break;
+                default:
+                    break;
+            }
         }
     }
 

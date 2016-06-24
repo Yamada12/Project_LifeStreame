@@ -16,6 +16,7 @@ public class TitleManager : MonoBehaviour
     // Use this for initialization
     void Start()
     {
+        PlayerStatus.static_Load();
         settingCanvas.SetActive(false);
         close();
     }
@@ -72,13 +73,22 @@ public class TitleManager : MonoBehaviour
 
     public void StartGame()
     {
-        if (PlayerPrefs.HasKey("mf"))//mfキーがあったら
+        Debug.Log("進行度:" + PlayerStatus.progress);
+        if (PlayerStatus.progress != 0)//進行度が0じゃなかったら
         {
             warningPanel.SetActive(true);
             warningPanel.GetComponentInChildren<Text>().text = "前回のプレイデータが残っています！\n初めから開始してもよろしいですか？";
         }
         else
             TitleMoveAnimation(true);
+    }
+
+    public void Continue()
+    {
+        if (PlayerStatus.progress == 0)//進行度が0だったら
+            TitleMoveAnimation(true);
+        else
+            SceneManager.LoadScene("World");
     }
 
     public void close()

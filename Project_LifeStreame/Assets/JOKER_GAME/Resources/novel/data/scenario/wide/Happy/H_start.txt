@@ -112,7 +112,7 @@
 これで説明を終わるね[p]
 
 それじゃあ[p]
-[chara_mod name="happy" storage="happy"]
+[chara_mod name="happy" storage="unHappy"]
 
 良い人生を[p]
 

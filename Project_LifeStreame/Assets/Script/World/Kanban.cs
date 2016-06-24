@@ -1,43 +1,35 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+/// <summary>
+/// 看板を制御するスクリプト
+/// </summary>
+
 public class Kanban : MonoBehaviour {
 
     public Transform kanbanPosition;
-    public GameObject shoboi;
-    public GameObject hutuu;
-    public GameObject yabai;
-
-	// Use this for initialization
-	void Start () {
-	
-	}
-	
-	// Update is called once per frame
-	void Update () {
-	
-	}
+    public int Kanban_num;
 
     public void OnTriggerEnter(Collider other)
     {
-        if(other.gameObject.tag == "Player")
+        if(other.gameObject.tag == "Player")//プレイヤーが看板に触れたら上にボーンッ！
         {
-            if (gameObject == shoboi)
-            {
                 iTween.MoveTo(gameObject, iTween.Hash("position", kanbanPosition, "time", 1.0f));
                 iTween.RotateTo(gameObject, iTween.Hash("rotation", kanbanPosition, "time", 1.0f));
+
+            if (Kanban_num == 1)//看板しょぼいの時のSE
+            {
+
             }
 
-            if (gameObject == hutuu)
+            if (Kanban_num == 2)//看板ふつうの時のSE
             {
-                iTween.MoveTo(gameObject, iTween.Hash("position", kanbanPosition, "time", 1.0f));
-                iTween.RotateTo(gameObject, iTween.Hash("rotation", kanbanPosition, "time", 1.0f));
+
             }
 
-            if (gameObject == yabai)
+            if (Kanban_num == 3)//看板やばいの時のSE
             {
-                iTween.MoveTo(gameObject, iTween.Hash("position", kanbanPosition, "time", 1.0f));
-                iTween.RotateTo(gameObject, iTween.Hash("rotation", kanbanPosition, "time", 1.0f));
+
             }
         }
     }

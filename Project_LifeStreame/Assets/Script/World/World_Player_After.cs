@@ -15,8 +15,9 @@ public class World_Player_After : MonoBehaviour
     void Start()//試験後上にぴょん
     {
 
-        if (World_Player.result >= 1)
+        if (World_Player.shiken == 1)
         {
+            Debug.Log("リザルト"+ World_Player.result);
             iTween.MoveTo(gameObject, iTween.Hash("delay", 0.5f, "y", 0.5, "time", 0.2f, "oncomplete", "Move4", "oncompletetarget", gameObject));
         }
     }
@@ -33,7 +34,7 @@ public class World_Player_After : MonoBehaviour
 
     void Update()
     {
-        if (World_Player.result >= 1)//試験後、クリックで
+        if (World_Player.shiken == 1)//試験後、クリックで
         {
             if (World_Player.kanban_nyugaku == 2 || World_Player.kanban_shakai == 1)
             {
@@ -58,6 +59,9 @@ public class World_Player_After : MonoBehaviour
 
     public void Move7()
     {
+
+        Debug.Log("リザルト"+World_Player.result);//リザルトが0になってしまう？
+
         switch (World_Player.result)
         {
             case 3:

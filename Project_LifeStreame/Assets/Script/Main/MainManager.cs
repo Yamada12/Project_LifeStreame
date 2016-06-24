@@ -20,6 +20,7 @@ public class MainManager : MonoBehaviour
     public GameObject happyObj = null;      //ハッピーシステムのオブジェクト
     public GameObject menuButton = null;    //メニューボタン
     public GameObject love_Button = null;   //連絡ボタン
+    public GameObject storkObj = null;      //コウノトリシステムのオブジェクト
     string timeText;
 
     void Start()
@@ -68,6 +69,10 @@ public class MainManager : MonoBehaviour
 
     void Update()
     {
+        if (PlayerStatus.babyCount <= 0 && PlayerStatus.children <= 0)
+        {
+            GameObject obj = Instantiate(storkObj) as GameObject;
+        }
         if (!pauseFlag)
         {
             // 時間消費
@@ -98,9 +103,9 @@ public class MainManager : MonoBehaviour
     IEnumerator HappySpawn()
     {
         yield return new WaitForSeconds(1f);
-        float rnd = Random.Range(0, 100);
-        if (rnd < 1)
-        {
+        float rnd = Random.Range(0, 200);
+        if (rnd == 1)
+        {//0.5%でハッピーになれます
             GameObject obj = Instantiate(happyObj) as GameObject;
         }
         StartCoroutine(HappySpawn());
@@ -153,12 +158,12 @@ public class MainManager : MonoBehaviour
     /// </summary>
     IEnumerator  ReturnWorld()
     {
-        Destroy(GameObject.Find("License_Canvas(Clone)"));
+        Destroy(GameObject.Find("Licence_Canvas(Clone)"));
         Destroy(GameObject.Find("Love_Canvas(Clone)"));
         Destroy(GameObject.Find("Happy!(Clone)"));
         yield return new WaitForSeconds(4f);
         ev.InitDelete();
-        World_Player.result = 0;
+        //World_Player.result = 0;
         World_Player.shiken = 0;
         PlayerStatus.lifeTime = 1200;
         PlayerStatus.static_Save();

@@ -13,7 +13,7 @@ public class World_Player_Before : MonoBehaviour
 
     void Start()//試験前　真上にぴょん
     {
-        if (World_Player.result == 0)
+        if (World_Player.shiken == 0)
         {
             iTween.MoveTo(gameObject, iTween.Hash("delay", 2.0f, "y", 1.5, "time", 0.3f, "oncomplete", "Move1", "oncompletetarget", gameObject));
         }

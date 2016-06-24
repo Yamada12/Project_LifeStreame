@@ -7,25 +7,38 @@ public class SettingManager : MonoBehaviour
     public GameObject nameField;
     public GameObject m_Button;     //男性選択ボタン
     public GameObject f_Button;     //女性選択ボタン
+    public Text finalAnswer;        //最終確認テキスト
     public Sprite[] selected_Sprite_m;
     public Sprite[] selected_Sprite_f;
+
+    private string geneName;
+    private int selectmf;
 
     // Use this for initialization
     void Start ()
     {
-        PlayerStatus.initStatus();
         SoundPlayer.Instance.PlayBGM("First01");
+    }
+
+    public void InputText()
+    {
+        string gender;
+        if (selectmf == 0)
+            gender = "男の子";
+        else
+            gender = "女の子";
+        finalAnswer.text = "世代名:" + geneName + "\n性別:" + gender + "\nでよろしいですか？";
     }
 
     public void ClanInput()
     {//一族名登録
-        PlayerStatus.clanName = nameField.GetComponent<InputField>().text;
+        geneName = nameField.GetComponent<InputField>().text;
         Debug.Log(PlayerStatus.clanName);
     }
 
     public void Mf_Select(int select)
     {//性別選択
-        PlayerStatus.mf = select;
+        selectmf = select;
         if (select == 0)
         {//男性なら
             m_Button.GetComponent<Image>().sprite = selected_Sprite_m[0];
@@ -44,6 +57,9 @@ public class SettingManager : MonoBehaviour
 
     public void save()
     {//セーブ
+        PlayerStatus.initStatus();
+        PlayerStatus.clanName = geneName;
+        PlayerStatus.mf = selectmf;
         PlayerStatus.static_Save();
     }
 

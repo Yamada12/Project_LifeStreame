@@ -111,15 +111,19 @@ public class Licence_Controller : MonoBehaviour
             case 0://塾
                 if (PlayerStatus.ec >= 300)
                 {
+                    PlayerStatus.lifeTime -= 60;
                     PlayerStatus.ac += 20;
                     PlayerStatus.co += 5;
+                    PlayerPrefs.SetFloat("ac", PlayerStatus.ac);
+                    PlayerPrefs.SetFloat("co", PlayerStatus.co);
+                    sc.OtherPoper("学力↑", 0f);
+                    sc.OtherPoper("コミュ力↑", 0.5f);
                 }
-                PlayerPrefs.SetFloat("ac", PlayerStatus.ac);
-                PlayerPrefs.SetFloat("co", PlayerStatus.co);
-                sc.OtherPoper("学力↑", 0f);
-                sc.OtherPoper("コミュ力↑", 0.5f);
+                else
+                    sc.OtherPoper("経済力が足りないよ", 0f);
                 break;
             case 1://アルバイト
+                PlayerStatus.lifeTime -= 60;
                 PlayerStatus.ec += 20;
                 PlayerStatus.vi += 5;
                 PlayerPrefs.SetFloat("ec", PlayerStatus.ec);
@@ -128,6 +132,7 @@ public class Licence_Controller : MonoBehaviour
                 sc.OtherPoper("体力↑", 0.5f);
                 break;
             case 2://遊ぶ
+                PlayerStatus.lifeTime -= 60;
                 PlayerStatus.vi += 10;
                 PlayerStatus.co += 10;
                 PlayerStatus.hu += 5;
@@ -139,6 +144,7 @@ public class Licence_Controller : MonoBehaviour
                 sc.OtherPoper("人間力↑", 1f);
                 break;
             case 3://家で休む
+                PlayerStatus.lifeTime -= 60;
                 PlayerStatus.lu += 20;
                 PlayerStatus.vi += 5;
                 PlayerPrefs.SetFloat("lu", PlayerStatus.lu);
@@ -149,7 +155,5 @@ public class Licence_Controller : MonoBehaviour
             default:
                 break;
         }
-
-        PlayerStatus.lifeTime -= 60;
     }
 }

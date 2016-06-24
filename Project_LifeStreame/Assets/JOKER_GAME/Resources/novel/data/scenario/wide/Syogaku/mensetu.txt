@@ -1,0 +1,857 @@
+﻿;メッセージ表示
+[showmessage time=0]
+
+;共通ライブラリ
+;セーブ・ロードバックログなど基本的な機能を取り込む ;
+;[call file=wide/system target="*system_setting_buttons"]
+
+;ゲーム作成で便利なマクロ集
+[call file=wide/libs/quiz]
+[text_new name=_sp_chara_name layer=ui x="-168" y=-108.5 val="" color="DDFF00" fontsize=16 anchor="MiddleLeft"]
+[text_show name="_sp_chara_name"]
+
+;---------------------------------------------------------------------------------------------------------------------------------------
+
+[bg_new name="before" storage="interview_before"]
+[bg_new name="after" storage="interview_after"]
+[bg_show name="before" time=0.5]
+
+～面接試験当日～[p]
+
+-待機室-[p]
+
+#{f.clanName}
+(ついに面接かぁ・・・)[p]
+(緊張するなぁ・・・)[p]
+(もうそろそろ、順番来るかなぁ)[p]
+(でも、あんなに練習したんだし)[p]
+(自信持っていこう)[p]
+・・・・[p]
+
+#受付
+{f.clanName}さーん[p]
+次、お願いします[p]
+
+#{f.clanName}
+は、はいッ！[p]
+(遂に来ちゃったぁー)[p]
+
+#受付
+あ、{f.clanName}さん[p]
+
+#{f.clanName}
+は、はい？[p]
+(なんだろう・・・)[p]
+
+#受付
+・・・・その程度の準備で大丈夫ですか？[p]
+
+#{f.clanName}
+・・・・[p]
+(どこか変なところあるかな・・・)[p]
+だ、大丈夫です。　門題ありません。[p]
+
+#受付
+そうですか[p]
+面接頑張ってくださいね[p]
+
+#{f.clanName}
+(何だったんだろう・・・)[p]
+よく分かんないけど気持ちは落ち着いたかな[p]
+
+・・・・・・・・[p]
+
+#{f.clanName}
+[playbgm wait=false time=1 storage="interview_before"]
+この扉の向こうに奴が・・・[p]
+(大丈夫　気持ちは落ち着いてる)[p]
+(受付の人のおかげだ)[p]
+負けるわけにはいかない！[p]
+[playse storage="heart_sound" wait=true]
+すぅーはぁー・・・[p]
+すぅーはぁー・・・[p]
+
+よし！いこう！！[p]
+
+[stopbgm]
+[playse storage="door-wood-knock1" wait=true]
+#
+コンコンコン[p]
+
+#面接官
+・・・どーぞ[p]
+
+[playse storage="door-open1" wait=true]
+[bg_mod name="before" storage="interview_after"]
+
+#
+-面接室-[p]
+
+#{f.clanName}
+失礼します！[p]
+
+[playbgm wait=false storage="interview_after"]
+ッ！？[p]
+
+（このプレッシャーはッ！？）[p]
+（練習の時とは違う圧倒的な存在感ッ）[p]
+（このプレッシャーに耐えられるかな・・・）[p]
+
+#面接官
+どうぞおかけください[p]
+
+#{f.clanName}
+し、失礼しまちゅッ！[p]
+(噛んでしまった！？)[p]
+(もう落ちちゃったかなぁ)[p]
+
+#面接官
+では、面接を始めます[p]
+まず、お名前をお願いします[p]
+
+#{f.clanName}
+はい！[p]
+(いや、まだ面接は始まったばかり)[p]
+(ここから挽回していこう)[p]
+
+{f.clanName}と申します。[p]
+
+本日はよろしくお願いします[p]
+(よし！　ちゃんと言えた)[p]
+
+#面接官
+はい、よろしくお願いします[p]
+
+#{f.clanName}
+(あれぇ反応薄い・・・)[p]
+
+[calc exp="f.no=1"]
+
+
+;------------------------------------------------------------------------------------------------------------------------
+
+
+;固定質問
+#面接官
+次に志望動機お願いします[p]
+[random var="f.rand"num=2]
+[if exp="{f.rand}==0"]
+[select_new text="地域発展に貢献したいからです" target=*select_n_01]
+[select_new text="成長したいからです" target=*select_n_02]
+[select_new text="家から近かったからです" target=*select_n_03]
+[select_show sound=click ]
+[s]
+
+*select_n_01
+#面接官
+ほう[p]
+地域の事を考えているんですね[p]
+@jump target=*h2
+
+*select_n_02
+#面接官
+なるほど　成長したいのね[p]
+@jump target=*a2
+
+*select_n_03
+#面接官
+便利ですね　受かればの話しですが[p]
+@jump target=*l2
+[endif]
+
+
+[if exp="{f.rand}==1"]
+[select_new text="給料が高いからです" target=*select_n_11]
+[select_new text="人を笑顔にしたいからです" target=*select_n_12]
+[select_new text="貴社の商品が好きだからです" target=*select_n_13]
+[select_show sound=click ]
+[s]
+
+*select_n_11
+#面接官
+お金しか頭にないんですか？[p]
+@jump target=*l2
+
+*select_n_12
+#面接官
+素晴らしいですね[p]
+@jump target=*h2
+
+*select_n_13
+#面接官
+ありがとうございます[p]
+@jump target=*a2
+[endif]
+
+
+
+;---------------------------------------------------------------------------------------------------------
+
+
+
+*h2
+[if exp="{f.no}==0"]
+
+[calc exp="f.no=0"]
+@jump target=*high2
+
+[else]
+
+[stopbgm]
+[playbgm wait=false storage="interview_high"]
+
+[calc exp="f.no=0"]
+
+@jump target=*high2
+[endif]
+
+*high2
+#{f.clanName}
+(なんか、面接官の反応が良い気がする)[p]
+#面接官
+この仕事でもっとも重要な資質は何だと思いますか？[p]
+[random var="f.rand"num=2]
+[if exp="{f.rand}==0"]
+[select_new text="客観的な視野です" target=*select_h2_01]
+[select_new text="報告連絡相談です" target=*select_h2_02]
+[select_new text="遅刻しないことです" target=*select_h2_03]
+[select_show sound=click ]
+[s]
+
+*select_h2_01
+#面接官
+広い視野を持ってる方は歓迎しますよ[p]
+@jump target=*h3
+
+*select_h2_02
+#面接官
+報連相は大事ですね[p]
+@jump target=*a3
+
+*select_h2_03
+#面接官
+当たり前です[p]
+@jump target=*l3
+[endif]
+
+
+[if exp="{f.rand}==1"]
+[select_new text="気配り出来る事です" target=*select_h2_11]
+[select_new text="組織を自覚することです" target=*select_h2_12]
+[select_new text="挨拶を忘れないことです" target=*select_h2_13]
+[select_show sound=click ]
+[s]
+
+*select_h2_11
+#面接官
+人の気持ちを考えられる人は良いですね[p]
+@jump target=*a3
+
+*select_h2_12
+#面接官
+ほう　企業をわかってますね[p]
+@jump target=*h3
+
+*select_h2_13
+#面接官
+当たり前です[p]
+@jump target=*l3
+[endif]
+
+
+
+
+
+
+
+
+*a2
+[if exp="{f.no}==1"]
+[calc exp="f.no=1"]
+
+@jump target=*about2
+
+[else]
+
+[stopbgm]
+[playbgm wait=false storage="interview_after"]
+
+[calc exp="f.no=1"]
+
+@jump target=*about2
+[endif]
+
+*about2
+#{f.clanName}
+(次はどんな質問かなぁ)[p]
+#面接官
+今後のキャリアプランをお聞かせください[p]
+[random var="f.rand"num=2]
+[if exp="{f.rand}==0"]
+[select_new text="スキルを習得します" target=*select_a2_01]
+[select_new text="企画のリーダーになります" target=*select_a2_02]
+[select_new text="お茶入れをマスターします" target=*select_a2_03]
+[select_show sound=click ]
+[s]
+
+*select_a2_01
+#面接官
+あの資格があるといいですよ[p]
+@jump target=*a3
+
+*select_a2_02
+#面接官
+しっかりと先を考えてますね[p]
+@jump target=*h3
+
+*select_a2_03
+#面接官
+そんなの誰でもできますよ[p]
+@jump target=*l3
+[endif]
+
+
+[if exp="{f.rand}==1"]
+[select_new text="動ける人材になります" target=*select_a2_11]
+[select_new text="上司についていきます" target=*select_a2_12]
+[select_new text="社長になります" target=*select_a2_13]
+[select_show sound=click ]
+[s]
+
+*select_a2_11
+#面接官
+自ら行動できる人材は欲しいですね[p]
+@jump target=*h3
+
+*select_a2_12
+#面接官
+指示に従うだけではだめですよ[p]
+@jump target=*a3
+
+*select_a2_13
+#面接官
+なれたらいいですね[p]
+@jump target=*l3
+[endif]
+
+
+
+
+
+*l2
+[if exp="{f.no}==2"]
+
+[calc exp="f.no=2"]
+
+@jump target=*Low2
+
+[else]
+
+[stopbgm]
+[playbgm wait=false storage="interview_Low"]
+
+[calc exp="f.no=2"]
+
+@jump target=*Low2
+[endif]
+
+*Low2
+#{f.clanName}
+(なんか、反応がキツイ気がする・・・)[p]
+#面接官
+大きな失敗やミスをしたことはありますか？[p]
+[random var="f.rand"num=2]
+[if exp="{f.rand}==0"]
+[select_new text="遅刻したことがあります" target=*select_l2_01]
+[select_new text="ありません" target=*select_l2_02]
+[select_new text="ボランティアを経験しました" target=*select_l2_03]
+[select_show sound=click ]
+[s]
+
+*select_l2_01
+#面接官
+うちで遅刻されても困ります[p]
+@jump target=*l3
+
+*select_l2_02
+#面接官
+何もないんですか[p]
+@jump target=*a3
+
+*select_l2_03
+#面接官
+積極的にボランティアに参加するのはいいことですよ[p]
+@jump target=*h3
+[endif]
+
+
+[if exp="{f.rand}==1"]
+[select_new text="ありません" target=*select_l2_11]
+[select_new text="寝坊したことがあります" target=*select_l2_12]
+[select_new text="リーダーを経験しました" target=*select_l2_13]
+[select_show sound=click ]
+[s]
+
+*select_l2_11
+#面接官
+なにか一つくらいあるでしょう[p]
+@jump target=*a3
+
+*select_l2_12
+#面接官
+寝坊されても困ります[p]
+@jump target=*l3
+
+*select_l2_13
+#面接官
+それは良い経験をしましたね[p]
+@jump target=*h3
+[endif]
+
+
+
+;---------------------------------------------------------------------------------------------------------
+
+
+*h3
+[if exp="{f.no}==0"]
+
+[calc exp="f.no=0"]
+#{f.clanName}
+(さらに反応が良くなった気がする)[p]
+@jump target=*high3
+
+[else]
+
+[stopbgm]
+[playbgm wait=false storage="interview_high"]
+
+[calc exp="f.no=0"]
+#{f.clanName}
+(なんか、反応が良くなった気がする)[p]
+@jump target=*high3
+[endif]
+
+*high3
+#面接官
+あなたにとって仕事とは何ですか[p]
+[random var="f.rand"num=2]
+[if exp="{f.rand}==0"]
+[select_new text="金です" target=*select_h3_01]
+[select_new text="社会貢献です" target=*select_h3_02]
+[select_new text="生き甲斐です" target=*select_h3_03]
+[select_show sound=click ]
+[s]
+
+*select_h3_01
+#面接官
+まあ　生きるためには必要ですね[p]
+@jump target=*l4
+
+*select_h3_02
+#面接官
+社会の為に働くなんて素晴らしいですね[p]
+@jump target=*h4
+
+*select_h3_03
+#面接官
+人生の楽しみをもっと増やしてください[p]
+@jump target=*a4
+[endif]
+
+
+[if exp="{f.rand}==1"]
+[select_new text="成長する場です" target=*select_h3_11]
+[select_new text="趣味です" target=*select_h3_12]
+[select_new text="人の役に立つことです" target=*select_h3_13]
+[select_show sound=click ]
+[s]
+
+*select_h3_11
+#面接官
+その成長を利益につなげてくださいね[p]
+@jump target=*a4
+
+*select_h3_12
+#面接官
+いいですね　趣味で仕事ができて[p]
+@jump target=*l4
+
+*select_h3_13
+#面接官
+人の為に仕事ができるのは素晴らしいですね[p]
+@jump target=*h4
+[endif]
+
+
+
+
+
+*a3
+[if exp="{f.no}==1"]
+[calc exp="f.no=1"]
+#{f.clanName}
+(次はどんな質問かなぁ)[p]
+@jump target=*about3
+[else]
+[stopbgm]
+[playbgm wait=false storage="interview_after2"]
+
+[calc exp="f.no=1"]
+#{f.clanName}
+(次はどんな質問かなぁ)[p]
+@jump target=*about3
+[endif]
+
+*about3
+#面接官
+経験やスキルを当社でどう活かしますか？[p]
+[random var="f.rand"num=2]
+[if exp="{f.rand}==0"]
+[select_new text="会社の為に使います" target=*select_a3_01]
+[select_new text="自分の為に使います" target=*select_a3_02]
+[select_new text="社会の為に使います" target=*select_a3_03]
+[select_show sound=click ]
+[s]
+
+*select_a3_01
+#面接官
+ぜひその力を利益に繋げてください[p]
+@jump target=*a4
+
+*select_a3_02
+#面接官
+自分しかかんがえてないんですか[p]
+@jump target=*l4
+
+*select_a3_03
+#面接官
+自分の力が、社会の役に立つのは気持ちがいいですよね[p]
+@jump target=*h4
+[endif]
+
+
+[if exp="{f.rand}==1"]
+[select_new text="たくさん頑張ります" target=*select_a3_11]
+[select_new text="利益に繋げます" target=*select_a3_12]
+[select_new text="人の笑顔の為に使います" target=*select_a3_13]
+[select_show sound=click ]
+[s]
+
+*select_a3_11
+#面接官
+頑張ってください[p]
+@jump target=*l4
+
+*select_a3_12
+#面接官
+それが仕事です[p]
+@jump target=*a4
+
+*select_a3_13
+#面接官
+笑顔を作れることは素晴らしいですね[p]
+@jump target=*h4
+[endif]
+
+
+
+
+
+*l3
+[if exp="{f.no}==2"]
+
+[calc exp="f.no=2"]
+#{f.clanName}
+(さらに反応がキツくなった気がする・・・)[p]
+@jump target=*Low3
+
+[else]
+
+[stopbgm]
+[playbgm wait=false storage="interview_low"]
+
+[calc exp="f.no=2"]
+#{f.clanName}
+(なんか、反応がきつくなった気がする・・・)[p]
+@jump target=*Low3
+
+[endif]
+
+*Low3
+#面接官
+内定を出したらご入社いただけますか？[p]
+[random var="f.rand"num=2]
+[if exp="{f.rand}==0"]
+[select_new text="・・・・" target=*select_l3_01]
+[select_new text="もちろんです" target=*select_l3_02]
+[select_new text="は、はい" target=*select_l3_03]
+[select_show sound=click ]
+[s]
+
+*select_l3_01
+#面接官
+なにか答えてください[p]
+@jump target=*h4
+
+*select_l3_02
+#面接官
+良い返事ですね[p]
+@jump target=*a4
+
+*select_l3_03
+#面接官
+ホントに大丈夫ですか[p]
+@jump target=*l4
+[endif]
+
+
+[if exp="{f.rand}==1"]
+[select_new text="はい、業務を全力で全うします" target=*select_l3_11]
+[select_new text="当たり前じゃないですか" target=*select_l3_12]
+[select_new text="すぐには判断できません" target=*select_l3_13]
+[select_show sound=click ]
+[s]
+
+*select_l3_11
+#面接官
+はい、その際は頑張って頂きます[p]
+@jump target=*h4
+
+*select_l3_12
+#面接官
+当たり前なんですか[p]
+@jump target=*a4
+
+*select_l3_13
+#面接官
+判断してください[p]
+@jump target=*l4
+[endif]
+
+
+
+;------------------------------------------------------------------------------------------------------------------------
+
+
+
+*h4
+[stopbgm]
+[playbgm wait=false storage="interview_Last"]
+#{f.clanName}
+(ん？)[p]
+(なんか雰囲気がさっきまでと違う・・・)[p]
+(これはヤバい気がする！？)[p]
+#面接官
+あなたは今日、この場で就職活動をやめることはできますか？[p]
+[random var="f.rand"num=2]
+[if exp="{f.rand}==0"]
+[select_new text="はい！" target=*select_h4_01]
+[select_new text="いえ、就職するまでやめません" target=*select_h4_02]
+[select_new text="やめたいです" target=*select_h4_03]
+[select_show sound=click ]
+[s]
+
+*select_h4_01
+#面接官
+元気よく返事しますね[p]
+@jump target=*Unity
+
+*select_h4_02
+#面接官
+そうですか[p]
+就職活動頑張ってください[p]
+@jump target=*Unity
+
+*select_h4_03
+#面接官
+やめればいいじゃないですか[p]
+@jump target=*Unity
+[endif]
+
+
+[if exp="{f.rand}==1"]
+[select_new text="内定を頂けたらやめます" target=*select_h4_11]
+[select_new text="できます" target=*select_h4_12]
+[select_new text="やめたくないです" target=*select_h4_13]
+[select_show sound=click ]
+[s]
+
+*select_h4_11
+#面接官
+結果が楽しみですね[p]
+@jump target=*Unity
+
+*select_h4_12
+#面接官
+やめたいんですね[p]
+@jump target=*Unity
+
+*select_h4_13
+#面接官
+そんなに就活好きなんですか[p]
+@jump target=*Unity
+[endif]
+
+
+
+
+
+*a4
+[stopbgm]
+[playbgm wait=false storage="interview_Last"]
+#{f.clanName}
+(ん？)[p]
+(なんか雰囲気がさっきまでと違う・・・)[p]
+(これはヤバい気がする！？)[p]
+#面接官
+最後に何か質問はありますか[p]
+[random var="f.rand"num=2]
+[if exp="{f.rand}==0"]
+[select_new text="トイレはどこですか？" target=*select_a4_01]
+[select_new text="ありません" target=*select_a4_02]
+[select_new text="私の印象はどうですか？" target=*select_a4_03]
+[select_show sound=click ]
+[s]
+
+*select_a4_01
+#面接官
+部屋を出て右に進むとありますよ[p]
+@jump target=*Unity
+
+*select_a4_02
+#面接官
+そうですか　ありませんか[p]
+@jump target=*Unity
+
+*select_a4_03
+#面接官
+とてもいい感じでしたよ[p]
+@jump target=*Unity
+[endif]
+
+
+[if exp="{f.rand}==1"]
+[select_new text="もう内定ですか？" target=*select_a4_11]
+[select_new text="次の選考はいつ頃ですか？" target=*select_a4_12]
+[select_new text="特にないです" target=*select_a4_13]
+[select_show sound=click ]
+[s]
+
+*select_a4_11
+#面接官
+さあ　どうでしょうね[p]
+@jump target=*Unity
+
+*select_a4_12
+#面接官
+2週間後に次の選考に入りますよ[p]
+@jump target=*Unity
+
+*select_a4_13
+#面接官
+なにか気になることはないんですか[p]
+@jump target=*Unity
+[endif]
+
+
+
+
+
+
+
+*l4
+[stopbgm]
+[playbgm wait=false storage="interview_Last"]
+#{f.clanName}
+(ん？)[p]
+(なんか雰囲気がさっきまでと違う・・・)[p]
+(これはヤバい気がする！？)[p]
+#面接官
+今日の面接で学んだこと、成長したことは何ですか？[p]
+[random var="f.rand"num=2]
+[if exp="{f.rand}==0"]
+[select_new text="特にありません" target=*select_l4_01]
+[select_new text="反応することです" target=*select_l4_02]
+[select_new text="目を合わせることです" target=*select_l4_03]
+[select_show sound=click ]
+[s]
+
+*select_l4_01
+#面接官
+何も得るものはありませんでしたか[p]
+@jump target=*Unity
+
+*select_l4_02
+#面接官
+よくうなずいていましたね[p]
+@jump target=*Unity
+
+*select_l4_03
+#面接官
+緊張で少し目が泳いでいましたね[p]
+@jump target=*Unity
+[endif]
+
+
+[if exp="{f.rand}==1"]
+[select_new text="笑顔は難しい事です" target=*select_l4_11]
+[select_new text="姿勢が辛いことです" target=*select_l4_12]
+[select_new text="特にないです" target=*select_l4_13]
+[select_show sound=click ]
+[s]
+
+*select_l4_11
+#面接官
+すてきな笑顔でしたよ[p]
+@jump target=*Unity
+
+*select_l4_12
+#面接官
+背筋を伸ばすのは疲れますよね[p]
+@jump target=*Unity
+
+*select_l4_13
+#面接官
+そうですか[p]
+@jump target=*Unity
+[endif]
+
+
+;-------------------------------------------------------------------------------------------------------------
+
+*Unity
+[stopbgm]
+#面接官
+面接はこれで終了になります[p]
+#{f.clanName}
+はい！　本日はありがとうございました[p]
+(やっと終わったー)[p]
+失礼します[p]
+[playse storage="door-open1" wait=true]
+[bg_mod name=before storage="interview_before"]
+(はぁー緊張したぁ)[p]
+(後は、結果を待つのみかぁ)[p]
+
+#受付
+お疲れ様でした　{f.clanName}さん[p]
+
+#{f.clanName}
+あ、あの時の[p]
+本日はありがとうございました[p]
+でも、どうしてあんなことを私に・・・[p]
+
+#受付
+いえ、ただの気まぐれですよ・・・・[p]
+また、あなたに会えることを楽しみにしてますよ[p]
+
+#{f.clanNmae}
+はい！　本当にありがとうございました！[p]
+(不思議な人だったなぁ)[p]
+(合格してるといいな)[p]
+
+[Export]
+[scene file={f.sceneName}]
+
+
+

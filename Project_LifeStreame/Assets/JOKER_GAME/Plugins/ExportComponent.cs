@@ -31,6 +31,8 @@ namespace Novel
 
             PlayerStatus.marriage = int.Parse(StatusManager.variable.get("f.marriage"));
 
+            PlayerStatus.static_Save();
+
             //次のシナリオに進む処理
             this.gameManager.nextOrder();
 

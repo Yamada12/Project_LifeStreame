@@ -1,6 +1,8 @@
 ﻿using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
+using Novel;
 
 public class JobManager : MonoBehaviour
 {
@@ -20,6 +22,7 @@ public class JobManager : MonoBehaviour
 
     void Start ()
     {
+        SoundPlayer.Instance.PlayBGM("Work");
         basePoints_Origin = basePoint.gameObject.transform.position;
         jobName.text = "職業名";
         acPoints.text = "数値/仕事一回辺り";
@@ -50,7 +53,16 @@ public class JobManager : MonoBehaviour
     public void SendAnimation()
     {
         turningPanel.SetActive(false);
-        iTween.MoveTo(basePoint, iTween.Hash("position", sendPoint.gameObject.transform.position, "time", 1f));
+        iTween.MoveTo(basePoint, iTween.Hash("position", sendPoint.gameObject.transform.position, "time", 1f, "oncomplete", "LastBattle", "oncompletetarget", this.gameObject));
+    }
+
+    void LastBattle()
+    {
+        PlayerStatus.InitConverter();
+        PlayerStatus.progress = 7;
+        NovelSingleton.StatusManager.callJoker("wide/Syogaku/mensetu", "");
+        //SceneManager.LoadScene("World", LoadSceneMode.Single);
+
     }
 
     public void JobsVote(int jobID)

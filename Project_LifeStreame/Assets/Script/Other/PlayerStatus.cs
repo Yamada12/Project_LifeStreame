@@ -19,13 +19,14 @@ public class PlayerStatus : MonoBehaviour
     static public float lu = 0;                     //運の数値
     static public float geneNumber = 1;             //世代数
     static public float lifeTime = 1200f;           //残り時間
-    static public int progress = 1;                 //進行度   小学校＝１　2年生＝２　etc...
+    static public int progress = 0;                 //進行度   小学校＝１　2年生＝２　etc...
     static public string job = "小学生";        //ジョブ名（職業名）
     static public int marriage = 0;                //結婚しているかどうか？　0＝何もない　1=付き合っている(1：ツンデレ、テリメガ)　10=結婚している
     static public int children;                 //子供の人数（双子かどうか？）
     static public int schoolFlag;               //所属学校（０なら無所属、１なら？？学校　etc...）
     static public int clubFlag;                 //部活動は何系か？　0＝文化　1＝運動　2=無所属
     static public int courseYear;               //経過年数（現在の進行度に何年滞在したか？※学年など）
+    static public int babyCount = 10;           //何回で赤ちゃんが生まれる？
     static public int lp_tun;                   //好感度：ツンデレ  (0なら出会っていない。1以上で出会っている。)
     static public int lp_maji;                  //好感度：真面目   (0なら出会っていない。1以上で出会っている。)
     static public int lp_supo;                  //好感度：スポコン  (0なら出会っていない。1以上で出会っている。)
@@ -40,7 +41,7 @@ public class PlayerStatus : MonoBehaviour
     /// <summary>
     /// はじめから開始時にすべての変数をリセットするメソッド
     /// </summary>
-    static public void initStatus ()
+    static public void initStatus()
     {
         mf = 0;  //入力なしの場合は男性になる
         clanName = "みやの";   //入力なしの場合はみやのになる
@@ -54,11 +55,12 @@ public class PlayerStatus : MonoBehaviour
         lifeTime = 1200f;      //仮代入、一番初めに使う値をいれる
         progress = 1;
         job = "無職";         //暫定無職、小学生とかいれてもいいかも？
-        marriage = 0;    //生まれながら結婚している奴などいない！
-        children = 1;        //残機的な扱いのつもり（０でゲームオーバー的な）
+        marriage = 0;       //生まれながら結婚している奴などいない！
+        children = 0;        //残機的な扱いのつもり（０でゲームオーバー的な）
         schoolFlag = 0;      //0=無所属
         clubFlag = 2;       //初期は無所属なので２
         courseYear = 1;      //経過年数なので初期値は１年目
+        babyCount = 10;     //10回イベントをこなすとコウノトリシステムが発動する
         lp_tun = 0;
         lp_maji = 0;
         lp_supo = 0;
@@ -69,6 +71,45 @@ public class PlayerStatus : MonoBehaviour
         lp_nago = 0;
         lp_ore = 0;
         lp_ani = 0;
+        World_Player.result = 0;
+        World_Player.shiken = 0;
+    }
+
+    /// <summary>
+    /// 引き継ぎ開始時に一部の変数をリセットするメソッド
+    /// </summary>
+    static public void InitInheriting()
+    {
+        mf = Random.Range(0, 2);  //引き継ぎ時は性別を選べない
+        co = co / 3;
+        ec = ec / 3;
+        ac = ac / 3;
+        hu = hu / 3;
+        vi = vi / 3;
+        lu = lu / 3;
+        geneNumber += 1;         //世代数
+        lifeTime = 1200f;      //仮代入、一番初めに使う値をいれる
+        progress = 1;
+        job = "無職";         //暫定無職、小学生とかいれてもいいかも？
+        marriage = 0;       //生まれながら結婚している奴などいない！
+        children = 0;        //残機的な扱いのつもり（０でゲームオーバー的な）
+        schoolFlag = 0;      //0=無所属
+        clubFlag = 2;       //初期は無所属なので２
+        courseYear = 1;      //経過年数なので初期値は１年目
+        babyCount = 10;
+        lp_tun = 0;
+        lp_maji = 0;
+        lp_supo = 0;
+        lp_hika = 0;
+        lp_ten = 0;
+        lp_mega = 0;
+        lp_kama = 0;
+        lp_nago = 0;
+        lp_ore = 0;
+        lp_ani = 0;
+        World_Player.result = 0;
+        World_Player.shiken = 0;
+        static_Save();
     }
 
     /// <summary>
@@ -145,6 +186,7 @@ public class PlayerStatus : MonoBehaviour
     /// </summary>
     static public void static_Save()
     {
+        lp_Check();
         PlayerPrefs.SetString("clanName", PlayerStatus.clanName);
         PlayerPrefs.SetInt("mf", PlayerStatus.mf);
         PlayerPrefs.SetFloat("co", PlayerStatus.co);
@@ -162,6 +204,7 @@ public class PlayerStatus : MonoBehaviour
         PlayerPrefs.SetInt("schoolFlag", PlayerStatus.schoolFlag);
         PlayerPrefs.SetInt("clubFlag", PlayerStatus.clubFlag);
         PlayerPrefs.SetInt("courceYear", PlayerStatus.courseYear);
+        PlayerPrefs.SetInt("babyCount", PlayerStatus.babyCount);
         PlayerPrefs.SetInt("lp_tun", PlayerStatus.lp_tun);
         PlayerPrefs.SetInt("lp_maji", PlayerStatus.lp_maji);
         PlayerPrefs.SetInt("lp_supo", PlayerStatus.lp_supo);
@@ -198,6 +241,7 @@ public class PlayerStatus : MonoBehaviour
         PlayerStatus.schoolFlag = PlayerPrefs.GetInt("schoolFlag");
         PlayerStatus.clubFlag = PlayerPrefs.GetInt("clubFlag");
         PlayerStatus.courseYear = PlayerPrefs.GetInt("courceYear");
+        PlayerStatus.babyCount = PlayerPrefs.GetInt("babyCount");
         PlayerStatus.lp_tun = PlayerPrefs.GetInt("lp_tun");
         PlayerStatus.lp_maji = PlayerPrefs.GetInt("lp_maji");
         PlayerStatus.lp_supo = PlayerPrefs.GetInt("lp_supo");
@@ -210,5 +254,45 @@ public class PlayerStatus : MonoBehaviour
         PlayerStatus.lp_ani = PlayerPrefs.GetInt("lp_ani");
         World_Player.result = PlayerPrefs.GetInt("result");
         World_Player.shiken = PlayerPrefs.GetInt("shiken");
+    }
+
+    /// <summary>
+    /// 誰かと婚約関係にあるときコンテンツを実行したらカウントを減らす
+    /// </summary>
+    static public void babyCounter()
+    {
+        if (marriage >= 10)
+        {//誰かと結婚している時
+            babyCount -= 1;
+            if (babyCount < 0)
+                babyCount = 0;
+        }
+    }
+
+    static void lp_Check()
+    {//lpがマイナスに行かないようにする（出会っていれば）
+        if (lp_tun < 0)
+            lp_tun = 1;
+
+        if (lp_maji < 0)
+            lp_maji = 1;
+
+        if (lp_supo < 0)
+            lp_supo = 1;
+
+        if (lp_mega < 0)
+            lp_mega = 1;
+
+        if (lp_kama < 0)
+            lp_kama = 1;
+
+        if (lp_nago < 0)
+            lp_nago = 1;
+
+        if (lp_hika < 0)
+            lp_hika = 1;
+
+        if (lp_ore < 0)
+            lp_ore = 1;
     }
 }

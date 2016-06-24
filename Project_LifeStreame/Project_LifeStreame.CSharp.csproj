@@ -154,6 +154,7 @@
     <Compile Include="Assets\MeshBaker\scripts\MB3_MeshBakerRoot.cs" />
     <Compile Include="Assets\MeshBaker\scripts\MB3_MultiMeshBaker.cs" />
     <Compile Include="Assets\MeshBaker\scripts\MB3_TextureBaker.cs" />
+    <Compile Include="Assets\Script\DebugText.cs" />
     <Compile Include="Assets\Script\Main\ContentManager.cs" />
     <Compile Include="Assets\Script\Main\EventButton_Manager.cs" />
     <Compile Include="Assets\Script\Main\HappySystem.cs" />
@@ -161,9 +162,11 @@
     <Compile Include="Assets\Script\Main\Love_Controller.cs" />
     <Compile Include="Assets\Script\Main\MainManager.cs" />
     <Compile Include="Assets\Script\Main\Main_Camera_Manager.cs" />
+    <Compile Include="Assets\Script\Main\StrokSystem.cs" />
     <Compile Include="Assets\Script\Main\TestAnim.cs" />
     <Compile Include="Assets\Script\Main\UI_Manager.cs" />
     <Compile Include="Assets\Script\Main\charaChanger.cs" />
+    <Compile Include="Assets\Script\Other\InheritingManager.cs" />
     <Compile Include="Assets\Script\Other\InitScene.cs" />
     <Compile Include="Assets\Script\Other\PlayerStatus.cs" />
     <Compile Include="Assets\Script\Other\ScenarioManager.cs" />
@@ -325,6 +328,7 @@
     <None Include="Assets\JOKER_GAME\Resources\novel\data\scenario\wide\Syogaku\S_shiken.txt" />
     <None Include="Assets\JOKER_GAME\Resources\novel\data\scenario\wide\Syogaku\S_sotugyo.txt" />
     <None Include="Assets\JOKER_GAME\Resources\novel\data\scenario\wide\Syogaku\S_undokai.txt" />
+    <None Include="Assets\JOKER_GAME\Resources\novel\data\scenario\wide\Syogaku\mensetu.txt" />
     <None Include="Assets\JOKER_GAME\Resources\novel\data\scenario\wide\Tyugaku\T_barentain.txt" />
     <None Include="Assets\JOKER_GAME\Resources\novel\data\scenario\wide\Tyugaku\T_bunkasai.txt" />
     <None Include="Assets\JOKER_GAME\Resources\novel\data\scenario\wide\Tyugaku\T_hanami.txt" />
