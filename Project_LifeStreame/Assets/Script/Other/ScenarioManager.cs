@@ -252,10 +252,21 @@ public class ScenarioManager : MonoBehaviour
     }
 
     /// <summary>
+    /// 外部からコルーチンを呼び出すメソッド
+    /// </summary>
+    /// <param name="text">ポップさせたい文字列</param>
+    /// <param name="time">ディレイの時間</param>
+    public void OtherPoper(string text, float time)
+    {
+        flyText.GetComponentInChildren<Text>().alignment = TextAnchor.LowerLeft;
+        StartCoroutine(PopText(text, time));
+    }
+
+    /// <summary>
     /// テキストをレーダーの位置に出現させるメソッド
     /// </summary>
     /// <param name="text">表示する内容</param>
-    private IEnumerator PopText(string text, float delayTime)
+    public IEnumerator PopText(string text, float delayTime)
     {
         flyText.GetComponentInChildren<Text>().text = text;
         if (delayTime <= 0)
@@ -297,12 +308,13 @@ public class ScenarioManager : MonoBehaviour
     {//キャラ毎の出会いシーンに遷移
         int rnd = Random.Range(0, 3);
         Debug.Log("今回の値：" + rnd);
-        PlayerStatus.initStatus();//デバッグ用
         if (rnd == 0)
         {
             switch (charaName)
             {
                 case "tundere":
+                    if (PlayerStatus.mf == 1)
+                        break;
                     if (PlayerStatus.lp_tun <= 0)
                     {//ツンデレと出会ったことが無ければ
                         if (PlayerStatus.progress == 3)
@@ -322,6 +334,8 @@ public class ScenarioManager : MonoBehaviour
                     }
                     break;
                 case "majime":
+                    if (PlayerStatus.mf == 1)
+                        break;
                     if (PlayerStatus.lp_maji <= 0)
                     {//出会ったことが無ければ
                         if (PlayerStatus.progress == 3)
@@ -341,6 +355,8 @@ public class ScenarioManager : MonoBehaviour
                     }
                     break;
                 case "supokon":
+                    if (PlayerStatus.mf == 1)
+                        break;
                     if (PlayerStatus.lp_supo <= 0)
                     {//出会ったことが無ければ
                         if (PlayerStatus.progress == 3)
@@ -360,6 +376,8 @@ public class ScenarioManager : MonoBehaviour
                     }
                     break;
                 case "interi":
+                    if (PlayerStatus.mf == 0)
+                        break;
                     if (PlayerStatus.lp_mega <= 0)
                     {//出会ったことが無ければ
                         if (PlayerStatus.progress == 3)
@@ -379,6 +397,8 @@ public class ScenarioManager : MonoBehaviour
                     }
                     break;
                 case "kamase":
+                    if (PlayerStatus.mf == 0)
+                        break;
                     if (PlayerStatus.lp_kama <= 0)
                     {//出会ったことが無ければ
                         if (PlayerStatus.progress == 3)
@@ -398,6 +418,8 @@ public class ScenarioManager : MonoBehaviour
                     }
                     break;
                 case "nagoyaka":
+                    if (PlayerStatus.mf == 0)
+                        break;
                     if (PlayerStatus.lp_nago <= 0)
                     {//出会ったことが無ければ
                         if (PlayerStatus.progress == 3)

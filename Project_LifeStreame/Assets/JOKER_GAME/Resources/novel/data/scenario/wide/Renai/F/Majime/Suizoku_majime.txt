@@ -24,8 +24,10 @@
 [show name=risa]
 ;キャラクター表示
 
+[playbgm wait=false time=1 storage="suizoku"]
+
 #梨沙
-うわ～[p]
+わぁ[p]
 
 魚がたくさん[p]
 
@@ -57,7 +59,7 @@
 
 [select_new text="可愛い理由だね" target=*select_a1 ]
 [select_new text="確かにラッコカワイイよね" target=*select_a2 ]
-[select_new text="美味しそうとは思はないの？" target=*select_a3 ]
+[select_new text="美味しそうとは思わないの？" target=*select_a3 ]
 
 [select_show sound=click ]
 
@@ -71,10 +73,13 @@
 佐倉さんの意外な一面が見れてうれしいよ[p]
 
 #梨沙
-それはどういう意味なのかしら？[p]
+そ、それはどういう意味なのかしら？[p]
 
 #{f.clanName}
 可愛い一面が見れてよかったってことだよ[p]
+
+#梨沙
+一応、お礼を言っておくわ・・・[p]
 
 #
 佐倉　梨沙の好感度が上がった。[p]
@@ -127,6 +132,8 @@
 
 経済力が下がった。[p]
 [calc exp="f.ec={f.ec}-20"]
+
+[stopbgm]
 
 [Export]
 

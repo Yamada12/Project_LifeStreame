@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using Novel;
 
 public class HappySystem : MonoBehaviour
 {//0.4%
@@ -44,6 +45,8 @@ public class HappySystem : MonoBehaviour
             touch = true;
             Debug.Log("HappyHappy!");
             SoundPlayer.Instance.PlaySE("StatusUp_big");
+            PlayerStatus.InitConverter();
+            NovelSingleton.StatusManager.callJoker("wide/Happy/H_happyhappy", "");
             Destroy(this.gameObject, 0.5f);
         }
     }

@@ -24,6 +24,8 @@
 [show name=kazuma]
 ;キャラクター表示
 
+[playbgm wait=false time=1 storage="puropozu"]
+
 #{f.clanName}
 綺麗だね！[p]
 
@@ -38,7 +40,6 @@
 #和真
 ・・・・・[p]
 
-[chara_mod name="kazuma" storage="interi_tere_c"]
 あ、あの！[p]
 
 #{f.clanName}
@@ -68,23 +69,16 @@
 あなたはどう思いますか？[p]
 
 #{f.clanName}
-私も・・・[p]
-
-和真君とずっと一緒にいたい[p]
+私も和真君とずっと一緒にいたい[p]
 
 これから先もよろしくね[p]
 
-[chara_mod name="kazuma" storage="interi_odoroki_c"]
-#和真
-ッ・・・・[p]
-
-[chara_mod name="kazuma" storage="interi_tere_c"]
-こちらこそ[p]
-
-よろしくお願いします[p]
-
 #
 羽神　和真と結婚することが出来ました。[p]
+
+[calc exp="f.marriage=10"]
+
+[stopbgm]
 
 [Export]
 

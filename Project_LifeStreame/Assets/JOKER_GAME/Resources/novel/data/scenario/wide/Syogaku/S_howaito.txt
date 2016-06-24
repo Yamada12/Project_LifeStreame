@@ -16,6 +16,7 @@
 [bg_new name="syoko" storage="syoko"]
 [bg_show name="syoko" time=0.5]
 
+[playbgm wait=false time=1 storage="barehowa"]
 
 ～ホワイトデー～[p]
 
@@ -68,6 +69,8 @@
 [endif]
 
 [endif]
+
+[stopbgm]
 
 [Export]
 

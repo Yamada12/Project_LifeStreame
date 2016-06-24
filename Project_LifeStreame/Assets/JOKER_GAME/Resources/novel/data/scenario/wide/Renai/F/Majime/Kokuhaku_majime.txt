@@ -24,6 +24,8 @@
 [show name=risa]
 ;キャラクター表示
 
+[playbgm wait=false time=1 storage="kokuhaku"]
+
 #梨沙
 何かしら[p]
 
@@ -91,6 +93,8 @@
 
 #
 佐倉　梨沙と恋人関係になりました。[p]
+
+[calc exp="f.marriage=2"]
 
 [else]
 
@@ -179,6 +183,8 @@
 #
 佐倉　梨沙と恋人関係になりました。[p]
 
+[calc exp="f.marriage=2"]
+
 [else]
 
 #{f.clanName}
@@ -255,6 +261,8 @@
 #
 佐倉　梨沙と恋人関係になりました。[p]
 
+[calc exp="f.marriage=2"]
+
 [else]
 
 #{f.clanName}
@@ -286,6 +294,8 @@
 @jump target=*a_common
 
 *a_common 
+
+[stopbgm]
 
 [Export]
 

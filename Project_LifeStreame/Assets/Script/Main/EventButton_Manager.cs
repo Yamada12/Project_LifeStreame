@@ -21,10 +21,8 @@ public class EventButton_Manager : MonoBehaviour
         {
             awakePanel.SetActive(true);
             PlayerStatus.lifeTime = 1200f;
-            MainManager.pauseFlag = true;
         } else {
             awakePanel.SetActive(false);
-            MainManager.pauseFlag = false;
         }
     }
 

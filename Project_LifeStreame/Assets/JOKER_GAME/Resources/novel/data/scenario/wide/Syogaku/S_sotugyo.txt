@@ -32,4 +32,4 @@
 
 [Export]
 
-[scene file={f.sceneName}]
+[scene file="Main_ElementarySchool"]

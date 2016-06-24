@@ -21,10 +21,10 @@
 [bg_show name="c_room" time=0.5]
 ;背景表示
 
-[playbgm wait=false time=1 storage="nagoyaka"]
-
 [show name=yositaka]
 ;キャラクター表示
+
+[playbgm wait=false time=1 storage="nagoyaka"]
 
 #善鷹
 へぇ～[p]
@@ -46,14 +46,13 @@
 #{f.clanName}
 檜山君は見かけどおりだけどね。[p]
 
-[chara_mod name="yositaka" storage="nagoyaka_niko_s"]
 #善鷹
 はは[p]
 
 褒め言葉だと思っておくよ。[p]
 
 #
-檜山　善鷹をデートに誘えるようになりました。[p]
+檜山　善鷹の連絡先を入手しました。[p]
 
 人間力が少し上がった。[p]
 [calc exp="f.hu={f.hu}+10"]
@@ -62,4 +61,4 @@
 
 [Export]
 
-[scene file={f.sceneName}]
+[scene file="Main_HighSchool"]

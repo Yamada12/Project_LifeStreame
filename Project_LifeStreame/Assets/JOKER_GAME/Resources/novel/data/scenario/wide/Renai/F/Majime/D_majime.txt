@@ -21,10 +21,10 @@
 [bg_show name="mati" time=0.5]
 ;背景表示
 
-[playbgm wait=false time=1 storage="majime"]
-
 [show name=risa]
 ;キャラクター表示
+
+[playbgm wait=false time=1 storage="majime"]
 
 #{f.clanName}
 あれは委員長？[p]
@@ -74,7 +74,7 @@
 私はもう委員長ではないわ[p]
 
 #
-佐倉　梨沙をデートに誘えるようになりました。[p]
+佐倉　梨沙の連絡先を入手しました。[p]
 
 人間力が少し上がった。[p]
 [calc exp="f.hu={f.hu}+10"]

@@ -82,7 +82,7 @@ chara_hide name=kazuma time=1 wait=false]
 (羽神君嘘はよくないよ・・・)[p]
 
 #
-羽神　和真をデートに誘えるようになりました。[p]
+羽神　和真の連絡先を入手しました。[p]
 
 人間力が少し上がった。[p]
 [calc exp="f.hu={f.hu}+10"]

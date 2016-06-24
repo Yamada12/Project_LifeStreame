@@ -24,6 +24,8 @@
 [show name=kazuma]
 ;キャラクター表示
 
+[playbgm wait=false time=1 storage="suizoku"]
+
 #{f.clanName}
 水族館だぁ[p]
 
@@ -68,7 +70,6 @@
 
 おいしいもん！[p]
 
-[chara_mod name="kazuma" storage="interi_odoroki_c"]
 #和真
 え？[p]
 
@@ -137,7 +138,7 @@
 
 *a_common 
 
-
+[stopbgm]
 
 経済力が下がった。[p]
 [calc exp="f.ec={f.ec}-20"]

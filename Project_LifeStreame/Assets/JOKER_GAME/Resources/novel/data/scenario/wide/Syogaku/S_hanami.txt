@@ -16,6 +16,7 @@
 [bg_new name="sakura" storage="sakura"]
 [bg_show name="sakura" time=0.5]
 
+[playbgm wait=false time=1 storage="hanami"]
 
 ～花見～[p]
 
@@ -39,11 +40,11 @@
 
 どれから食べようかなー？[p]
 
-#からあげ
-から揚げいっただきーっ！
+#
+から揚げいっただきーっ！[p]
 
 #{f.clanName}
-あ、ずるい！頂戴頂戴！！
+あ、ずるい！頂戴頂戴！！[p]
 
 #
 {f.clanName}は花より団子である。[p]
@@ -51,10 +52,10 @@
 {f.clanName}は楽しい時間を過ごした。[p]
 
 体力が少し上がった。[p]
-[calc exp="f.vi={f.vi}+30"]
+[calc exp="f.vi={f.vi}+10"]
 
 コミュ力と人間力が上がった。[p]
-[calc exp="f.co={f.co}+30"]
+[calc exp="f.co={f.co}+20"]
 [calc exp="f.hu={f.hu}+20"]
 
 [random var="f.rand" num=25]
@@ -68,6 +69,8 @@
 [calc exp="f.lu={f.lu}+10"]
 
 [endif]
+
+[stopbgm]
 
 [Export]
 

@@ -16,6 +16,7 @@
 [bg_new name="bunka02" storage="bunka02"]
 [bg_show name="bunka02" time=0]
 
+[playbgm wait=false time=1 storage="bunkasai"]
 
 ～文化祭～[p]
 
@@ -51,6 +52,8 @@
 [calc exp="f.lu={f.lu}+10"]
 
 [endif]
+
+[stopbgm]
 
 [Export]
 

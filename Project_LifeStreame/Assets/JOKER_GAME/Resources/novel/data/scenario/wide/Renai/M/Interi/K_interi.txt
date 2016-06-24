@@ -21,8 +21,6 @@
 [bg_show name="K_roka" time=0.5]
 ;背景表示
 
-[playbgm wait=false time=1 storage="interi"]
-
 #{f.clanName}
 よいしょっと[p]
 
@@ -64,13 +62,11 @@
 あ、お願いします。[p]
 
 #
-羽神　和真をデートに誘えるようになりました。[p]
+羽神　和真の連絡先を入手しました。[p]
 
 人間力が少し上がった。[p]
 [calc exp="f.hu={f.hu}+10"]
 
-[stopbgm]
-
 [Export]
 
-[scene file={f.sceneName}]
+[scene file="Main_HighSchool"]

@@ -24,6 +24,8 @@
 [show name=kazuma]
 ;キャラクター表示
 
+[playbgm wait=false time=1 storage="eiga"]
+
 #{f.clanName}
 映画なにみる？[p]
 
@@ -35,7 +37,7 @@
 #{f.clanName}
 お、おすすめ！？[p]
 
-#{f.clanName}
+#和真
 はい、おすすめです[p]
 
 #{f.clanName}
@@ -110,7 +112,6 @@
 #{f.clanName}
 アニメは？[p]
 
-[chara_mod name="kazuma" storage="interi_kanasi_c"]
 #和真
 アニメですか[p]
 
@@ -135,6 +136,8 @@
 
 経済力が下がった。[p]
 [calc exp="f.ec={f.ec}-20"]
+
+[stopbgm]
 
 [Export]
 

@@ -45,8 +45,12 @@ public class World_Player : MonoBehaviour {
             result = 0;
             StatusManager.variable.set("f.test", ((int)result).ToString());
         }
+    }
 
+    void Start()
+    {
         SoundPlayer.Instance.PlayBGM("World01");
+        PlayerStatus.static_Save();
     }
 
     public void OnTriggerEnter(Collider other)
@@ -232,6 +236,7 @@ public class World_Player : MonoBehaviour {
         if (other.gameObject.tag == "GA")
         {
             SceneManager.LoadScene("Main");//メイン社会人へ
+            NovelSingleton.StatusManager.callJoker("wide/Happy/H_end", "");
         }
     }
 }

@@ -24,6 +24,8 @@
 [show name=risa]
 ;キャラクター表示
 
+[playbgm wait=false time=1 storage="kouen"]
+
 #{f.clanName}
 たまにはこういう落ち着いたところもいいね[p]
 
@@ -100,7 +102,7 @@
 
 お腹空いてると思って[p]
 
-[chara_mod name="risa" storage="majime_default_c"]
+[chara_mod name="risa" storage="majime_yakitori_c"]
 #梨沙
 雰囲気的にアウトよ[p]
 
@@ -142,6 +144,8 @@
 
 経済力が下がった。[p]
 [calc exp="f.ec={f.ec}-20"]
+
+[stopbgm]
 
 [Export]
 

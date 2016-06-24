@@ -1,0 +1,334 @@
+﻿;メッセージ表示
+[showmessage time=0]
+
+;共通ライブラリ
+;セーブ・ロードバックログなど基本的な機能を取り込む 
+;[call file=wide/system target="*system_setting_buttons"]
+
+;ゲーム作成で便利なマクロ集
+[call file=wide/libs/utils]
+[text_new name=_sp_chara_name layer=ui x="-168" y=-108.5 val="" color="DDFF00" fontsize=16 anchor="MiddleLeft"]
+[text_show name="_sp_chara_name" time=0]
+
+[bg_new name="kouen" storage="kouen"]
+;背景宣言
+
+[chara_new name=mio storage=hikaeme_default_c y=-1 ]
+;キャラクター宣言
+
+[wait time=0]
+
+[bg_show name="kouen" time=0.5]
+;背景表示
+
+[show name=mio]
+;キャラクター表示
+
+[playbgm wait=false time=1 storage="kokuhaku"]
+
+#美音
+何かしら？[p]
+
+こんなところで待ち合わせだなんて[p]
+
+#{f.clanName}
+ちょっと伝えたいことがあって[p]
+
+#美音
+あら、何かしら[p]
+
+[select_new text="ストレートに" target=*select_a1 ]
+[select_new text="気付いたかのように" target=*select_a2 ]
+[select_new text="情熱的に" target=*select_a3 ]
+
+[select_show sound=click ]
+
+[s]
+
+*select_a1
+
+[if exp="{f.lp_hika}>50"]
+
+#{f.clanName}
+俺は[p]
+
+美音のことが好きだ！[p]
+
+[chara_mod name="mio" storage="hikaeme_kanasi_c"]
+#美音
+・・・・[p]
+
+私でいいんですか？[p]
+
+本当に本当に私でいいんですか？[p]
+
+今まであなたに嫌われてしまったのではないかと[p]
+
+不安な毎日でした・・・[p]
+
+#{f.clanName}
+そんなことない[p]
+
+俺は、美音との会話好きだよ[p]
+
+話しているとき美音はいつも笑顔で[p]
+
+楽しそうで[p]
+
+俺はそんな美音と一緒にいると凄く楽しいんだ[p]
+
+だから俺は美音じゃなきゃダメなんだ[p]
+
+[chara_mod name="mio" storage="hikaeme_tere_c"]
+
+#美音
+ありがとう・・・[p]
+
+私もあなたのこと好き[p]
+
+大好き[p]
+
+こ、これからよろしくね[p]
+
+#
+筒路　美音と恋人関係になりました。[p]
+
+[calc exp="f.marriage=4"]
+
+[else]
+
+#{f.clanName}
+俺は[p]
+
+美音のことが好きだ！[p]
+
+[chara_mod name="mio" storage="hikaeme_kanasi_c"]
+
+#美音
+・・・・・[p]
+
+まさか告白されるとは思っていなっかたわ[p]
+
+あなたのことは嫌いじゃないわ[p]
+
+でも、好きと言われても私にはわからない[p]
+
+あなたと話しているととても楽しいけど[p]
+
+好きという感情なのかわからないの[p]
+
+もう少し時間をくれるかしら[p]
+
+#
+告白にはまだ早かったようだ[p]
+
+[endif]
+
+@jump target=*a_common
+
+*select_a2
+
+[calc exp="f.lp_hika={f.lp_hika}+10"]
+
+[if exp="{f.lp_hika}>50"]
+
+#{f.clanName}
+俺さ[p]
+
+さんざん美音にいじられて思った[p]
+
+#美音
+何かしら？[p]
+
+#{f.clanName}
+俺、美音と話してるとすごく楽しい[p]
+
+ずっと話していたい[p]
+
+美音の楽しそうに笑っている顔をずっと見ていたい[p]
+
+俺は楽しそうな美音が大好きだ[p]
+
+だから俺と付き合ってくれ[p]
+
+[chara_mod name="mio" storage="hikaeme_tere_c"]
+#美音
+こ、こ、告白されるだなんてッ！[p]
+
+わ、私で、い、いいんですか？[p]
+
+#{f.clanName}
+美音じゃなきゃいやだよ[p]
+
+[chara_mod name="mio" storage="hikaeme_default_c"]
+
+#美音
+・・・・・[p]
+
+こんな私のこと好きになってくれる人がいるんですね[p]
+
+本当、物好きな人です[p]
+
+でも、正直私はあなたが嫌いです[p]
+
+#{f.clanName}
+え[p]
+
+#美音
+ふふふ[p]
+
+嘘ですよ[p]
+
+大好きに決まってるじゃないですか[p]
+
+これからよろしくお願いしますね[p]
+
+#
+筒路　美音と恋人関係になりました。[p]
+
+[calc exp="f.marriage=4"]
+
+[else]
+
+#{f.clanName}
+俺さ[p]
+
+さんざん美音にいじられて思った[p]
+
+#美音
+何かしら？[p]
+
+#{f.clanName}
+俺、美音と話してるとすごく楽しい[p]
+
+ずっと話していたい[p]
+
+美音の楽しそうに笑っている顔をずっと見ていたい[p]
+
+俺は楽しそうな美音が大好きだ[p]
+
+だから俺と付き合ってくれ[p]
+
+[chara_mod name="mio" storage="hikaeme_kanasi_c"]
+
+#美音
+ごめんなさい[p]
+
+私もあなたと話しているととても楽しいわ[p]
+
+でも、気持ちの整理が出来ていないわ[p]
+
+まだあなたのことが好きだと自覚できてないの[p]
+
+あなたのこともっと知りたい[p]
+
+だからもう少し時間をいただけるかしら？[p]
+
+それと私を好きになってくれてありがとう[p]
+
+#
+告白にはまだ早かったようだ[p]
+
+[endif]
+
+@jump target=*a_common
+
+*select_a3
+
+[if exp="{f.lp_hika}>50"]
+
+#{f.clanName}
+俺は今から美音に告白する！[p]
+
+#美音
+やめてくれるかしら[p]
+
+#{f.clanName}
+え！？[p]
+
+#美音
+ふふふ[p]
+
+いえ、続けて頂戴[p]
+
+あなたの気持ち受け止めるわ[p]
+
+#{f.clanName}
+俺は！美音が好きだ！[p]
+
+好きで好きで好きで[p]
+
+毎日頭の中は美音でいっぱいだ！[p]
+
+俺は美音と一緒にいたい！[p]
+
+俺と付き合ってください！[p]
+
+[chara_mod name="mio" storage="hikaeme_tere_c"]
+#美音
+め、面と向かって言われると結構恥ずかしいわね[p]
+
+で、でもすごくうれしいわ[p]
+
+[chara_mod name="mio" storage="hikaeme_default_c"]
+誰かに想ってもらえるって凄く幸せな事ね[p]
+
+胸が温かい気持ちになったわ[p]
+
+・・・・[p]
+
+[chara_mod name="mio" storage="hikaeme_tere_c"]
+わ、私もあなたのこと好き[p]
+
+だから[p]
+
+こ、これからよろしくお願いします[p]
+
+#
+筒路　美音と恋人関係になりました。[p]
+
+[calc exp="f.marriage=4"]
+
+[else]
+
+#{f.clanName}
+俺は今から美音に告白する！[p]
+
+#美音
+やめてくれるかしら[p]
+
+#{f.clanName}
+え！？[p]
+
+#美音
+まって[p]
+
+もう少しまって[p]
+
+私の気持ちの整理がつくまで[p]
+
+まだ早いわ[p]
+
+私の準備ができたらあなたの気持ちを受け止めるわ[p]
+
+それまでもう少しだけまって[p]
+
+[chara_mod name="mio" storage="hikaeme_tere_c"]
+・・・・[p]
+
+安心して、あなたのことは嫌いじゃないから[p]
+
+#
+告白にはまだ早かったようだ[p]
+
+[endif]
+
+@jump target=*a_common
+
+*a_common 
+
+[stopbgm]
+
+[Export]
+
+[scene file={f.sceneName}]

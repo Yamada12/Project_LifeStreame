@@ -24,6 +24,8 @@
 [show name=kazuma]
 ;キャラクター表示
 
+[playbgm wait=false time=1 storage="kaimono"]
+
 #{f.clanName}
 何か買いたいものあるの？[p]
 
@@ -43,7 +45,6 @@
 #{f.clanName}
 え、みんな同じじゃないの？[p]
 
-[chara_mod name="kazuma" storage="interi_odoroki_c"]
 #和真
 全然違いますよ！[p]
 
@@ -67,7 +68,6 @@
 #{f.clanName}
 右のやつは？[p]
 
-[chara_mod name="kazuma" storage="interi_default_c"]
 #和真
 これは駄目です[p]
 
@@ -93,7 +93,6 @@
 #{f.clanName}
 真ん中のやつは？[p]
 
-[chara_mod name="kazuma" storage="interi_default_c"]
 #和真
 そうですね[p]
 
@@ -113,7 +112,6 @@
 #{f.clanName}
 左のやつは？[p]
 
-[chara_mod name="kazuma" storage="interi_default_c"]
 #和真
 そうですね[p]
 
@@ -132,7 +130,7 @@
 
 *a_common 
 
-
+[stopbgm]
 
 経済力が下がった。[p]
 [calc exp="f.ec={f.ec}-20"]

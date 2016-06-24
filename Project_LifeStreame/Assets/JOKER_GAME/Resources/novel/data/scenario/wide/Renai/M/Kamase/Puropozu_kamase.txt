@@ -24,6 +24,8 @@
 [show name=kojiro]
 ;キャラクター表示
 
+[playbgm wait=false time=1 storage="puropozu"]
+
 #{f.clanName}
 空気がおいしいね[p]
 
@@ -49,7 +51,6 @@
 #{f.clanName}
 あ！[p]
 
-[chara_mod name="kojiro" storage="kamase_odoroki_c"]
 #虎次郎
 危ない！[p]
 
@@ -61,7 +62,6 @@
 #{f.clanName}
 あはははははは！[p]
 
-[chara_mod name="kojiro" storage="kamase_kanasi_c"]
 #虎次郎
 ・・・・・・[p]
 
@@ -74,7 +74,6 @@
 #{f.clanName}
 あはは、な、なに？[p]
 
-[chara_mod name="kojiro" storage="kamase_tere_c"]
 #虎次郎
 俺たち結婚しよう[p]
 
@@ -82,7 +81,7 @@
 へ？[p]
 
 #虎次郎
-お、俺と一緒にいたら一生と笑わせてやる[p]
+俺と一緒にいたら一生と笑わせてやる[p]
 
 だから、俺と結婚してくれ[p]
 
@@ -90,7 +89,7 @@
 え？え！？[p]
 
 #虎次郎
-ど、どうする？[p]
+どうする？[p]
 
 #{f.clanName}
 ・・・・[p]
@@ -99,15 +98,12 @@
 
 私のこと一生楽しませてよね[p]
 
-[chara_mod name="kojiro" storage="kamase_default_c"]
-
-#虎次郎
-ああ、俺は鎌瀬虎次郎[p]
-
-約束は守る男だ[p]
-
 #
 鎌瀬　虎次郎と結婚することが出来ました。[p]
+
+[calc exp="f.marriage=10"]
+
+[stopbgm]
 
 [Export]
 

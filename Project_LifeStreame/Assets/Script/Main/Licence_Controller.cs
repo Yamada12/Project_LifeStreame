@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.UI;
 
 /// <summary>
 /// ボタンのアニメーションを管理するスクリプト
@@ -7,6 +8,8 @@ using System.Collections;
 /// </summary>
 public class Licence_Controller : MonoBehaviour
 {
+    private ScenarioManager sc = null;
+
     public GameObject[] Left;       //左から来るボタンが入る
     public GameObject[] Right;      //右から来るボタンが入る
 
@@ -19,6 +22,18 @@ public class Licence_Controller : MonoBehaviour
     void Start()
     {
         this.fadeIn(); //プレハブが生成されたらフェードイン処理を実行
+        sc = GameObject.Find("Main_Manager").GetComponent<ScenarioManager>();
+    }
+
+    void Update()
+    {
+        if (PlayerStatus.lifeTime < 60)
+        {
+            Left[0].GetComponentInChildren<Button>().interactable = false;
+            Left[1].GetComponentInChildren<Button>().interactable = false;
+            Left[2].GetComponentInChildren<Button>().interactable = false;
+            Left[3].GetComponentInChildren<Button>().interactable = false;
+        }
     }
 
     /// <summary>
@@ -84,5 +99,57 @@ public class Licence_Controller : MonoBehaviour
     void DestroySelf()
     {
         Destroy(this.gameObject);
+    }
+
+    /// <summary>
+    /// 外出イベント
+    /// </summary>
+    public void OutDoor(int id)
+    {
+        switch (id)
+        {
+            case 0://塾
+                if (PlayerStatus.ec >= 300)
+                {
+                    PlayerStatus.ac += 20;
+                    PlayerStatus.co += 5;
+                }
+                PlayerPrefs.SetFloat("ac", PlayerStatus.ac);
+                PlayerPrefs.SetFloat("co", PlayerStatus.co);
+                sc.OtherPoper("学力↑", 0f);
+                sc.OtherPoper("コミュ力↑", 0.5f);
+                break;
+            case 1://アルバイト
+                PlayerStatus.ec += 20;
+                PlayerStatus.vi += 5;
+                PlayerPrefs.SetFloat("ec", PlayerStatus.ec);
+                PlayerPrefs.SetFloat("vi", PlayerStatus.vi);
+                sc.OtherPoper("経済力↑", 0f);
+                sc.OtherPoper("体力↑", 0.5f);
+                break;
+            case 2://遊ぶ
+                PlayerStatus.vi += 10;
+                PlayerStatus.co += 10;
+                PlayerStatus.hu += 5;
+                PlayerPrefs.SetFloat("vi", PlayerStatus.vi);
+                PlayerPrefs.SetFloat("co", PlayerStatus.co);
+                PlayerPrefs.SetFloat("hu", PlayerStatus.hu);
+                sc.OtherPoper("体力↑", 0f);
+                sc.OtherPoper("コミュ力↑", 0.5f);
+                sc.OtherPoper("人間力↑", 1f);
+                break;
+            case 3://家で休む
+                PlayerStatus.lu += 20;
+                PlayerStatus.vi += 5;
+                PlayerPrefs.SetFloat("lu", PlayerStatus.lu);
+                PlayerPrefs.SetFloat("vi", PlayerStatus.vi);
+                sc.OtherPoper("運↑", 0f);
+                sc.OtherPoper("体力↑", 0.5f);
+                break;
+            default:
+                break;
+        }
+
+        PlayerStatus.lifeTime -= 60;
     }
 }

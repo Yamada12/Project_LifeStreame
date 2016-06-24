@@ -24,11 +24,13 @@
 [show name=kojiro]
 ;キャラクター表示
 
+[playbgm wait=false time=1 storage="kaimono"]
+
 #{f.clanName}
 鎌瀬君服見てもいいかな？[p]
 
 #虎次郎
-あ、いいとも[p]
+あぁ、いいとも[p]
 
 #{f.clanName}
 これ私に似合うかな[p]
@@ -122,7 +124,6 @@
 #虎次郎
 がーん[p]
 
-[chara_mod name="kojiro" storage="kamase_kanasi_c"]
 だ、ださい・・・[p]
 
 ださい・・・[p]
@@ -139,6 +140,8 @@
 
 経済力が下がった。[p]
 [calc exp="f.ec={f.ec}-20"]
+
+[stopbgm]
 
 [Export]
 

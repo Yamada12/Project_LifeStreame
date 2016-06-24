@@ -18,7 +18,7 @@
 
 [wait time=0]
 
-[bg_show name="roka" time=0.5]
+[bg_show name="mati" time=0.5]
 ;背景表示
 
 [show name=koji]

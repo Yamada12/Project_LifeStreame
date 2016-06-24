@@ -1,0 +1,333 @@
+﻿;メッセージ表示
+[showmessage time=0]
+
+;共通ライブラリ
+;セーブ・ロードバックログなど基本的な機能を取り込む 
+;[call file=wide/system target="*system_setting_buttons"]
+
+;ゲーム作成で便利なマクロ集
+[call file=wide/libs/quiz]
+[text_new name=_sp_chara_name layer=ui x="-168" y=-108.5 val="" color="DDFF00" fontsize=16 anchor="MiddleLeft"]
+[text_show name="_sp_chara_name" time=0]
+
+
+[wait time=0]
+
+[bg_new name="black" storage="black"]
+[bg_show name="black" time=0.5]
+
+[chara_new name=happy storage=happyhappy y=0 scale=2]
+;キャラクター宣言
+
+[playbgm wait=false time=1 storage="happy"]
+
+[chara_show name=happy]
+
+#ハッピハッピ
+やぁ[p]
+
+また会ったね[p]
+
+僕に出会えるなんて君は運がいいなぁ[p]
+
+そんな運がいい君に僕からプレゼントだよ[p]
+
+え？[p]
+
+運に頼りたくない？[p]
+
+何を言ってるんだ[p]
+
+運も実力のうちだよ[p]
+
+ほら、この中から成長させたい能力を選んで[p]
+
+;--------------------------------for文開始
+
+[calc exp="f.for=0"]
+*forstart
+
+[calc exp="f.for={f.for}+1"]
+[random var="f.rand" num=6]
+
+[if exp="{f.rand}==0"]
+[flag exp="f.pra=学力"]
+
+[elsif exp="{f.rand}==1"]
+[flag exp="f.pra=体力"]
+
+[elsif exp="{f.rand}==2"]
+[flag exp="f.pra=経済力"]
+
+[elsif exp="{f.rand}==3"]
+[flag exp="f.pra=運"]
+
+[elsif exp="{f.rand}==4"]
+[flag exp="f.pra=人間力"]
+
+[elsif exp="{f.rand}==5"]
+[flag exp="f.pra=コミュ力"]
+
+[endif]
+
+[if exp="{f.for}==1"]
+[flag exp="f.1={f.pra}"]
+
+[elsif exp="{f.for}==2"]
+[flag exp="f.2={f.pra}"]
+
+[elsif exp="{f.for}==3"]
+[flag exp="f.3={f.pra}"]
+
+[endif]
+
+[if exp="{f.for}==3"]
+
+[else]
+@jump target=*forstart
+
+[endif]
+
+;--------------------------------for文終了
+
+
+[select_new text="{f.1}" target=*select_a1 ]
+[select_new text="{f.2}" target=*select_a2 ]
+[select_new text="{f.3}" target=*select_a3 ]
+
+[select_show sound=click ]
+
+[s]
+
+*select_a1
+
+[if exp="{f.1}==コミュ力"]
+#ハッピハッピ
+君はコミュ力を上げたいんだね[p]
+
+コミュニケーションは重要だからね[p]
+
+なら、君のコミュ力を上げてあげよう！[p]
+
+[calc exp="f.co={f.co}+30"]
+[playse storage=StatusUp]
+
+[elsif exp="{f.1}==人間力"]
+#ハッピハッピ
+君は人間力を上げたいんだね[p]
+
+人間力は人間としての力だもんね[p]
+
+なら、君の人間力を上げてあげよう！[p]
+
+[calc exp="f.hu={f.hu}+30"]
+[playse storage=StatusUp]
+
+[elsif exp="{f.1}==経済力"]
+#ハッピハッピ
+君は経済力を上げたいんだね[p]
+
+確かに何事をするにもお金は必要だからね[p]
+
+なら、君の経済力を上げてあげよう！[p]
+[calc exp="f.ec={f.ec}+30"]
+[playse storage=StatusUp]
+
+[elsif exp="{f.1}==体力"]
+#ハッピハッピ
+君は体力を上げたいんだね[p]
+
+君、運動苦手なの？[p]
+
+なら、君の体力を上げてあげよう！[p]
+[calc exp="f.vi={f.vi}+30"]
+[playse storage=StatusUp]
+
+[elsif exp="{f.1}==学力"]
+#ハッピハッピ
+君は学力を上げたいんだね[p]
+
+おバカさんなの？[p]
+
+なら、君の学力を上げてあげよう！[p]
+[calc exp="f.ac={f.ac}+30"]
+[playse storage=StatusUp]
+
+[elsif exp="{f.1}==運"]
+#ハッピハッピ
+君は運をもっと上げようというのかい？[p]
+
+強欲だね[p]
+
+僕に会えるだけの運があるのに[p]
+
+しょうがない、君の運を上げてあげよう！[p]
+[calc exp="f.lu={f.lu}+30"]
+[playse storage=StatusUp]
+
+[endif]
+
+@jump target=*a_common
+
+*select_a2
+
+[if exp="{f.2}==コミュ力"]
+#ハッピハッピ
+君はコミュ力を上げたいんだね[p]
+
+コミュニケーションは重要だからね[p]
+
+なら、君のコミュ力を上げてあげよう！[p]
+[calc exp="f.co={f.co}+30"]
+[playse storage=StatusUp]
+
+[elsif exp="{f.2}==人間力"]
+#ハッピハッピ
+君は人間力を上げたいんだね[p]
+
+人間力は人間としての力だもんね[p]
+
+なら、君の人間力を上げてあげよう！[p]
+[calc exp="f.hu={f.hu}+30"]
+[playse storage=StatusUp]
+
+[elsif exp="{f.2}==経済力"]
+#ハッピハッピ
+君は経済力を上げたいんだね[p]
+
+確かに何事をするにもお金は必要だからね[p]
+
+なら、君の経済力を上げてあげよう！[p]
+[calc exp="f.ec={f.ec}+30"]
+[playse storage=StatusUp]
+
+[elsif exp="{f.2}==体力"]
+#ハッピハッピ
+君は体力を上げたいんだね[p]
+
+君、運動苦手なの？[p]
+
+なら、君の体力を上げてあげよう！[p]
+[calc exp="f.vi={f.vi}+30"]
+[playse storage=StatusUp]
+
+[elsif exp="{f.2}==学力"]
+#ハッピハッピ
+君は学力を上げたいんだね[p]
+
+おバカさんなの？[p]
+
+なら、君の学力を上げてあげよう！[p]
+[calc exp="f.ac={f.ac}+30"]
+[playse storage=StatusUp]
+
+[elsif exp="{f.2}==運"]
+#ハッピハッピ
+君は運をもっと上げようというのかい？[p]
+
+強欲だね[p]
+
+僕に会えるだけの運があるのに[p]
+
+しょうがない、君の運を上げてあげよう！[p]
+[calc exp="f.lu={f.lu}+30"]
+[playse storage=StatusUp]
+
+[endif]
+
+@jump target=*a_common
+
+*select_a3
+
+[if exp="{f.3}==コミュ力"]
+#ハッピハッピ
+君はコミュ力を上げたいんだね[p]
+
+コミュニケーションは重要だからね[p]
+
+なら、君のコミュ力を上げてあげよう！[p]
+[calc exp="f.co={f.co}+30"]
+[playse storage=StatusUp]
+
+[elsif exp="{f.3}==人間力"]
+#ハッピハッピ
+君は人間力を上げたいんだね[p]
+
+人間力は人間としての力だもんね[p]
+
+なら、君の人間力を上げてあげよう！[p]
+[calc exp="f.hu={f.hu}+30"]
+[playse storage=StatusUp]
+
+[elsif exp="{f.3}==経済力"]
+#ハッピハッピ
+君は経済力を上げたいんだね[p]
+
+確かに何事をするにもお金は必要だからね[p]
+
+なら、君の経済力を上げてあげよう！[p]
+[calc exp="f.ec={f.ec}+30"]
+[playse storage=StatusUp]
+
+[elsif exp="{f.3}==体力"]
+#ハッピハッピ
+君は体力を上げたいんだね[p]
+
+君、運動苦手なの？[p]
+
+なら、君の体力を上げてあげよう！[p]
+[calc exp="f.vi={f.vi}+30"]
+[playse storage=StatusUp]
+
+[elsif exp="{f.3}==学力"]
+#ハッピハッピ
+君は学力を上げたいんだね[p]
+
+おバカさんなの？[p]
+
+なら、君の学力を上げてあげよう！[p]
+[calc exp="f.ac={f.ac}+30"]
+[playse storage=StatusUp]
+
+[elsif exp="{f.3}==運"]
+#ハッピハッピ
+君は運をもっと上げようというのかい？[p]
+
+強欲だね[p]
+
+僕に会えるだけの運があるのに[p]
+
+しょうがない、君の運を上げてあげよう！[p]
+[calc exp="f.lu={f.lu}+30"]
+[playse storage=StatusUp]
+
+[endif]
+
+@jump target=*a_common
+
+*a_common
+
+#ハッピハッピ
+これで君の能力が上がったよ[p]
+
+[chara_mod name="happy" storage="happy"]
+
+それじゃあ[p]
+
+またどこかで[p]
+
+え？[p]
+
+また会えるかって？[p]
+
+きっとまた会えるさ[p]
+
+そう、なぜなら運があるから[p]
+
+[anim name="happy" time=3 x=0 y=10]
+
+[stopbgm]
+
+[Export]
+
+[scene file={f.sceneName}]

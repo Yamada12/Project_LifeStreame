@@ -85,7 +85,7 @@ public class MainManager : MonoBehaviour
             else
                 PlayerStatus.progress += 1;
 
-            Invoke("ReturnWorld", 4.0f);
+            StartCoroutine(ReturnWorld());
         }
         // HPゲージに値を設定
         _timerSlider.value = PlayerStatus.lifeTime;
@@ -148,11 +148,20 @@ public class MainManager : MonoBehaviour
         pauseFlag = false;
     }
 
-    void ReturnWorld()
+    /// <summary>
+    /// 終了処理をしてWorldシーンに戻る
+    /// </summary>
+    IEnumerator  ReturnWorld()
     {
+        Destroy(GameObject.Find("License_Canvas(Clone)"));
+        Destroy(GameObject.Find("Love_Canvas(Clone)"));
+        Destroy(GameObject.Find("Happy!(Clone)"));
+        yield return new WaitForSeconds(4f);
         ev.InitDelete();
         World_Player.result = 0;
         World_Player.shiken = 0;
+        PlayerStatus.lifeTime = 1200;
+        PlayerStatus.static_Save();
         SceneManager.LoadScene("World", LoadSceneMode.Single);
     }
 }

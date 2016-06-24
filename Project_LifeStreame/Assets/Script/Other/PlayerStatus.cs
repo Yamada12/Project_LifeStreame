@@ -173,6 +173,7 @@ public class PlayerStatus : MonoBehaviour
         PlayerPrefs.SetInt("lp_ore", PlayerStatus.lp_ore);
         PlayerPrefs.SetInt("lp_ani", PlayerStatus.lp_ani);
         PlayerPrefs.SetInt("result", World_Player.result);
+        PlayerPrefs.SetInt("shiken", World_Player.shiken);
     }
 
     /// <summary>
@@ -208,5 +209,6 @@ public class PlayerStatus : MonoBehaviour
         PlayerStatus.lp_ore = PlayerPrefs.GetInt("lp_ore");
         PlayerStatus.lp_ani = PlayerPrefs.GetInt("lp_ani");
         World_Player.result = PlayerPrefs.GetInt("result");
+        World_Player.shiken = PlayerPrefs.GetInt("shiken");
     }
 }

@@ -1,0 +1,125 @@
+﻿;メッセージ表示
+[showmessage time=0]
+
+;共通ライブラリ
+;セーブ・ロードバックログなど基本的な機能を取り込む 
+;[call file=wide/system target="*system_setting_buttons"]
+
+;ゲーム作成で便利なマクロ集
+[call file=wide/libs/quiz]
+[text_new name=_sp_chara_name layer=ui x="-168" y=-108.5 val="" color="DDFF00" fontsize=16 anchor="MiddleLeft"]
+[text_show name="_sp_chara_name" time=0]
+
+
+[wait time=0]
+
+[bg_new name="black" storage="black"]
+[bg_show name="black" time=0.5]
+
+[chara_new name=happy storage=happyhappy y=0 scale=2]
+;キャラクター宣言
+
+[playbgm wait=false time=1 storage="happy"]
+
+[chara_show name=happy]
+
+#？？？
+やぁ[p]
+
+はじめまして[p]
+
+僕は幸福の妖精[p]
+
+#ハッピハッピ
+ハッピハッピだよ[p]
+
+僕がこのゲームの説明をするね[p]
+
+このゲームの目的は世代をつなぐこと[p]
+
+君がパートナーを見つけて子供につなげるんだ[p]
+
+そして君の子供に君の能力を[p]
+
+ある程度引き継ぐことが出来るんだ[p]
+
+だから、君の能力が高ければ高いほど[p]
+
+子供の能力が高くなるんだ[p]
+
+何世代君の家系を繋げられるか[p]
+
+そして、子供の能力をマックスまで上げることができるか[p]
+
+これがゲームの目的だよ[p]
+
+もし、パートナーを見つけることが出来なかったら[p]
+
+お迎えにあがるよ[p]
+
+これがこのゲームのゲームオーバー[p]
+
+だから、パートナーを見つけることが重要なんだ[p]
+
+次に君自身の能力の上げ方の説明をするね[p]
+
+
+[image_new name="button2" tag=button storage=LS_Button_Com x=4 y=2.5 scale=0.5]
+[image_new name="button3" tag=button storage=LS_Button_Hum x=5 y=1 scale=0.5]
+[image_new name="button4" tag=button storage=LS_Button_Money x=4 y=-0.5 scale=0.5]
+[image_new name="button5" tag=button storage=LS_Button_Vit x=-4 y=-0.5 scale=0.5]
+[image_new name="button6" tag=button storage=LS_Button_Luck x=-5 y=1 scale=0.5]
+[image_new name="button1" tag=button storage=LS_Button_Academy x=-4 y=2.5 scale=0.5]
+
+
+[image_show name=button2 time=0.5]
+[image_show name=button3 time=0.5]
+[image_show name=button4 time=0.5]
+[image_show name=button5 time=0.5]
+[image_show name=button6 time=0.5]
+[image_show name=button1 time=0.5]
+
+これらが能力を上げるためのボタンだよ[p]
+
+それぞれに上がりやすい能力があって[p]
+
+アイコンがヒントになってるよ[p]
+
+このゲームには「時間」という概念が存在するんだ[p]
+
+ボーっとしていると時間はあっという間になくなってしまう[p]
+
+何もせず人生を過ごすと自分の能力も上がらない[p]
+
+だから自分を成長させるために[p]
+
+このボタンを押して自分を成長させていくんだ[p]
+
+能力を上げるには時間を消費するから[p]
+
+今、自分に足りないものは何かを考えて[p]
+
+有意義な時間を過ごしてね[p]
+
+[image_hide tag=button time=3 wait=false]
+
+最後に君が人生を楽しんでいるかを[p]
+
+たまに僕が見に行くから[p]
+
+その時は優しくしてね[p]
+
+これで説明を終わるね[p]
+
+それじゃあ[p]
+[chara_mod name="happy" storage="happy"]
+
+良い人生を[p]
+
+[anim name="happy" time=3 x=0 y=10]
+
+[stopbgm]
+
+[Export]
+
+[scene file="World"]

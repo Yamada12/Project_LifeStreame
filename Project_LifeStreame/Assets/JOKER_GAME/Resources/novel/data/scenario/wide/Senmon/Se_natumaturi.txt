@@ -16,6 +16,7 @@
 [bg_new name="natumaturi" storage="natumaturi"]
 [bg_show name="natumaturi" time=0.5]
 
+[playbgm wait=false time=1 storage="natumaturi"]
 
 ～夏祭り～[p]
 
@@ -58,6 +59,8 @@
 [calc exp="f.lu={f.lu}+20"]
 
 [endif]
+
+[stopbgm]
 
 [Export]
 

@@ -103,7 +103,6 @@
 #橙花
 凄く綺麗[p]
 
-[chara_mod name=toka storage=tundere_odoroki_c]
 なッ！？[p]
 
 [chara_mod name=toka storage=tundere_tere_c]

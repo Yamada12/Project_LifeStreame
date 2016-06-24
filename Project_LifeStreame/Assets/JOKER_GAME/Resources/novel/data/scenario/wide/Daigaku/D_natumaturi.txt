@@ -17,6 +17,7 @@
 [bg_new name="sky_yoru" storage="sky_yoru"]
 [bg_show name="ame" time=0.5]
 
+[playbgm wait=false time=1 storage="natumaturi"]
 
 ～夏祭り～[p]
 
@@ -60,6 +61,8 @@
 [calc exp="f.lu={f.lu}+20"]
 
 [endif]
+
+[stopbgm]
 
 [Export]
 

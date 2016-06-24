@@ -8,6 +8,7 @@ public class SceneChanger : MonoBehaviour
     public void ChangeUnityScene(string sceneName)
     {//UnityからUnityのシーンへ遷移
         //Application.LoadLevel(sceneName);
+        PlayerStatus.static_Load();
         SceneManager.LoadScene(sceneName);
     }
 

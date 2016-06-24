@@ -24,6 +24,8 @@
 [show name=sora]
 ;キャラクター表示
 
+[playbgm wait=false time=1 storage="kokuhaku"]
+
 #蒼空
 どうしたの？[p]
 
@@ -78,6 +80,8 @@
 
 #
 花楓　蒼空と恋人関係になりました。[p]
+
+[calc exp="f.marriage=3"]
 
 [else]
 
@@ -135,6 +139,8 @@
 
 #
 花楓　蒼空と恋人関係になりました。[p]
+
+[calc exp="f.marriage=3"]
 
 [else]
 
@@ -196,6 +202,8 @@
 #
 花楓　蒼空と恋人関係になりました。[p]
 
+[calc exp="f.marriage=3"]
+
 [else]
 
 #{f.clanName}
@@ -225,6 +233,8 @@
 @jump target=*a_common
 
 *a_common 
+
+[stopbgm]
 
 [Export]
 

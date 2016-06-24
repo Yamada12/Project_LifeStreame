@@ -24,6 +24,8 @@
 [show name=kazuma]
 ;キャラクター表示
 
+[playbgm wait=false time=1 storage="kokuhaku"]
+
 #和真
 どうしたんですか？[p]
 
@@ -54,7 +56,6 @@
 
 和真君のそばにいたいの[p]
 
-[chara_mod name="kazuma" storage="interi_odoroki_c"]
 #和真
 ・・・・[p]
 
@@ -62,12 +63,10 @@
 
 今までこういう経験がないもので[p]
 
-[chara_mod name="kazuma" storage="interi_default_c"]
 ・・・・[p]
 
 そうですね[p]
 
-[chara_mod name="kazuma" storage="interi_tere_c"]
 僕もあなたのこと好きです[p]
 
 こんな感情初めてだ[p]
@@ -76,6 +75,8 @@
 
 #
 羽神　和真と恋人関係になりました。[p]
+
+[calc exp="f.marriage=1"]
 
 [else]
 
@@ -87,7 +88,6 @@
 #和真
 ・・・・[p]
 
-[chara_mod name="kazuma" storage="interi_kanasi_c"]
 すいません・・・[p]
 
 僕はこういう経験がないんです[p]
@@ -129,7 +129,6 @@
 #和真
 ・・・・・・[p]
 
-[chara_mod name="kazuma" storage="interi_kanasi_c"]
 恋ですか[p]
 
 僕も、最近あなたのことばかり考えていました[p]
@@ -142,13 +141,14 @@
 
 素敵な気持ちですね[p]
 
-[chara_mod name="kazuma" storage="interi_tere_c"]
 僕も、あなたのこと好きになってしまっていたようです。[p]
 
 これからよろしくお願いします。[p]
 
 #
 羽神　和真と恋人関係になりました。[p]
+
+[calc exp="f.marriage=1"]
 
 [else]
 
@@ -172,7 +172,6 @@
 #和真
 ・・・・・・[p]
 
-[chara_mod name="kazuma" storage="interi_kanasi_c"]
 すいません[p]
 
 あなたのことは嫌いではありません[p]
@@ -203,16 +202,13 @@
 
 どうにかなりそうなの[p]
 
-[chara_mod name="kazuma" storage="interi_kanasi_c"]
 #和真
 どうにかなってしまっては困りますね[p]
 
-[chara_mod name="kazuma" storage="interi_default_c"]
 そうですか[p]
 
 僕はあなたにとって必要な存在ということですね[p]
 
-[chara_mod name="kazuma" storage="interi_tere_c"]
 偶然にも、僕も同じようなことを思っていました[p]
 
 僕にもあなたが必要なようです[p]
@@ -221,6 +217,8 @@
 
 #
 羽神　和真と恋人関係になりました。[p]
+
+[calc exp="f.marriage=1"]
 
 [else]
 
@@ -233,7 +231,6 @@
 
 どうにかなりそうなの[p]
 
-[chara_mod name="kazuma" storage="interi_kanasi_c"]
 #和真
 すいません・・・[p]
 
@@ -251,6 +248,8 @@
 @jump target=*a_common
 
 *a_common 
+
+[stopbgm]
 
 [Export]
 

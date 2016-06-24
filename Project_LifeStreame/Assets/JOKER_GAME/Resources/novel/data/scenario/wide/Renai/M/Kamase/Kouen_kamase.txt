@@ -24,6 +24,8 @@
 [show name=kojiro]
 ;キャラクター表示
 
+[playbgm wait=false time=1 storage="kouen"]
+
 #{f.clanName}
 あ！鉄棒だ！[p]
 
@@ -75,7 +77,6 @@
 #{f.clanName}
 だ、大丈夫鎌瀬君！[p]
 
-[chara_mod name="kojiro" storage="kamase_kanasi_c"]
 #虎次郎
 いてて[p]
 
@@ -85,7 +86,7 @@
 #虎次郎
 あ、う、うん[p]
 
-そ、そうだな[p]
+そうだな[p]
 
 #
 鎌瀬　虎次郎の好感度が上がった。[p]
@@ -141,7 +142,6 @@
 #{f.clanName}
 よし！特訓しよ！[p]
 
-[chara_mod name="kojiro" storage="kamase_odoroki_c"]
 #虎次郎
 ひぃぃぃぃぃ！[p]
 
@@ -157,6 +157,8 @@
 
 経済力が下がった。[p]
 [calc exp="f.ec={f.ec}-20"]
+
+[stopbgm]
 
 [Export]
 

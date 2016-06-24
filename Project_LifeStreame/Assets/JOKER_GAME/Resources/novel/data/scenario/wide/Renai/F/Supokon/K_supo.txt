@@ -21,10 +21,10 @@
 [bg_show name="K_roka" time=0.5]
 ;背景表示
 
-[playbgm wait=false time=1 storage="supokon"]
-
 [show name=sora]
 ;キャラクター表示
+
+[playbgm wait=false time=1 storage="supokon"]
 
 #
 うおおおおおおおおい！[p]
@@ -65,7 +65,7 @@
 いや、全然わかってない・・・[p]
 
 #
-花楓　蒼空をデートに誘えるようになりました。[p]
+花楓　蒼空の連絡先を入手しました。[p]
 
 人間力が少し上がった。[p]
 [calc exp="f.hu={f.hu}+10"]
@@ -74,4 +74,4 @@
 
 [Export]
 
-[scene file={f.sceneName}]
+[scene file="Main_HighSchool"]

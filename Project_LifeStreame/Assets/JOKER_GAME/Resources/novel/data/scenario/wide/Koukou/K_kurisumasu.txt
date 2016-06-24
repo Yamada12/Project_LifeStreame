@@ -16,6 +16,7 @@
 [bg_new name="room" storage="room"]
 [bg_show name="room" time=0.5]
 
+[playbgm wait=false time=1 storage="kurisumasu"]
 
 ～クリスマス～[p]
 
@@ -44,6 +45,8 @@
 [calc exp="f.lu={f.lu}+50"]
 
 [endif]
+
+[stopbgm]
 
 [Export]
 

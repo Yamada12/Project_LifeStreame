@@ -24,6 +24,8 @@
 [show name=yositaka]
 ;キャラクター表示
 
+[playbgm wait=false time=1 storage="kaimono"]
+
 #{f.clanName}
 何か欲しいものあるの？[p]
 
@@ -37,7 +39,6 @@
 #{f.clanName}
 うん[p]
 
-[chara_mod name="yositaka" storage="nagoyaka_niko_c"]
 #善鷹
 あ、これ[p]
 
@@ -96,7 +97,6 @@
 #{f.clanName}
 なら、檜山君これに合うんじゃない？[p]
 
-[chara_mod name="yositaka" storage="nagoyaka_default_c"]
 #善鷹
 僕に？[p]
 

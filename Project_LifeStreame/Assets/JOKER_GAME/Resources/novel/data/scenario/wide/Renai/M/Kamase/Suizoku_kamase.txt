@@ -24,6 +24,8 @@
 [show name=kojiro]
 ;キャラクター表示
 
+[playbgm wait=false time=1 storage="suizoku"]
+
 #{f.clanName}
 意外だなぁ[p]
 
@@ -45,7 +47,6 @@
 #{f.clanName}
 ペンギンが鎌瀬君に威嚇してる！[p]
 
-[chara_mod name="kojiro" storage="kamase_odoroki_c"]
 #虎次郎
 ひぃ！[p]
 
@@ -124,6 +125,8 @@
 
 経済力が下がった。[p]
 [calc exp="f.ec={f.ec}-20"]
+
+[stopbgm]
 
 [Export]
 

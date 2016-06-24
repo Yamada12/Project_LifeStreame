@@ -24,6 +24,8 @@
 [show name=kojiro]
 ;キャラクター表示
 
+[playbgm wait=false time=1 storage="kokuhaku"]
+
 #虎次郎
 どうしたんだい？[p]
 
@@ -58,7 +60,7 @@
 
 一緒にいるとなぜか安心するの[p]
 
-全然頼りないのに[p]
+全然たよりないのに[p]
 
 あなたのそんな自然で親しみやすいところが[p]
 
@@ -71,13 +73,14 @@
 
 オレも君のことちゅきだよ[p]
 
-んんッ！[p]
+んん！[p]
 
-[chara_mod name="kojiro" storage="kamase_odoroki_c"]
 好きだ！！！[p]
 
 #
 鎌瀬　虎次郎と恋人関係になりました。[p]
+
+[calc exp="f.marriage=2"]
 
 [else]
 
@@ -88,17 +91,16 @@
 
 一緒にいるとなぜか安心するの[p]
 
-全然頼りないのに[p]
+全然たよりないのに[p]
 
 あなたのそんな自然で親しみやすいところが[p]
 
 好きなのかもしれない[p]
 
-[chara_mod name="kojiro" storage="kamase_kanasi_c"]
 #虎次郎
 んー[p]
 
-君は僕の魅力にまだ気付き切れていないようだ[p]
+君は僕の魅力にまだ気づき切れていないようだ[p]
 
 それでは僕の彼女は務まらない[p]
 
@@ -137,13 +139,14 @@
 
 オレのそばにいればいくらでも笑わせてやる[p]
 
-[chara_mod name="kojiro" storage="kamase_tere_c"]
 オレも[p]
 
 君のそばにいたい[p]
 
 #
 鎌瀬　虎次郎と恋人関係になりました。[p]
+
+[calc exp="f.marriage=2"]
 
 [else]
 
@@ -162,7 +165,6 @@
 
 だから、私と付き合ってください[p]
 
-[chara_mod name="kojiro" storage="kamase_kanasi_c"]
 #虎次郎
 残念だけど[p]
 
@@ -200,7 +202,6 @@
 
 今では全部が好きなの！[p]
 
-[chara_mod name="kojiro" storage="kamase_odoroki_c"]
 #虎次郎
 ちょっとまってくれ[p]
 
@@ -217,6 +218,8 @@
 #
 鎌瀬　虎次郎と恋人関係になりました。[p]
 
+[calc exp="f.marriage=2"]
+
 [else]
 
 #{f.clanName}
@@ -232,7 +235,6 @@
 
 今では全部が好きなの！[p]
 
-[chara_mod name="kojiro" storage="kamase_kanasi_c"]
 #虎次郎
 熱がこもったいい告白だった[p]
 
@@ -250,6 +252,8 @@
 @jump target=*a_common
 
 *a_common 
+
+[stopbgm]
 
 [Export]
 

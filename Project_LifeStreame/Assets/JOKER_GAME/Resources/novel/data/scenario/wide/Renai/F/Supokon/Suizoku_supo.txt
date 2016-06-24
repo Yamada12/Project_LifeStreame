@@ -24,6 +24,8 @@
 [show name=sora]
 ;キャラクター表示
 
+[playbgm wait=false time=1 storage="suizoku"]
+
 #蒼空
 わぁー！[p]
 
@@ -141,6 +143,8 @@
 
 経済力が下がった。[p]
 [calc exp="f.ec={f.ec}-20"]
+
+[stopbgm]
 
 [Export]
 

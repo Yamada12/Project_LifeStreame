@@ -16,6 +16,7 @@
 [bg_new name="syakai01" storage="syakai01"]
 [bg_show name="syakai01" time=0.5]
 
+[playbgm wait=false time=1 storage="kurisumasu"]
 
 ～クリスマス～[p]
 
@@ -48,6 +49,8 @@
 [calc exp="f.lu={f.lu}+50"]
 
 [endif]
+
+[stopbgm]
 
 [Export]
 

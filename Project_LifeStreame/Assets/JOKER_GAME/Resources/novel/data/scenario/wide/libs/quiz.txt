@@ -65,10 +65,10 @@
 [endif]
 
 
-@anim name={evt.caller_name} scale=1.2 time=0.5
+@anim name={evt.caller_name} scale=1.2
 
 
-[image_hide tag="select_button" time=0.2]
+[image_hide tag="select_button"]
 
 
 [image_remove tag="select_button"]

@@ -95,6 +95,8 @@
 #
 姫百合　橙花と恋人関係になりました。[p]
 
+[calc exp="f.marriage=1"]
+
 [else]
 
 #{f.clanName}
@@ -174,6 +176,8 @@
 #
 姫百合　橙花と恋人関係になりました。[p]
 
+[calc exp="f.marriage=1"]
+
 [else]
 
 #{f.clanName}
@@ -242,6 +246,8 @@
 
 #
 姫百合　橙花と恋人関係になりました。[p]
+
+[calc exp="f.marriage=1"]
 
 [else]
 

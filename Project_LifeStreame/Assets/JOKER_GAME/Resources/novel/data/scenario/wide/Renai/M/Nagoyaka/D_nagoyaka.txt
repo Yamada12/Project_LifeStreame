@@ -21,10 +21,10 @@
 [bg_show name="kouen" time=0.5]
 ;背景表示
 
-[playbgm wait=false time=1 storage="nagoyaka"]
-
 [show name=yositaka]
 ;キャラクター表示
+
+[playbgm wait=false time=1 storage="nagoyaka"]
 
 #善鷹
 あははは[p]
@@ -44,7 +44,7 @@
 #{f.clanName}
 何してるの？[p]
 
-[chara_mod name="yositaka" storage="nagoyaka_kanasi_c"]
+[chara_mod name="yositaka" storage="nagoyaka_odoroki_c"]
 #善鷹
 あッ[p]
 
@@ -71,7 +71,7 @@
 今度は{f.clanName}にも見せてあげたいな[p]
 
 #
-檜山　善鷹をデートに誘えるようになりました。[p]
+檜山　善鷹の連絡先を入手しました。[p]
 
 人間力が少し上がった。[p]
 [calc exp="f.hu={f.hu}+10"]

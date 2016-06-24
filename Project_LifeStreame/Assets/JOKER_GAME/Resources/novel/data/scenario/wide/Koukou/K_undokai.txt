@@ -16,6 +16,7 @@
 [bg_new name="sky02" storage="sky02"]
 [bg_show name="sky02" time=0.5]
 
+[playbgm wait=false time=1 storage="undokai"]
 
 ～運動会～[p]
 
@@ -54,6 +55,8 @@
 [calc exp="f.lu={f.lu}+40"]
 
 [endif]
+
+[stopbgm]
 
 [Export]
 

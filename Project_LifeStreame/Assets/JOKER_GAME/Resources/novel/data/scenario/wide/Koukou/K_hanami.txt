@@ -16,6 +16,7 @@
 [bg_new name="sakura" storage="sakura"]
 [bg_show name="sakura" time=0.5]
 
+[playbgm wait=false time=1 storage="hamami"]
 
 ～花見～[p]
 
@@ -53,6 +54,8 @@
 [calc exp="f.lu={f.lu}+10"]
 
 [endif]
+
+[stopbgm]
 
 [Export]
 

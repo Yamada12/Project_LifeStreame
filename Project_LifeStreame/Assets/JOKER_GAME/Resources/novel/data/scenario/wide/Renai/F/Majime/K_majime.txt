@@ -51,7 +51,7 @@
 委員長・・・[p]
 
 #
-佐倉　梨沙をデートに誘えるようになりました。[p]
+佐倉　梨沙の連絡先を入手しました。[p]
 
 人間力が少し上がった。[p]
 [calc exp="f.hu={f.hu}+10"]
@@ -60,4 +60,4 @@
 
 [Export]
 
-[scene file={f.sceneName}]
+[scene file="Main_HighSchool"]

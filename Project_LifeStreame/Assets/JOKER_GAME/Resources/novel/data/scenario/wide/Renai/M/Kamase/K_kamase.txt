@@ -58,7 +58,6 @@
 #
 ・・・・・[p]
 
-[chara_mod name="kojiro" storage="kamase_kanasi_s"]
 #虎次郎
 思ったより高いな・・・[p]
 
@@ -66,7 +65,7 @@
 台持ってきますね。[p]
 
 #
-鎌瀬　虎次郎をデートに誘えるようになりました。[p]
+鎌瀬　虎次郎の連絡先を入手しました。[p]
 
 人間力が少し上がった。[p]
 [calc exp="f.hu={f.hu}+10"]
@@ -75,4 +74,4 @@
 
 [Export]
 
-[scene file={f.sceneName}]
+[scene file="Main_HighSchool"]

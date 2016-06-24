@@ -41,7 +41,6 @@
 #虎次郎
 ッ！？[p]
 
-#{f.clanName}
 よかッ・・・[p]
 
 [chara_mod name="kojiro" storage="kamase_default_c"]
@@ -75,12 +74,11 @@
 #{f.clanName}
 迷ったんだよね？[p]
 
-[chara_mod name="kojiro" storage="kamase_kanasi_c"]
 #虎次郎
 はい、迷ってます[p]
 
 #
-鎌瀬　虎次郎をデートに誘えるようになりました。[p]
+鎌瀬　虎次郎の連絡先を入手しました。[p]
 
 人間力が少し上がった。[p]
 [calc exp="f.hu={f.hu}+10"]

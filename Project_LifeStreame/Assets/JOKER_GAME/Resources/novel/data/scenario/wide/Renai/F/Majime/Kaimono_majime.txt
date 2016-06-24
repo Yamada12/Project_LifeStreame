@@ -24,6 +24,8 @@
 [show name=risa]
 ;キャラクター表示
 
+[playbgm wait=false time=1 storage="kaimono"]
+
 #{f.clanName}
 何か欲しいものあるの？[p]
 
@@ -57,7 +59,7 @@
 *select_a1
 
 #{f.clanName}
-右のやつは[p]
+右のやつは？[p]
 
 #梨沙
 そうね[p]
@@ -123,6 +125,8 @@
 
 経済力が下がった。[p]
 [calc exp="f.ec={f.ec}-20"]
+
+[stopbgm]
 
 [Export]
 

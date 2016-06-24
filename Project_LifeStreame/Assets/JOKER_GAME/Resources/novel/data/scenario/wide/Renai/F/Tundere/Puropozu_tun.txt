@@ -96,6 +96,8 @@
 #
 姫百合　橙花と結婚することが出来ました。[p]
 
+[calc exp="f.marriage=10"]
+
 [stopbgm]
 
 [Export]
