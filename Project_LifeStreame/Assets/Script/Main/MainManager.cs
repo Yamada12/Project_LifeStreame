@@ -32,6 +32,7 @@ public class MainManager : MonoBehaviour
             ev.Load_UseCount();
             ev.Save_UseCount();
             PlayerStatus.static_Load();
+            ev.InteractiveCheck();
             Debug.Log("初回起動じゃないよ！");
         }
         else {

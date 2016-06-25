@@ -576,14 +576,12 @@ public class ScenarioManager : MonoBehaviour
                     {//ツンデレと出会ったことが無ければ
                         if (PlayerStatus.progress == 3)
                         {//高校以下なら高校の出会いシーン
-                            PlayerStatus.lp_tun += 1;
                             PlayerStatus.InitConverter();
                             PlayerStatus.static_Save();
                             NovelSingleton.StatusManager.callJoker("wide/Renai/F/Tundere/K_tun", "");
                         }
                         else if (PlayerStatus.progress >= 4)
                         {//専門学校以上なら社会の出会いシーン
-                            PlayerStatus.lp_tun += 1;
                             PlayerStatus.InitConverter();
                             PlayerStatus.static_Save();
                             NovelSingleton.StatusManager.callJoker("wide/Renai/F/Tundere/D_tun", "");
@@ -597,14 +595,12 @@ public class ScenarioManager : MonoBehaviour
                     {//出会ったことが無ければ
                         if (PlayerStatus.progress == 3)
                         {//高校以下なら高校の出会いシーン
-                            PlayerStatus.lp_maji += 1;
                             PlayerStatus.InitConverter();
                             PlayerStatus.static_Save();
                             NovelSingleton.StatusManager.callJoker("wide/Renai/F/Majime/K_majime", "");
                         }
                         else if (PlayerStatus.progress >= 4)
                         {//専門学校以上なら社会の出会いシーン
-                            PlayerStatus.lp_maji += 1;
                             PlayerStatus.InitConverter();
                             PlayerStatus.static_Save();
                             NovelSingleton.StatusManager.callJoker("wide/Renai/F/Majime/D_majime", "");
@@ -618,14 +614,12 @@ public class ScenarioManager : MonoBehaviour
                     {//出会ったことが無ければ
                         if (PlayerStatus.progress == 3)
                         {//高校以下なら高校の出会いシーン
-                            PlayerStatus.lp_supo += 1;
                             PlayerStatus.InitConverter();
                             PlayerStatus.static_Save();
                             NovelSingleton.StatusManager.callJoker("wide/Renai/F/Supokon/K_supo", "");
                         }
                         else if (PlayerStatus.progress >= 4)
                         {//専門学校以上なら社会の出会いシーン
-                            PlayerStatus.lp_supo += 1;
                             PlayerStatus.InitConverter();
                             PlayerStatus.static_Save();
                             NovelSingleton.StatusManager.callJoker("wide/Renai/F/Supokon/D_supo", "");
@@ -639,14 +633,12 @@ public class ScenarioManager : MonoBehaviour
                     {//出会ったことが無ければ
                         if (PlayerStatus.progress == 3)
                         {//高校以下なら高校の出会いシーン
-                            PlayerStatus.lp_mega += 1;
                             PlayerStatus.InitConverter();
                             PlayerStatus.static_Save();
                             NovelSingleton.StatusManager.callJoker("wide/Renai/M/Interi/K_interi", "");
                         }
                         else if (PlayerStatus.progress >= 4)
                         {//専門学校以上なら社会の出会いシーン
-                            PlayerStatus.lp_mega += 1;
                             PlayerStatus.InitConverter();
                             PlayerStatus.static_Save();
                             NovelSingleton.StatusManager.callJoker("wide/Renai/M/Interi/D_interi", "");
@@ -660,14 +652,12 @@ public class ScenarioManager : MonoBehaviour
                     {//出会ったことが無ければ
                         if (PlayerStatus.progress == 3)
                         {//高校以下なら高校の出会いシーン
-                            PlayerStatus.lp_kama += 1;
                             PlayerStatus.InitConverter();
                             PlayerStatus.static_Save();
                             NovelSingleton.StatusManager.callJoker("wide/Renai/M/Kamase/K_kamase", "");
                         }
                         else if (PlayerStatus.progress >= 4)
                         {//専門学校以上なら社会の出会いシーン
-                            PlayerStatus.lp_kama += 1;
                             PlayerStatus.InitConverter();
                             PlayerStatus.static_Save();
                             NovelSingleton.StatusManager.callJoker("wide/Renai/M/Kamase/D_kamase", "");
@@ -681,14 +671,12 @@ public class ScenarioManager : MonoBehaviour
                     {//出会ったことが無ければ
                         if (PlayerStatus.progress == 3)
                         {//高校以下なら高校の出会いシーン
-                            PlayerStatus.lp_nago += 1;
                             PlayerStatus.InitConverter();
                             PlayerStatus.static_Save();
                             NovelSingleton.StatusManager.callJoker("wide/Renai/M/Nagoyaka/K_nagoyaka", "");
                         }
                         else if (PlayerStatus.progress >= 4)
                         {//専門学校以上なら社会の出会いシーン
-                            PlayerStatus.lp_nago += 1;
                             PlayerStatus.InitConverter();
                             PlayerStatus.static_Save();
                             NovelSingleton.StatusManager.callJoker("wide/Renai/M/Nagoyaka/D_nagoyaka", "");

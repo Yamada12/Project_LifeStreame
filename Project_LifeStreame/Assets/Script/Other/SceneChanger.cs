@@ -23,9 +23,9 @@ public class SceneChanger : MonoBehaviour
     {
         float rnd = Random.Range(0, 4);
         SoundPlayer.Instance.PlaySE("Event_Enter");
-        PlayerStatus.lifeTime -= 20;
         if (PlayerStatus.lifeTime > 20)
         {
+            PlayerStatus.lifeTime -= 20;
             switch (character)
             {
                 case "tun"://ツンデレ

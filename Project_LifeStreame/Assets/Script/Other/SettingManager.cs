@@ -18,6 +18,8 @@ public class SettingManager : MonoBehaviour
     void Start ()
     {
         SoundPlayer.Instance.PlayBGM("First01");
+        geneName = "みやの";
+        selectmf = 0;
     }
 
     public void InputText()
@@ -60,6 +62,11 @@ public class SettingManager : MonoBehaviour
         PlayerStatus.initStatus();
         PlayerStatus.clanName = geneName;
         PlayerStatus.mf = selectmf;
+        for (int i = 0; i < 50; i++)
+        {
+            PlayerPrefs.DeleteKey(i.ToString());
+        }
+        MainManager.pauseFlag = true;
         PlayerStatus.static_Save();
     }
 

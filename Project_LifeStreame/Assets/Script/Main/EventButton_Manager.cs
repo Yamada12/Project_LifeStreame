@@ -47,7 +47,7 @@ public class EventButton_Manager : MonoBehaviour
         for (int i = 0; i < buttons.Length; i++)
         {
             useCounts[i] = PlayerPrefs.GetInt(buttonID[i]);
-            InteractiveCheck(i);
+            InteractiveCheck();
         }
     }
 
@@ -62,7 +62,7 @@ public class EventButton_Manager : MonoBehaviour
             useCounts[id] = 0;
 
         Save_UseCount();
-        InteractiveCheck(id);
+        InteractiveCheck();
     }
 
     /// <summary>
@@ -70,7 +70,7 @@ public class EventButton_Manager : MonoBehaviour
     /// 0以下であればインタラクティブをfalseにする
     /// </summary>
     /// /// <param name="id">チェックするボタンのID</param>
-    public void InteractiveCheck(int id)
+    public void InteractiveCheck()
     {//id要らないかも？
         //if(useCounts[id] <= 0 || PlayerStatus.lifeTime < lostTimes[id])
         //    buttons[id].interactable = false;
@@ -92,11 +92,12 @@ public class EventButton_Manager : MonoBehaviour
             PlayerPrefs.DeleteKey(i.ToString());
         }
         MainManager.pauseFlag = true;
+        InteractiveCheck();
     }
 
     public void Debug_DeleteALL()
     {//デバッグ用セーブデータ全消去
         PlayerPrefs.DeleteKey("0");
-        InteractiveCheck(0);
+        InteractiveCheck();
     }
 }
