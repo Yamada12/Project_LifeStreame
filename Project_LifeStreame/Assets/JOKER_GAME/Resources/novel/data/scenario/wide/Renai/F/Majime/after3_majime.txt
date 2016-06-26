@@ -1,0 +1,95 @@
+﻿;メッセージ表示
+[showmessage time=0]
+
+;共通ライブラリ
+;セーブ・ロードバックログなど基本的な機能を取り込む 
+;[call file=wide/system target="*system_setting_buttons"]
+
+;ゲーム作成で便利なマクロ集
+[call file=wide/libs/utils]
+[text_new name=_sp_chara_name layer=ui x="-168" y=-108.5 val="" color="DDFF00" fontsize=16 anchor="MiddleLeft"]
+[text_show name="_sp_chara_name" time=0]
+
+[bg_new name="mati" storage="mati"]
+;背景宣言
+
+[chara_new name=risa storage=majime_default_c y=-1 ]
+;キャラクター宣言
+
+[wait time=0]
+
+[bg_show name="mati" time=0.5]
+;背景表示
+
+[show name=risa]
+;キャラクター表示
+
+[playbgm wait=false time=1 storage="majime"]
+
+#{f.clanName}
+いつもにぎやかだよね[p]
+
+#梨沙
+そうね[p]
+
+ほかに比べてここは賑やかね[p]
+
+っ！[p]
+
+[chara_mod name="risa" storage="majime_tere_c"]
+きれい[p]
+
+#{f.clanName}
+ん?[p]
+
+どうした？[p]
+
+#梨沙
+こういうの憧れるなぁ[p]
+
+#{f.clanName}
+・・・・[p]
+
+[select_new text="ほらいこう" target=*select_a1 ]
+[select_new text="まってて" target=*select_a2 ]
+
+
+[select_show sound=click ]
+
+[s]
+
+*select_a1
+#{f.clanName}
+ほら、はやくいこう[p]
+
+[chara_mod name="risa" storage="majime_kanasi_c"]
+#梨沙
+え、ええ・・・[p]
+
+#{f.clanName}
+(もう少し待っててくれ)[p]
+
+@jump target=*a_common
+
+*select_a2
+#{f.clanName}
+もう少しまってて[p]
+
+#梨沙
+う、うん・・・[p]
+
+@jump target=*a_common
+
+
+
+*a_common 
+
+#
+佐倉　梨沙との絆が最大になった[p]
+
+
+[stopbgm]
+
+[Export]
+
+[scene file={f.sceneName}]

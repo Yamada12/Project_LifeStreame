@@ -1,0 +1,76 @@
+﻿;メッセージ表示
+[showmessage time=0]
+
+;共通ライブラリ
+;セーブ・ロードバックログなど基本的な機能を取り込む 
+;[call file=wide/system target="*system_setting_buttons"]
+
+;ゲーム作成で便利なマクロ集
+[call file=wide/libs/utils]
+[text_new name=_sp_chara_name layer=ui x="-168" y=-108.5 val="" color="DDFF00" fontsize=16 anchor="MiddleLeft"]
+[text_show name="_sp_chara_name" time=0]
+
+[bg_new name="room2" storage="room2"]
+;背景宣言
+
+[chara_new name=yositaka storage=nagoyaka_default_c y=-1 ]
+;キャラクター宣言
+
+[wait time=0]
+
+[bg_show name="room2" time=0.5]
+;背景表示
+
+[show name=yositaka]
+;キャラクター表示
+
+[playbgm wait=false time=1 storage="nagoyaka"]
+
+#善鷹
+あ、いい匂い[p]
+
+これは肉じゃがかな？[p]
+
+#{f.clanName}
+せいかーい[p]
+
+#善鷹
+何か手伝おうか？[p]
+
+#{f.clanName}
+そうだなぁ[p]
+
+お皿を用意してもらえるかな[p]
+
+#善鷹
+わかった[p]
+
+お皿だね[p]
+
+#
+ガチャガチャ・・・[p]
+
+#{f.clanName}
+ありがとう[p]
+
+#善鷹
+いいよ、これくらい[p]
+
+これから、何か手伝ってほしいことあったら何でも言って[p]
+
+バンバン手伝うから[p]
+
+#{f.clanName}
+分かった[p]
+
+今度から手伝ってもらうよ[p]
+
+#
+檜山　善鷹と幸せな時間を過ごした[p]
+
+
+[stopbgm]
+
+[Export]
+
+[scene file={f.sceneName}]

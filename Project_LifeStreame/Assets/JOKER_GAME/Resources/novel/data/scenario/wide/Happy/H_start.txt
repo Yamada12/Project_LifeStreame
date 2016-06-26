@@ -19,7 +19,7 @@
 [chara_new name=happy storage=happyhappy y=0 scale=2]
 ;キャラクター宣言
 
-[playbgm wait=false time=1 storage="happy"]
+[playbgm wait=false time=1 storage="Happy"]
 
 [chara_show name=happy]
 
@@ -30,8 +30,8 @@
 
 僕は幸福の妖精[p]
 
-#ハッピハッピ
-ハッピハッピだよ[p]
+#はっぴはっぴ
+はっぴはっぴだよ[p]
 
 僕がこのゲームの説明をするね[p]
 

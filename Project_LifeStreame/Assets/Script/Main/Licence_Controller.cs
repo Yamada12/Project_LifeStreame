@@ -27,12 +27,15 @@ public class Licence_Controller : MonoBehaviour
 
     void Update()
     {
-        if (PlayerStatus.lifeTime < 60)
+        if (this.gameObject.name != "Love_Canvas(Clone)" || this.gameObject.name != "Love_Canvas")
         {
-            Left[0].GetComponentInChildren<Button>().interactable = false;
-            Left[1].GetComponentInChildren<Button>().interactable = false;
-            Left[2].GetComponentInChildren<Button>().interactable = false;
-            Left[3].GetComponentInChildren<Button>().interactable = false;
+            if (PlayerStatus.lifeTime < 60)
+            {
+                Left[0].GetComponentInChildren<Button>().interactable = false;
+                Left[1].GetComponentInChildren<Button>().interactable = false;
+                Left[2].GetComponentInChildren<Button>().interactable = false;
+                Left[3].GetComponentInChildren<Button>().interactable = false;
+            }
         }
     }
 

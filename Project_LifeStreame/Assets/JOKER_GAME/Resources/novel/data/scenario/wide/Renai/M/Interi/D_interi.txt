@@ -81,6 +81,8 @@ chara_hide name=kazuma time=1 wait=false]
 #{f.clanName}
 (羽神君嘘はよくないよ・・・)[p]
 
+[calc exp="f.lp_mega=1"]
+
 #
 羽神　和真の連絡先を入手しました。[p]
 

@@ -1,0 +1,163 @@
+﻿;メッセージ表示
+[showmessage time=0]
+
+;共通ライブラリ
+;セーブ・ロードバックログなど基本的な機能を取り込む 
+;[call file=wide/system target="*system_setting_buttons"]
+
+;ゲーム作成で便利なマクロ集
+[call file=wide/libs/utils]
+[text_new name=_sp_chara_name layer=ui x="-168" y=-108.5 val="" color="DDFF00" fontsize=16 anchor="MiddleLeft"]
+[text_show name="_sp_chara_name" time=0]
+
+[bg_new name="kouen" storage="kouen"]
+;背景宣言
+
+[chara_new name=yositaka storage=nagoyaka_default_c y=-1 ]
+;キャラクター宣言
+
+[wait time=0]
+
+[bg_show name="kouen" time=0.5]
+;背景表示
+
+[show name=yositaka]
+;キャラクター表示
+
+[playbgm wait=false time=1 storage="nagoyaka"]
+
+#善鷹
+あ、公園で少し休憩しようか[p]
+
+#{f.clanName}
+あ、うん[p]
+
+休憩していこう[p]
+
+#善鷹
+あそこのベンチでいいよね[p]
+
+#{f.clanName}
+うん[p]
+
+#善鷹
+よいしょっと[p]
+
+#{f.clanName}
+ふぅ・・・[p]
+
+#善鷹
+あれ？[p]
+
+#{f.clanName}
+なに？[p]
+
+#
+にゃ～[p]
+
+#善鷹
+おまえか～[p]
+
+#{f.clanName}
+うわ～ネコだぁ[p]
+
+すごく人懐っこいんだね[p]
+
+#善鷹
+たまに遊んでるから懐かれちゃった[p]
+
+#{f.clanName}
+私が触っても大丈夫かな？[p]
+
+[chara_mod name="yositaka" storage="nagoyaka_niko_c"]
+
+#善鷹
+大丈夫だよ[p]
+
+#{f.clanName}
+そーっと・・・[p]
+
+#
+なでなで[p]
+
+#
+にゃ～にゃ～[p]
+
+#{f.clanName}
+か、かわいい[p]
+
+#善鷹
+ねぇ、かわいいよね[p]
+
+[select_new text="猫欲しいなぁ" target=*select_a1 ]
+[select_new text="犬も可愛いよね" target=*select_a2 ]
+[select_new text="他に好きな動物いる" target=*select_a3 ]
+
+[select_show sound=click ]
+
+[s]
+
+*select_a1
+#{f.clanName}
+猫ほしいなぁ[p]
+
+#善鷹
+確かにねぇ[p]
+
+いつか飼ってみたいなぁ[p]
+
+@jump target=*a_common
+
+*select_a2
+#{f.clanName}
+猫もいいけど犬も可愛いよねぇ[p]
+
+#善鷹
+確かにねぇ[p]
+
+犬も可愛いよねぇ[p]
+
+でも、どちらかというと猫派かなぁ[p]
+
+#{f.clanName}
+私はどっちも好きだけど[p]
+
+どっちかって言ったら・・・[p]
+
+うーん・・・・[p]
+
+猫かな[p]
+
+#善鷹
+はは、一緒だね[p]
+
+@jump target=*a_common
+
+*select_a3
+
+#{f.clanName}
+檜山君は他に好きな動物いる？[p]
+
+[chara_mod name="yositaka" storage="nagoyaka_default_c"]
+#善鷹
+他にかぁ[p]
+
+うーん[p]
+
+動物全般好きだからなぁ[p]
+
+皆好きだよ[p]
+
+@jump target=*a_common
+
+*a_common 
+
+#
+檜山　善鷹との絆が深まった[p]
+
+
+[stopbgm]
+
+[Export]
+
+[scene file={f.sceneName}]

@@ -287,7 +287,7 @@
 
 
 [if exp="{f.rand}==2"]
-銀閣寺に銀河塗られない原因となった、1467年から
+銀閣寺に銀が塗られない原因となった、1467年から
 11年にわたって起こった出来事は「何の乱」でしょう？[p]
 [select_new text="A:　応仁の乱" target=*select_b10_1]
 [select_new text="B:　壬申の乱" target=*select_b10_2]

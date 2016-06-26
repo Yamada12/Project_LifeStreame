@@ -37,6 +37,7 @@ public class PlayerStatus : MonoBehaviour
     static public int lp_nago;                  //好感度：和やか   (0なら出会っていない。1以上で出会っている。)
     static public int lp_ore;                   //好感度：オレサマ  (0なら出会っていない。1以上で出会っている。)
     static public int lp_ani;                   //好感度：アニキ   (0なら出会っていない。1以上で出会っている。)
+    static public int love_AfterCount = 0;
 
     /// <summary>
     /// はじめから開始時にすべての変数をリセットするメソッド
@@ -71,8 +72,11 @@ public class PlayerStatus : MonoBehaviour
         lp_nago = 0;
         lp_ore = 0;
         lp_ani = 0;
+        love_AfterCount = 0;
         World_Player.result = 0;
         World_Player.shiken = 0;
+        StatusRenderer.initVerts();
+        static_Save();
     }
 
     /// <summary>
@@ -107,8 +111,10 @@ public class PlayerStatus : MonoBehaviour
         lp_nago = 0;
         lp_ore = 0;
         lp_ani = 0;
+        love_AfterCount = 0;
         World_Player.result = 0;
         World_Player.shiken = 0;
+        StatusRenderer.initVerts();
         static_Save();
     }
 
@@ -215,6 +221,7 @@ public class PlayerStatus : MonoBehaviour
         PlayerPrefs.SetInt("lp_nago", PlayerStatus.lp_nago);
         PlayerPrefs.SetInt("lp_ore", PlayerStatus.lp_ore);
         PlayerPrefs.SetInt("lp_ani", PlayerStatus.lp_ani);
+        PlayerPrefs.SetInt("love_AfterCount", PlayerStatus.love_AfterCount);
         PlayerPrefs.SetInt("result", World_Player.result);
         PlayerPrefs.SetInt("shiken", World_Player.shiken);
     }
@@ -252,6 +259,7 @@ public class PlayerStatus : MonoBehaviour
         PlayerStatus.lp_nago = PlayerPrefs.GetInt("lp_nago");
         PlayerStatus.lp_ore = PlayerPrefs.GetInt("lp_ore");
         PlayerStatus.lp_ani = PlayerPrefs.GetInt("lp_ani");
+        PlayerStatus.love_AfterCount = PlayerPrefs.GetInt("love_AfterCount");
         World_Player.result = PlayerPrefs.GetInt("result");
         World_Player.shiken = PlayerPrefs.GetInt("shiken");
     }

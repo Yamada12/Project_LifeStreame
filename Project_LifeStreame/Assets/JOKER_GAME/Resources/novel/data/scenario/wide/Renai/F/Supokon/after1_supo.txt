@@ -1,0 +1,200 @@
+﻿;メッセージ表示
+[showmessage time=0]
+
+;共通ライブラリ
+;セーブ・ロードバックログなど基本的な機能を取り込む 
+;[call file=wide/system target="*system_setting_buttons"]
+
+;ゲーム作成で便利なマクロ集
+[call file=wide/libs/utils]
+[text_new name=_sp_chara_name layer=ui x="-168" y=-108.5 val="" color="DDFF00" fontsize=16 anchor="MiddleLeft"]
+[text_show name="_sp_chara_name" time=0]
+
+[bg_new name="kouen" storage="kouen"]
+;背景宣言
+
+[chara_new name=sora storage=supokon_niko_c y=-1 ]
+;キャラクター宣言
+
+[wait time=0]
+
+[bg_show name="kouen" time=0.5]
+;背景表示
+
+[show name=sora]
+;キャラクター表示
+
+[playbgm wait=false time=1 storage="supokon"]
+
+#蒼空
+公園よっていこう！[p]
+
+#{f.clanName}
+え？なんで？[p]
+
+#蒼空
+いいから！[p]
+
+#{f.clanName}
+まぁ公園なら・・・[p]
+
+いやまてッ！[p]
+
+また走ろうとか言うんじゃないだろうな？[p]
+
+#蒼空
+いいから行くよ！[p]
+
+#{f.clanName}
+ひ、ひっぱるな！[p]
+
+[chara_mod name="sora" storage="supokon_niko_c"]
+#蒼空
+はい、座って[p]
+
+#{f.clanName}
+あ、うん[p]
+
+#蒼空
+・・・・[p]
+
+#{f.clanName}
+・・・・[p]
+
+#蒼空
+ここで告白されたんだよね[p]
+
+#{f.clanName}
+ぶはッ！[p]
+
+[select_new text="いきなり何を言っているんだ！？" target=*select_a1 ]
+[select_new text="そ、そうだな・・・" target=*select_a2 ]
+[select_new text="そ、そうだっけ・・・？" target=*select_a3 ]
+
+[select_show sound=click ]
+
+[s]
+
+*select_a1
+
+#{f.clanName}
+いきなり何を言ってるんだ！？[p]
+
+#蒼空
+私、凄くうれしかったんだ[p]
+
+[chara_mod name="sora" storage="supokon_kanasi_c"]
+きっと私じゃないって思ってたから[p]
+
+#{f.clanName}
+蒼空・・・[p]
+
+[chara_mod name="sora" storage="supokon_niko_c"]
+#蒼空
+ありがとう、私を選んでくれて[p]
+
+よし！[p]
+
+走ろう！[p]
+
+#{f.clanName}
+ええ！？[p]
+
+#蒼空
+私が勝ったら、なんか奢ってね！[p]
+
+#{f.clanName}
+ちょッ！まッ[p]
+
+#蒼空
+よーいドンッ！！！[p]
+
+[anim name="sora" time=1 x=-15 y=-1]
+
+#{f.clanName}
+相変わらず速いな！[p]
+
+@jump target=*a_common
+
+*select_a2
+
+#{f.clanName}
+そ、そうだな・・・[p]
+
+#蒼空
+あ、もしかして恥ずかしがってる？[p]
+
+#{f.clanName}
+あ、当たり前だ[p]
+
+#蒼空
+へーそうなんだー[p]
+
+もう一回言って[p]
+
+#{f.clanName}
+い、嫌だよ恥ずかしい[p]
+
+[chara_mod name="sora" storage="supokon_kanasi_c"]
+#蒼空
+えー言ってよー[p]
+
+#{f.clanName}
+こ、今度な[p]
+
+#蒼空
+いーまー[p]
+
+#{f.clanName}
+帰りはダッシュな！[p]
+
+[chara_mod name="sora" storage="supokon_default_c"]
+#蒼空
+ちょ、ちょっと待ってよー[p]
+
+@jump target=*a_common
+
+*select_a3
+#{f.clanName}
+そ、そうだっけ・・・？[p]
+
+#蒼空
+何忘れたふりしてんの？[p]
+
+私はずっと覚えてるからね[p]
+
+#{f.clanName}
+やめてくれよ恥ずかしいだろ[p]
+
+[chara_mod name="sora" storage="supokon_niko_c"]
+#蒼空
+あー顔真っ赤だー！[p]
+
+おもしろーい[p]
+
+#{f.clanName}
+面白くないわ！[p]
+
+#蒼空
+きゃーこわいー[p]
+
+[anim name="sora" time=0.5 x=-15 y=-1]
+
+#{f.clanName}
+にげる速度が速すぎるッ！[p]
+
+追いつけないわ！[p]
+
+@jump target=*a_common
+
+*a_common 
+
+#
+花楓　蒼空との絆が深まった[p]
+
+
+[stopbgm]
+
+[Export]
+
+[scene file={f.sceneName}]

@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2015
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Project_LifeStreame_6.25@.CSharp.Plugins", "Project_LifeStreame_6.25@.CSharp.Plugins.csproj", "{3D9F5362-227E-28A9-98CE-2A1308D2756A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Project_LifeStreame_6.25@.CSharp", "Project_LifeStreame_6.25@.CSharp.csproj", "{CA9FBE85-BCF8-F05E-EF58-E5B6D078CE64}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Project_LifeStreame_6.25@.CSharp.Editor", "Project_LifeStreame_6.25@.CSharp.Editor.csproj", "{C5304555-3BD1-027C-52AF-4F235FF90F75}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3D9F5362-227E-28A9-98CE-2A1308D2756A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3D9F5362-227E-28A9-98CE-2A1308D2756A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3D9F5362-227E-28A9-98CE-2A1308D2756A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3D9F5362-227E-28A9-98CE-2A1308D2756A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CA9FBE85-BCF8-F05E-EF58-E5B6D078CE64}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CA9FBE85-BCF8-F05E-EF58-E5B6D078CE64}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CA9FBE85-BCF8-F05E-EF58-E5B6D078CE64}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CA9FBE85-BCF8-F05E-EF58-E5B6D078CE64}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C5304555-3BD1-027C-52AF-4F235FF90F75}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C5304555-3BD1-027C-52AF-4F235FF90F75}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C5304555-3BD1-027C-52AF-4F235FF90F75}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C5304555-3BD1-027C-52AF-4F235FF90F75}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

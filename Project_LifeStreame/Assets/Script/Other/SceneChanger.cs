@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 using Novel;
 
 public class SceneChanger : MonoBehaviour
@@ -190,4 +191,166 @@ public class SceneChanger : MonoBehaviour
         }
     }
 
+    public void ChangeJokerScene_Love_After(string character)
+    {
+        if (PlayerStatus.lifeTime > 20)
+        {
+            PlayerStatus.lifeTime -= 20;
+            switch (character)
+            {
+                case "tun"://ツンデレ
+                    if (PlayerStatus.love_AfterCount == 0)
+                    {
+                        PlayerStatus.InitConverter();
+                        PlayerStatus.love_AfterCount += 1;
+                        NovelSingleton.StatusManager.callJoker("wide/Renai/F/Tundere/after1_tun", "");
+                    }
+                    else if (PlayerStatus.love_AfterCount == 1)
+                    {
+                        PlayerStatus.InitConverter();
+                        PlayerStatus.love_AfterCount += 1;
+                        NovelSingleton.StatusManager.callJoker("wide/Renai/F/Tundere/after2_tun", "");
+                    }
+                    else if (PlayerStatus.love_AfterCount == 2)
+                    {
+                        PlayerStatus.InitConverter();
+                        PlayerStatus.love_AfterCount += 1;
+                        GameObject.Find("Propose").GetComponent<Button>().interactable = true;
+                        NovelSingleton.StatusManager.callJoker("wide/Renai/F/Tundere/after3_tun", "");
+                    }
+                    break;
+                case "majime"://真面目
+                    if (PlayerStatus.love_AfterCount == 0)
+                    {
+                        PlayerStatus.InitConverter();
+                        PlayerStatus.love_AfterCount += 1;
+                        NovelSingleton.StatusManager.callJoker("wide/Renai/F/Majime/after1_majime", "");
+                    }
+                    else if (PlayerStatus.love_AfterCount == 1)
+                    {
+                        PlayerStatus.InitConverter();
+                        PlayerStatus.love_AfterCount += 1;
+                        NovelSingleton.StatusManager.callJoker("wide/Renai/F/Majime/after2_majime", "");
+                    }
+                    else if (PlayerStatus.love_AfterCount == 2)
+                    {
+                        PlayerStatus.InitConverter();
+                        PlayerStatus.love_AfterCount += 1;
+                        GameObject.Find("Propose").GetComponent<Button>().interactable = true;
+                        NovelSingleton.StatusManager.callJoker("wide/Renai/F/Majime/after3_majime", "");
+                    }
+                    break;
+                case "supokon"://スポコン
+                    if (PlayerStatus.love_AfterCount == 0)
+                    {
+                        PlayerStatus.InitConverter();
+                        PlayerStatus.love_AfterCount += 1;
+                        NovelSingleton.StatusManager.callJoker("wide/Renai/F/Supokon/after1_supo", "");
+                    }
+                    else if (PlayerStatus.love_AfterCount == 1)
+                    {
+                        PlayerStatus.InitConverter();
+                        PlayerStatus.love_AfterCount += 1;
+                        NovelSingleton.StatusManager.callJoker("wide/Renai/F/Supokon/after2_supo", "");
+                    }
+                    else if (PlayerStatus.love_AfterCount == 2)
+                    {
+                        PlayerStatus.InitConverter();
+                        PlayerStatus.love_AfterCount += 1;
+                        GameObject.Find("Propose").GetComponent<Button>().interactable = true;
+                        NovelSingleton.StatusManager.callJoker("wide/Renai/F/Supokon/after3_supo", "");
+                    }
+                    break;
+                case "mega"://インテリメガネ
+                    if (PlayerStatus.love_AfterCount == 0)
+                    {
+                        PlayerStatus.InitConverter();
+                        PlayerStatus.love_AfterCount += 1;
+                        NovelSingleton.StatusManager.callJoker("wide/Renai/M/Interi/after1_interi", "");
+                    }
+                    else if (PlayerStatus.love_AfterCount == 1)
+                    {
+                        PlayerStatus.InitConverter();
+                        PlayerStatus.love_AfterCount += 1;
+                        NovelSingleton.StatusManager.callJoker("wide/Renai/M/Interi/after2_interi", "");
+                    }
+                    else if (PlayerStatus.love_AfterCount == 2)
+                    {
+                        PlayerStatus.InitConverter();
+                        PlayerStatus.love_AfterCount += 1;
+                        GameObject.Find("Propose").GetComponent<Button>().interactable = true;
+                        NovelSingleton.StatusManager.callJoker("wide/Renai/M/Interi/after3_interi", "");
+                    }
+                    break;
+                case "kamase"://カマセ
+                    if (PlayerStatus.love_AfterCount == 0)
+                    {
+                        PlayerStatus.InitConverter();
+                        PlayerStatus.love_AfterCount += 1;
+                        NovelSingleton.StatusManager.callJoker("wide/Renai/M/Kamase/after1_kamase", "");
+                    }
+                    else if (PlayerStatus.love_AfterCount == 1)
+                    {
+                        PlayerStatus.InitConverter();
+                        PlayerStatus.love_AfterCount += 1;
+                        NovelSingleton.StatusManager.callJoker("wide/Renai/M/Kamase/after2_kamase", "");
+                    }
+                    else if (PlayerStatus.love_AfterCount == 2)
+                    {
+                        PlayerStatus.InitConverter();
+                        PlayerStatus.love_AfterCount += 1;
+                        GameObject.Find("Propose").GetComponent<Button>().interactable = true;
+                        NovelSingleton.StatusManager.callJoker("wide/Renai/M/Kamase/after3_kamase", "");
+                    }
+                    break;
+                case "nago"://和やか
+                    if (PlayerStatus.love_AfterCount == 0)
+                    {
+                        PlayerStatus.InitConverter();
+                        PlayerStatus.love_AfterCount += 1;
+                        NovelSingleton.StatusManager.callJoker("wide/Renai/M/Nagoyaka/after1_nagoyaka", "");
+                    }
+                    else if (PlayerStatus.love_AfterCount == 1)
+                    {
+                        PlayerStatus.InitConverter();
+                        PlayerStatus.love_AfterCount += 1;
+                        NovelSingleton.StatusManager.callJoker("wide/Renai/M/Nagoyaka/after2_nagoyaka", "");
+                    }
+                    else if (PlayerStatus.love_AfterCount == 2)
+                    {
+                        PlayerStatus.InitConverter();
+                        PlayerStatus.love_AfterCount += 1;
+                        GameObject.Find("Propose").GetComponent<Button>().interactable = true;
+                        NovelSingleton.StatusManager.callJoker("wide/Renai/M/Nagoyaka/after3_nagoyaka", "");
+                    }
+                    break;
+                case "tun_con":
+                    PlayerStatus.InitConverter();
+                    NovelSingleton.StatusManager.callJoker("wide/Renai/F/Tundere/Puropozu_tun", "");
+                    break;
+                case "majime_con":
+                    PlayerStatus.InitConverter();
+                    NovelSingleton.StatusManager.callJoker("wide/Renai/F/Majime/Puropozu_majime", "");
+                    break;
+                case "supokon_con":
+                    PlayerStatus.InitConverter();
+                    NovelSingleton.StatusManager.callJoker("wide/Renai/F/Supokon/Puropozu_supo", "");
+                    break;
+                case "mega_con":
+                    PlayerStatus.InitConverter();
+                    NovelSingleton.StatusManager.callJoker("wide/Renai/M/Interi/Puropozu_interi", "");
+                    break;
+                case "kamase_con":
+                    PlayerStatus.InitConverter();
+                    NovelSingleton.StatusManager.callJoker("wide/Renai/M/Kamase/Puropozu_kamase", "");
+                    break;
+                case "nago_con":
+                    PlayerStatus.InitConverter();
+                    NovelSingleton.StatusManager.callJoker("wide/Renai/M/Nagoyaka/Puropozu_nagoyaka", "");
+                    break;
+                default:
+                    break;
+            }
+        }
+    }
 }

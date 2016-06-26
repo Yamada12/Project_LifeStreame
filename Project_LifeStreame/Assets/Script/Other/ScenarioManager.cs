@@ -18,6 +18,11 @@ public class ScenarioManager : MonoBehaviour
     {
         bigEvent_Base.SetActive(false);
         flyText.GetComponentInChildren<Text>().text = "ふらーい！";
+        if (PlayerStatus.progress == 7)
+        {
+            GameObject.Find("WorkButton").transform.GetChild(0).GetComponent<Text>().text = PlayerStatus.job;
+            GameObject.Find("WorkButton").transform.GetChild(1).GetComponent<Text>().text = "消費時間:60";
+        }
     }
 
     // Update is called once per frame
@@ -31,15 +36,33 @@ public class ScenarioManager : MonoBehaviour
         }
         else if (PlayerStatus.lifeTime <= 1100f && PlayerStatus.lifeTime > 1000f)
         {//5月　運動会
-            ContentFalser(1);
-            titleText.text = "運動会";
-            explanatoryText.text = "運動会が開催される。今年は何組だろうか…？\n消費時間:70\n";
+            if (PlayerStatus.progress == 7)
+            {
+                ContentFalser(10);
+                titleText.text = "イベントなし";
+                explanatoryText.text = "この時期に大きなイベントは無いようだ。\n消費時間:70\n";
+            }
+            else
+            {
+                ContentFalser(1);
+                titleText.text = "運動会";
+                explanatoryText.text = "運動会が開催される。今年は何組だろうか…？\n消費時間:70\n";
+            }
         }
         else if (PlayerStatus.lifeTime <= 1000f && PlayerStatus.lifeTime > 900f)
         {//6月　運動会
-            ContentFalser(1);
-            titleText.text = "運動会";
-            explanatoryText.text = "運動会が開催される。今年は何組だろうか…？\n消費時間:70\n";
+            if (PlayerStatus.progress == 7)
+            {
+                ContentFalser(10);
+                titleText.text = "イベントなし";
+                explanatoryText.text = "この時期に大きなイベントは無いようだ。\n消費時間:70\n";
+            }
+            else
+            {
+                ContentFalser(1);
+                titleText.text = "運動会";
+                explanatoryText.text = "運動会が開催される。今年は何組だろうか…？\n消費時間:70\n";
+            }
         }
         else if (PlayerStatus.lifeTime <= 900f && PlayerStatus.lifeTime > 800f)
         {//7月　なし
@@ -55,15 +78,33 @@ public class ScenarioManager : MonoBehaviour
         }
         else if (PlayerStatus.lifeTime <= 700f && PlayerStatus.lifeTime > 600f)
         {//9月　文化祭
-            ContentFalser(3);
-            titleText.text = "文化祭";
-            explanatoryText.text = "文化祭の準備が始まった。今年は一体どんな出展があるのだろうか\n消費時間:70\n";
+            if (PlayerStatus.progress == 7)
+            {
+                ContentFalser(10);
+                titleText.text = "イベントなし";
+                explanatoryText.text = "この時期に大きなイベントは無いようだ。\n消費時間:70\n";
+            }
+            else
+            {
+                ContentFalser(3);
+                titleText.text = "文化祭";
+                explanatoryText.text = "文化祭の準備が始まった。今年は一体どんな出展があるのだろうか\n消費時間:70\n";
+            }
         }
         else if (PlayerStatus.lifeTime <= 600f && PlayerStatus.lifeTime > 500f)
         {//10月　文化祭
-            ContentFalser(3);
-            titleText.text = "文化祭";
-            explanatoryText.text = "文化祭の準備が始まった。今年は一体どんな出展があるのだろうか\n消費時間:70\n";
+            if (PlayerStatus.progress == 7)
+            {
+                ContentFalser(10);
+                titleText.text = "イベントなし";
+                explanatoryText.text = "この時期に大きなイベントは無いようだ。\n消費時間:70\n";
+            }
+            else
+            {
+                ContentFalser(3);
+                titleText.text = "文化祭";
+                explanatoryText.text = "文化祭の準備が始まった。今年は一体どんな出展があるのだろうか\n消費時間:70\n";
+            }
         }
         else if (PlayerStatus.lifeTime <= 500f && PlayerStatus.lifeTime > 400f)
         {//11月　なし
@@ -121,7 +162,13 @@ public class ScenarioManager : MonoBehaviour
     /// <param name="_?">各種対応したパラメータ</param>
     public void Status_co_Up(float _parameter)
     {//コミュ力の上昇
-        PlayerStatus.co += _parameter;
+        if (World_Player.result >= 9)
+            PlayerStatus.co += _parameter * 1.2f;
+        else if (World_Player.result >= 7)
+            PlayerStatus.co += _parameter;
+        else if (World_Player.result >= 5)
+            PlayerStatus.co += _parameter * 0.7f;
+
         PlayerPrefs.SetFloat("co", PlayerStatus.co);
         flyText.GetComponentInChildren<Text>().alignment = TextAnchor.UpperCenter;
         StartCoroutine(PopText("コミュ力↑", 0f));
@@ -129,7 +176,13 @@ public class ScenarioManager : MonoBehaviour
 
     public void Status_ec_Up(float _parameter)
     {//経済力の上昇
-        PlayerStatus.ec += _parameter;
+        if (World_Player.result >= 9)
+            PlayerStatus.ec += _parameter * 1.2f;
+        else if (World_Player.result >= 7)
+            PlayerStatus.ec += _parameter;
+        else if (World_Player.result >= 5)
+            PlayerStatus.ec += _parameter * 0.7f;
+
         PlayerPrefs.SetFloat("ec", PlayerStatus.ec);
         flyText.GetComponentInChildren<Text>().alignment = TextAnchor.UpperCenter;
         StartCoroutine(PopText("経済力↑", 0f));
@@ -137,7 +190,13 @@ public class ScenarioManager : MonoBehaviour
 
     public void Status_ac_Up(float _parameter)
     {//学力の上昇
-        PlayerStatus.ac += _parameter;
+        if (World_Player.result >= 9)
+            PlayerStatus.ac += _parameter * 1.2f;
+        else if (World_Player.result >= 7)
+            PlayerStatus.ac += _parameter;
+        else if (World_Player.result >= 5)
+            PlayerStatus.ac += _parameter * 0.7f;
+
         PlayerPrefs.SetFloat("ac", PlayerStatus.ac);
         flyText.GetComponentInChildren<Text>().alignment = TextAnchor.UpperCenter;
         StartCoroutine(PopText("学力↑", 0f));
@@ -145,7 +204,13 @@ public class ScenarioManager : MonoBehaviour
 
     public void Status_hu_Up(float _parameter)
     {//人間力の上昇
-        PlayerStatus.hu += _parameter;
+        if (World_Player.result >= 9)
+            PlayerStatus.hu += _parameter * 1.2f;
+        else if (World_Player.result >= 7)
+            PlayerStatus.hu += _parameter;
+        else if (World_Player.result >= 5)
+            PlayerStatus.hu += _parameter * 0.7f;
+
         PlayerPrefs.SetFloat("hu", PlayerStatus.hu);
         flyText.GetComponentInChildren<Text>().alignment = TextAnchor.UpperCenter;
         StartCoroutine(PopText("人間力↑", 0f));
@@ -153,7 +218,13 @@ public class ScenarioManager : MonoBehaviour
 
     public void Status_vi_Up(float _parameter)
     {//体力の上昇
-        PlayerStatus.vi += _parameter;
+        if (World_Player.result >= 9)
+            PlayerStatus.vi += _parameter * 1.2f;
+        else if (World_Player.result >= 7)
+            PlayerStatus.vi += _parameter;
+        else if (World_Player.result >= 5)
+            PlayerStatus.vi += _parameter * 0.7f;
+
         PlayerPrefs.SetFloat("vi", PlayerStatus.vi);
         flyText.GetComponentInChildren<Text>().alignment = TextAnchor.UpperCenter;
         StartCoroutine(PopText("体力↑", 0f));
@@ -163,7 +234,13 @@ public class ScenarioManager : MonoBehaviour
     {//運の上昇
         if (Random.Range(0, 24) == 0)
         {
-            PlayerStatus.lu += _parameter;
+            if (World_Player.result >= 9)
+                PlayerStatus.lu += _parameter * 1.2f;
+            else if (World_Player.result >= 7)
+                PlayerStatus.lu += _parameter;
+            else if (World_Player.result >= 5)
+                PlayerStatus.lu += _parameter * 0.7f;
+
             PlayerPrefs.SetFloat("lu", PlayerStatus.lu);
             flyText.GetComponentInChildren<Text>().alignment = TextAnchor.UpperRight;
             StartCoroutine(PopText("運↑", 0f));

@@ -43,6 +43,7 @@ public class World_Player_After : MonoBehaviour
                     iTween.MoveBy(gameObject, iTween.Hash("y", 0.5, "time", 0.2f, "oncomplete", "Move7", "oncompletetarget", gameObject));
                     World_Player.kanban_nyugaku = 3;
                     World_Player.kanban_shakai = 2;
+                    World_Player.clickHappy = 1;
                 }
             }
         }

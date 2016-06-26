@@ -1,0 +1,83 @@
+﻿;メッセージ表示
+[showmessage time=0]
+
+;共通ライブラリ
+;セーブ・ロードバックログなど基本的な機能を取り込む 
+;[call file=wide/system target="*system_setting_buttons"]
+
+;ゲーム作成で便利なマクロ集
+[call file=wide/libs/utils]
+[text_new name=_sp_chara_name layer=ui x="-168" y=-108.5 val="" color="DDFF00" fontsize=16 anchor="MiddleLeft"]
+[text_show name="_sp_chara_name" time=0]
+
+[bg_new name="room2" storage="room2"]
+;背景宣言
+
+[chara_new name=kazuma storage=interi_default_c y=-1 ]
+;キャラクター宣言
+
+[wait time=0]
+
+[bg_show name="room2" time=0.5]
+;背景表示
+
+[show name=kazuma]
+;キャラクター表示
+
+[playbgm wait=false time=1 storage="interi"]
+
+#{f.clanName}
+和真君[p]
+
+今日は何食べたい？[p]
+
+#和真
+そうですね・・・[p]
+
+おまかせします[p]
+
+#{f.clanName}
+もぉ[p]
+
+何にしようか困ってるから聞いてるのに[p]
+
+それじゃあ意味ないよ[p]
+
+[chara_mod name="kazuma" storage="interi_odoroki_c"]
+#和真
+そ、そうですねぇ[p]
+
+カレーが食べたいですね[p]
+
+#{f.clanName}
+カレーかぁ[p]
+
+よし！カレーを作ろう！[p]
+
+何カレー？[p]
+
+[chara_mod name="kazuma" storage="interi_default_c"]
+#和真
+シーフードカレーがいいですね[p]
+
+#{f.clanName}
+おっけー[p]
+
+シーフードカレーね[p]
+
+頑張って作るから楽しみにしてて[p]
+
+#和真
+分かりました[p]
+
+期待してます[p]
+
+#
+羽神　和真と幸せな時間を過ごした[p]
+
+
+[stopbgm]
+
+[Export]
+
+[scene file={f.sceneName}]

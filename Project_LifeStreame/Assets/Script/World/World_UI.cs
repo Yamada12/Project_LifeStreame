@@ -24,6 +24,8 @@ public class World_UI : MonoBehaviour {
     public GameObject image07;//社会人看板（迎え）
     public GameObject image08;//年寄り看板
 
+    public GameObject clickHappy;//入学前　「クリックしてね」Byはっぴはっぴ
+
     public GameObject start01;//小学生　始まりUI
     public GameObject start02;//中学生　始まりUI
     public GameObject start03;//高校　始まりUI
@@ -41,12 +43,13 @@ public class World_UI : MonoBehaviour {
     }
 
     public void OnGUI () {//プレイヤーの基本情報表示(世代数、名前)
-        GUI.skin.textField.fontSize = 35;
+        /*GUI.skin.textField.fontSize = 35;
         GUI.skin.box.fontSize = 50;
         GUI.skin.button.fontSize = 30;
 
         //第〇世代〇〇家
         GUI.Box(new Rect(Screen.width / 2 - 500, Screen.height / 2 - 270, 500, 100), "第" + PlayerStatus.geneNumber + "世代" + PlayerStatus.clanName + "家", Box);
+        */
 
         //試験前・試験後・人生の選択・社会人・年寄りの看板・ボタンを表示する
         //イメージオブジェクトをそれぞれにアタッチ
@@ -55,9 +58,15 @@ public class World_UI : MonoBehaviour {
             iTween.MoveTo(image01, iTween.Hash("z", -5f, "time", 2.0f));//試験看板を右下からにゅっと
         }
 
-        if (World_Player.kanban_nyugaku == 1)//試験後
+        if (World_Player.kanban_nyugaku == 2)//試験後
         {
             iTween.MoveTo(image02, iTween.Hash("z", -5f, "time", 2.0f));//入学看板を右下からにゅっと
+            iTween.MoveTo(clickHappy, iTween.Hash("z", 1f, "x", 1f, "time", 2.0f));//ハッピハッピが右斜め上から飛んでくる
+        }
+
+        if (World_Player.clickHappy == 1)
+        {
+            iTween.MoveTo(clickHappy, iTween.Hash("z", 100f, "x", -100f, "time", 2.0f));//
         }
 
         if (World_Player.Select_Button == 1)//人生の選択
@@ -79,42 +88,42 @@ public class World_UI : MonoBehaviour {
         {
             if(PlayerStatus.progress == 1)//小学生パート
             {
-                iTween.MoveTo(start01, iTween.Hash("delay", 0.5f, "x", -60, "time", 1.0f));//スタート小学校を左からにゅっと
+                iTween.MoveTo(start01, iTween.Hash("delay", 0.5f, "x", -67, "time", 1.0f));//スタート小学校を左からにゅっと
             }
 
             if (PlayerStatus.progress == 2)//中学生パート
             {
-                iTween.MoveTo(start02, iTween.Hash("x", -60, "time", 7.0f));//スタート小学校を左からにゅっと
+                iTween.MoveTo(start02, iTween.Hash("delay", 0.5f, "x", -67, "time", 1.0f));//スタート小学校を左からにゅっと
             }
 
             if (PlayerStatus.progress == 3)//高校パート
             {
-                iTween.MoveTo(start03, iTween.Hash("x", -60, "time", 7.0f));//スタート小学校を左からにゅっと
+                iTween.MoveTo(start03, iTween.Hash("delay", 0.5f, "x", -67, "time", 1.0f));//スタート小学校を左からにゅっと
             }
 
             if (PlayerStatus.progress == 4)//人生の選択パート
             {
-                iTween.MoveTo(start04, iTween.Hash("x", -60, "time", 7.0f));//スタート小学校を左からにゅっと
+                iTween.MoveTo(start04, iTween.Hash("delay", 0.5f, "x", -67, "time", 1.0f));//スタート小学校を左からにゅっと
             }
 
             if (PlayerStatus.progress == 5)//専門学校パート
             {
-                iTween.MoveTo(start05, iTween.Hash("x", -60, "time", 7.0f));//スタート小学校を左からにゅっと
+                iTween.MoveTo(start05, iTween.Hash("delay", 0.5f, "x", -67, "time", 1.0f));//スタート小学校を左からにゅっと
             }
 
             if (PlayerStatus.progress == 6)//大学パート
             {
-                iTween.MoveTo(start06, iTween.Hash("x", -60, "time", 7.0f));//スタート小学校を左からにゅっと
+                iTween.MoveTo(start06, iTween.Hash("delay", 0.5f, "x", -67, "time", 1.0f));//スタート小学校を左からにゅっと
             }
 
             if (PlayerStatus.progress == 7)//社会人パート
             {
-                iTween.MoveTo(start07, iTween.Hash("x", -60, "time", 7.0f));//スタート小学校を左からにゅっと
+                iTween.MoveTo(start07, iTween.Hash("delay", 0.5f, "x", -67, "time", 1.0f));//スタート小学校を左からにゅっと
             }
 
             if (PlayerStatus.progress == 8)//歳よりパート
             {
-                iTween.MoveTo(start08, iTween.Hash("x", -60, "time", 7.0f));//スタート小学校を左からにゅっと
+                iTween.MoveTo(start08, iTween.Hash("delay", 0.5f, "x", -67, "time", 1.0f));//スタート小学校を左からにゅっと
             }
         }
 

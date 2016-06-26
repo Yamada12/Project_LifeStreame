@@ -1,0 +1,227 @@
+﻿;メッセージ表示
+[showmessage time=0]
+
+;共通ライブラリ
+;セーブ・ロードバックログなど基本的な機能を取り込む 
+;[call file=wide/system target="*system_setting_buttons"]
+
+;ゲーム作成で便利なマクロ集
+[call file=wide/libs/utils]
+[text_new name=_sp_chara_name layer=ui x="-168" y=-108.5 val="" color="DDFF00" fontsize=16 anchor="MiddleLeft"]
+[text_show name="_sp_chara_name" time=0]
+
+[bg_new name="ike" storage="ike"]
+;背景宣言
+
+[chara_new name=kojiro storage=kamase_default_c y=-1 ]
+[chara_new name=yositaka storage=nagoyaka_default_c x=3 y=-1 ]
+[chara_new name=kazuma storage=interi_default_c x=3 y=-1 ]
+;キャラクター宣言
+
+[wait time=0]
+
+[bg_show name="ike" time=0.5]
+;背景表示
+
+[show name=kojiro]
+;キャラクター表示
+
+[playbgm wait=false time=1 storage="kamase"]
+
+#{f.clanName}
+やっぱりここは綺麗だなぁ[p]
+
+近くにこんなところがあるなんて幸せだなぁ[p]
+
+#虎次郎
+そうだな[p]
+
+お、なんか鳥がいる[p]
+
+#{f.clanName}
+なんて鳥なんだろう[p]
+
+[select_new text="鎌瀬君わかる？" target=*select_a1 ]
+[select_new text="今度調べてみようかな" target=*select_a2 ]
+[select_new text="他にも何かいるかな" target=*select_a3 ]
+
+[select_show sound=click ]
+
+[s]
+
+*select_a1
+
+#{f.clanName}
+鎌瀬君わかる？[p]
+
+[chara_mod name="kojiro" storage="kamase_odoroki_c"]
+#虎次郎
+えッ！？[p]
+
+あ、あれは白いから・・・[p]
+
+そ、そう白鳥だ！[p]
+
+[anim name="kojiro" time=1 x=-3 y=-1]
+[show name=kazuma]
+
+#和真
+いいえ[p]
+
+あれはサギです[p]
+
+#虎次郎
+だ、誰が詐欺だ！[p]
+
+[chara_mod name="kazuma" storage="interi_kanasi_c"]
+#和真
+そういう鳥の名前です[p]
+
+#{f.clanName}
+あ、羽神君だ[p]
+
+こんなところで奇遇だね[p]
+
+[chara_mod name="kazuma" storage="interi_default_c"]
+#和真
+少し気分転換に散歩の途中です[p]
+
+#{f.clanName}
+そうだったんだぁ[p]
+
+よく来るの？[p]
+
+#和真
+ええ[p]
+
+ここは静かですし、綺麗ですから[p]
+
+#虎次郎
+お、おーい[p]
+
+俺を無視して会話をするなー[p]
+
+#{f.clanName}
+いいところだよねー[p]
+
+#和真
+そうですね[p]
+
+それでは、お二人の邪魔になってしまうので[p]
+
+僕はそろそろ[p]
+
+[anim name="kazuma" time=3 x=15 y=-1]
+[anim name="kojiro" time=1 x=0 y=-1]
+
+[chara_mod name="kojiro" storage="kamase_kanasi_c"]
+#虎次郎
+まったく、ひどいぜ[p]
+
+#{f.clanName}
+ごめんごめん[p]
+
+鎌瀬君が一番だから[p]
+
+[chara_mod name="kojiro" storage="kamase_tere_c"]
+#虎次郎
+あ、当たり前だ・・・[p]
+
+@jump target=*a_common
+
+*select_a2
+
+#{f.clanName}
+今度調べてみようかな[p]
+
+[anim name="kojiro" time=1 x=-3 y=-1]
+[show name=yositaka]
+
+#善鷹
+あれは、サギだよ[p]
+
+#{f.clanName}
+檜山君だ[p]
+
+[chara_mod name="yositaka" storage="nagoyaka_niko_c"]
+#善鷹
+あ、カマ次郎君だ[p]
+
+もしかして、お邪魔だったかな？[p]
+
+[chara_mod name="kojiro" storage="kamase_odoroki_c"]
+#虎次郎
+だ、誰がカマ次郎だ！[p]
+
+#{f.clanName}
+ううん[p]
+
+お邪魔なんかじゃないよ[p]
+
+#虎次郎
+お邪魔だよ！[p]
+
+#{f.clanName}
+カマ次郎君！仲良く！[p]
+
+[chara_mod name="yositaka" storage="nagoyaka_kanasi_c"]
+#善鷹
+カマ次郎君仲良くしよ[p]
+
+#虎次郎
+だ、だから！[p]
+
+カマ次郎言うなぁぁぁぁぁ！[p]
+
+@jump target=*a_common
+
+*select_a3
+#{f.clanName}
+他に何かいるかな？[p]
+
+#虎次郎
+魚とかいないか？[p]
+
+#{f.clanName}
+魚かぁ[p]
+
+あ、いたいた！[p]
+
+#虎次郎
+お、焼いたらうまいかな[p]
+
+#{f.clanName}
+食べちゃ駄目だからね？[p]
+
+#虎次郎
+わかってるよ[p]
+
+いつかキャンプとか行きたいなぁ[p]
+
+#{f.clanName}
+いったことあるの？[p]
+
+#虎次郎
+ああ、小さい頃家族で行ってたよ[p]
+
+だから、久しぶりにいきたいなって[p]
+
+#{f.clanName}
+今度いこっか[p]
+
+#虎次郎
+おう、絶対行こうな[p]
+
+@jump target=*a_common
+
+*a_common 
+
+#
+鎌瀬　虎次郎との絆が更に深まった[p]
+
+
+[stopbgm]
+
+[Export]
+
+[scene file={f.sceneName}]

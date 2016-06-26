@@ -1,0 +1,44 @@
+﻿;メッセージ表示
+[showmessage time=0]
+
+;共通ライブラリ
+;セーブ・ロードバックログなど基本的な機能を取り込む 
+;[call file=wide/system target="*system_setting_buttons"]
+
+;ゲーム作成で便利なマクロ集
+[call file=wide/libs/quiz]
+[text_new name=_sp_chara_name layer=ui x="-168" y=-108.5 val="" color="DDFF00" fontsize=16 anchor="MiddleLeft"]
+[text_show name="_sp_chara_name" time=0]
+
+
+[wait time=0]
+
+[bg_new name="black" storage="black"]
+[bg_show name="black" time=0.5]
+
+[chara_new name=happy storage=happyhappy y=0 scale=2]
+;キャラクター宣言
+
+[playbgm wait=false time=1 storage="unHappy"]
+
+[chara_show name=happy]
+
+#はっぴはっぴ
+おめでとう[p]
+
+本当におめでとう[p]
+
+君はパートナーを見つけて次の世代に繋ぐ条件を満たしたよ[p]
+
+残りの時間は子供のために頑張ってね[p]
+
+それじゃあ[p]
+[chara_mod name="happy" storage="unHappy"]
+
+良い人生を[p]
+
+[stopbgm]
+
+[Export]
+
+[scene file={f.sceneName}]

@@ -1,0 +1,213 @@
+﻿;メッセージ表示
+[showmessage time=0]
+
+;共通ライブラリ
+;セーブ・ロードバックログなど基本的な機能を取り込む 
+;[call file=wide/system target="*system_setting_buttons"]
+
+;ゲーム作成で便利なマクロ集
+[call file=wide/libs/utils]
+[text_new name=_sp_chara_name layer=ui x="-168" y=-108.5 val="" color="DDFF00" fontsize=16 anchor="MiddleLeft"]
+[text_show name="_sp_chara_name" time=0]
+
+[bg_new name="kouen" storage="kouen"]
+;背景宣言
+
+[chara_new name=toka storage=tundere_default_c y=-1 ]
+;キャラクター宣言
+
+[wait time=0]
+
+[bg_show name="kouen" time=0.5]
+;背景表示
+
+[show name=toka]
+;キャラクター表示
+
+[playbgm wait=false time=1 storage="tundere"]
+
+#{f.clanName}
+あ、公園よってかないか？[p]
+
+#橙花
+公園？[p]
+
+どうして？[p]
+
+#{f.clanName}
+いやいいだろ[p]
+
+ちょっとよってこ[p]
+
+#橙花
+しょうがないわね[p]
+
+#{f.clanName}
+・・・・・[p]
+
+#橙花
+・・・・・[p]
+
+#{f.clanName}
+・・・・・[p]
+
+#橙花
+どうして黙るのよッ[p]
+
+#{f.clanName}
+いやだってさ[p]
+
+[select_new text="ここで告白したんだなって" target=*select_a1 ]
+[select_new text="凄く眠いから" target=*select_a2 ]
+[select_new text="クレープ買おうか悩むんだ・・・" target=*select_a3 ]
+
+[select_show sound=click ]
+
+[s]
+
+*select_a1
+
+#{f.clanName}
+いや[p]
+
+ここで告白したんだなぁって[p]
+
+[chara_mod name="toka" storage="tundere_tere_c"]
+
+#橙花
+ななななななななななななななななッ！？[p]
+
+何よ突然ッ！？[p]
+
+#{f.clanName}
+あの時、もし駄目だったどうしようって不安だったなぁ[p]
+
+今では、いつもそばに橙花がいて[p]
+
+俺は幸せだなぁ[p]
+
+あの時の橙花可愛かったなぁ[p]
+
+[chara_mod name="toka" storage="tundere_default_c"]
+
+#橙花
+あの時？[p]
+
+今は[p]
+
+#{f.clanName}
+ん？[p]
+
+可愛いに決まってるだろ[p]
+
+[chara_mod name="toka" storage="tundere_tere_c"]
+
+#橙花
+・・・・・[p]
+
+・・・・ありがと[p]
+
+@jump target=*a_common
+
+*select_a2
+
+#{f.clanName}
+いやだってさ[p]
+
+凄く眠くて・・・[p]
+
+うあぁぁあ・・・[p]
+
+#橙花
+まったく・・・・[p]
+
+あんたいつも眠そうよね[p]
+
+#{f.clanName}
+・・・ぅん[p]
+
+#橙花
+まったく[p]
+
+しょうがないわね[p]
+
+ほら、特別にここ[p]
+
+貸したげる[p]
+
+#{f.clanName}
+・・・わーい膝枕だー[p]
+
+よいしょっと[p]
+
+#橙花
+・・・・[p]
+
+[chara_mod name="toka" storage="tundere_tere_c"]
+やっぱり恥ずかしいからダメッ！[p]
+
+帰るわよ！[p]
+
+#{f.clanName}
+そんなぁ～[p]
+
+@jump target=*a_common
+
+*select_a3
+いや[p]
+
+クレープを買おうか悩んでいる[p]
+
+[chara_mod name="toka" storage="tundere_odoroki_c"]
+
+#橙花
+買いましょ[p]
+
+#{f.clanName}
+へ？[p]
+
+#橙花
+クレープ食べましょ[p]
+
+クレープ・・・[p]
+
+クレープ・・・[p]
+
+#{f.clanName}
+な、何かに憑りつかれたのか！？[p]
+
+#橙花
+く、クレープ[p]
+
+#{f.clanName}
+ま、待て早まるな！[p]
+
+この前、少し太ったって嘆いてだろ！[p]
+
+[chara_mod name="toka" storage="tundere_default_c"]
+#橙花
+なんでそんなこと覚えてるのよッ！[p]
+
+#{f.clanName}
+俺が悪かった[p]
+
+クレープだなんて言って[p]
+
+ほら帰るぞ！[p]
+
+[chara_mod name="toka" storage="tundere_kanasi_c"]
+私のクレープゥゥゥ！[p]
+
+@jump target=*a_common
+
+*a_common 
+
+#
+姫百合　橙花との絆が深まった[p]
+
+
+[stopbgm]
+
+[Export]
+
+[scene file={f.sceneName}]

@@ -20,14 +20,16 @@ public class World_Player : MonoBehaviour {
     static public int kanban_toshiyori;
     static public int shiken;
     static public int Spawner;
+    static public int clickHappy;
 
-    void Awake()//変更点
+    void Awake()
     {
         kanban_shiken = 0;
         kanban_nyugaku = 0;
         Select_Button = 0;
         kanban_shakai = 0;
         kanban_toshiyori = 0;
+        clickHappy = 0;
 
         Debug.Log("リザルト：" + result);
         Debug.Log("試験：" + shiken);

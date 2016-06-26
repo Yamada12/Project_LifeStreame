@@ -1,0 +1,66 @@
+﻿;メッセージ表示
+[showmessage time=0]
+
+;共通ライブラリ
+;セーブ・ロードバックログなど基本的な機能を取り込む 
+;[call file=wide/system target="*system_setting_buttons"]
+
+;ゲーム作成で便利なマクロ集
+[call file=wide/libs/utils]
+[text_new name=_sp_chara_name layer=ui x="-168" y=-108.5 val="" color="DDFF00" fontsize=16 anchor="MiddleLeft"]
+[text_show name="_sp_chara_name" time=0]
+
+[bg_new name="room2" storage="room2"]
+;背景宣言
+
+[chara_new name=yositaka storage=nagoyaka_default_c y=-1 ]
+;キャラクター宣言
+
+[wait time=0]
+
+[bg_show name="room2" time=0.5]
+;背景表示
+
+[show name=yositaka]
+;キャラクター表示
+
+[playbgm wait=false time=1 storage="nagoyaka"]
+
+#{f.clanName}
+善鷹君は子供何人くらいほしい？[p]
+
+#善鷹
+うーん[p]
+
+何人でもいいけど[p]
+
+女の子が欲しいな[p]
+
+きっと可愛いだろうなぁ[p]
+
+#{f.clanName}
+女の子かぁ[p]
+
+男の子は？[p]
+
+#善鷹
+勿論男の子でもいいよ[p]
+
+元気で優しい子になってくれたらいいなぁ[p]
+
+男の子と女の子一人ずつほしいかな[p]
+
+楽しくなるだろうなぁ[p]
+
+#{f.clanName}
+そうだねぇ[p]
+
+#
+檜山　善鷹と幸せな時間を過ごした[p]
+
+
+[stopbgm]
+
+[Export]
+
+[scene file={f.sceneName}]

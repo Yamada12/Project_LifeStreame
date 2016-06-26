@@ -1,0 +1,232 @@
+﻿;メッセージ表示
+[showmessage time=0]
+
+;共通ライブラリ
+;セーブ・ロードバックログなど基本的な機能を取り込む 
+;[call file=wide/system target="*system_setting_buttons"]
+
+;ゲーム作成で便利なマクロ集
+[call file=wide/libs/utils]
+[text_new name=_sp_chara_name layer=ui x="-168" y=-108.5 val="" color="DDFF00" fontsize=16 anchor="MiddleLeft"]
+[text_show name="_sp_chara_name" time=0]
+
+[bg_new name="miti" storage="miti"]
+;背景宣言
+
+[chara_new name=risa storage=majime_kanasi_c y=-1 scale=0.9]
+[chara_new name=toka storage=tundere_odoroki_c x=3 y=-1 ]
+[chara_new name=sora storage=supokon_niko_c x=15 y=-1 ]
+;キャラクター宣言
+
+[wait time=0]
+
+[bg_show name="miti" time=0.5]
+;背景表示
+
+[show name=risa]
+;キャラクター表示
+
+[playbgm wait=false time=1 storage="majime"]
+
+#{f.clanName}
+うーん[p]
+
+ここどこだ？[p]
+
+#梨沙
+だから、言ったのに[p]
+
+ちゃんと確認したのって[p]
+
+#{f.clanName}
+いやいやいや[p]
+
+こっちの道よ[p]
+
+って梨沙が言ったんだぞ？[p]
+
+[chara_mod name="risa" storage="majime_default_c"]
+
+#梨沙
+そうだったかしら[p]
+
+#{f.clanName}
+まぁ言い争ってもしょうがない[p]
+
+どうにか元の道に戻ろう[p]
+
+どうしようか[p]
+
+[select_new text="調べてみる" target=*select_a1 ]
+[select_new text="来た道を戻る" target=*select_a2 ]
+[select_new text="歩く" target=*select_a3 ]
+
+[select_show sound=click ]
+
+[s]
+
+*select_a1
+#{f.clanName}
+仕方ない[p]
+
+こうなったら調べよう[p]
+
+#梨沙
+最初からそうしてればよかったのに[p]
+
+#{f.clanName}
+ごもっとも[p]
+
+#？？？
+あ[p]
+
+[anim name="risa" time=1 x=-3 y=-1]
+[show name=toka]
+
+#{f.clanName}
+橙花じゃないか[p]
+
+#橙花
+あんたたちこんなところで何してんの？[p]
+
+#{f.clanName}
+いや少し迷っちゃって[p]
+
+#梨沙
+考えなしに進むから[p]
+
+#{f.clanName}
+そんなことは決してない[p]
+
+#橙花
+迷った？[p]
+
+ここまっすぐ行けば駅よ？[p]
+
+#{f.clanName}
+え[p]
+
+#梨沙
+どうやら、駅の近くをぐるぐるしていたようね[p]
+
+[chara_mod name="toka" storage="tundere_default_c"]
+#橙花
+それじゃ、あとはごゆっくり[p]
+
+[anim name="toka" time=5 x=15 y=-1]
+[anim name="risa" time=1 x=0 y=-1]
+
+#梨沙
+姫百合さん怒ってなかった？[p]
+
+#{f.clanName}
+え？いつも通りだったよ[p]
+
+ほら、帰ろう[p]
+
+@jump target=*a_common
+
+*select_a2
+
+#{f.clanName}
+しょうがない[p]
+
+来た道を戻ってみるか[p]
+
+#？？？
+うおぉぉぉぉぉぉぉぉぉぉ！！！！[p]
+
+[anim name="risa" time=1 x=-3 y=-1]
+[show name=sora]
+
+[anim name="risa" time=1 x=3 y=-1]
+
+[chara_mod name="risa" storage="majime_odoroki_c"]
+#{f.clanName}
+うわ！？[p]
+
+[chara_mod name="sora" storage="supokon_default_c"]
+#蒼空
+こんなところで会うなんて珍しいね[p]
+
+#{f.clanName}
+こんなところで何してんだ？[p]
+
+[chara_mod name="sora" storage="supokon_niko_c"]
+#蒼空
+走ってた！[p]
+
+#{f.clanName}
+まじかよ[p]
+
+そ、そうだ！[p]
+
+道に迷ってるんだけど[p]
+
+道わかるか？[p]
+
+[chara_mod name="sora" storage="supokon_default_c"]
+#蒼空
+ん？[p]
+
+ここまっすぐ行けば駅だよ[p]
+
+#{f.clanName}
+まじかよ！？[p]
+
+それじゃ、お二人さんごゆっくり！[p]
+
+[anim name="sora" time=1 x=15 y=-1]
+[anim name="risa" time=1 x=0 y=-1]
+
+#梨沙
+風のような子ね[p]
+
+#{f.clanName}
+ホント、やばいよな[p]
+
+@jump target=*a_common
+
+*select_a3
+{f.clanName}
+よし！[p]
+
+とりあえず、歩こう！[p]
+
+#梨沙
+まって[p]
+
+本当にそれで大丈夫？[p]
+
+#{f.clanName}
+え、あ、うん[p]
+
+大丈夫じゃないね[p]
+
+[chara_mod name="risa" storage="majime_kanasi_c"]
+#梨沙
+しょうがないわね[p]
+
+貸して[p]
+
+私が調べてみるわ[p]
+
+#梨沙
+・・・・・[p]
+
+[chara_mod name="risa" storage="majime_default_c"]
+今どこにいるのかしら[p]
+
+@jump target=*a_common
+
+*a_common 
+
+#
+佐倉　梨沙との絆が更に深まった[p]
+
+
+[stopbgm]
+
+[Export]
+
+[scene file={f.sceneName}]

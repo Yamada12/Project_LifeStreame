@@ -334,5 +334,6 @@ public class JobManager : MonoBehaviour
                 PlayerStatus.job = "フリーター";
                 break;
         }
+        PlayerStatus.static_Save();
     }
 }

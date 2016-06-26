@@ -845,13 +845,13 @@
 いえ、ただの気まぐれですよ・・・・[p]
 また、あなたに会えることを楽しみにしてますよ[p]
 
-#{f.clanNmae}
+#{f.clanName}
 はい！　本当にありがとうございました！[p]
 (不思議な人だったなぁ)[p]
 (合格してるといいな)[p]
 
 [Export]
-[scene file={f.sceneName}]
+[scene file="Main"]
 
 
 

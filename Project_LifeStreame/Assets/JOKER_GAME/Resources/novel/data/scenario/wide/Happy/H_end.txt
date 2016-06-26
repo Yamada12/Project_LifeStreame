@@ -19,11 +19,11 @@
 [chara_new name=happy storage=happyhappy y=0 scale=2]
 ;キャラクター宣言
 
-[playbgm wait=false time=1 storage="happy"]
+[playbgm wait=false time=1 storage="Happy"]
 
 [chara_show name=happy]
 
-#ハッピハッピ
+#はっぴはっぴ
 あ～あ[p]
 
 やっちゃったね[p]
@@ -40,4 +40,4 @@
 
 [Export]
 
-[scene file="World"]
+[scene file="Title"]

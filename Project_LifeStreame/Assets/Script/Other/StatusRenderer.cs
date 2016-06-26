@@ -36,6 +36,19 @@ public class StatusRenderer : MonoBehaviour
         UpdateMesh();
     }
 
+    /// <summary>
+    /// グラフ初期化
+    /// </summary>
+    static public void initVerts()
+    {
+        vert1_step = 1f;
+        vert2_step = 1f;
+        vert3_step = 1f;
+        vert4_step = 1f;
+        vert5_step = 1f;
+        vert6_step = 1f;
+    }
+
     public void UpdateMesh()
     {//メッシュの形を更新する
         mesh = new Mesh();

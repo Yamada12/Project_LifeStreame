@@ -162,6 +162,7 @@ public class MainManager : MonoBehaviour
         Destroy(GameObject.Find("Licence_Canvas(Clone)"));
         Destroy(GameObject.Find("Love_Canvas(Clone)"));
         Destroy(GameObject.Find("Happy!(Clone)"));
+        StopCoroutine("HappySpawn");
         yield return new WaitForSeconds(4f);
         ev.InitDelete();
         //World_Player.result = 0;

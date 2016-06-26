@@ -1,0 +1,177 @@
+﻿;メッセージ表示
+[showmessage time=0]
+
+;共通ライブラリ
+;セーブ・ロードバックログなど基本的な機能を取り込む 
+;[call file=wide/system target="*system_setting_buttons"]
+
+;ゲーム作成で便利なマクロ集
+[call file=wide/libs/utils]
+[text_new name=_sp_chara_name layer=ui x="-168" y=-108.5 val="" color="DDFF00" fontsize=16 anchor="MiddleLeft"]
+[text_show name="_sp_chara_name" time=0]
+
+[bg_new name="ike" storage="ike"]
+;背景宣言
+
+[chara_new name=yositaka storage=nagoyaka_default_c y=-1 ]
+[chara_new name=kazuma storage=interi_default_c x=3 y=-1 ]
+[chara_new name=kojiro storage=kamase_odoroki_c x=3 y=-1 ]
+;キャラクター宣言
+
+[wait time=0]
+
+[bg_show name="ike" time=0.5]
+;背景表示
+
+[show name=yositaka]
+;キャラクター表示
+
+[playbgm wait=false time=1 storage="nagoyaka"]
+
+#{f.clanName}
+うわ～[p]
+
+やっぱりきれいだなぁ[p]
+
+#善鷹
+そうだねぇ[p]
+
+ここは池が綺麗だし[p]
+
+動物もたくさんいるし[p]
+
+いいところだよぉ[p]
+
+[chara_mod name="yositaka" storage="nagoyaka_niko_c"]
+あ、魚がいるよ[p]
+
+#{f.clanName}
+ホントだ、ここに魚いたんだ[p]
+
+いいところだねぇ[p]
+
+#善鷹
+そうだねぇ[p]
+
+[select_new text="何かいないかなぁ" target=*select_a1 ]
+[select_new text="もう少しいよう" target=*select_a2 ]
+[select_new text="いこうか" target=*select_a3 ]
+
+[select_show sound=click ]
+
+[s]
+
+*select_a1
+#{f.clanName}
+何かいないかなぁ[p]
+
+#
+・・・・[p]
+
+#
+ザッブーン！！！[p]
+
+#{f.clanName}
+え！？何々！？[p]
+
+#善鷹
+おっきな魚でもいるのかな？[p]
+
+[anim name="yositaka" time=1 x=-3 y=-1]
+[show name=kojiro]
+
+#虎次郎
+たっ、助けてくれー[p]
+
+#{f.clanName}
+か、鎌瀬君・・・・[p]
+
+[chara_mod name="yositaka" storage="nagoyaka_kanasi_c"]
+#善鷹
+何してるんだろうね[p]
+
+#{f.clanName}
+さ、さぁ・・・[p]
+
+@jump target=*a_common
+
+*select_a2
+#{f.clanName}
+もう少しここにいよう[p]
+
+[show name=kazuma]
+#和真
+おや[p]
+
+#{f.clanName}
+あ、羽神君[p]
+
+羽神君もここ好きなの？[p]
+
+#和真
+ええ、よく気分転換に[p]
+
+#{f.clanName}
+そうなんだぁ[p]
+
+いいところだよねぇ[p]
+
+#善鷹
+動物たちがたくさんいるし[p]
+
+そういえばね、魚がいるんだよ[p]
+
+[chara_mod name="kazuma" storage="interi_odoroki_c"]
+#和真
+そうなんですか？[p]
+
+#{f.clanName}
+うん、さっきいたよ[p]
+
+#和真
+それは知らなかったですね[p]
+
+[chara_mod name="kazuma" storage="interi_default_c"]
+それでは、僕は用事があるので[p]
+
+#{f.clanName}
+じゃあねぇ[p]
+
+#善鷹
+ばいばーい[p]
+
+[anim name="kazuma" time=3 x=15 y=-1]
+[anim name="yositaka" time=1 x=0 y=-1]
+
+@jump target=*a_common
+
+*select_a3
+
+#{f.clanName}
+もうそろそろいこうか[p]
+
+#善鷹
+うん[p]
+
+そうだね[p]
+
+また来ようね[p]
+
+#{f.clanName}
+うん！[p]
+
+次はどんな発見があるかなぁ[p]
+
+@jump target=*a_common
+
+*a_common 
+
+#
+檜山　善鷹との絆が更に深まった[p]
+
+
+[stopbgm]
+
+[Export]
+
+[scene file={f.sceneName}]

@@ -12,12 +12,21 @@ public class Love_Controller : MonoBehaviour
     public GameObject[] basePoint_f;        //初期位置(女性キャラ選択ボタン)
     public GameObject[] targetDetail_m;  //アニメーションさせたいイメージ（男性）
     public GameObject[] basePoint_m;        //初期位置(男性キャラ選択ボタン)
+    public GameObject[] proposeButton;
 
     /// <summary>
     /// 性別に応じてボタンを切り替える
     /// </summary>
     void Start()
     {
+        if (PlayerStatus.love_AfterCount >= 3)
+        {
+            for (int i = 0; i < proposeButton.Length; i++)
+            {
+                proposeButton[i].GetComponent<Button>().interactable = true;
+            }
+        }
+
         if (PlayerStatus.mf == 0)
         {//男性の場合
             for (int i = 0; i < basePoint_m.Length; i++)
@@ -156,6 +165,7 @@ public class Love_Controller : MonoBehaviour
             else
                 targetDetail_f[id].SetActive(true);
 
+            basePoint_f[id].GetComponentInChildren<Button>().interactable = false;
             iTween.ScaleFrom(targetDetail_f[id], iTween.Hash("x", 0.1f, "y", 0.1f, "z", 0.1f, "time", 0.5f));
             iTween.MoveFrom(targetDetail_f[id], iTween.Hash("position", basePoint_f[id].gameObject.transform.position, "time", 0.5f));
             SoundPlayer.Instance.PlaySE("SmartPhone_Enter");
@@ -173,6 +183,7 @@ public class Love_Controller : MonoBehaviour
             else
                 targetDetail_m[id].SetActive(true);
 
+            basePoint_m[id].GetComponentInChildren<Button>().interactable = false;
             iTween.ScaleFrom(targetDetail_m[id], iTween.Hash("x", 0.1f, "y", 0.1f, "z", 0.1f, "time", 0.5f));
             iTween.MoveFrom(targetDetail_m[id], iTween.Hash("position", basePoint_m[id].gameObject.transform.position, "time", 0.5f));
             SoundPlayer.Instance.PlaySE("SmartPhone_Enter");

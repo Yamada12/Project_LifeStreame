@@ -1,0 +1,240 @@
+﻿;メッセージ表示
+[showmessage time=0]
+
+;共通ライブラリ
+;セーブ・ロードバックログなど基本的な機能を取り込む 
+;[call file=wide/system target="*system_setting_buttons"]
+
+;ゲーム作成で便利なマクロ集
+[call file=wide/libs/utils]
+[text_new name=_sp_chara_name layer=ui x="-168" y=-108.5 val="" color="DDFF00" fontsize=16 anchor="MiddleLeft"]
+[text_show name="_sp_chara_name" time=0]
+
+[bg_new name="miti" storage="miti"]
+;背景宣言
+
+[chara_new name=toka storage=tundere_default_c y=-1 ]
+[chara_new name=risa storage=majime_default_c x=3 y=-1 ]
+[chara_new name=sora storage=supokon_default_c x=15 y=-1 scale=0.9]
+
+;キャラクター宣言
+
+[wait time=0]
+
+[bg_show name="miti" time=0.5]
+;背景表示
+
+[show name=toka]
+;キャラクター表示
+
+[playbgm wait=false time=1 storage="tundere"]
+
+#橙花
+今日どこ行くの？[p]
+
+#{f.clanName}
+うーん・・・[p]
+
+どこいこっか[p]
+
+[chara_mod name="toka" storage="tundere_odoroki_c"]
+
+#橙花
+決めてないのッ！？[p]
+
+#{f.clanName}
+橙花行きたいところあるかなって[p]
+
+#橙花
+そういうのは男のあんたが決めなさい！[p]
+
+[select_new text="え、俺が悪いの" target=*select_a1 ]
+[select_new text="(か、考えろ・・・)" target=*select_a2 ]
+[select_new text="と、とりあえず歩こう" target=*select_a3 ]
+
+[select_show sound=click ]
+
+[s]
+
+*select_a1
+
+#{f.clanName}
+え、俺が悪いの？[p]
+
+[chara_mod name="toka" storage="tundere_kanasi_c"]
+
+#橙花
+はぁ・・・[p]
+
+悪いとかじゃなくて[p]
+
+まったく[p]
+
+[anim name="toka" time=1 x=-3 y=-1]
+
+[show name=risa]
+#梨沙
+デートでは男の人がリードするものよ[p]
+
+{f.clanName}さん[p]
+
+[chara_mod name="toka" storage="tundere_odoroki_c"]
+
+#{f.clanName}
+委員長！？[p]
+
+#橙花
+ど、どうしてこんなところに[p]
+
+#梨沙
+私、家がこの近くなの[p]
+
+それと、{f.clanName}さん[p]
+
+委員長という呼び方をやめてもらえるかしら[p]
+
+#{f.clanName}
+あ、ごめん[p]
+
+[chara_mod name="toka" storage="tundere_tere_c"]
+#梨沙
+それじゃ、お二人のデートのお邪魔になるので[p]
+
+私はこれで失礼するわ[p]
+
+[chara_hide name=risa time=1 wait=false]
+
+[anim name="toka" time=1 x=0 y=-1]
+
+#{f.clanName}
+い、行こうか[p]
+
+#橙花
+う、うん[p]
+
+@jump target=*a_common
+
+*select_a2
+
+#{f.clanName}
+(か、考えろ・・・)[p]
+
+#橙花
+・・・・[p]
+
+#{f.clanName}
+え、えーっと[p]
+
+#？？？
+うぉぉぉぉぉぉぉぉぉぉい！！！[p]
+
+[chara_mod name="toka" storage="tundere_odoroki_c"]
+
+[show name=sora]
+[anim name="toka" time=1 x=-3 y=-1]
+
+[anim name="saora" time=1 x=3 y=-1]
+
+#{f.clanName}
+うわッ！？[p]
+
+なんでこんなところに！？[p]
+
+#蒼空
+え？[p]
+
+[chara_mod name="sora" storage="supokon_niko_c"]
+走ってた[p]
+
+#{f.clanName}
+まじかよ[p]
+
+[chara_mod name="sora" storage="supokon_default_c"]
+[chara_mod name="toka" storage="tundere_tere_c"]
+#蒼空
+今日もお二人さんはラブラブのようですなぁ[p]
+
+#橙花
+・・・・[p]
+
+
+[chara_mod name="sora" storage="supokon_niko_c"]
+#蒼空
+それじゃ、私はもうひとっ走り行ってくるね[p]
+[chara_mod name="toka" storage="tundere_odoroki_c"]
+
+お幸せに―！！！[p]
+
+[anim name="saora" time=1 x=15 y=-1]
+[anim name="toka" time=1 x=0 y=-1]
+
+#{f.clanName}
+相変わらずだな[p]
+
+#橙花
+そ、そうね[p]
+
+[chara_mod name="toka" storage="tundere_default_c"]
+で？[p]
+
+#{f.clanName}
+ん？[p]
+
+#橙花
+どこに行くの？[p]
+
+#{f.clanName}
+そ、そうだな・・・[p]
+
+@jump target=*a_common
+
+*select_a3
+
+#{f.clanName}
+と、とりあえず歩こう[p]
+
+#橙花
+それで、一時間以上歩いてるんだけど？[p]
+
+#{f.clanName}
+そ、そうだなぁ[p]
+
+う、うーん[p]
+
+えーっと・・・[p]
+
+[chara_mod name="toka" storage="tundere_kanasi_c"]
+
+#橙花
+もぉー[p]
+
+しょうがないわね[p]
+
+いつものクレープでいいわよ[p]
+
+まだコンプリートしてないし[p]
+
+[chara_mod name="toka" storage="tundere_default_c"]
+
+そのかわり[p]
+
+今日は、私が満足するまで買ってもらうからね[p]
+
+#{f.clanName}
+くッ！[p]
+
+今回はしょうがない・・・[p]
+
+お手柔らかにお願いします・・・[p]
+
+@jump target=*a_common
+
+*a_common 
+姫百合　橙花との絆が更に深まった[p]
+
+
+[stopbgm]
+
+[Export]
+
+[scene file={f.sceneName}]

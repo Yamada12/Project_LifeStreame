@@ -1,0 +1,195 @@
+﻿;メッセージ表示
+[showmessage time=0]
+
+;共通ライブラリ
+;セーブ・ロードバックログなど基本的な機能を取り込む 
+;[call file=wide/system target="*system_setting_buttons"]
+
+;ゲーム作成で便利なマクロ集
+[call file=wide/libs/utils]
+[text_new name=_sp_chara_name layer=ui x="-168" y=-108.5 val="" color="DDFF00" fontsize=16 anchor="MiddleLeft"]
+[text_show name="_sp_chara_name" time=0]
+
+[bg_new name="kouen" storage="kouen"]
+;背景宣言
+
+[chara_new name=risa storage=majime_default_c y=-1 ]
+;キャラクター宣言
+
+[wait time=0]
+
+[bg_show name="kouen" time=0.5]
+;背景表示
+
+[show name=risa]
+;キャラクター表示
+
+[playbgm wait=false time=1 storage="majime"]
+
+#{f.clanName}
+あ、少し公園で休憩しない？[p]
+
+#梨沙
+ええ[p]
+
+いいわよ[p]
+
+#{f.clanName}
+はぁ[p]
+
+疲れた[p]
+
+#梨沙
+そうね[p]
+
+今日はたくさん歩いたから[p]
+
+#{f.clanName}
+そうだねぇ[p]
+
+#梨沙
+・・・・[p]
+
+#{f.clanName}
+・・・・[p]
+
+[chara_mod name="risa" storage="majime_kanasi_c"]
+
+#梨沙
+ね、ねぇ[p]
+
+#{f.clanName}
+なに？[p]
+
+#梨沙
+私と一緒にいて楽しい？[p]
+
+後悔してない？[p]
+
+[select_new text="どうしたのいきなり？" target=*select_a1 ]
+[select_new text="当たり前だろ？" target=*select_a2 ]
+[select_new text="楽しいに決まってる" target=*select_a3 ]
+
+[select_show sound=click ]
+
+[s]
+
+*select_a1
+#{f.clanName}
+どうしたのいきなり？[p]
+
+#梨沙
+い、いえ[p]
+
+私、誰かとお付き合いとかした経験がなくて[p]
+
+どうしていいのか分からないことだらけで[p]
+
+もしかして嫌われてしまうようなことしてるんじゃないかって[p]
+
+#{f.clanName}
+そんなことないよ[p]
+
+ちゃんと彼女できてるって[p]
+
+もっと自信をもって[p]
+
+[chara_mod name="risa" storage="majime_tere_c"]
+#梨沙
+そうかしら[p]
+
+#{f.clanName}
+今日は、手をつないで帰ろうな[p]
+
+#梨沙
+恥ずかしいけど[p]
+
+頑張るわ[p]
+
+@jump target=*a_common
+
+*select_a2
+
+#{f.clanName}
+当たり前だろ？[p]
+
+後悔なんてするわけないよ[p]
+
+梨沙と付き合い始めてから[p]
+
+毎日が楽しいよ[p]
+
+#梨沙
+ホント？[p]
+
+#{f.clanName}
+ホントホント[p]
+
+梨沙は十分俺の彼女してるから[p]
+
+自信持って[p]
+
+[chara_mod name="risa" storage="majime_tere_c"]
+#梨沙
+あなたにそう言われると嬉しいわ[p]
+
+ありがとう[p]
+
+#{f.clanName}
+今日は、手をつないで帰ろうか[p]
+
+@jump target=*a_common
+
+*select_a3
+#{f.clanName}
+そんなの楽しいに決まってるだろ？[p]
+
+梨沙と一緒にいてつまらないと思ったこと一度もない[p]
+
+梨沙は俺といて楽しくないか？[p]
+
+#梨沙
+いえ[p]
+
+楽しいわ[p]
+
+こんなに楽しい気持ちになったのは初めて[p]
+
+#{f.clanName}
+俺だって同じだ[p]
+
+だから特別なことをしなくたって[p]
+
+毎日が楽しいし[p]
+
+梨沙と一緒にいるだけで楽しいんだ[p]
+
+普通でいいんだよ普通で[p]
+
+これが俺たちの付き合い方だよ[p]
+
+[chara_mod name="risa" storage="majime_tere_c"]
+ありがと[p]
+
+気持ちが楽になったわ[p]
+
+そうね、考えすぎてたかもしれないわね[p]
+
+#{f.clanName}
+うんうん[p]
+
+今日は手をつないで帰ろう[p]
+
+@jump target=*a_common
+
+*a_common 
+
+#
+佐倉　梨沙との絆が深まった[p]
+
+
+[stopbgm]
+
+[Export]
+
+[scene file={f.sceneName}]

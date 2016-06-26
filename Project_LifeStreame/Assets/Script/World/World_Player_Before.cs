@@ -25,9 +25,9 @@ public class World_Player_Before : MonoBehaviour
         
         iTween.MoveBy(gameObject, iTween.Hash("delay", 0.5f, "z", 15, "time", 0.5f, "oncomplete", "Move2", "oncompletetarget", gameObject));
 
-        if (PlayerStatus.progress == 7 || PlayerStatus.progress == 8)//年寄りはまっすぐびゅーーーーん
+        if (PlayerStatus.progress == 7 || PlayerStatus.progress == 8)//社会人・年寄りはまっすぐびゅーーーーん
         {
-            iTween.MoveBy(gameObject, iTween.Hash("delay", 0.5f, "z", 50, "time", 20.0f));
+            iTween.MoveBy(gameObject, iTween.Hash("delay", 0.5f, "z", 50, "time", 10.0f));
         }
 
     }
