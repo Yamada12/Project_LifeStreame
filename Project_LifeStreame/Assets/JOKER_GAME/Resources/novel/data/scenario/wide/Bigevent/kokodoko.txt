@@ -1,0 +1,88 @@
+﻿;メッセージ表示
+[showmessage time=0]
+
+;共通ライブラリ
+;セーブ・ロードバックログなど基本的な機能を取り込む 
+;[call file=wide/system target="*system_setting_buttons"]
+
+;ゲーム作成で便利なマクロ集
+[call file=wide/libs/utils]
+[text_new name=_sp_chara_name layer=ui x="-168" y=-108.5 val="" color="DDFF00" fontsize=16 anchor="MiddleLeft"]
+[text_show name="_sp_chara_name" time=0]
+
+
+[wait time=0]
+
+[bg_new name="heya" storage="heya"]
+[bg_show name="heya" time=0.5]
+
+[playbgm wait=false time=1 storage="kokodoko"]
+
+#{f.clanName}
+むにゃむにゃ・・・[p]
+
+・・・・・・・・・・・[p]
+
+ふぁッ！？[p]
+
+じゅ、１０時！？[p]
+
+あー、一コマ目逃したなぁ[p]
+
+とりあえず学校行くか・・・[p]
+
+[bg_mod name=heya storage="black"]
+[bg_mod name=heya storage="koutei"]
+
+よし、大学ついた～[p]
+
+けど、今二コマ目やってるから[p]
+
+三コマ目から参加しよ・・・[p]
+
+ちょっと散策してみようかな[p]
+
+凄い広いなぁ[p]
+
+[bg_mod name=heya storage="yama"]
+
+おお、こんなとこもあったのか～[p]
+
+てか、迷子になりそうだな[p]
+
+・・・・・・・・[p]
+
+いやッ！[p]
+
+迷子だよ！！！[p]
+
+ここどこだよ！？[p]
+
+どうやってきたっけ・・・？[p]
+
+落ち着け・・・[p]
+
+考えるな、感じろ[p]
+
+こっちのような気がする！[p]
+
+[bg_mod name=heya storage="black"]
+うおぉぉぉぉぉぉぉぉぉぉぉぉぉ！[p]
+
+#
+全力で走ってようやく校舎に戻れた[p]
+
+その時にはもう授業は全て終わっていた[p]
+
+体力が上がった。[p]
+[calc exp="f.vi={f.vi}+20"]
+
+学力が少し下がった。[p]
+[calc exp="f.ac={f.ac}-5"]
+
+
+[stopbgm]
+
+[Export]
+
+[scene file={f.sceneName}]

@@ -1,0 +1,89 @@
+﻿;メッセージ表示
+[showmessage time=0]
+
+;共通ライブラリ
+;セーブ・ロードバックログなど基本的な機能を取り込む 
+;[call file=wide/system target="*system_setting_buttons"]
+
+;ゲーム作成で便利なマクロ集
+[call file=wide/libs/utils]
+[text_new name=_sp_chara_name layer=ui x="-168" y=-108.5 val="" color="DDFF00" fontsize=16 anchor="MiddleLeft"]
+[text_show name="_sp_chara_name" time=0]
+
+
+[wait time=0]
+
+[bg_new name="s_room" storage="s_room"]
+[bg_show name="s_room" time=0.5]
+
+#
+かっかかっかかかかっかっか[p]
+
+#先生
+この問題ノートに解けー[p]
+
+・・・・・[p]
+
+#{f.clanName}
+難しいなぁ[p]
+
+わからない[p]
+
+#先生
+よし[p]
+
+答え書くから丸付けしろ―[p]
+
+[playbgm wait=false time=1 storage="kati"]
+#
+カチカチカチカチカチカチカチ・・・[p]
+#
+カチカチカチカチカチカチカチ・・・[p]
+#
+カチカチカチカチカチカチカチ・・・[p]
+#
+カチカチカチカチカチカチカチ・・・[p]
+#
+カチカチカチカチカチカチカチ・・・[p]
+
+#
+一斉に鳴り出すノックオン[p]
+
+皆ふざけてリズムを刻み始めた[p]
+
+#{f.clanName}
+(この流れに乗らなくてわ！)[p]
+
+(ここからの主旋律は自分だっ！)[p]
+
+[stopbgm time=0]
+
+#
+突然鳴りやむノックオン[p]
+
+[playse storage=kati]
+#
+カチッ！[p]
+
+一際大きなノックオンが教室に響き渡る[p]
+
+#先生
+{f.clanName}！廊下に出ろ！！！[p]
+
+#{f.clanName}
+ええ！？なんでこうなるのぉ～[p]
+
+#
+{f.clanName}は長々と説教をされた[p]
+
+人間力が上がった。[p]
+[calc exp="f.hu={f.hu}+20"]
+
+運が若干下がった。[p]
+[calc exp="f.lu={f.lu}-5"]
+
+[stopbgm]
+
+[Export]
+
+[scene file={f.sceneName}]

@@ -241,6 +241,8 @@ public class ScenarioManager : MonoBehaviour
             else if (World_Player.result >= 5)
                 PlayerStatus.lu += _parameter * 0.7f;
 
+            PopTrophy.GetTrophy("そう、なぜなら運があるから", "運で運が上がった", 18);
+
             PlayerPrefs.SetFloat("lu", PlayerStatus.lu);
             flyText.GetComponentInChildren<Text>().alignment = TextAnchor.UpperRight;
             StartCoroutine(PopText("運↑", 0f));

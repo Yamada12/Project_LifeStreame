@@ -218,6 +218,25 @@ public class SceneChanger : MonoBehaviour
                         GameObject.Find("Propose").GetComponent<Button>().interactable = true;
                         NovelSingleton.StatusManager.callJoker("wide/Renai/F/Tundere/after3_tun", "");
                     }
+                    else if (PlayerStatus.love_AfterCount == 3)
+                    {
+                        float rnd = Random.Range(0,3);
+                        if (rnd == 0)
+                        {
+                            PlayerStatus.InitConverter();
+                            NovelSingleton.StatusManager.callJoker("wide/Renai/F/Tundere/marriage1_tun", "");
+                        }
+                        else if (rnd == 1)
+                        {
+                            PlayerStatus.InitConverter();
+                            NovelSingleton.StatusManager.callJoker("wide/Renai/F/Tundere/marriage2_tun", "");
+                        }
+                        else if (rnd == 2)
+                        {
+                            PlayerStatus.InitConverter();
+                            NovelSingleton.StatusManager.callJoker("wide/Renai/F/Tundere/marriage3_tun", "");
+                        }
+                    }
                     break;
                 case "majime"://真面目
                     if (PlayerStatus.love_AfterCount == 0)
@@ -238,6 +257,25 @@ public class SceneChanger : MonoBehaviour
                         PlayerStatus.love_AfterCount += 1;
                         GameObject.Find("Propose").GetComponent<Button>().interactable = true;
                         NovelSingleton.StatusManager.callJoker("wide/Renai/F/Majime/after3_majime", "");
+                    }
+                    else if (PlayerStatus.love_AfterCount == 3)
+                    {
+                        float rnd = Random.Range(0, 3);
+                        if (rnd == 0)
+                        {
+                            PlayerStatus.InitConverter();
+                            NovelSingleton.StatusManager.callJoker("wide/Renai/F/Tundere/marriage1_majime", "");
+                        }
+                        else if (rnd == 1)
+                        {
+                            PlayerStatus.InitConverter();
+                            NovelSingleton.StatusManager.callJoker("wide/Renai/F/Tundere/marriage2_majime", "");
+                        }
+                        else if (rnd == 2)
+                        {
+                            PlayerStatus.InitConverter();
+                            NovelSingleton.StatusManager.callJoker("wide/Renai/F/Tundere/marriage3_majime", "");
+                        }
                     }
                     break;
                 case "supokon"://スポコン
@@ -260,6 +298,25 @@ public class SceneChanger : MonoBehaviour
                         GameObject.Find("Propose").GetComponent<Button>().interactable = true;
                         NovelSingleton.StatusManager.callJoker("wide/Renai/F/Supokon/after3_supo", "");
                     }
+                    else if (PlayerStatus.love_AfterCount == 3)
+                    {
+                        float rnd = Random.Range(0, 3);
+                        if (rnd == 0)
+                        {
+                            PlayerStatus.InitConverter();
+                            NovelSingleton.StatusManager.callJoker("wide/Renai/F/Tundere/marriage1_supo", "");
+                        }
+                        else if (rnd == 1)
+                        {
+                            PlayerStatus.InitConverter();
+                            NovelSingleton.StatusManager.callJoker("wide/Renai/F/Tundere/marriage2_supo", "");
+                        }
+                        else if (rnd == 2)
+                        {
+                            PlayerStatus.InitConverter();
+                            NovelSingleton.StatusManager.callJoker("wide/Renai/F/Tundere/marriage3_supo", "");
+                        }
+                    }
                     break;
                 case "mega"://インテリメガネ
                     if (PlayerStatus.love_AfterCount == 0)
@@ -280,6 +337,25 @@ public class SceneChanger : MonoBehaviour
                         PlayerStatus.love_AfterCount += 1;
                         GameObject.Find("Propose").GetComponent<Button>().interactable = true;
                         NovelSingleton.StatusManager.callJoker("wide/Renai/M/Interi/after3_interi", "");
+                    }
+                    else if (PlayerStatus.love_AfterCount == 3)
+                    {
+                        float rnd = Random.Range(0, 3);
+                        if (rnd == 0)
+                        {
+                            PlayerStatus.InitConverter();
+                            NovelSingleton.StatusManager.callJoker("wide/Renai/F/Tundere/marriage1_interi", "");
+                        }
+                        else if (rnd == 1)
+                        {
+                            PlayerStatus.InitConverter();
+                            NovelSingleton.StatusManager.callJoker("wide/Renai/F/Tundere/marriage2_interi", "");
+                        }
+                        else if (rnd == 2)
+                        {
+                            PlayerStatus.InitConverter();
+                            NovelSingleton.StatusManager.callJoker("wide/Renai/F/Tundere/marriage3_interi", "");
+                        }
                     }
                     break;
                 case "kamase"://カマセ
@@ -302,6 +378,25 @@ public class SceneChanger : MonoBehaviour
                         GameObject.Find("Propose").GetComponent<Button>().interactable = true;
                         NovelSingleton.StatusManager.callJoker("wide/Renai/M/Kamase/after3_kamase", "");
                     }
+                    else if (PlayerStatus.love_AfterCount == 3)
+                    {
+                        float rnd = Random.Range(0, 3);
+                        if (rnd == 0)
+                        {
+                            PlayerStatus.InitConverter();
+                            NovelSingleton.StatusManager.callJoker("wide/Renai/F/Tundere/marriage1_kamase", "");
+                        }
+                        else if (rnd == 1)
+                        {
+                            PlayerStatus.InitConverter();
+                            NovelSingleton.StatusManager.callJoker("wide/Renai/F/Tundere/marriage2_kamase", "");
+                        }
+                        else if (rnd == 2)
+                        {
+                            PlayerStatus.InitConverter();
+                            NovelSingleton.StatusManager.callJoker("wide/Renai/F/Tundere/marriage3_kamase", "");
+                        }
+                    }
                     break;
                 case "nago"://和やか
                     if (PlayerStatus.love_AfterCount == 0)
@@ -322,6 +417,25 @@ public class SceneChanger : MonoBehaviour
                         PlayerStatus.love_AfterCount += 1;
                         GameObject.Find("Propose").GetComponent<Button>().interactable = true;
                         NovelSingleton.StatusManager.callJoker("wide/Renai/M/Nagoyaka/after3_nagoyaka", "");
+                    }
+                    else if (PlayerStatus.love_AfterCount == 3)
+                    {
+                        float rnd = Random.Range(0, 3);
+                        if (rnd == 0)
+                        {
+                            PlayerStatus.InitConverter();
+                            NovelSingleton.StatusManager.callJoker("wide/Renai/F/Tundere/marriage1_nagoyaka", "");
+                        }
+                        else if (rnd == 1)
+                        {
+                            PlayerStatus.InitConverter();
+                            NovelSingleton.StatusManager.callJoker("wide/Renai/F/Tundere/marriage2_nagoyaka", "");
+                        }
+                        else if (rnd == 2)
+                        {
+                            PlayerStatus.InitConverter();
+                            NovelSingleton.StatusManager.callJoker("wide/Renai/F/Tundere/marriage3_nagoyaka", "");
+                        }
                     }
                     break;
                 case "tun_con":

@@ -1,0 +1,95 @@
+﻿;メッセージ表示
+[showmessage time=0]
+
+;共通ライブラリ
+;セーブ・ロードバックログなど基本的な機能を取り込む 
+;[call file=wide/system target="*system_setting_buttons"]
+
+;ゲーム作成で便利なマクロ集
+[call file=wide/libs/utils]
+[text_new name=_sp_chara_name layer=ui x="-168" y=-108.5 val="" color="DDFF00" fontsize=16 anchor="MiddleLeft"]
+[text_show name="_sp_chara_name" time=0]
+
+
+[wait time=0]
+
+[bg_new name="syakai02" storage="syakai02"]
+[bg_show name="syakai02" time=0.5]
+
+#{f.clanName}
+そういえば今日はボーナスが入る日だったな～[p]
+
+よし、丁度明日は休みだし映画でも見に行こうかな[p]
+
+[bg_mod name=syakai02 storage="black"]
+
+#
+次の日[p]
+
+[playbgm wait=false time=1 storage="vs"]
+
+[bg_mod name=syakai02 storage="eiga"]
+
+#
+ガヤガヤ・・・[p]
+
+#{f.clanName}
+ん～何見ようかなぁ[p]
+
+・・・[p]
+
+よし、これにしよう！[p]
+
+と、その前に[p]
+
+#店員
+いらっしゃいませ[p]
+
+#{f.clanName}
+んーっと[p]
+
+ポップコーンのスーパー油ギッシュセットください！[p]
+
+#店員
+ポップコーンのお味とお飲物はいかがなさいますか？[p]
+
+#{f.clanName}
+味はミックスで、飲み物は・・・えーっと[p]
+
+紫蘇スパークリングでお願いします[p]
+
+あ、あと飲み物はLLでお願いします[p]
+
+#店員
+はい、ありがとうございます！[p]
+
+ご注文の品のポップコーンのスーパー油ギッシュセットのミックスと[p]
+
+紫蘇スパークリングのLLでございます[p]
+
+ありがとうございましたー！[p]
+
+#
+[r]
+[cm]
+
+[bg_mod name=syakai02 storage="black"]
+[bg_mod name=syakai02 storage="eiga"]
+
+#{f.clanName}
+あ～あそこでこう来たか～[p]
+
+ん～楽しかった！[p]
+
+経済力が上がった。[p]
+[calc exp="f.ec={f.ec}+20"]
+
+体力が少し下がった。[p]
+[calc exp="f.vi={f.vi}-5"]
+
+
+[stopbgm]
+
+[Export]
+
+[scene file={f.sceneName}]

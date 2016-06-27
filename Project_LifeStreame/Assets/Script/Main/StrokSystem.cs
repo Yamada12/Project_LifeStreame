@@ -1,5 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
+using Novel;
+using UnityEngine.UI;
 
 public class StrokSystem : MonoBehaviour
 {
@@ -9,9 +11,12 @@ public class StrokSystem : MonoBehaviour
 
     public GameObject babyObject = null;    //かご
     public GameObject fallPoint = null;     //落ちてくる位置
+    public Text babyText = null;            //テキスト格納
 
     void Start()
     {
+        babyText.text = "";
+        babyText.resizeTextForBestFit = false;
         SummonBird();
         PlayerStatus.children += 1;
         PlayerStatus.static_Save();
@@ -19,20 +24,31 @@ public class StrokSystem : MonoBehaviour
 
     void SummonBird()
     {
-        iTween.MoveTo(spawnPos, iTween.Hash("position", centerPos.transform.position, "time", 3f, "oncomplete", "Baby", "oncompletetarget", this.gameObject));
+        iTween.MoveTo(babyObject, iTween.Hash("position", centerPos.transform.position, "time", 3f, "oncomplete", "Baby", "oncompletetarget", this.gameObject));
     }
 
     void SummonBird02()
     {
         iTween.MoveTo(spawnPos, iTween.Hash("position", targetPos.transform.position, "time", 3f));
-        Destroy(this.gameObject, 2f);
+        iTween.ScaleTo(babyObject, iTween.Hash("x", 3f, "y", 3f, "time", 1f, "oncomplete", "TextFit", "oncompletetarget", this.gameObject));
     }
 
     void Baby()
     {
+        spawnPos.transform.parent = babyObject.transform.parent;
         iTween.MoveTo(babyObject, iTween.Hash("position", fallPoint.transform.position, "time", 1f, "oncomplete", "SummonBird02", "oncompletetarget", this.gameObject));
-        babyObject.transform.parent = spawnPos.transform.parent;
-        Debug.Log("SummonBird!");
         SoundPlayer.Instance.PlaySE("StatusUp_big");
+    }
+
+    void TextFit()
+    {
+        babyText.text = "クリックしてね！";
+        babyText.resizeTextForBestFit = true;
+    }
+
+    public void HappyBaby()
+    {
+        PlayerStatus.InitConverter();
+        NovelSingleton.StatusManager.callJoker("wide/Happy/H_baby", "");
     }
 }

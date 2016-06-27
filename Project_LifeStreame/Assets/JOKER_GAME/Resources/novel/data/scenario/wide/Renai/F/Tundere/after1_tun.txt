@@ -27,7 +27,7 @@
 [playbgm wait=false time=1 storage="tundere"]
 
 #{f.clanName}
-あ、公園よってかないか？[p]
+あ、公園寄ってかないか？[p]
 
 #橙花
 公園？[p]
@@ -37,7 +37,7 @@
 #{f.clanName}
 いやいいだろ[p]
 
-ちょっとよってこ[p]
+ちょっと寄ってこ[p]
 
 #橙花
 しょうがないわね[p]

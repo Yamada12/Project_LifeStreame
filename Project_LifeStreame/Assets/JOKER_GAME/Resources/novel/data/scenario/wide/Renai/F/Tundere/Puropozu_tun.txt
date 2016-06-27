@@ -33,7 +33,7 @@
 綺麗だね[p]
 
 #橙花
-空気もおいしいきがするわ[p]
+空気もおいしい気がするわ[p]
 
 #{f.clanName}
 そうだね[p]
@@ -96,7 +96,7 @@
 #
 姫百合　橙花と結婚することが出来ました。[p]
 
-[calc exp="f.marriage=10"]
+[calc exp="f.marriage=11"]
 
 [stopbgm]
 

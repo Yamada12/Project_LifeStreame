@@ -103,6 +103,8 @@
 
 [image_hide tag=button time=3 wait=false]
 
+[wait time=0.5]
+
 最後に君が人生を楽しんでいるかを[p]
 
 たまに僕が見に行くから[p]
@@ -112,7 +114,7 @@
 これで説明を終わるね[p]
 
 それじゃあ[p]
-[chara_mod name="happy" storage="unHappy"]
+[chara_mod name="happy" storage="Happy"]
 
 良い人生を[p]
 

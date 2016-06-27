@@ -27,7 +27,7 @@
 [playbgm wait=false time=1 storage="supokon"]
 
 #蒼空
-ねーね[p]
+ね～ね～[p]
 
 #{f.clanName}
 ん？[p]

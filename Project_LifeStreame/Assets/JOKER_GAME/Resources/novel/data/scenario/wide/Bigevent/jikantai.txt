@@ -1,0 +1,70 @@
+﻿;メッセージ表示
+[showmessage time=0]
+
+;共通ライブラリ
+;セーブ・ロードバックログなど基本的な機能を取り込む 
+;[call file=wide/system target="*system_setting_buttons"]
+
+;ゲーム作成で便利なマクロ集
+[call file=wide/libs/utils]
+[text_new name=_sp_chara_name layer=ui x="-168" y=-108.5 val="" color="DDFF00" fontsize=16 anchor="MiddleLeft"]
+[text_show name="_sp_chara_name" time=0]
+
+
+[wait time=0]
+
+[bg_new name="mati" storage="mati"]
+[bg_show name="mati" time=0.5]
+
+[playbgm wait=false time=1 storage="imisin"]
+
+#{f.clanName}
+いらしゃいませー[p]
+
+#店長
+{f.clanName}、ちょっといいかな・・・？[p]
+
+#{f.clanName}
+はい、何でしょうか？[p]
+
+(何かやっちゃったかな)[p]
+
+#店長
+あ～そこ座って[p]
+
+で、話なんだけど[p]
+
+君に時間帯責任者になってもらいたいと思ってるんだよ[p]
+
+#{f.clanName}
+(な、なんだって！？)[p]
+
+(しかし、やってみたい気持ちも少しある)[p]
+
+やります！やらせてください！[p]
+
+#店長
+おお！[p]
+
+本当かい、ありがとう！[p]
+
+わからないことがあったら何でも聞いてくれ！[p]
+
+#主人公
+はい！[p]
+
+迷惑かけると思いますが、よろしくお願いします！！[p]
+
+経済力と人間力が上がった。[p]
+[calc exp="f.ec={f.ec}+10"]
+[calc exp="f.hu={f.hu}+10"]
+
+学力が少し下がった。[p]
+[calc exp="f.hu={f.ac}-5"]
+
+
+[stopbgm]
+
+[Export]
+
+[scene file={f.sceneName}]

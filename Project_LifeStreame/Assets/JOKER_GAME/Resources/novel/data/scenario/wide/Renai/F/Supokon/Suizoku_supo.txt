@@ -94,7 +94,7 @@
 
 結構大きいんだね[p]
 
-{f.clanName}
+#{f.clanName}
 そうだな[p]
 
 #蒼空

@@ -3,6 +3,7 @@ using System;
 using System.Linq;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.SceneManagement;
 
 public class SoundPlayer : SingletonMonoBehaviour<SoundPlayer>
 {
@@ -10,6 +11,7 @@ public class SoundPlayer : SingletonMonoBehaviour<SoundPlayer>
     public List<AudioClip> BGMList;
     public List<AudioClip> SEList;
     public int MaxSE = 10;
+    public GameObject quitObject;
 
     private AudioSource bgmSource = null;
     private List<AudioSource> seSources = null;
@@ -96,11 +98,21 @@ public class SoundPlayer : SingletonMonoBehaviour<SoundPlayer>
 
     void Update()
     {
-        if (PlayerStatus.lifeTime < 600 && PlayerStatus.lifeTime > 100)
-            this.bgmSource.pitch = 1.25f;
-        else if (PlayerStatus.lifeTime <= 100)
-            this.bgmSource.pitch = 1.5f;
-        else if (PlayerStatus.lifeTime <= 1)
-            this.bgmSource.pitch = 2.0f;
+        if (SceneManager.GetActiveScene().name != "Title")
+        {
+            if (PlayerStatus.lifeTime < 600 && PlayerStatus.lifeTime > 100)
+                this.bgmSource.pitch = 1.25f;
+            else if (PlayerStatus.lifeTime <= 100)
+                this.bgmSource.pitch = 1.5f;
+            else if (PlayerStatus.lifeTime <= 1)
+                this.bgmSource.pitch = 2.0f;
+        }else
+            this.bgmSource.pitch = 1.0f;
+
+        if (Input.GetButtonDown("Cancel"))
+        {
+            Destroy(GameObject.Find("GameMenu(Clone)"));
+            GameObject obj = Instantiate(quitObject) as GameObject;
+        }
     }
 }

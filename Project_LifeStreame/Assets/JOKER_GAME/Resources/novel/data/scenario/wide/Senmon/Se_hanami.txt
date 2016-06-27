@@ -21,7 +21,7 @@
 ～花見～[p]
 
 #
-{f.clanName}は[p]
+{f.clanName}は仲間たちと花見に来ていた[p]
 
 #{f.clanName}
 飲むぞぉ！[p]

@@ -73,7 +73,7 @@
 #
 佐倉　梨沙と結婚することが出来ました。[p]
 
-[calc exp="f.marriage=10"]
+[calc exp="f.marriage=12"]
 
 [stopbgm]
 

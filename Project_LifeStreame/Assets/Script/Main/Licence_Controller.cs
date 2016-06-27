@@ -27,7 +27,7 @@ public class Licence_Controller : MonoBehaviour
 
     void Update()
     {
-        if (this.gameObject.name != "Love_Canvas(Clone)" || this.gameObject.name != "Love_Canvas")
+        if (this.gameObject.name != "Love_Canvas(Clone)" && this.gameObject.name != "Love_Canvas")
         {
             if (PlayerStatus.lifeTime < 60)
             {

@@ -45,9 +45,15 @@ public class HappySystem : MonoBehaviour
             touch = true;
             Debug.Log("HappyHappy!");
             SoundPlayer.Instance.PlaySE("StatusUp_big");
-            PlayerStatus.InitConverter();
-            NovelSingleton.StatusManager.callJoker("wide/Happy/H_happyhappy", "");
-            Destroy(this.gameObject, 0.5f);
+            PopTrophy.GetTrophy("はっぴはっぴー！", "はっぴはっぴを捕まえた", 8);
+            Invoke("moveScene", 2f);
+            Destroy(this.gameObject, 2f);
         }
+    }
+
+    void moveScene()
+    {
+        PlayerStatus.InitConverter();
+        NovelSingleton.StatusManager.callJoker("wide/Happy/H_happyhappy", "");
     }
 }

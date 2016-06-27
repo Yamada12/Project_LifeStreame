@@ -13,7 +13,8 @@
 
 [wait time=1]
 
-;[calc exp="f.clanName=福島"]
+[bg_new name="sky01" storage="sky01"]
+[bg_show name="sky01" time=0.5]
 
 [playbgm wait=false time=1 storage="undokai"]
 
@@ -25,7 +26,7 @@
 #{f.clanName}
 他のクラスを圧倒的な力でねじ伏せるんだ！[p]
 
-#モブ達
+#クラスのメンバー
 おー！！！[p]
 
 #

@@ -1,0 +1,85 @@
+﻿;メッセージ表示
+[showmessage time=0]
+
+;共通ライブラリ
+;セーブ・ロードバックログなど基本的な機能を取り込む 
+;[call file=wide/system target="*system_setting_buttons"]
+
+;ゲーム作成で便利なマクロ集
+[call file=wide/libs/utils]
+[text_new name=_sp_chara_name layer=ui x="-168" y=-108.5 val="" color="DDFF00" fontsize=16 anchor="MiddleLeft"]
+[text_show name="_sp_chara_name" time=0]
+
+
+[wait time=0]
+
+[bg_new name="mati" storage="mati"]
+[bg_show name="mati" time=0.5]
+
+[playbgm wait=false time=1 storage="imisin"]
+
+#{f.clanName}
+今日はバイトの日だ[p]
+
+[playse storage=door-open1]
+
+#{f.clanName}
+お疲れ様でーす！[p]
+
+#店長
+お、{f.clanName}今日も元気だね[p]
+
+#{f.clanName}
+はいっ！元気です！[p]
+
+#店長
+あ、今日いつもと違うことやってもらいたいんだけど[p]
+
+やる？[p]
+
+#{f.clanName}
+やります！[p]
+
+・・・ちなみにどんなことやるんですか？[p]
+
+#
+ニヤ・・・[p]
+
+#店長
+ナ　イ　ショ　！[p]
+
+バイト代はずむよ！[p]
+
+#{f.clanName}
+・・・・なんか怪しい[p]
+
+#
+数時間後[p]
+
+#店長
+おつかれ～[p]
+
+いやぁ～助かったよ[p]
+
+#{f.clanName}
+いえ、初めてだったので勉強になりました！[p]
+
+#店長
+また頼むよ[p]
+
+#{f.clanName}
+はいっ！[p]
+
+経済力と人間力[p]
+[calc exp="f.ec={f.ec}+10"]
+[calc exp="f.hu={f.hu}+10"]
+
+学力が少し下がった。[p]
+[calc exp="f.ac={f.ac}-5"]
+
+
+[stopbgm]
+
+[Export]
+
+[scene file={f.sceneName}]

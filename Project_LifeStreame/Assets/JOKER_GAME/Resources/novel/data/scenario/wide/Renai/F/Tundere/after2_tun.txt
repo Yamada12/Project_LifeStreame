@@ -133,7 +133,7 @@
 [show name=sora]
 [anim name="toka" time=1 x=-3 y=-1]
 
-[anim name="saora" time=1 x=3 y=-1]
+[anim name="sora" time=1 x=3 y=-1]
 
 #{f.clanName}
 うわッ！？[p]

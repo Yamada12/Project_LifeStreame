@@ -139,7 +139,7 @@
 [anim name="risa" time=1 x=-3 y=-1]
 [show name=sora]
 
-[anim name="risa" time=1 x=3 y=-1]
+[anim name="sora" time=1 x=3 y=-1]
 
 [chara_mod name="risa" storage="majime_odoroki_c"]
 #{f.clanName}

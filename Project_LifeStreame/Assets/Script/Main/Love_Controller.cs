@@ -83,6 +83,34 @@ public class Love_Controller : MonoBehaviour
                         }
                         basePoint_f[3].GetComponentInChildren<Button>().interactable = true;
                         break;
+                    case 11://ツンデレ結婚
+                        for (int i = 0; i < basePoint_f.Length; i++)
+                        {//特定のボタン以外をオフにする
+                            basePoint_f[i].GetComponentInChildren<Button>().interactable = false;
+                        }
+                        basePoint_f[0].GetComponentInChildren<Button>().interactable = true;
+                        break;
+                    case 12://真面目ちゃん結婚
+                        for (int i = 0; i < basePoint_f.Length; i++)
+                        {//特定のボタン以外をオフにする
+                            basePoint_f[i].GetComponentInChildren<Button>().interactable = false;
+                        }
+                        basePoint_f[1].GetComponentInChildren<Button>().interactable = true;
+                        break;
+                    case 13://スポコン結婚
+                        for (int i = 0; i < basePoint_f.Length; i++)
+                        {//特定のボタン以外をオフにする
+                            basePoint_f[i].GetComponentInChildren<Button>().interactable = false;
+                        }
+                        basePoint_f[2].GetComponentInChildren<Button>().interactable = true;
+                        break;
+                    case 14://控え目結婚(予定)
+                        for (int i = 0; i < basePoint_f.Length; i++)
+                        {//特定のボタン以外をオフにする
+                            basePoint_f[i].GetComponentInChildren<Button>().interactable = false;
+                        }
+                        basePoint_f[3].GetComponentInChildren<Button>().interactable = true;
+                        break;
                 }
             }
         }
@@ -142,7 +170,46 @@ public class Love_Controller : MonoBehaviour
                         }
                         basePoint_m[3].GetComponentInChildren<Button>().interactable = true;
                         break;
+                    case 11://テリメガ結婚
+                        for (int i = 0; i < basePoint_m.Length; i++)
+                        {//特定のボタン以外をオフにする
+                            basePoint_m[i].GetComponentInChildren<Button>().interactable = false;
+                        }
+                        basePoint_m[0].GetComponentInChildren<Button>().interactable = true;
+                        break;
+                    case 12://カマセ結婚
+                        for (int i = 0; i < basePoint_m.Length; i++)
+                        {//特定のボタン以外をオフにする
+                            basePoint_m[i].GetComponentInChildren<Button>().interactable = false;
+                        }
+                        basePoint_m[1].GetComponentInChildren<Button>().interactable = true;
+                        break;
+                    case 13://和やか結婚
+                        for (int i = 0; i < basePoint_m.Length; i++)
+                        {//特定のボタン以外をオフにする
+                            basePoint_m[i].GetComponentInChildren<Button>().interactable = false;
+                        }
+                        basePoint_m[2].GetComponentInChildren<Button>().interactable = true;
+                        break;
+                    case 14://オレ様(予定)結婚
+                        for (int i = 0; i < basePoint_m.Length; i++)
+                        {//特定のボタン以外をオフにする
+                            basePoint_m[i].GetComponentInChildren<Button>().interactable = false;
+                        }
+                        basePoint_m[3].GetComponentInChildren<Button>().interactable = true;
+                        break;
                 }
+            }
+        }
+    }
+
+    void Update()
+    {
+        if (PlayerStatus.progress != 7)
+        {
+            for (int i = 0; i < proposeButton.Length; i++)
+            {
+                proposeButton[i].GetComponent<Button>().interactable = false;
             }
         }
     }
@@ -154,6 +221,22 @@ public class Love_Controller : MonoBehaviour
     {
         if (PlayerStatus.mf == 0)
         {//男性の場合
+            if (PlayerStatus.marriage == 0)
+            {//誰とも付き合っていなければ
+                if (PlayerStatus.lp_tun >= 1)
+                    basePoint_f[0].GetComponentInChildren<Button>().interactable = true;
+
+                if (PlayerStatus.lp_maji >= 1)
+                    basePoint_f[1].GetComponentInChildren<Button>().interactable = true;
+
+                if (PlayerStatus.lp_supo >= 1)
+                    basePoint_f[2].GetComponentInChildren<Button>().interactable = true;
+            }
+
+            /*４体目
+            if (PlayerStatus.lp_tun >= 1)
+                basePoint_f[3].GetComponentInChildren<Button>().interactable = true;
+            */
             for (int i = 0; i < targetDetail_f.Length; i++)
             {//全ての詳細パネルを消去
                 targetDetail_f[i].SetActive(false);
@@ -172,6 +255,18 @@ public class Love_Controller : MonoBehaviour
         }
         else
         {//女性の場合
+            if (PlayerStatus.marriage == 0)
+            {//誰とも付き合っていなければ
+                if (PlayerStatus.lp_mega >= 1)
+                    basePoint_m[0].GetComponentInChildren<Button>().interactable = true;
+
+                if (PlayerStatus.lp_kama >= 1)
+                    basePoint_m[1].GetComponentInChildren<Button>().interactable = true;
+
+                if (PlayerStatus.lp_nago >= 1)
+                    basePoint_m[2].GetComponentInChildren<Button>().interactable = true;
+            }
+
             for (int i = 0; i < targetDetail_m.Length; i++)
             {//全ての詳細パネルを消去
                 targetDetail_f[i].SetActive(false);

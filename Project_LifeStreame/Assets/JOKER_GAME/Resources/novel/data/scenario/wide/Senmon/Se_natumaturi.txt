@@ -13,8 +13,8 @@
 
 [wait time=0]
 
-[bg_new name="natumaturi" storage="natumaturi"]
-[bg_show name="natumaturi" time=0.5]
+[bg_new name="ame" storage="ame"]
+[bg_show name="ame" time=0.5]
 
 [playbgm wait=false time=1 storage="natumaturi"]
 
@@ -23,19 +23,19 @@
 #
 {f.clanName}は花火を楽しみにいったが雨が降ってきてしまった。[p]
 
-#モブ
+#友人Ａ
 うわ～降ってきちゃった。[p]
 
 #{f.clanName}
 急いで屋根のあるところに[p]
 
-#モブ
+#友人Ａ
 これじゃ花火は中止かな[p]
 
 #{f.clanName}
 見たかったなぁ、花火[p]
 
-#モブ
+#友人Ａ
 雨じゃ仕方ないね[p]
 
 コミュ力と人間力と体力が上がった。[p]
@@ -52,6 +52,7 @@
 [if exp="{f.rand}==1"]
 
 なんと！[p]
+[bg_mod name=ame storage="natumaturi"]
 
 降っていた雨がやんで花火を見ることが出来た！[p]
 

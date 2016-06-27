@@ -25,6 +25,7 @@ public class MainManager : MonoBehaviour
 
     void Start()
     {
+        //PlayerPrefs.DeleteAll();
         if (PlayerPrefs.HasKey("0"))
         {//初回起動ではない場合
             pauseFlag = false;
@@ -86,10 +87,6 @@ public class MainManager : MonoBehaviour
             PlayerStatus.lifeTime = 0;
             endPanel.SetActive(true);
             pauseFlag = true;
-            if(PlayerStatus.progress == 5)  //専門学校パートなら2を代入して強制的に社会人パートへ
-                PlayerStatus.progress += 2;
-            else
-                PlayerStatus.progress += 1;
 
             StartCoroutine(ReturnWorld());
         }
@@ -165,10 +162,15 @@ public class MainManager : MonoBehaviour
         StopCoroutine("HappySpawn");
         yield return new WaitForSeconds(4f);
         ev.InitDelete();
+        if (PlayerStatus.progress == 5)  //専門学校パートなら2を代入して強制的に社会人パートへ
+            PlayerStatus.progress += 2;
+        else
+            PlayerStatus.progress += 1;
         //World_Player.result = 0;
         World_Player.shiken = 0;
         PlayerStatus.lifeTime = 1200;
         PlayerStatus.static_Save();
         SceneManager.LoadScene("World", LoadSceneMode.Single);
+        StopCoroutine("ReturnWorld");
     }
 }
