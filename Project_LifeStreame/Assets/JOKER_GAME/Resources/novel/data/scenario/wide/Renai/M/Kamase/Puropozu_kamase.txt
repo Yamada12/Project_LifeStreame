@@ -18,7 +18,7 @@
 
 [wait time=0]
 
-[bg_show name="ike" time=0.5]
+[bg_show name="yama" time=0.5]
 ;背景表示
 
 [show name=kojiro]

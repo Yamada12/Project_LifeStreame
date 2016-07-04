@@ -567,38 +567,87 @@ public class ScenarioManager : MonoBehaviour
                 PlayerStatus.job = "弁護士";
                 break;
             case "占い師"://†占い師†
-                PlayerStatus.ec += 10;
+                float rnd_ura = Random.Range(0, 1000);
+                if (rnd_ura <= PlayerStatus.lu)
+                {
+                    PlayerStatus.ec += 20;
+                    PlayerStatus.lu += 20;
+                    PlayerStatus.co += 10;
+                    flyText.GetComponentInChildren<Text>().alignment = TextAnchor.UpperCenter;
+                    StartCoroutine(PopText("桃プリンセスを助けた！", 0f));
+                }
+                else
+                    StartCoroutine(PopText("何も起こらなかった", 0f));
+
                 PlayerStatus.lifeTime -= 50;
                 flyText.GetComponentInChildren<Text>().alignment = TextAnchor.UpperCenter;
-                StartCoroutine(PopText("経済力↑", 0f));
                 PlayerStatus.job = "占い師";
                 break;
             case "執事・メイド"://†執事・メイド†
-                PlayerStatus.ec += 10;
+                float rnd_mei = Random.Range(0, 1000);
+                if (rnd_mei <= PlayerStatus.lu)
+                {
+                    PlayerStatus.ec += 30;
+                    PlayerStatus.hu += 20;
+                    PlayerStatus.co += 20;
+                    PlayerStatus.ac += 10;
+                    flyText.GetComponentInChildren<Text>().alignment = TextAnchor.UpperCenter;
+                    StartCoroutine(PopText("おかえりなさいませ！", 0f));
+                }
+                else
+                    StartCoroutine(PopText("ご主人に怒られた…", 0f));
+
                 PlayerStatus.lifeTime -= 50;
                 flyText.GetComponentInChildren<Text>().alignment = TextAnchor.UpperCenter;
-                StartCoroutine(PopText("経済力↑", 0f));
                 PlayerStatus.job = "執事・メイド";
                 break;
             case "正義の味方"://†正義の味方†
-                PlayerStatus.ec += 10;
+                float rnd_sei = Random.Range(0, 1000);
+                if (rnd_sei <= PlayerStatus.lu)
+                {
+                    PlayerStatus.ec += 10;
+                    PlayerStatus.hu += 20;
+                    flyText.GetComponentInChildren<Text>().alignment = TextAnchor.UpperCenter;
+                    StartCoroutine(PopText("ツーパンで終わった！！", 0f));
+                }
+                else
+                    StartCoroutine(PopText("今日は平和だった", 0f));
+
                 PlayerStatus.lifeTime -= 50;
                 flyText.GetComponentInChildren<Text>().alignment = TextAnchor.UpperCenter;
-                StartCoroutine(PopText("経済力↑", 0f));
                 PlayerStatus.job = "正義の味方";
                 break;
             case "スタントマン"://†スタントマン†
-                PlayerStatus.ec += 10;
+                float rnd_sut = Random.Range(0, 1000);
+                if (rnd_sut <= PlayerStatus.lu)
+                {
+                    PlayerStatus.ec += 30;
+                    PlayerStatus.vi += 10;
+                    PlayerStatus.lu += 10;
+                    flyText.GetComponentInChildren<Text>().alignment = TextAnchor.UpperCenter;
+                    StartCoroutine(PopText("スタントに成功した！", 0f));
+                }
+                else
+                    StartCoroutine(PopText("スタントに失敗した…", 0f));
+
                 PlayerStatus.lifeTime -= 50;
                 flyText.GetComponentInChildren<Text>().alignment = TextAnchor.UpperCenter;
-                StartCoroutine(PopText("経済力↑", 0f));
                 PlayerStatus.job = "スタントマン";
                 break;
             case "配管工"://†配管工†
-                PlayerStatus.ec += 10;
+                float rnd_hai = Random.Range(0, 1000);
+                if (rnd_hai <= PlayerStatus.lu)
+                {
+                    PlayerStatus.ec += 30;
+                    PlayerStatus.vi += 20;
+                    flyText.GetComponentInChildren<Text>().alignment = TextAnchor.UpperCenter;
+                    StartCoroutine(PopText("桃プリンセスを助けた！", 0f));
+                }
+                else
+                    StartCoroutine(PopText("何も起こらなかった", 0f));
+
                 PlayerStatus.lifeTime -= 50;
                 flyText.GetComponentInChildren<Text>().alignment = TextAnchor.UpperCenter;
-                StartCoroutine(PopText("経済力↑", 0f));
                 PlayerStatus.job = "配管工";
                 break;
             case "ギャンブラー"://†ギャンブラー†
@@ -609,9 +658,10 @@ public class ScenarioManager : MonoBehaviour
                     flyText.GetComponentInChildren<Text>().alignment = TextAnchor.UpperCenter;
                     StartCoroutine(PopText("運がいいね！", 0f));
                 }
+                else
+                    StartCoroutine(PopText("何も起こらなかった", 0f));
                 PlayerStatus.lifeTime -= 50;
                 flyText.GetComponentInChildren<Text>().alignment = TextAnchor.UpperCenter;
-                StartCoroutine(PopText("何も起こらなかった", 0f));
                 PlayerStatus.job = "ギャンブラー";
                 break;
             case "王子・王女"://‡王子・王女‡

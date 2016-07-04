@@ -87,6 +87,8 @@ public class TitleManager : MonoBehaviour
     {
         if (PlayerStatus.progress == 0)//進行度が0だったら
             TitleMoveAnimation(true);
+        else if(PlayerStatus.progress == 7)
+            SceneManager.LoadScene("Main");
         else
             SceneManager.LoadScene("World");
     }

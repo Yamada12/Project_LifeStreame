@@ -51,7 +51,7 @@ public class TrophySystem : MonoBehaviour
 
         hiddenlement.transform.FindChild("HiddenElement").gameObject.SetActive(false);
         CheckAchibment();
-        SoundPlayer.Instance.PlayBGM("Work");
+        SoundPlayer.Instance.PlayBGM("First01");
     }
 
     /// <summary>
@@ -200,6 +200,7 @@ public class TrophySystem : MonoBehaviour
     /// <param name="id"></param>
     public void showDetail(int id)
     {
+        SoundPlayer.Instance.PlaySE("Normal_Enter");
         switch(id)
         {
             case 0:

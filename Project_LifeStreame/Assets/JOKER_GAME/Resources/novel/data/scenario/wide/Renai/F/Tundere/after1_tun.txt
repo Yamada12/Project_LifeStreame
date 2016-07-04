@@ -196,6 +196,8 @@
 ほら帰るぞ！[p]
 
 [chara_mod name="toka" storage="tundere_kanasi_c"]
+
+#橙花
 私のクレープゥゥゥ！[p]
 
 @jump target=*a_common

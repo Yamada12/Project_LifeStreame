@@ -37,6 +37,8 @@
 
 良い人生を[p]
 
+[anim name="happy" time=3 x=0 y=10]
+
 [stopbgm]
 
 [Export]

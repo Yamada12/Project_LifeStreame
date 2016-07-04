@@ -28,7 +28,7 @@
 
 やっちゃったね[p]
 
-{f.geneNo}代目の{f.clanName}君[p]
+{f.geneNumber}代目の{f.clanName}君[p]
 
 君の行いが君の家系を終わらせたんだ[p]
 
@@ -40,4 +40,4 @@
 
 [Export]
 
-[scene file="World"]
+[scene file="EndRoll"]

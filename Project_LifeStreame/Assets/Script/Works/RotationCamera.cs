@@ -15,7 +15,7 @@ public class RotationCamera : MonoBehaviour
         //		transform.LookAt(target);
 
         //自分をZ軸を中心に0～360でランダムに回転させる
-        transform.Rotate(new Vector3(0, 0, Random.Range(0, 360)), Space.World);
+        //transform.Rotate(new Vector3(0, 0, Random.Range(0, 360)), Space.World);
     }
 
     void Update()

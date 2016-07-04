@@ -19,11 +19,21 @@ public class Love_Controller : MonoBehaviour
     /// </summary>
     void Start()
     {
-        if (PlayerStatus.love_AfterCount >= 3)
+        if (PlayerStatus.love_AfterCount == 3)
         {
-            for (int i = 0; i < proposeButton.Length; i++)
+            if (PlayerStatus.marriage > 10)
             {
-                proposeButton[i].GetComponent<Button>().interactable = true;
+                for (int i = 0; i < proposeButton.Length; i++)
+                {
+                    proposeButton[i].GetComponent<Button>().interactable = false;
+                }
+            }
+            else
+            {
+                for (int i = 0; i < proposeButton.Length; i++)
+                {
+                    proposeButton[i].GetComponent<Button>().interactable = true;
+                }
             }
         }
 

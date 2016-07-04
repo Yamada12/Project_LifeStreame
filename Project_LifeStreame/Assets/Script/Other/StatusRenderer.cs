@@ -113,7 +113,6 @@ public class StatusRenderer : MonoBehaviour
         else if (PlayerStatus.co >= 999)
         {
             vert1_step = 4f;
-            PopTrophy.GetTrophy("コミュトロフィー", "コミュ力カンスト", 0);
         }
 
         //経済力のレーダー位置
@@ -134,7 +133,6 @@ public class StatusRenderer : MonoBehaviour
         else if (PlayerStatus.ec >= 999)
         {
             vert2_step = 4f;
-            PopTrophy.GetTrophy("経済トロフィー", "経済力カンスト", 1);
         }
 
         //学力のレーダー位置
@@ -155,7 +153,6 @@ public class StatusRenderer : MonoBehaviour
         else if (PlayerStatus.ac >= 999)
         {
             vert3_step = 4f;
-            PopTrophy.GetTrophy("学力トロフィー", "学力カンスト", 2);
         }
 
         //人間力のレーダー位置
@@ -176,7 +173,6 @@ public class StatusRenderer : MonoBehaviour
         else if (PlayerStatus.hu >= 999)
         {
             vert4_step = 4f;
-            PopTrophy.GetTrophy("人間力トロフィー", "人間力カンスト", 3);
         }
 
         //体力のレーダー位置
@@ -197,7 +193,6 @@ public class StatusRenderer : MonoBehaviour
         else if (PlayerStatus.vi >= 999)
         {
             vert5_step = 4f;
-            PopTrophy.GetTrophy("体力トロフィー", "体力カンスト", 4);
         }
 
         //運気のレーダー位置
@@ -218,7 +213,6 @@ public class StatusRenderer : MonoBehaviour
         else if (PlayerStatus.lu >= 999)
         {
             vert6_step = 4f;
-            PopTrophy.GetTrophy("運気トロフィー", "運気カンスト", 5);
         }
     }
 }

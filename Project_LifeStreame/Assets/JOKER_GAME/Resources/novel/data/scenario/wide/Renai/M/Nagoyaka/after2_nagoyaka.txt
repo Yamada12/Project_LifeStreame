@@ -99,6 +99,8 @@
 #{f.clanName}
 もう少しここにいよう[p]
 
+[anim name="yositaka" time=3 x=-3 y=-1]
+
 [show name=kazuma]
 #和真
 おや[p]

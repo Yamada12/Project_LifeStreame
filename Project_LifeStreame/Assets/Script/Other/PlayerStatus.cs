@@ -37,7 +37,7 @@ public class PlayerStatus : MonoBehaviour
     static public int lp_nago;                  //好感度：和やか   (0なら出会っていない。1以上で出会っている。)
     static public int lp_ore;                   //好感度：オレサマ  (0なら出会っていない。1以上で出会っている。)
     static public int lp_ani;                   //好感度：アニキ   (0なら出会っていない。1以上で出会っている。)
-    static public int love_AfterCount = 2;
+    static public int love_AfterCount;
 
     /// <summary>
     /// はじめから開始時にすべての変数をリセットするメソッド

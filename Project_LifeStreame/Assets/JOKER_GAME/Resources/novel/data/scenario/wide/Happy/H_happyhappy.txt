@@ -310,7 +310,7 @@
 #はっぴはっぴ
 これで君の能力が上がったよ[p]
 
-[chara_mod name="happy" storage="happy"]
+[chara_mod name="happy" storage="unHappy"]
 
 それじゃあ[p]
 

@@ -165,7 +165,7 @@
 
 お幸せに―！！！[p]
 
-[anim name="saora" time=1 x=15 y=-1]
+[anim name="sora" time=1 x=15 y=-1]
 [anim name="toka" time=1 x=0 y=-1]
 
 #{f.clanName}
@@ -230,6 +230,8 @@
 @jump target=*a_common
 
 *a_common 
+
+#
 姫百合　橙花との絆が更に深まった[p]
 
 

@@ -9,11 +9,7 @@ public class InheritingManager : MonoBehaviour
 	void Start ()
     {
         PlayerStatus.static_Save();
-	}
-	
-	// Update is called once per frame
-	void Update ()
-    {
+        SoundPlayer.Instance.PlaySE("announce");
 	}
 
     public void InheritingNewGame()

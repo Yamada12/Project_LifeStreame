@@ -56,6 +56,12 @@ public class World_Player : MonoBehaviour {
     void Start()
     {
         SoundPlayer.Instance.PlayBGM("World01");
+
+        if (PlayerStatus.progress == 5)
+            PopTrophy.GetTrophy("専門デビュー", "専門学校に進学した", 16);
+        else if (PlayerStatus.progress == 6)
+            PopTrophy.GetTrophy("大学デビュー", "大学に進学した", 17);
+
         PlayerStatus.static_Save();
         PlayerStatus.static_Load();
     }

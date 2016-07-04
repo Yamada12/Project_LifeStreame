@@ -66,7 +66,7 @@
 #{f.clanName}
 ZZZ・・・[p]
 
-chara_hide name=kazuma time=1 wait=false]
+[chara_hide name=kazuma time=1 wait=false]
 [bg_mod name="densya" storage="black"]
 
 [wait=0.5]

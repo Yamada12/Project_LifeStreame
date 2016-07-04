@@ -10,7 +10,7 @@
 [text_new name=_sp_chara_name layer=ui x="-168" y=-108.5 val="" color="DDFF00" fontsize=16 anchor="MiddleLeft"]
 [text_show name="_sp_chara_name" time=0]
 
-[bg_new name="mait" storage="mati"]
+[bg_new name="mati" storage="mati"]
 ;背景宣言
 
 [chara_new name=yositaka storage=nagoyaka_default_c y=-1 ]

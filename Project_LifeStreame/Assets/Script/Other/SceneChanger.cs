@@ -195,31 +195,34 @@ public class SceneChanger : MonoBehaviour
     {
         if (PlayerStatus.lifeTime > 20)
         {
-            PlayerStatus.lifeTime -= 20;
             switch (character)
             {
                 case "tun"://ツンデレ
                     if (PlayerStatus.love_AfterCount == 0)
                     {
+                        PlayerStatus.lifeTime -= 20;
                         PlayerStatus.InitConverter();
                         PlayerStatus.love_AfterCount += 1;
                         NovelSingleton.StatusManager.callJoker("wide/Renai/F/Tundere/after1_tun", "");
                     }
                     else if (PlayerStatus.love_AfterCount == 1)
                     {
+                        PlayerStatus.lifeTime -= 20;
                         PlayerStatus.InitConverter();
                         PlayerStatus.love_AfterCount += 1;
                         NovelSingleton.StatusManager.callJoker("wide/Renai/F/Tundere/after2_tun", "");
                     }
                     else if (PlayerStatus.love_AfterCount == 2)
                     {
+                        PlayerStatus.lifeTime -= 20;
                         PlayerStatus.InitConverter();
-                        PlayerStatus.love_AfterCount += 1;
+                        PlayerStatus.love_AfterCount = 3;
                         GameObject.Find("Propose").GetComponent<Button>().interactable = true;
                         NovelSingleton.StatusManager.callJoker("wide/Renai/F/Tundere/after3_tun", "");
                     }
-                    else if (PlayerStatus.love_AfterCount == 3)
+                    else if (PlayerStatus.love_AfterCount == 3 && PlayerStatus.marriage > 10)
                     {
+                        PlayerStatus.lifeTime -= 20;
                         float rnd = Random.Range(0,3);
                         if (rnd == 0)
                         {
@@ -241,200 +244,220 @@ public class SceneChanger : MonoBehaviour
                 case "majime"://真面目
                     if (PlayerStatus.love_AfterCount == 0)
                     {
+                        PlayerStatus.lifeTime -= 20;
                         PlayerStatus.InitConverter();
                         PlayerStatus.love_AfterCount += 1;
                         NovelSingleton.StatusManager.callJoker("wide/Renai/F/Majime/after1_majime", "");
                     }
                     else if (PlayerStatus.love_AfterCount == 1)
                     {
+                        PlayerStatus.lifeTime -= 20;
                         PlayerStatus.InitConverter();
                         PlayerStatus.love_AfterCount += 1;
                         NovelSingleton.StatusManager.callJoker("wide/Renai/F/Majime/after2_majime", "");
                     }
                     else if (PlayerStatus.love_AfterCount == 2)
                     {
+                        PlayerStatus.lifeTime -= 20;
                         PlayerStatus.InitConverter();
-                        PlayerStatus.love_AfterCount += 1;
+                        PlayerStatus.love_AfterCount = 3;
                         GameObject.Find("Propose").GetComponent<Button>().interactable = true;
                         NovelSingleton.StatusManager.callJoker("wide/Renai/F/Majime/after3_majime", "");
                     }
-                    else if (PlayerStatus.love_AfterCount == 3)
+                    else if (PlayerStatus.love_AfterCount == 3 && PlayerStatus.marriage > 10)
                     {
+                        PlayerStatus.lifeTime -= 20;
                         float rnd = Random.Range(0, 3);
                         if (rnd == 0)
                         {
                             PlayerStatus.InitConverter();
-                            NovelSingleton.StatusManager.callJoker("wide/Renai/F/Tundere/marriage1_majime", "");
+                            NovelSingleton.StatusManager.callJoker("wide/Renai/F/Majime/marriage1_majime", "");
                         }
                         else if (rnd == 1)
                         {
                             PlayerStatus.InitConverter();
-                            NovelSingleton.StatusManager.callJoker("wide/Renai/F/Tundere/marriage2_majime", "");
+                            NovelSingleton.StatusManager.callJoker("wide/Renai/F/Majime/marriage2_majime", "");
                         }
                         else if (rnd == 2)
                         {
                             PlayerStatus.InitConverter();
-                            NovelSingleton.StatusManager.callJoker("wide/Renai/F/Tundere/marriage3_majime", "");
+                            NovelSingleton.StatusManager.callJoker("wide/Renai/F/Majime/marriage3_majime", "");
                         }
                     }
                     break;
                 case "supokon"://スポコン
                     if (PlayerStatus.love_AfterCount == 0)
                     {
+                        PlayerStatus.lifeTime -= 20;
                         PlayerStatus.InitConverter();
                         PlayerStatus.love_AfterCount += 1;
                         NovelSingleton.StatusManager.callJoker("wide/Renai/F/Supokon/after1_supo", "");
                     }
                     else if (PlayerStatus.love_AfterCount == 1)
                     {
+                        PlayerStatus.lifeTime -= 20;
                         PlayerStatus.InitConverter();
                         PlayerStatus.love_AfterCount += 1;
                         NovelSingleton.StatusManager.callJoker("wide/Renai/F/Supokon/after2_supo", "");
                     }
                     else if (PlayerStatus.love_AfterCount == 2)
                     {
+                        PlayerStatus.lifeTime -= 20;
                         PlayerStatus.InitConverter();
-                        PlayerStatus.love_AfterCount += 1;
+                        PlayerStatus.love_AfterCount = 3;
                         GameObject.Find("Propose").GetComponent<Button>().interactable = true;
                         NovelSingleton.StatusManager.callJoker("wide/Renai/F/Supokon/after3_supo", "");
                     }
-                    else if (PlayerStatus.love_AfterCount == 3)
+                    else if (PlayerStatus.love_AfterCount == 3 && PlayerStatus.marriage > 10)
                     {
+                        PlayerStatus.lifeTime -= 20;
                         float rnd = Random.Range(0, 3);
                         if (rnd == 0)
                         {
                             PlayerStatus.InitConverter();
-                            NovelSingleton.StatusManager.callJoker("wide/Renai/F/Tundere/marriage1_supo", "");
+                            NovelSingleton.StatusManager.callJoker("wide/Renai/F/Supokon/marriage1_supo", "");
                         }
                         else if (rnd == 1)
                         {
                             PlayerStatus.InitConverter();
-                            NovelSingleton.StatusManager.callJoker("wide/Renai/F/Tundere/marriage2_supo", "");
+                            NovelSingleton.StatusManager.callJoker("wide/Renai/F/Supokon/marriage2_supo", "");
                         }
                         else if (rnd == 2)
                         {
                             PlayerStatus.InitConverter();
-                            NovelSingleton.StatusManager.callJoker("wide/Renai/F/Tundere/marriage3_supo", "");
+                            NovelSingleton.StatusManager.callJoker("wide/Renai/F/Supokon/marriage3_supo", "");
                         }
                     }
                     break;
                 case "mega"://インテリメガネ
                     if (PlayerStatus.love_AfterCount == 0)
                     {
+                        PlayerStatus.lifeTime -= 20;
                         PlayerStatus.InitConverter();
                         PlayerStatus.love_AfterCount += 1;
                         NovelSingleton.StatusManager.callJoker("wide/Renai/M/Interi/after1_interi", "");
                     }
                     else if (PlayerStatus.love_AfterCount == 1)
                     {
+                        PlayerStatus.lifeTime -= 20;
                         PlayerStatus.InitConverter();
                         PlayerStatus.love_AfterCount += 1;
                         NovelSingleton.StatusManager.callJoker("wide/Renai/M/Interi/after2_interi", "");
                     }
                     else if (PlayerStatus.love_AfterCount == 2)
                     {
+                        PlayerStatus.lifeTime -= 20;
                         PlayerStatus.InitConverter();
-                        PlayerStatus.love_AfterCount += 1;
+                        PlayerStatus.love_AfterCount = 3;
                         GameObject.Find("Propose").GetComponent<Button>().interactable = true;
                         NovelSingleton.StatusManager.callJoker("wide/Renai/M/Interi/after3_interi", "");
                     }
-                    else if (PlayerStatus.love_AfterCount == 3)
+                    else if (PlayerStatus.love_AfterCount == 3 && PlayerStatus.marriage > 10)
                     {
+                        PlayerStatus.lifeTime -= 20;
                         float rnd = Random.Range(0, 3);
                         if (rnd == 0)
                         {
                             PlayerStatus.InitConverter();
-                            NovelSingleton.StatusManager.callJoker("wide/Renai/F/Tundere/marriage1_interi", "");
+                            NovelSingleton.StatusManager.callJoker("wide/Renai/M/Interi/marriage1_interi", "");
                         }
                         else if (rnd == 1)
                         {
                             PlayerStatus.InitConverter();
-                            NovelSingleton.StatusManager.callJoker("wide/Renai/F/Tundere/marriage2_interi", "");
+                            NovelSingleton.StatusManager.callJoker("wide/Renai/M/Interi/marriage2_interi", "");
                         }
                         else if (rnd == 2)
                         {
                             PlayerStatus.InitConverter();
-                            NovelSingleton.StatusManager.callJoker("wide/Renai/F/Tundere/marriage3_interi", "");
+                            NovelSingleton.StatusManager.callJoker("wide/Renai/M/Interi/marriage3_interi", "");
                         }
                     }
                     break;
                 case "kamase"://カマセ
                     if (PlayerStatus.love_AfterCount == 0)
                     {
+                        PlayerStatus.lifeTime -= 20;
                         PlayerStatus.InitConverter();
                         PlayerStatus.love_AfterCount += 1;
                         NovelSingleton.StatusManager.callJoker("wide/Renai/M/Kamase/after1_kamase", "");
                     }
                     else if (PlayerStatus.love_AfterCount == 1)
                     {
+                        PlayerStatus.lifeTime -= 20;
                         PlayerStatus.InitConverter();
                         PlayerStatus.love_AfterCount += 1;
                         NovelSingleton.StatusManager.callJoker("wide/Renai/M/Kamase/after2_kamase", "");
                     }
                     else if (PlayerStatus.love_AfterCount == 2)
                     {
+                        PlayerStatus.lifeTime -= 20;
                         PlayerStatus.InitConverter();
-                        PlayerStatus.love_AfterCount += 1;
+                        PlayerStatus.love_AfterCount = 3;
                         GameObject.Find("Propose").GetComponent<Button>().interactable = true;
                         NovelSingleton.StatusManager.callJoker("wide/Renai/M/Kamase/after3_kamase", "");
                     }
-                    else if (PlayerStatus.love_AfterCount == 3)
+                    else if (PlayerStatus.love_AfterCount == 3 && PlayerStatus.marriage > 10)
                     {
+                        PlayerStatus.lifeTime -= 20;
                         float rnd = Random.Range(0, 3);
                         if (rnd == 0)
                         {
                             PlayerStatus.InitConverter();
-                            NovelSingleton.StatusManager.callJoker("wide/Renai/F/Tundere/marriage1_kamase", "");
+                            NovelSingleton.StatusManager.callJoker("wide/Renai/M/Kamase/marriage1_kamase", "");
                         }
                         else if (rnd == 1)
                         {
                             PlayerStatus.InitConverter();
-                            NovelSingleton.StatusManager.callJoker("wide/Renai/F/Tundere/marriage2_kamase", "");
+                            NovelSingleton.StatusManager.callJoker("wide/Renai/M/Kamase/marriage2_kamase", "");
                         }
                         else if (rnd == 2)
                         {
                             PlayerStatus.InitConverter();
-                            NovelSingleton.StatusManager.callJoker("wide/Renai/F/Tundere/marriage3_kamase", "");
+                            NovelSingleton.StatusManager.callJoker("wide/Renai/M/Kamase/marriage3_kamase", "");
                         }
                     }
                     break;
                 case "nago"://和やか
                     if (PlayerStatus.love_AfterCount == 0)
                     {
+                        PlayerStatus.lifeTime -= 20;
                         PlayerStatus.InitConverter();
                         PlayerStatus.love_AfterCount += 1;
                         NovelSingleton.StatusManager.callJoker("wide/Renai/M/Nagoyaka/after1_nagoyaka", "");
                     }
                     else if (PlayerStatus.love_AfterCount == 1)
                     {
+                        PlayerStatus.lifeTime -= 20;
                         PlayerStatus.InitConverter();
                         PlayerStatus.love_AfterCount += 1;
                         NovelSingleton.StatusManager.callJoker("wide/Renai/M/Nagoyaka/after2_nagoyaka", "");
                     }
                     else if (PlayerStatus.love_AfterCount == 2)
                     {
+                        PlayerStatus.lifeTime -= 20;
                         PlayerStatus.InitConverter();
-                        PlayerStatus.love_AfterCount += 1;
+                        PlayerStatus.love_AfterCount = 3;
                         GameObject.Find("Propose").GetComponent<Button>().interactable = true;
                         NovelSingleton.StatusManager.callJoker("wide/Renai/M/Nagoyaka/after3_nagoyaka", "");
                     }
-                    else if (PlayerStatus.love_AfterCount == 3)
+                    else if (PlayerStatus.love_AfterCount == 3 && PlayerStatus.marriage > 10)
                     {
+                        PlayerStatus.lifeTime -= 20;
                         float rnd = Random.Range(0, 3);
                         if (rnd == 0)
                         {
                             PlayerStatus.InitConverter();
-                            NovelSingleton.StatusManager.callJoker("wide/Renai/F/Tundere/marriage1_nagoyaka", "");
+                            NovelSingleton.StatusManager.callJoker("wide/Renai/M/Nagoyaka/marriage1_nagoyaka", "");
                         }
                         else if (rnd == 1)
                         {
                             PlayerStatus.InitConverter();
-                            NovelSingleton.StatusManager.callJoker("wide/Renai/F/Tundere/marriage2_nagoyaka", "");
+                            NovelSingleton.StatusManager.callJoker("wide/Renai/M/Nagoyaka/marriage2_nagoyaka", "");
                         }
                         else if (rnd == 2)
                         {
                             PlayerStatus.InitConverter();
-                            NovelSingleton.StatusManager.callJoker("wide/Renai/F/Tundere/marriage3_nagoyaka", "");
+                            NovelSingleton.StatusManager.callJoker("wide/Renai/M/Nagoyaka/marriage3_nagoyaka", "");
                         }
                     }
                     break;

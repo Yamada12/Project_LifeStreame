@@ -155,6 +155,7 @@
     <Compile Include="Assets\MeshBaker\scripts\MB3_MultiMeshBaker.cs" />
     <Compile Include="Assets\MeshBaker\scripts\MB3_TextureBaker.cs" />
     <Compile Include="Assets\Script\DebugText.cs" />
+    <Compile Include="Assets\Script\EndRoll.cs" />
     <Compile Include="Assets\Script\Main\ContentManager.cs" />
     <Compile Include="Assets\Script\Main\EventButton_Manager.cs" />
     <Compile Include="Assets\Script\Main\HappySystem.cs" />
